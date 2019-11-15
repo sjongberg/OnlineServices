@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystemTest\\SandwichSystem.BusinessLayerTests.csproj": {}
+    "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystemTest\\SandwichSystem.BusinessLayerTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj": {
+    "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj",
         "projectName": "SandwichSystem.DataLayer",
-        "projectPath": "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj",
+        "projectPath": "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj",
         "packagesPath": "C:\\Users\\ChristianPGyssels\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystem.DataLayer\\obj\\",
+        "outputPath": "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -61,14 +61,71 @@
         }
       }
     },
-    "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystemTest\\SandwichSystem.BusinessLayerTests.csproj": {
+    "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystemTest\\SandwichSystem.BusinessLayerTests.csproj",
-        "projectName": "SandwichSystem.BusinessLayerTests",
-        "projectPath": "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystemTest\\SandwichSystem.BusinessLayerTests.csproj",
+        "projectUniqueName": "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj",
+        "projectName": "SandwichSystem.Shared",
+        "projectPath": "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj",
         "packagesPath": "C:\\Users\\ChristianPGyssels\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystemTest\\obj\\",
+        "outputPath": "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ChristianPGyssels\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystemTest\\SandwichSystem.BusinessLayerTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystemTest\\SandwichSystem.BusinessLayerTests.csproj",
+        "projectName": "SandwichSystem.BusinessLayerTests",
+        "projectPath": "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystemTest\\SandwichSystem.BusinessLayerTests.csproj",
+        "packagesPath": "C:\\Users\\ChristianPGyssels\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystemTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -89,11 +146,11 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj": {
-                "projectPath": "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj"
+              "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj": {
+                "projectPath": "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj"
               },
-              "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj": {
-                "projectPath": "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj"
+              "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj": {
+                "projectPath": "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj"
               }
             }
           }
@@ -149,14 +206,14 @@
         }
       }
     },
-    "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj": {
+    "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj",
         "projectName": "SandwichSystem.BusinessLayer",
-        "projectPath": "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj",
+        "projectPath": "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj",
         "packagesPath": "C:\\Users\\ChristianPGyssels\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystem\\obj\\",
+        "outputPath": "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -177,8 +234,11 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj": {
-                "projectPath": "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj"
+              "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj": {
+                "projectPath": "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj"
+              },
+              "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj": {
+                "projectPath": "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj"
               }
             }
           }
