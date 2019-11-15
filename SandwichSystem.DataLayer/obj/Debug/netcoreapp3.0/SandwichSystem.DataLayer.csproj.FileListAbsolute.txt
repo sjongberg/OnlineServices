@@ -14,3 +14,10 @@ C:\Users\ChristianPGyssels\Source\Repos\EnriqueUbillus\BF2019SandwichSystem\Sand
 C:\Users\ChristianPGyssels\Source\Repos\EnriqueUbillus\BF2019SandwichSystem\SandwichSystem.DataLayer\obj\Debug\netcoreapp3.0\SandwichSystem.DataLayer.AssemblyInfo.cs
 C:\Users\ChristianPGyssels\Source\Repos\EnriqueUbillus\BF2019SandwichSystem\SandwichSystem.DataLayer\obj\Debug\netcoreapp3.0\SandwichSystem.DataLayer.dll
 C:\Users\ChristianPGyssels\Source\Repos\EnriqueUbillus\BF2019SandwichSystem\SandwichSystem.DataLayer\obj\Debug\netcoreapp3.0\SandwichSystem.DataLayer.pdb
+C:\Users\Student\Source\Repos\TheRealDelep\BF2019SandwichSystem\SandwichSystem.DataLayer\bin\Debug\netcoreapp3.0\SandwichSystem.DataLayer.deps.json
+C:\Users\Student\Source\Repos\TheRealDelep\BF2019SandwichSystem\SandwichSystem.DataLayer\bin\Debug\netcoreapp3.0\SandwichSystem.DataLayer.dll
+C:\Users\Student\Source\Repos\TheRealDelep\BF2019SandwichSystem\SandwichSystem.DataLayer\bin\Debug\netcoreapp3.0\SandwichSystem.DataLayer.pdb
+C:\Users\Student\Source\Repos\TheRealDelep\BF2019SandwichSystem\SandwichSystem.DataLayer\obj\Debug\netcoreapp3.0\SandwichSystem.DataLayer.AssemblyInfoInputs.cache
+C:\Users\Student\Source\Repos\TheRealDelep\BF2019SandwichSystem\SandwichSystem.DataLayer\obj\Debug\netcoreapp3.0\SandwichSystem.DataLayer.AssemblyInfo.cs
+C:\Users\Student\Source\Repos\TheRealDelep\BF2019SandwichSystem\SandwichSystem.DataLayer\obj\Debug\netcoreapp3.0\SandwichSystem.DataLayer.dll
+C:\Users\Student\Source\Repos\TheRealDelep\BF2019SandwichSystem\SandwichSystem.DataLayer\obj\Debug\netcoreapp3.0\SandwichSystem.DataLayer.pdb
