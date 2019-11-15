@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SandwichSystem;
 using SandwichSystem.BusinessLayer;
+using SandwichSystem.BusinessLayer.Domain;
 
 namespace SandwichSystem.BusinessLayerTests
 {
@@ -19,9 +20,9 @@ namespace SandwichSystem.BusinessLayerTests
         Ingredient Oeuf = new Ingredient(new StringTranslated("Eggs", "Oeufs", "Eien"), true);
         Ingredient Miel = new Ingredient(new StringTranslated("Honey", "Miel", "Honing"), false);
 
-        Sandwish Club = new Sandwish(new StringTranslated("Club", "Club", "Club"));
-        Sandwish BrieNoix = new Sandwish(new StringTranslated("Brie", "Brie", "Brie"));
-        Sandwish PestoVerde = new Sandwish(new StringTranslated("Pesto", "Pesto", "Pesto"));
+        Sandwich Club = new Sandwich(new StringTranslated("Club", "Club", "Club"));
+        Sandwich BrieNoix = new Sandwich(new StringTranslated("Brie", "Brie", "Brie"));
+        Sandwich PestoVerde = new Sandwich(new StringTranslated("Pesto", "Pesto", "Pesto"));
 
         [TestMethod]
         public void ShowAllergene_ReturnsStart_WhenIngredientIsAllergen()
@@ -79,7 +80,7 @@ namespace SandwichSystem.BusinessLayerTests
             Club.Ingredients.Add(Salade);
             Club.Ingredients.Add(Fromage);
 
-            var sute = BrieNoix.ShowIngredients(Language.English);
+            var sute = BrieNoix.GetIngredients(Language.English);
             Assert.AreEqual(sute, "Brie* - Honey - Nuts*");
         }
     }

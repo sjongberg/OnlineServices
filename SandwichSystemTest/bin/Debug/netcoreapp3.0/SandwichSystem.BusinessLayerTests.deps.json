@@ -1166,7 +1166,8 @@
       },
       "SandwichSystem.BusinessLayer/1.0.0": {
         "dependencies": {
-          "SandwichSystem.DataLayer": "1.0.0"
+          "SandwichSystem.DataLayer": "1.0.0",
+          "SandwichSystem.Shared": "1.0.0"
         },
         "runtime": {
           "SandwichSystem.BusinessLayer.dll": {}
@@ -1175,6 +1176,11 @@
       "SandwichSystem.DataLayer/1.0.0": {
         "runtime": {
           "SandwichSystem.DataLayer.dll": {}
+        }
+      },
+      "SandwichSystem.Shared/1.0.0": {
+        "runtime": {
+          "SandwichSystem.Shared.dll": {}
         }
       }
     }
@@ -1856,6 +1862,11 @@
       "sha512": ""
     },
     "SandwichSystem.DataLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SandwichSystem.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
