@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AssemblyVersion>1911.12.1.1539</AssemblyVersion>
+    <FileVersion>1911.12.1.1539</FileVersion>
+    <ApplicationIcon />
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SandwichSystem.DataLayer\SandwichSystem.DataLayer.csproj" />
+  </ItemGroup>
+
+</Project>

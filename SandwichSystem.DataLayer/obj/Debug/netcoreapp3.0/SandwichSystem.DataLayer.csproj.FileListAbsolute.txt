@@ -1,0 +1,8 @@
+C:\Users\ChristianPGyssels\Desktop\SandwichSystem\SandwichSystem.DataLayer\bin\Debug\netcoreapp3.0\SandwichSystem.DataLayer.deps.json
+C:\Users\ChristianPGyssels\Desktop\SandwichSystem\SandwichSystem.DataLayer\bin\Debug\netcoreapp3.0\SandwichSystem.DataLayer.dll
+C:\Users\ChristianPGyssels\Desktop\SandwichSystem\SandwichSystem.DataLayer\bin\Debug\netcoreapp3.0\SandwichSystem.DataLayer.pdb
+C:\Users\ChristianPGyssels\Desktop\SandwichSystem\SandwichSystem.DataLayer\obj\Debug\netcoreapp3.0\SandwichSystem.DataLayer.csprojAssemblyReference.cache
+C:\Users\ChristianPGyssels\Desktop\SandwichSystem\SandwichSystem.DataLayer\obj\Debug\netcoreapp3.0\SandwichSystem.DataLayer.AssemblyInfoInputs.cache
+C:\Users\ChristianPGyssels\Desktop\SandwichSystem\SandwichSystem.DataLayer\obj\Debug\netcoreapp3.0\SandwichSystem.DataLayer.AssemblyInfo.cs
+C:\Users\ChristianPGyssels\Desktop\SandwichSystem\SandwichSystem.DataLayer\obj\Debug\netcoreapp3.0\SandwichSystem.DataLayer.dll
+C:\Users\ChristianPGyssels\Desktop\SandwichSystem\SandwichSystem.DataLayer\obj\Debug\netcoreapp3.0\SandwichSystem.DataLayer.pdb

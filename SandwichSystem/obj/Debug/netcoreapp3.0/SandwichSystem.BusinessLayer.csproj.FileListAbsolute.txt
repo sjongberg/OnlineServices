@@ -1,0 +1,11 @@
+C:\Users\ChristianPGyssels\Desktop\SandwichSystem\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\ChristianPGyssels\Desktop\SandwichSystem\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\ChristianPGyssels\Desktop\SandwichSystem\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.AssemblyInfo.cs
+C:\Users\ChristianPGyssels\Desktop\SandwichSystem\SandwichSystem\bin\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.deps.json
+C:\Users\ChristianPGyssels\Desktop\SandwichSystem\SandwichSystem\bin\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.dll
+C:\Users\ChristianPGyssels\Desktop\SandwichSystem\SandwichSystem\bin\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.pdb
+C:\Users\ChristianPGyssels\Desktop\SandwichSystem\SandwichSystem\bin\Debug\netcoreapp3.0\SandwichSystem.DataLayer.dll
+C:\Users\ChristianPGyssels\Desktop\SandwichSystem\SandwichSystem\bin\Debug\netcoreapp3.0\SandwichSystem.DataLayer.pdb
+C:\Users\ChristianPGyssels\Desktop\SandwichSystem\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.csproj.CopyComplete
+C:\Users\ChristianPGyssels\Desktop\SandwichSystem\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.dll
+C:\Users\ChristianPGyssels\Desktop\SandwichSystem\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.pdb
