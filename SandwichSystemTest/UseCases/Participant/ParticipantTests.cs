@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using SandwichSystem.BusinessLayer.Domain;
 using SandwichSystem.BusinessLayer.UseCases;
 using SandwichSystem.DataLayer;
 using System;
@@ -12,7 +13,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
     [TestClass()]
     public class ParticipantTests
     {
-        public List<Sandwish> GetTestsListOfSandwish()
+        public List<Sandwich> GetTestsListOfSandwich()
         {
             //REchercher Founisseur
             Ingredient Tomate = new Ingredient(new StringTranslated("Tomato", "Tomate", "Tomaat"), false);
@@ -27,9 +28,9 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
             Ingredient Oeuf = new Ingredient(new StringTranslated("Eggs", "Oeufs", "Eien"), true);
             Ingredient Miel = new Ingredient(new StringTranslated("Honey", "Miel", "Honing"), false);
 
-            Sandwish Club = new Sandwish(new StringTranslated("Club", "Club", "Club"));
-            Sandwish BrieNoix = new Sandwish(new StringTranslated("Brie", "Brie", "Brie"));
-            Sandwish PestoVerde = new Sandwish(new StringTranslated("Pesto", "Pesto", "Pesto"));
+            Sandwich Club = new Sandwich(new StringTranslated("Club", "Club", "Club"));
+            Sandwich BrieNoix = new Sandwich(new StringTranslated("Brie", "Brie", "Brie"));
+            Sandwich PestoVerde = new Sandwich(new StringTranslated("Pesto", "Pesto", "Pesto"));
 
             BrieNoix.Ingredients.Add(Brie);
             BrieNoix.Ingredients.Add(Miel);
@@ -45,7 +46,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
             Club.Ingredients.Add(Fromage);
             //Rechercher la liste de sandwich
 
-            var lst = new List<Sandwish>();;
+            var lst = new List<Sandwich>();;
 
             lst.Add(BrieNoix);
             lst.Add(Club);
@@ -56,12 +57,12 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
         [TestMethod()]
         public void AfficherMenuTest()
         {
-            var fakeSandwishRepo = new Mock<IRepository<Sandwish, int>>();
+            var fakeSandwichRepo = new Mock<IRepository<Sandwich, int>>();
             var fakeIngredientRepo = new Mock<IRepository<Ingredient, int>>();
 
-            fakeSandwishRepo.Setup( x=> x.Get()).Returns(GetTestsListOfSandwish());
+            fakeSandwichRepo.Setup( x=> x.Get()).Returns(GetTestsListOfSandwich());
 
-            var participant = new Participant(fakeSandwishRepo.Object, fakeIngredientRepo.Object);
+            var participant = new Participant(fakeSandwichRepo.Object, fakeIngredientRepo.Object);
 
             var listMenu = participant.AfficherMenu("Test", Language.English);
             

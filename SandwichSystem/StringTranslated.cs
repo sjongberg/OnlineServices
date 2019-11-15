@@ -1,4 +1,5 @@
-﻿namespace SandwichSystem.BusinessLayer
+﻿
+namespace SandwichSystem.BusinessLayer.Domain
 {
     public class StringTranslated
     {

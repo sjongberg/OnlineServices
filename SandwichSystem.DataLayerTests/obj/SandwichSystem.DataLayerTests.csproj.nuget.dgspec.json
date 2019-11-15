@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj": {}
+    "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj": {
+    "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj",
+        "projectUniqueName": "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj",
         "projectName": "SandwichSystem.DataLayerTests",
-        "projectPath": "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj",
+        "projectPath": "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj",
         "packagesPath": "C:\\Users\\ChristianPGyssels\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ChristianPGyssels\\Desktop\\SandwichSystem\\SandwichSystem.DataLayerTests\\obj\\",
+        "outputPath": "C:\\Users\\ChristianPGyssels\\Source\\Repos\\EnriqueUbillus\\BF2019SandwichSystem\\SandwichSystem.DataLayerTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

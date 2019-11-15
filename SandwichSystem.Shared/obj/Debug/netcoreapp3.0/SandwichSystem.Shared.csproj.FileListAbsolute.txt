@@ -1,0 +1,8 @@
+C:\Users\ChristianPGyssels\Source\Repos\EnriqueUbillus\BF2019SandwichSystem\SandwichSystem.Shared\bin\Debug\netcoreapp3.0\SandwichSystem.Shared.deps.json
+C:\Users\ChristianPGyssels\Source\Repos\EnriqueUbillus\BF2019SandwichSystem\SandwichSystem.Shared\bin\Debug\netcoreapp3.0\SandwichSystem.Shared.dll
+C:\Users\ChristianPGyssels\Source\Repos\EnriqueUbillus\BF2019SandwichSystem\SandwichSystem.Shared\bin\Debug\netcoreapp3.0\SandwichSystem.Shared.pdb
+C:\Users\ChristianPGyssels\Source\Repos\EnriqueUbillus\BF2019SandwichSystem\SandwichSystem.Shared\obj\Debug\netcoreapp3.0\SandwichSystem.Shared.csprojAssemblyReference.cache
+C:\Users\ChristianPGyssels\Source\Repos\EnriqueUbillus\BF2019SandwichSystem\SandwichSystem.Shared\obj\Debug\netcoreapp3.0\SandwichSystem.Shared.AssemblyInfoInputs.cache
+C:\Users\ChristianPGyssels\Source\Repos\EnriqueUbillus\BF2019SandwichSystem\SandwichSystem.Shared\obj\Debug\netcoreapp3.0\SandwichSystem.Shared.AssemblyInfo.cs
+C:\Users\ChristianPGyssels\Source\Repos\EnriqueUbillus\BF2019SandwichSystem\SandwichSystem.Shared\obj\Debug\netcoreapp3.0\SandwichSystem.Shared.dll
+C:\Users\ChristianPGyssels\Source\Repos\EnriqueUbillus\BF2019SandwichSystem\SandwichSystem.Shared\obj\Debug\netcoreapp3.0\SandwichSystem.Shared.pdb
