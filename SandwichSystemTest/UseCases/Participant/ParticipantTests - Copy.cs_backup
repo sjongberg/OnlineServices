@@ -26,9 +26,9 @@
 //            Ingredient Oeuf = new Ingredient(new StringTranslated("Eggs", "Oeufs", "Eien"), true);
 //            Ingredient Miel = new Ingredient(new StringTranslated("Honey", "Miel", "Honing"), false);
 
-//            Sandwish Club = new Sandwish(new StringTranslated("Club", "Club", "Club"));
-//            Sandwish BrieNoix = new Sandwish(new StringTranslated("Brie", "Brie", "Brie"));
-//            Sandwish PestoVerde = new Sandwish(new StringTranslated("Pesto", "Pesto", "Pesto"));
+//            Sandwich Club = new Sandwich(new StringTranslated("Club", "Club", "Club"));
+//            Sandwich BrieNoix = new Sandwich(new StringTranslated("Brie", "Brie", "Brie"));
+//            Sandwich PestoVerde = new Sandwich(new StringTranslated("Pesto", "Pesto", "Pesto"));
 
 //            BrieNoix.Ingredients.Add(Brie);
 //            BrieNoix.Ingredients.Add(Miel);
@@ -44,9 +44,9 @@
 //            Club.Ingredients.Add(Fromage);
 //            //Rechercher la liste de sandwich
 
-//            //var lst = new List<Sandwish>();
+//            //var lst = new List<Sandwich>();
 
-//            IRepository<Sandwish, int> repo = null;// new SandwishRepo();
+//            IRepository<Sandwich, int> repo = null;// new SandwichRepo();
 //            repo.Insert(BrieNoix);
 
 //            var participant = new Participant(repo, null);
