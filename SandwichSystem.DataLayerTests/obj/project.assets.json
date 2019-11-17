@@ -5664,19 +5664,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Student\\.nuget\\packages\\": {}
+    "C:\\Users\\ubill\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Student\\Source\\Repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj",
+      "projectUniqueName": "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj",
       "projectName": "SandwichSystem.DataLayerTests",
-      "projectPath": "C:\\Users\\Student\\Source\\Repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj",
-      "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Student\\Source\\Repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem.DataLayerTests\\obj\\",
+      "projectPath": "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj",
+      "packagesPath": "C:\\Users\\ubill\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem.DataLayerTests\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ubill\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

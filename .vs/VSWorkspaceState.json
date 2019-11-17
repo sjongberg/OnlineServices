@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\SandwichSystem",
+    "\\SandwichSystem.DataLayerTests",
+    "\\SandwichSystem.Shared",
+    "\\SandwichSystem.Shared\\bin\\Debug",
+    "\\SandwichSystem.Shared\\bin\\Release",
+    "\\SandwichSystem.Shared\\BTO",
+    "\\SandwichSystemTest",
+    "\\SandwichSystemTest\\UseCases",
+    "\\SandwichSystemTest\\UseCases\\Participant"
+  ],
+  "SelectedNode": "\\SandwichSystem.Shared\\BTO\\SandwishBTO.cs",
+  "PreviewInSolutionExplorer": false
+}
