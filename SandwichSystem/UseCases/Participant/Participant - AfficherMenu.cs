@@ -15,5 +15,11 @@ namespace SandwichSystem.BusinessLayer.UseCases
             => SandwichRepo.Get()
                 .Select(x=> x.ToBTO(Langue))
                 .ToList();
+
+        public List<IngredientBTO> DisplayIngredients(string sandwich, Language Langue)
+            => IngredientRepo.Get()
+                .Select(x => x.ToBTO(Langue))
+                .ToList();
+
     }
 }

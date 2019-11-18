@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Student\\source\\repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj": {}
+    "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Student\\source\\repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj": {
+    "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Student\\source\\repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj",
         "projectName": "SandwichSystem.DataLayer",
-        "projectPath": "C:\\Users\\Student\\source\\repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj",
-        "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Student\\source\\repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\obj\\",
+        "projectPath": "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj",
+        "packagesPath": "C:\\Users\\ubill\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem.DataLayer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ubill\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
