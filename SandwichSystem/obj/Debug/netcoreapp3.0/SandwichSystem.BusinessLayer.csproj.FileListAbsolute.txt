@@ -35,16 +35,3 @@ C:\Users\Student\Source\Repos\TheRealDelep\BF2019SandwichSystem\SandwichSystem\b
 C:\Users\Student\Source\Repos\TheRealDelep\BF2019SandwichSystem\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.csproj.CopyComplete
 C:\Users\Student\Source\Repos\TheRealDelep\BF2019SandwichSystem\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.dll
 C:\Users\Student\Source\Repos\TheRealDelep\BF2019SandwichSystem\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.pdb
-C:\Users\ubill\Desktop\BFormation\projects\SandwichSystem\bin\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.deps.json
-C:\Users\ubill\Desktop\BFormation\projects\SandwichSystem\bin\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.dll
-C:\Users\ubill\Desktop\BFormation\projects\SandwichSystem\bin\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.pdb
-C:\Users\ubill\Desktop\BFormation\projects\SandwichSystem\bin\Debug\netcoreapp3.0\SandwichSystem.DataLayer.dll
-C:\Users\ubill\Desktop\BFormation\projects\SandwichSystem\bin\Debug\netcoreapp3.0\SandwichSystem.Shared.dll
-C:\Users\ubill\Desktop\BFormation\projects\SandwichSystem\bin\Debug\netcoreapp3.0\SandwichSystem.DataLayer.pdb
-C:\Users\ubill\Desktop\BFormation\projects\SandwichSystem\bin\Debug\netcoreapp3.0\SandwichSystem.Shared.pdb
-C:\Users\ubill\Desktop\BFormation\projects\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.csprojAssemblyReference.cache
-C:\Users\ubill\Desktop\BFormation\projects\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.AssemblyInfoInputs.cache
-C:\Users\ubill\Desktop\BFormation\projects\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.AssemblyInfo.cs
-C:\Users\ubill\Desktop\BFormation\projects\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.csproj.CopyComplete
-C:\Users\ubill\Desktop\BFormation\projects\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.dll
-C:\Users\ubill\Desktop\BFormation\projects\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.pdb

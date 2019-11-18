@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj": {}
+    "C:\\Users\\Student\\source\\repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj": {
+    "C:\\Users\\Student\\source\\repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Student\\source\\repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj",
         "projectName": "SandwichSystem.Shared",
-        "projectPath": "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj",
-        "packagesPath": "C:\\Users\\ubill\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem.Shared\\obj\\",
+        "projectPath": "C:\\Users\\Student\\source\\repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj",
+        "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Student\\source\\repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem.Shared\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ubill\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

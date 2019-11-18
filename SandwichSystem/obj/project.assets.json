@@ -43,23 +43,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ubill\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Student\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Student\\source\\repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj",
       "projectName": "SandwichSystem.BusinessLayer",
-      "projectPath": "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj",
-      "packagesPath": "C:\\Users\\ubill\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem\\obj\\",
+      "projectPath": "C:\\Users\\Student\\source\\repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj",
+      "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Student\\source\\repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ubill\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -72,11 +68,11 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj": {
-              "projectPath": "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj"
+            "C:\\Users\\Student\\source\\repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj": {
+              "projectPath": "C:\\Users\\Student\\source\\repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj"
             },
-            "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj": {
-              "projectPath": "C:\\Users\\ubill\\Desktop\\BFormation\\projects\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj"
+            "C:\\Users\\Student\\source\\repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj": {
+              "projectPath": "C:\\Users\\Student\\source\\repos\\TheRealDelep\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj"
             }
           }
         }
