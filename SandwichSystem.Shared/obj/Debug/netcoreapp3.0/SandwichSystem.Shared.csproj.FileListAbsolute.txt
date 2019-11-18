@@ -13,3 +13,11 @@ C:\Users\Student\Source\Repos\TheRealDelep\BF2019SandwichSystem\SandwichSystem.S
 C:\Users\Student\Source\Repos\TheRealDelep\BF2019SandwichSystem\SandwichSystem.Shared\obj\Debug\netcoreapp3.0\SandwichSystem.Shared.AssemblyInfo.cs
 C:\Users\Student\Source\Repos\TheRealDelep\BF2019SandwichSystem\SandwichSystem.Shared\obj\Debug\netcoreapp3.0\SandwichSystem.Shared.dll
 C:\Users\Student\Source\Repos\TheRealDelep\BF2019SandwichSystem\SandwichSystem.Shared\obj\Debug\netcoreapp3.0\SandwichSystem.Shared.pdb
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem.Shared\bin\Debug\netcoreapp3.0\SandwichSystem.Shared.deps.json
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem.Shared\bin\Debug\netcoreapp3.0\SandwichSystem.Shared.dll
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem.Shared\bin\Debug\netcoreapp3.0\SandwichSystem.Shared.pdb
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem.Shared\obj\Debug\netcoreapp3.0\SandwichSystem.Shared.csprojAssemblyReference.cache
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem.Shared\obj\Debug\netcoreapp3.0\SandwichSystem.Shared.AssemblyInfoInputs.cache
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem.Shared\obj\Debug\netcoreapp3.0\SandwichSystem.Shared.AssemblyInfo.cs
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem.Shared\obj\Debug\netcoreapp3.0\SandwichSystem.Shared.dll
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem.Shared\obj\Debug\netcoreapp3.0\SandwichSystem.Shared.pdb

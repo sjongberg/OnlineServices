@@ -1,21 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystemTest\\SandwichSystem.BusinessLayerTests.csproj": {}
+    "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystemTest\\SandwichSystem.BusinessLayerTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj": {
+    "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj",
+        "projectUniqueName": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj",
         "projectName": "SandwichSystem.DataLayer",
-        "projectPath": "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj",
-        "packagesPath": "C:\\Users\\orlan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\obj\\",
+        "projectPath": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj",
+        "packagesPath": "C:\\Users\\ChristianPGyssels\\.nuget\\packages\\",
+        "outputPath": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\orlan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ChristianPGyssels\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -56,18 +61,23 @@
         }
       }
     },
-    "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj": {
+    "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj",
+        "projectUniqueName": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj",
         "projectName": "SandwichSystem.Shared",
-        "projectPath": "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj",
-        "packagesPath": "C:\\Users\\orlan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem.Shared\\obj\\",
+        "projectPath": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj",
+        "packagesPath": "C:\\Users\\ChristianPGyssels\\.nuget\\packages\\",
+        "outputPath": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.Shared\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\orlan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ChristianPGyssels\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -108,18 +118,23 @@
         }
       }
     },
-    "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystemTest\\SandwichSystem.BusinessLayerTests.csproj": {
+    "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystemTest\\SandwichSystem.BusinessLayerTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystemTest\\SandwichSystem.BusinessLayerTests.csproj",
+        "projectUniqueName": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystemTest\\SandwichSystem.BusinessLayerTests.csproj",
         "projectName": "SandwichSystem.BusinessLayerTests",
-        "projectPath": "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystemTest\\SandwichSystem.BusinessLayerTests.csproj",
-        "packagesPath": "C:\\Users\\orlan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystemTest\\obj\\",
+        "projectPath": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystemTest\\SandwichSystem.BusinessLayerTests.csproj",
+        "packagesPath": "C:\\Users\\ChristianPGyssels\\.nuget\\packages\\",
+        "outputPath": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystemTest\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\orlan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ChristianPGyssels\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -131,11 +146,11 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj": {
-                "projectPath": "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj"
+              "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj": {
+                "projectPath": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj"
               },
-              "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj": {
-                "projectPath": "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj"
+              "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj": {
+                "projectPath": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj"
               }
             }
           }
@@ -191,18 +206,23 @@
         }
       }
     },
-    "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj": {
+    "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj",
+        "projectUniqueName": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj",
         "projectName": "SandwichSystem.BusinessLayer",
-        "projectPath": "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj",
-        "packagesPath": "C:\\Users\\orlan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem\\obj\\",
+        "projectPath": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem\\SandwichSystem.BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\ChristianPGyssels\\.nuget\\packages\\",
+        "outputPath": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\orlan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ChristianPGyssels\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -214,11 +234,11 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj": {
-                "projectPath": "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj"
+              "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj": {
+                "projectPath": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.DataLayer\\SandwichSystem.DataLayer.csproj"
               },
-              "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj": {
-                "projectPath": "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj"
+              "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj": {
+                "projectPath": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj"
               }
             }
           }

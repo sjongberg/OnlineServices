@@ -1,21 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj": {}
+    "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj": {
+    "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj",
+        "projectUniqueName": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj",
         "projectName": "SandwichSystem.DataLayerTests",
-        "projectPath": "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj",
-        "packagesPath": "C:\\Users\\orlan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\orlan\\Source\\Repos\\Orl4ne\\BF2019SandwichSystem\\SandwichSystem.DataLayerTests\\obj\\",
+        "projectPath": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.DataLayerTests\\SandwichSystem.DataLayerTests.csproj",
+        "packagesPath": "C:\\Users\\ChristianPGyssels\\.nuget\\packages\\",
+        "outputPath": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.DataLayerTests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\orlan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ChristianPGyssels\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"

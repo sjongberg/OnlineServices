@@ -35,3 +35,16 @@ C:\Users\Student\Source\Repos\TheRealDelep\BF2019SandwichSystem\SandwichSystem\b
 C:\Users\Student\Source\Repos\TheRealDelep\BF2019SandwichSystem\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.csproj.CopyComplete
 C:\Users\Student\Source\Repos\TheRealDelep\BF2019SandwichSystem\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.dll
 C:\Users\Student\Source\Repos\TheRealDelep\BF2019SandwichSystem\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.pdb
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem\bin\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.deps.json
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem\bin\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.dll
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem\bin\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.pdb
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem\bin\Debug\netcoreapp3.0\SandwichSystem.DataLayer.dll
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem\bin\Debug\netcoreapp3.0\SandwichSystem.Shared.dll
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem\bin\Debug\netcoreapp3.0\SandwichSystem.DataLayer.pdb
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem\bin\Debug\netcoreapp3.0\SandwichSystem.Shared.pdb
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.csprojAssemblyReference.cache
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.AssemblyInfoInputs.cache
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.AssemblyInfo.cs
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.csproj.CopyComplete
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.dll
+C:\GITHUB\BF2019SandwichSystem\SandwichSystem\obj\Debug\netcoreapp3.0\SandwichSystem.BusinessLayer.pdb
