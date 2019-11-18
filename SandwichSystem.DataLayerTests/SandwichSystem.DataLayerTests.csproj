@@ -5,12 +5,14 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyVersion>1911.18.0.1414</AssemblyVersion>
+    <AssemblyVersion>1911.18.0.1415</AssemblyVersion>
 
-    <FileVersion>1911.18.0.1414</FileVersion>
+    <FileVersion>1911.18.0.1415</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.0.0" />
     <PackageReference Include="MSTest.TestFramework" Version="2.0.0" />

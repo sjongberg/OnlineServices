@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandwichSystem.DataLayerTes
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cross-Cutting", "Cross-Cutting", "{D448C9F6-AB3B-4938-AE1F-DFF20BEAB273}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandwichSystem.Shared", "SandwichSystem.Shared\SandwichSystem.Shared.csproj", "{D6E9890A-B959-41BD-8E24-280324742ABB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandwichSystem.Shared", "SandwichSystem.Shared\SandwichSystem.Shared.csproj", "{D6E9890A-B959-41BD-8E24-280324742ABB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleInjection", "ExampleInjection\ExampleInjection.csproj", "{82FE27BB-B157-41D9-A01F-EAAC53C88B80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{D6E9890A-B959-41BD-8E24-280324742ABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6E9890A-B959-41BD-8E24-280324742ABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6E9890A-B959-41BD-8E24-280324742ABB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82FE27BB-B157-41D9-A01F-EAAC53C88B80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82FE27BB-B157-41D9-A01F-EAAC53C88B80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82FE27BB-B157-41D9-A01F-EAAC53C88B80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82FE27BB-B157-41D9-A01F-EAAC53C88B80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -31,7 +31,11 @@
         },
         "frameworks": {
           "netcoreapp3.0": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj": {
+                "projectPath": "C:\\GITHUB\\BF2019SandwichSystem\\SandwichSystem.Shared\\SandwichSystem.Shared.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -42,6 +46,16 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
