@@ -17,11 +17,11 @@ namespace SandwichSystem.BusinessLayer.UseCases
         {
             return AfficherMenu(Founisseur.Id, Langue);
         }
-        public List<SandwichBTO> AfficherMenu(int Founisseur, Language Langue)
+        public List<SandwichBTO> AfficherMenu(int FounisseurId, Language Langue)
         {
-            var Supplier = UnitOfWork.SupplierRepository.GetByID(Founisseur);
+            var Supplier = UnitOfWork.SupplierRepository.GetByID(FounisseurId);
 
-            return UnitOfWork.RepositorySandwich
+            return UnitOfWork.SandwichRepository
                     .GetSandwichesBySupplier(Supplier)
                     .Select(x => x.ToDomain().ToBTO(Langue))
                      .ToList();

@@ -59,20 +59,25 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
         [TestMethod()]
         public void AfficherMenuTest()
         {
-            var unitOfWorkMock = new Mock<IUnitOfWork>();
-
+            //ARRANGE
             var fakeSandwichRepo = new Mock<ISandwichRepository>();
+            fakeSandwichRepo.Setup(x => x.GetAll()).Returns(GetTestsListOfSandwich());
+            fakeSandwichRepo.Setup(x => x.GetSandwichesBySupplier(It.IsAny<SupplierDTO>())).Returns(GetTestsListOfSandwich());
+            
             var fakeIngredientRepo = new Mock<IRepository<IngredientDTO, int>>();
 
             var fakeSupplierRepo = new Mock<IRepository<SupplierDTO, int>>();
+            fakeSupplierRepo.Setup(x => x.GetByID(It.IsAny<int>())).Returns(new SupplierDTO { Id = 1, Name = "MockedSupplier" });
+            
+            var unitOfWorkMock = new Mock<IUnitOfWork>();
+            unitOfWorkMock.Setup(x => x.SandwichRepository).Returns(fakeSandwichRepo.Object);
+            unitOfWorkMock.Setup(x => x.SupplierRepository).Returns(fakeSupplierRepo.Object);
 
-            fakeSandwichRepo.Setup(x => x.GetAll()).Returns(GetTestsListOfSandwich());
-            unitOfWorkMock.Setup(x => x.RepositorySandwich).Returns(fakeSandwichRepo.Object);
-
+            //ACT
             var participant = new Participant(unitOfWorkMock.Object);
-
             var listMenu = participant.AfficherMenu(1, Language.English);
 
+            //ASSERT
             Assert.AreEqual(3, listMenu.Count());
         }
     }

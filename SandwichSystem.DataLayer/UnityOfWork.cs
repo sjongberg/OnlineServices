@@ -1,4 +1,6 @@
-﻿using SandwichSystem.Shared.DTO;
+﻿using SandwichSystem.DataLayer.Interfaces;
+using SandwichSystem.DataLayer.Repositories;
+using SandwichSystem.Shared.DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,21 +9,32 @@ namespace SandwichSystem.DataLayer
 {
     public class UnitOfWork : IDisposable, IUnitOfWork
     {
-        public UnitOfWork(SandwichContext Context)
+        public UnitOfWork(SandwichSystemContext Context)
         {
             this.DbContext = Context;
         }
 
-        private SandwichContext DbContext;
+        private SandwichSystemContext DbContext;
 
         private ISandwichRepository sandwichRepository;
-        public ISandwichRepository RepositorySandwich
+        public ISandwichRepository SandwichRepository
         {
             get
             {
                 if (sandwichRepository == null)
                     sandwichRepository = new SandwichRepository(DbContext);
                 return sandwichRepository;
+            }
+        }
+
+        private IRepository<IngredientDTO, int> ingredientRepository;
+        public IRepository<IngredientDTO, int> IngredientRepository
+        {
+            get
+            {
+                if (ingredientRepository == null)
+                    ingredientRepository = new IngredientRepository(DbContext);
+                return ingredientRepository;
             }
         }
 
@@ -42,6 +55,7 @@ namespace SandwichSystem.DataLayer
             DbContext = null;
 
             sandwichRepository = null;
+            supplierRepository = null;
         }
         public void Save()
         {

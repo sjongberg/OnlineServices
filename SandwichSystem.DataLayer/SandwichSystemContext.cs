@@ -6,9 +6,9 @@ using System.Text;
 
 namespace SandwichSystem.DataLayer
 {
-    public class SandwichContext :DbContext
+    public class SandwichSystemContext : DbContext
     {
-        public SandwichContext()
+        public SandwichSystemContext()
         {
 
         }

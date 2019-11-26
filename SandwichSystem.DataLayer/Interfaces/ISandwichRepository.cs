@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SandwichSystem.DataLayer
+namespace SandwichSystem.DataLayer.Interfaces
 {
     public interface ISandwichRepository : IRepository<SandwichDTO, int>
     {

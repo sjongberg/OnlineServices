@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SandwichSystem.DataLayer
+namespace SandwichSystem.DataLayer.Interfaces
 {
     public interface IRepository<T, U>
     {

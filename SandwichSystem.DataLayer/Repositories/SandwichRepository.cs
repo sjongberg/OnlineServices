@@ -1,38 +1,32 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SandwichSystem.DataLayer.Entities;
 using SandwichSystem.DataLayer.Extentions;
+using SandwichSystem.DataLayer.Interfaces;
 using SandwichSystem.Shared.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SandwichSystem.DataLayer
+namespace SandwichSystem.DataLayer.Repositories
 {
-    public class SandwichRepository : ISandwichRepository, IDisposable
+    public class SandwichRepository : ISandwichRepository
     {
-        private SandwichContext Context;
+        private SandwichSystemContext Context;
 
-        public SandwichRepository(SandwichContext ContextInjected)
+        public SandwichRepository(SandwichSystemContext ContextInjected)
         {
-            Context = ContextInjected ?? new SandwichContext();
+            Context = ContextInjected ?? throw new ArgumentNullException(nameof(ContextInjected));
         }
 
         public void Delete(SandwichDTO entityToDelete)
         {
             Context.Sandwiches.Remove(entityToDelete.ToEF());
-            Context.SaveChanges();
         }
 
         public void Delete(int id)
         {
             Delete(GetByID(id));
-        }
-
-        public void Dispose()
-        {
-            Context.Dispose();
-            Context = null;
         }
 
         public IEnumerable<SandwichDTO> GetAll()
@@ -68,8 +62,6 @@ namespace SandwichSystem.DataLayer
         public void Insert(SandwichDTO entity)
         {
             Context.Sandwiches.Add(entity.ToEF());
-
-            Context.SaveChanges();
         }
 
         public void Update(SandwichDTO entityToUpdate)
