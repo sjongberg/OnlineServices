@@ -62,14 +62,16 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
             var unitOfWorkMock = new Mock<IUnitOfWork>();
 
             var fakeSandwichRepo = new Mock<ISandwichRepository>();
-            var fakeIngredientRepo = new Mock<IRepository<Ingredient, int>>();
+            var fakeIngredientRepo = new Mock<IRepository<IngredientDTO, int>>();
+
+            var fakeSupplierRepo = new Mock<IRepository<SupplierDTO, int>>();
 
             fakeSandwichRepo.Setup(x => x.GetAll()).Returns(GetTestsListOfSandwich());
             unitOfWorkMock.Setup(x => x.RepositorySandwich).Returns(fakeSandwichRepo.Object);
 
             var participant = new Participant(unitOfWorkMock.Object);
 
-            var listMenu = participant.AfficherMenu("Test", Language.English);
+            var listMenu = participant.AfficherMenu(1, Language.English);
 
             Assert.AreEqual(3, listMenu.Count());
         }

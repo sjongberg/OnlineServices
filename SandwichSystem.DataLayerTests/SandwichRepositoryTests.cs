@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using SandwichSystem.DataLayer;
 
 namespace SandwichSystem.DataLayerTests
@@ -9,9 +10,11 @@ namespace SandwichSystem.DataLayerTests
         [TestMethod]
         public void SandwichRepository_ShouldInsertInDb_WhenValidSandwichIsProvided()
         {
-            var repo = new SandwichRepository(null);
+            var repoMock = new Mock<ISandwichRepository>();
 
-            repo.Insert(new Shared.DTO.SandwichDTO { Name = new Shared.StringTranslated("hello2", "bonjour", "hlo"), Supplier = new Shared.DTO.SupplierDTO { Name = "Fournisseur1" } });
+            //repoMock.Setup(x=>x.Insert).
+
+            //repo.Insert(new Shared.DTO.SandwichDTO { Name = new Shared.StringTranslated("hello2", "bonjour", "hlo"), Supplier = new Shared.DTO.SupplierDTO { Name = "Fournisseur1" } });
         }
     }
 }

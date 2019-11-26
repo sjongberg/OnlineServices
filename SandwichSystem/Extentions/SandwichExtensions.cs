@@ -32,14 +32,5 @@ namespace SandwichSystem.BusinessLayer.Extentions
                 Ingredients = SandwichDTO.Ingredients.Select(x => x.ToDomain()).ToList()
             };
         }
-        public static Ingredient ToDomain(this string ingredientBTO, Language Langue)
-        {
-            //TO IMPLEMENT
-            return new Ingredient(null, false);
-        }
-        public static Ingredient ToDomain(this IngredientDTO IngredientDTO)
-        {
-            return new Ingredient(IngredientDTO.Name, IngredientDTO.IsAllergene);
-        }
     }
 }

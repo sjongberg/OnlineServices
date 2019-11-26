@@ -52,6 +52,14 @@ namespace SandwichSystem.DataLayer
             throw new NotImplementedException();
         }
 
+        public List<SandwichDTO> GetSandwichesBySupplier(SupplierDTO Supplier)
+            => Context.Sandwiches
+            .Include(x => x.Supplier)
+            .Include(x => x.SandwichIngredients)
+            .Where(x=>x.Supplier.Id == Supplier.Id)
+            .Select(x=>x.ToDTO())
+            .ToList();
+
         public List<SandwichDTO> GetSandwichesWithoutIngredient(List<IngredientDTO> Ingredients)
         {
             throw new NotImplementedException();
