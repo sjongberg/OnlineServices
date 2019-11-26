@@ -16,19 +16,8 @@ namespace SandwichSystem.BusinessLayer.Domain
             this.IsAllergene = isAllergene;
         }
 
-        public string ShowAllergene()
-            => IsAllergene ? "*" : "";
-        //{
-        //    if (IsAllergene == true)
-        //    {
-        //        return "*";
-        //    }
-        //    else
-        //        return "";
-        //}
-
         public string ToString(Language Langue)
-            => Name.ToString(Langue) + ShowAllergene();
+            => Name.ToString(Langue) + (IsAllergene? "*":"");
 
 
     }

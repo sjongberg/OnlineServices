@@ -1,23 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SandwichSystem.BusinessLayer.Domain;
-using SandwichSystem.DataLayer;
+using SandwichSystem.DataLayer.Interfaces;
 
 namespace SandwichSystem.BusinessLayer.UseCases
 {
     public partial class Participant
     {
+        private IUnitOfWork UnitOfWork { get; }
+
         public Participant(IUnitOfWork UnitOfWork)
         {
-            if (UnitOfWork is null)
-            {
-                throw new ArgumentNullException(nameof(UnitOfWork));
-            }
-
-            this.UnitOfWork = UnitOfWork;
+            this.UnitOfWork = UnitOfWork ?? throw new ArgumentNullException(nameof(UnitOfWork));
         }
 
-        public IUnitOfWork UnitOfWork { get; }
     }
 }

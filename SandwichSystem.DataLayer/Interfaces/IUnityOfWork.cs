@@ -1,10 +1,10 @@
 ﻿using SandwichSystem.Shared.DTO;
 
-namespace SandwichSystem.DataLayer
+namespace SandwichSystem.DataLayer.Interfaces
 {
     public interface IUnitOfWork
     {
-        ISandwichRepository RepositorySandwich { get; }
+        ISandwichRepository SandwichRepository { get; }
         IRepository<SupplierDTO, int> SupplierRepository { get; }
 
         void Dispose();

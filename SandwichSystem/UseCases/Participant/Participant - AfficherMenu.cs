@@ -13,9 +13,17 @@ namespace SandwichSystem.BusinessLayer.UseCases
 {
     public partial class Participant
     {
-        public List<SandwichBTO> AfficherMenu(string Founisseur, Language Langue)
-            =>  UnitOfWork.RepositorySandwich.GetAll()
+        public List<SandwichBTO> AfficherMenu(SupplierBTO Founisseur, Language Langue)
+            => AfficherMenu(Founisseur.Id, Langue);
+
+        public List<SandwichBTO> AfficherMenu(int FounisseurId, Language Langue)
+        {
+            var Supplier = UnitOfWork.SupplierRepository.GetByID(FounisseurId);
+
+            return UnitOfWork.SandwichRepository
+                    .GetSandwichesBySupplier(Supplier)
                     .Select(x => x.ToDomain().ToBTO(Langue))
-                    .ToList();
+                     .ToList();
+        }
     }
 }
