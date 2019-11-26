@@ -3,6 +3,7 @@ using Moq;
 using SandwichSystem.BusinessLayer.Domain;
 using SandwichSystem.BusinessLayer.UseCases;
 using SandwichSystem.DataLayer;
+using SandwichSystem.DataLayer.Interfaces;
 using SandwichSystem.Shared;
 using SandwichSystem.Shared.DTO;
 using System;
@@ -67,7 +68,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
             var fakeIngredientRepo = new Mock<IRepository<IngredientDTO, int>>();
 
             var fakeSupplierRepo = new Mock<IRepository<SupplierDTO, int>>();
-            fakeSupplierRepo.Setup(x => x.GetByID(It.IsAny<int>())).Returns(new SupplierDTO { Id = 1, Name = "MockedSupplier" });
+            fakeSupplierRepo.Setup(x => x.GetByID(It.IsAny<int>())).Returns(new SupplierDTO() { Id = 33, Name = "MockedSupplier" });
             
             var unitOfWorkMock = new Mock<IUnitOfWork>();
             unitOfWorkMock.Setup(x => x.SandwichRepository).Returns(fakeSandwichRepo.Object);

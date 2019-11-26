@@ -14,14 +14,7 @@ namespace SandwichSystem.BusinessLayer.Extentions
             return new SandwichBTO
             {
                 Name = Sandwich.Name.ToString(Langue),
-                Ingredients = String.Join(", ", Sandwich.Ingredients.Select(x => x.Name.ToString(Langue) + x.ShowAllergene()))
-            };
-        }
-        public static Sandwich ToDomain(this SandwichBTO SandwichBTO, Language Langue)
-        {
-            return new Sandwich(new StringTranslated("traduction english", "traduction french", "traduction du"))
-            {
-                Ingredients = SandwichBTO.Ingredients.Split(" - ").Select(x => x.ToDomain(Langue)).ToList()
+                Ingredients = String.Join(", ", Sandwich.Ingredients.Select(x => x.ToString(Langue)))
             };
         }
 

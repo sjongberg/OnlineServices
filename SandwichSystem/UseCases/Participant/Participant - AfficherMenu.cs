@@ -14,9 +14,8 @@ namespace SandwichSystem.BusinessLayer.UseCases
     public partial class Participant
     {
         public List<SandwichBTO> AfficherMenu(SupplierBTO Founisseur, Language Langue)
-        {
-            return AfficherMenu(Founisseur.Id, Langue);
-        }
+            => AfficherMenu(Founisseur.Id, Langue);
+
         public List<SandwichBTO> AfficherMenu(int FounisseurId, Language Langue)
         {
             var Supplier = UnitOfWork.SupplierRepository.GetByID(FounisseurId);

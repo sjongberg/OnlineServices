@@ -4,10 +4,10 @@ using SandwichSystem.BusinessLayer;
 using SandwichSystem.BusinessLayer.Domain;
 using SandwichSystem.Shared;
 
-namespace SandwichSystem.BusinessLayerTests
+namespace SandwichSystem.BusinessLayer.DomainTests
 {
     [TestClass]
-    public class IsAllergeneTest
+    public class IngredientTests
     {
         Ingredient Tomate = new Ingredient(new StringTranslated("Tomato", "Tomate", "Tomaat"), false);
         Ingredient Brie = new Ingredient(new StringTranslated("Brie", "Brie", "Brie"), true);
@@ -28,14 +28,13 @@ namespace SandwichSystem.BusinessLayerTests
         [TestMethod]
         public void ShowAllergene_ReturnsStart_WhenIngredientIsAllergen()
         {
-            var suta = Tomate.ShowAllergene();
-            Assert.AreEqual(suta, "");
+            Assert.AreEqual(false, Tomate.IsAllergene);
 
-            var sutb = Fromage.ShowAllergene();
-            Assert.AreEqual(sutb, "*");
+            var sutb = Fromage.IsAllergene;
+            Assert.AreEqual(sutb, true);
 
-            var sutc = Noix.ShowAllergene();
-            Assert.AreEqual(sutc, "*");
+            var sutc = Noix.IsAllergene;
+            Assert.AreEqual(sutc, true);
         }
 
         [TestMethod]
