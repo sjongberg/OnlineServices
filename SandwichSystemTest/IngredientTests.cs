@@ -2,6 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SandwichSystem;
 using SandwichSystem.BusinessLayer;
 using SandwichSystem.BusinessLayer.Domain;
+using SandwichSystem.Shared;
 
 namespace SandwichSystem.BusinessLayerTests
 {

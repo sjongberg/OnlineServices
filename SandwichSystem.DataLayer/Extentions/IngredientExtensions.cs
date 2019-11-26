@@ -19,6 +19,9 @@ namespace SandwichSystem.DataLayer.Extentions
         }
         public static IngredientEF ToEF(this IngredientDTO IngredientDTO)
         {
+            if (IngredientDTO is null)
+                throw new ArgumentNullException(nameof(IngredientDTO));
+
             return new IngredientEF()
             {
                 NameEnglish = IngredientDTO.Name.English,

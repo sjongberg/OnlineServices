@@ -7,7 +7,7 @@ namespace SandwichSystem.DataLayer
     {
         void Delete(T entityToDelete);
         void Delete(U id);
-        IEnumerable<T> Get();
+        IEnumerable<T> GetAll();
         T GetByID(U id);
         void Insert(T entity);
         void Update(T entityToUpdate);

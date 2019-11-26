@@ -21,24 +21,26 @@ namespace SandwichSystem.BusinessLayer.Domain
         public string GetIngredients(Language Langue)
             => String.Join(" - ", Ingredients.Select(x => x.ToString(Langue)));
 
-            //DOC Substitué par le code au-dessus...
-            //public string ShowIngredients(Language Langue)
-            //{
-            //    var result = "";
-            //    var index = 0;
-            //    foreach (Ingredient i in Ingredients)
-            //    {
-            //        if (index < Ingredients.Count-1)
-            //        {
-            //            result += i.ToString(Langue) + " - ";
-            //        }
-            //        else
-            //        {
-            //            result += i.ToString(Langue);
-            //        }
-            //        index++;
-            //    }
-            //    return result;
-            //}
-        }
+        //DOC Substitué par le code au-dessus...
+        //public string ShowIngredients(Language Langue)
+        //{
+        //    var result = "";
+        //    var index = 0;
+        //    foreach (Ingredient i in Ingredients)
+        //    {
+        //        if (index < Ingredients.Count-1)
+        //        {
+        //            result += i.ToString(Langue) + " - ";
+        //        }
+        //        else
+        //        {
+        //            result += i.ToString(Langue);
+        //        }
+        //        index++;
+        //    }
+        //    return result;
+        //}
+
+        public Supplier Supplier { get; set; }
+    }
 }

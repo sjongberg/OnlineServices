@@ -4,11 +4,9 @@ using System.Text;
 
 namespace SandwichSystem.Shared.DTO
 {
-    public class IngredientDTO
+    public class SupplierDTO
     {
         public int Id { get; set; }
-        public StringTranslated Name { get; set; }
-        public bool IsAllergene { get; set; }
+        public string Name { get; set; }
     }
-
 }
