@@ -60,7 +60,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
             var fakeSandwichRepo = new Mock<IRepository<Sandwich, int>>();
             var fakeIngredientRepo = new Mock<IRepository<Ingredient, int>>();
 
-            fakeSandwichRepo.Setup( x=> x.Get()).Returns(GetTestsListOfSandwich());
+            fakeSandwichRepo.Setup( x=> x.GetAll()).Returns(GetTestsListOfSandwich());
 
             var participant = new Participant(fakeSandwichRepo.Object, fakeIngredientRepo.Object);
 

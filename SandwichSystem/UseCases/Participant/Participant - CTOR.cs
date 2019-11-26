@@ -8,22 +8,16 @@ namespace SandwichSystem.BusinessLayer.UseCases
 {
     public partial class Participant
     {
-        public Participant(IRepository<Sandwich, int> SandwichRepo, IRepository<Ingredient, int> IngredientRepo)
+        public Participant(IUnitOfWork UnitOfWork)
         {
-            if (SandwichRepo is null)
+            if (UnitOfWork is null)
             {
-                throw new ArgumentNullException(nameof(SandwichRepo));
-            }
-            if (IngredientRepo is null)
-            {
-                throw new ArgumentNullException(nameof(IngredientRepo));
+                throw new ArgumentNullException(nameof(UnitOfWork));
             }
 
-            this.SandwichRepo = SandwichRepo;
-            this.IngredientRepo = IngredientRepo;
+            this.UnitOfWork = UnitOfWork;
         }
 
-        public IRepository<Sandwich, int> SandwichRepo { get; }
-        public IRepository<Ingredient, int> IngredientRepo { get; }
+        public IUnitOfWork UnitOfWork { get; }
     }
 }
