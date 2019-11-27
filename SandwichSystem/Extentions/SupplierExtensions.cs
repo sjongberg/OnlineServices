@@ -13,23 +13,43 @@ namespace SandwichSystem.BusinessLayer.Extentions
         {
             return new SupplierBTO
             {
-                Id = Supplier.SupplierId,
+                Id = Supplier.Id,
                 Name = Supplier.Name
             };
         }
         public static Supplier ToDomain(this SupplierBTO SupplierBTO)
         {
+            try
+            {
+                var SupplierDomain = new Supplier()
+                {
+                    Id = SupplierBTO.Id,
+                    Name = SupplierBTO.Name
+                };
+
+                SupplierDomain.IsValid();
+
+                return SupplierDomain;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static Supplier ToDomain(this SupplierDTO SupplierDTO)
+        {
             return new Supplier()
             {
-                SupplierId = SupplierBTO.Id,
-                Name = SupplierBTO.Name
+                Id = SupplierDTO.Id,
+                Name = SupplierDTO.Name
             };
         }
         public static SupplierDTO ToDTO(this Supplier Supplier)
         {
             return new SupplierDTO
             {
-                Id = Supplier.SupplierId,
+                Id = Supplier.Id,
                 Name = Supplier.Name
             };
         }

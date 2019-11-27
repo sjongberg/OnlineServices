@@ -11,9 +11,9 @@ namespace SandwichSystem.DataLayer.Repositories
 {
     public class SupplierRepository : IRepository<SupplierDTO, int>
     {
-        public SupplierRepository(SandwichSystemContext SandwichContext)
+        public SupplierRepository(SandwichSystemContext ContextInjected)
         {
-            this.SandwichContext = SandwichContext ?? throw new ArgumentNullException(nameof(SandwichContext));
+            this.SandwichContext = ContextInjected ?? throw new ArgumentNullException(nameof(ContextInjected));
         }
 
         public SandwichSystemContext SandwichContext { get; private set; }
@@ -38,7 +38,10 @@ namespace SandwichSystem.DataLayer.Repositories
 
         public SupplierDTO GetByID(int id)
         {
-            throw new NotImplementedException();
+            return SandwichContext.Suppliers
+                .AsNoTracking()
+                .FirstOrDefault(x=>x.Id == id)
+                .ToDTO();
         }
 
         public void Insert(SupplierDTO entity)

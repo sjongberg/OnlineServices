@@ -16,7 +16,7 @@ namespace SandwichSystem.BusinessLayer.Extentions
         }
         public static Ingredient ToDomain(this IngredientDTO IngredientDTO)
         {
-            return new Ingredient(IngredientDTO.Name, IngredientDTO.IsAllergene);
+            return new Ingredient(IngredientDTO.Name, IngredientDTO.IsAllergen);
         }
     }
 }

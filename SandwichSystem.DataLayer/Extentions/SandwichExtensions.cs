@@ -37,7 +37,7 @@ namespace SandwichSystem.DataLayer.Extentions
                 NameFrench = SandwichDTO.Name.French,
                 NameDutch = SandwichDTO.Name.Dutch,
 
-                Supplier = new SupplierEF { Id = SandwichDTO.Supplier.Id, Name = SandwichDTO.Supplier.Name },
+                Supplier = SandwichDTO.Supplier.ToEF(),
                 SandwichIngredients = new List<SandwichIngredient>()
 
                 //Ingredients = SandwichDTO.Ingredients.Select(x => x.ToEF()).ToList()

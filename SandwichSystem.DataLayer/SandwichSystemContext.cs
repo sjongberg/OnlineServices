@@ -8,11 +8,6 @@ namespace SandwichSystem.DataLayer
 {
     public class SandwichSystemContext : DbContext
     {
-        public SandwichSystemContext()
-        {
-
-        }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -35,7 +30,6 @@ namespace SandwichSystem.DataLayer
                 .HasOne<IngredientEF>(sc => sc.Ingredient)
                 .WithMany(ing => ing.SandwichIngredients)
                 .HasForeignKey(sc => sc.SandwichId);
-
         }
 
         public DbSet<SandwichEF> Sandwiches { get; set; }

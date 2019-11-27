@@ -8,7 +8,7 @@ namespace SandwichSystem.Shared.DTO
     {
         public int Id { get; set; }
         public StringTranslated Name { get; set; }
-        public bool IsAllergene { get; set; }
+        public bool IsAllergen { get; set; }
     }
 
 }

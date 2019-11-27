@@ -20,7 +20,7 @@ namespace SandwichSystem.BusinessLayer.Extentions
 
         public static Sandwich ToDomain(this SandwichDTO SandwichDTO)
         {
-            return new Sandwich(new StringTranslated("traduction english", "traduction french", "traduction du"))
+            return new Sandwich(new StringTranslated("traduction english", "traduction french", "traduction du"), SandwichDTO.Supplier.ToDomain())
             {
                 Ingredients = SandwichDTO.Ingredients.Select(x => x.ToDomain()).ToList()
             };

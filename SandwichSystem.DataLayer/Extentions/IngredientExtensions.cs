@@ -28,7 +28,7 @@ namespace SandwichSystem.DataLayer.Extentions
                 NameFrench = IngredientDTO.Name.French,
                 NameDutch = IngredientDTO.Name.Dutch,
 
-                IsAllergene = IngredientDTO.IsAllergene
+                IsAllergen = IngredientDTO.IsAllergen
             };
         }
     }

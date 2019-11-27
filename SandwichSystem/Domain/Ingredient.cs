@@ -7,6 +7,8 @@ namespace SandwichSystem.BusinessLayer.Domain
 {
     public class Ingredient
     {
+        public int Id { get; set; }
+
         public StringTranslated Name { get; set; }
         public bool IsAllergene { get; set; }
 

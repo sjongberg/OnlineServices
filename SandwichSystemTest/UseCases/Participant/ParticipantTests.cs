@@ -19,21 +19,21 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
         public List<SandwichDTO> GetTestsListOfSandwich()
         {
             //REchercher Founisseur
-            IngredientDTO Tomate = new IngredientDTO { Name = new StringTranslated("Tomato", "Tomate", "Tomaat"), IsAllergene = false };
-            IngredientDTO Brie = new IngredientDTO { Name = new StringTranslated("Brie", "Brie", "Brie"), IsAllergene = true };
-            IngredientDTO Fromage = new IngredientDTO { Name = new StringTranslated("Cheese", "Fromage", "Kaas"), IsAllergene = true };
-            IngredientDTO Noix = new IngredientDTO { Name = new StringTranslated("Nuts", "Noix", "Noten"), IsAllergene = true };
-            IngredientDTO Beurre = new IngredientDTO { Name = new StringTranslated("Butter", "Beurre", "Boter"), IsAllergene = false };
-            IngredientDTO Jambon = new IngredientDTO { Name = new StringTranslated("Ham", "Jambon", "Ham"), IsAllergene = false };
-            IngredientDTO Roquette = new IngredientDTO { Name = new StringTranslated("Arugula", "Roquette", "Rucola"), IsAllergene = false };
-            IngredientDTO Salade = new IngredientDTO { Name = new StringTranslated("Salad", "Salade", "Salade"), IsAllergene = false };
-            IngredientDTO Pesto = new IngredientDTO { Name = new StringTranslated("Pesto", "Pesto", "Pesto"), IsAllergene = false };
-            IngredientDTO Oeuf = new IngredientDTO { Name = new StringTranslated("Eggs", "Oeufs", "Eien"), IsAllergene = true };
-            IngredientDTO Miel = new IngredientDTO { Name = new StringTranslated("Honey", "Miel", "Honing"), IsAllergene = false };
+            IngredientDTO Tomate = new IngredientDTO { Name = new StringTranslated("Tomato", "Tomate", "Tomaat"), IsAllergen = false };
+            IngredientDTO Brie = new IngredientDTO { Name = new StringTranslated("Brie", "Brie", "Brie"), IsAllergen = true };
+            IngredientDTO Fromage = new IngredientDTO { Name = new StringTranslated("Cheese", "Fromage", "Kaas"), IsAllergen = true };
+            IngredientDTO Noix = new IngredientDTO { Name = new StringTranslated("Nuts", "Noix", "Noten"), IsAllergen = true };
+            IngredientDTO Beurre = new IngredientDTO { Name = new StringTranslated("Butter", "Beurre", "Boter"), IsAllergen = false };
+            IngredientDTO Jambon = new IngredientDTO { Name = new StringTranslated("Ham", "Jambon", "Ham"), IsAllergen = false };
+            IngredientDTO Roquette = new IngredientDTO { Name = new StringTranslated("Arugula", "Roquette", "Rucola"), IsAllergen = false };
+            IngredientDTO Salade = new IngredientDTO { Name = new StringTranslated("Salad", "Salade", "Salade"), IsAllergen = false };
+            IngredientDTO Pesto = new IngredientDTO { Name = new StringTranslated("Pesto", "Pesto", "Pesto"), IsAllergen = false };
+            IngredientDTO Oeuf = new IngredientDTO { Name = new StringTranslated("Eggs", "Oeufs", "Eien"), IsAllergen = true };
+            IngredientDTO Miel = new IngredientDTO { Name = new StringTranslated("Honey", "Miel", "Honing"), IsAllergen = false };
 
-            SandwichDTO Club = new SandwichDTO { Name = new StringTranslated("Club", "Club", "Club"), Ingredients = new List<IngredientDTO>() };
-            SandwichDTO BrieNoix = new SandwichDTO { Name = new StringTranslated("Brie", "Brie", "Brie"), Ingredients = new List<IngredientDTO>() };
-            SandwichDTO PestoVerde = new SandwichDTO { Name = new StringTranslated("Pesto", "Pesto", "Pesto"), Ingredients = new List<IngredientDTO>() };
+            SandwichDTO Club = new SandwichDTO { Name = new StringTranslated("Club", "Club", "Club"), Supplier = new SupplierDTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientDTO>() };
+            SandwichDTO BrieNoix = new SandwichDTO { Name = new StringTranslated("Brie", "Brie", "Brie"), Supplier = new SupplierDTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientDTO>() };
+            SandwichDTO PestoVerde = new SandwichDTO { Name = new StringTranslated("Pesto", "Pesto", "Pesto"), Supplier = new SupplierDTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientDTO>() };
 
             BrieNoix.Ingredients.Add(Brie);
             BrieNoix.Ingredients.Add(Miel);
@@ -64,12 +64,12 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
             var fakeSandwichRepo = new Mock<ISandwichRepository>();
             fakeSandwichRepo.Setup(x => x.GetAll()).Returns(GetTestsListOfSandwich());
             fakeSandwichRepo.Setup(x => x.GetSandwichesBySupplier(It.IsAny<SupplierDTO>())).Returns(GetTestsListOfSandwich());
-            
+
             var fakeIngredientRepo = new Mock<IRepository<IngredientDTO, int>>();
 
             var fakeSupplierRepo = new Mock<IRepository<SupplierDTO, int>>();
             fakeSupplierRepo.Setup(x => x.GetByID(It.IsAny<int>())).Returns(new SupplierDTO() { Id = 33, Name = "MockedSupplier" });
-            
+
             var unitOfWorkMock = new Mock<IUnitOfWork>();
             unitOfWorkMock.Setup(x => x.SandwichRepository).Returns(fakeSandwichRepo.Object);
             unitOfWorkMock.Setup(x => x.SupplierRepository).Returns(fakeSupplierRepo.Object);

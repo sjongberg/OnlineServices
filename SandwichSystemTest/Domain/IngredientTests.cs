@@ -21,20 +21,16 @@ namespace SandwichSystem.BusinessLayer.DomainTests
         Ingredient Oeuf = new Ingredient(new StringTranslated("Eggs", "Oeufs", "Eien"), true);
         Ingredient Miel = new Ingredient(new StringTranslated("Honey", "Miel", "Honing"), false);
 
-        Sandwich Club = new Sandwich(new StringTranslated("Club", "Club", "Club"));
-        Sandwich BrieNoix = new Sandwich(new StringTranslated("Brie", "Brie", "Brie"));
-        Sandwich PestoVerde = new Sandwich(new StringTranslated("Pesto", "Pesto", "Pesto"));
+        Sandwich Club = new Sandwich(new StringTranslated("Club", "Club", "Club"), new Supplier { Id = 33, Name = "Supplier1" });
+        Sandwich BrieNoix = new Sandwich(new StringTranslated("Brie", "Brie", "Brie"), new Supplier { Id = 33, Name = "Supplier1" });
+        Sandwich PestoVerde = new Sandwich(new StringTranslated("Pesto", "Pesto", "Pesto"), new Supplier { Id = 33, Name = "Supplier1" });
 
         [TestMethod]
         public void ShowAllergene_ReturnsStart_WhenIngredientIsAllergen()
         {
             Assert.AreEqual(false, Tomate.IsAllergene);
-
-            var sutb = Fromage.IsAllergene;
-            Assert.AreEqual(sutb, true);
-
-            var sutc = Noix.IsAllergene;
-            Assert.AreEqual(sutc, true);
+            Assert.AreEqual(true, Fromage.IsAllergene);
+            Assert.AreEqual(true, Noix.IsAllergene);
         }
 
         [TestMethod]
@@ -53,34 +49,25 @@ namespace SandwichSystem.BusinessLayer.DomainTests
         [TestMethod]
         public void ToString_ReturnsDutchName_WhenDutchEnumISProvided()
         {
-            var sutd = Tomate.ToString(Language.Dutch);
-            Assert.AreEqual(sutd, "Tomaat");
+            var sut = Tomate.ToString(Language.Dutch);
+            Assert.AreEqual("Tomaat", sut);
         }
 
         [TestMethod]
         public void ToString_ReturnsIngredientWithAllergenInfo_WhenAllergenIsProvided()
         {
-            var sutd = Noix.ToString(Language.English);
-            Assert.AreEqual(sutd, "Nuts*");
+            var sut = Noix.ToString(Language.English);
+            Assert.AreEqual("Nuts*", sut);
         }
 
         [TestMethod]
-        public void ShowIngredients()
+        public void GetIngredientsString_ReturnsACompleteListOFIngredientsWithAllergeneInfo()
         {
             BrieNoix.Ingredients.Add(Brie);
             BrieNoix.Ingredients.Add(Miel);
             BrieNoix.Ingredients.Add(Noix);
 
-            PestoVerde.Ingredients.Add(Pesto);
-            PestoVerde.Ingredients.Add(Roquette);
-            PestoVerde.Ingredients.Add(Oeuf);
-
-            Club.Ingredients.Add(Jambon);
-            Club.Ingredients.Add(Beurre);
-            Club.Ingredients.Add(Salade);
-            Club.Ingredients.Add(Fromage);
-
-            var sute = BrieNoix.GetIngredients(Language.English);
+            var sute = BrieNoix.GetIngredientsString(Language.English);
             Assert.AreEqual(sute, "Brie* - Honey - Nuts*");
         }
     }

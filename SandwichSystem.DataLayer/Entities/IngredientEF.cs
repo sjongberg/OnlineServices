@@ -14,7 +14,7 @@ namespace SandwichSystem.DataLayer.Entities
         public string NameEnglish { get; set; }
         public string NameFrench { get; set; }
         public string NameDutch { get; set; }
-        public bool IsAllergene { get; set; }
+        public bool IsAllergen { get; set; }
 
         public IList<SandwichIngredient> SandwichIngredients { get; set; }
     }
