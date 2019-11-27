@@ -14,7 +14,8 @@ namespace SandwichSystem.DataLayer.Extentions
             return new SupplierDTO
             {
                  Id = Supplier.Id,
-                 Name = Supplier.Name
+                 Name = Supplier.Name,
+                 IsCurrentSupplier = Supplier.IsCurrentSupplier
             };
         }
 
@@ -23,7 +24,8 @@ namespace SandwichSystem.DataLayer.Extentions
             return new SupplierEF
             {
                 Id = Supplier.Id,
-                Name = Supplier.Name
+                Name = Supplier.Name,
+                IsCurrentSupplier = Supplier.IsCurrentSupplier
             };
         }
     }

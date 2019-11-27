@@ -10,6 +10,7 @@ namespace SandwichSystem.BusinessLayer.Domain
         public int Id { get; set; }
 
         public StringTranslated Name { get; set; }
+
         public bool IsAllergene { get; set; }
 
         public Ingredient(StringTranslated Name, bool isAllergene)
@@ -20,8 +21,6 @@ namespace SandwichSystem.BusinessLayer.Domain
 
         public string ToString(Language Langue)
             => Name.ToString(Langue) + (IsAllergene? "*":"");
-
-
     }
 
 }

@@ -9,7 +9,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Assistante
 {
     public partial class Assistante
     {
-        public bool AjouterFournisseur(SupplierBTO Supplier)
+        public bool AddSupplier(SupplierBTO Supplier)
         {
             try
             {
@@ -23,21 +23,8 @@ namespace SandwichSystem.BusinessLayer.UseCases.Assistante
 
                 return true;
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
 
-        public List<SupplierBTO> GetFournisseurs()
-        {
-            try
-            {
-                return UnitOfWork.SupplierRepository
-                    .GetAll()
-                    .Select(x => x.ToDomain().ToBTO())
-                    .ToList();
-            }
+            //TODO Code to test Unique Constraint on Name...
             catch (Exception ex)
             {
                 throw ex;

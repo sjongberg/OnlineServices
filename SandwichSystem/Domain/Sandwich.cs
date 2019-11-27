@@ -8,17 +8,17 @@ namespace SandwichSystem.BusinessLayer.Domain
 {
     public class Sandwich
     {
-        public int Id { get; set; }
-
-        public StringTranslated Name { get; set; }
-
-        public List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
-
         public Sandwich(StringTranslated Name, Supplier Supplier)
         {
             this.Name = Name;
             this.Supplier = Supplier;
         }
+
+        public int Id { get; set; }
+
+        public StringTranslated Name { get; set; }
+
+        public List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
 
         public string ToString(Language Langue)
             => Name.ToString(Langue);

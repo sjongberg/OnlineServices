@@ -8,11 +8,12 @@ namespace SandwichSystem.BusinessLayer.Domain
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public bool IsCurrentSupplier { get; set; }
 
         public bool IsValid()
         {
             var InvalidSupplier = String.IsNullOrWhiteSpace(Name)
-                && String.IsNullOrEmpty(Name);
+                || String.IsNullOrEmpty(Name);
 
             if (InvalidSupplier)
                 throw new Exception("Supplier not valid;");

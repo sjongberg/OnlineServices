@@ -13,15 +13,18 @@ namespace SandwichSystem.BusinessLayer.Extentions
         {
             return new SandwichBTO
             {
-                Name = Sandwich.Name.ToString(Langue),
-                Ingredients = String.Join(", ", Sandwich.Ingredients.Select(x => x.ToString(Langue)))
+                Id = Sandwich.Id,
+                Name = Sandwich.ToString(Langue),
+                Ingredients = String.Join(" - ", Sandwich.Ingredients.Select(x => x.ToString(Langue))),
+                Supplier = Sandwich.Supplier.ToBTO()
             };
         }
 
         public static Sandwich ToDomain(this SandwichDTO SandwichDTO)
         {
-            return new Sandwich(new StringTranslated("traduction english", "traduction french", "traduction du"), SandwichDTO.Supplier.ToDomain())
+            return new Sandwich(new StringTranslated(SandwichDTO.Name.English, SandwichDTO.Name.French, SandwichDTO.Name.Dutch), SandwichDTO.Supplier.ToDomain())
             {
+                Id = SandwichDTO.Id,
                 Ingredients = SandwichDTO.Ingredients.Select(x => x.ToDomain()).ToList()
             };
         }

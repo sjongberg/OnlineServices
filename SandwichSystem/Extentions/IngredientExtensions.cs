@@ -9,14 +9,20 @@ namespace SandwichSystem.BusinessLayer.Extentions
 {
     public static class IngredientExtensions
     {
-        public static Ingredient ToDomain(this string ingredientBTO, Language Langue)
+        public static Ingredient ToDomain(this IngredientBTO ingredientBTO)
         {
-            //TO IMPLEMENT
-            return new Ingredient(null, false);
+            return new Ingredient(ingredientBTO.Name, ingredientBTO.IsAllergen)
+            {
+                Id = ingredientBTO.Id
+            };
         }
+
         public static Ingredient ToDomain(this IngredientDTO IngredientDTO)
         {
-            return new Ingredient(IngredientDTO.Name, IngredientDTO.IsAllergen);
+            return new Ingredient(IngredientDTO.Name, IngredientDTO.IsAllergen)
+            {
+                Id = IngredientDTO.Id
+            };
         }
     }
 }

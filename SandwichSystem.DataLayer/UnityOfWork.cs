@@ -38,8 +38,8 @@ namespace SandwichSystem.DataLayer
             }
         }
 
-        private IRepository<SupplierDTO, int> supplierRepository;
-        public IRepository<SupplierDTO, int> SupplierRepository
+        private ISupplierRepository supplierRepository;
+        public ISupplierRepository SupplierRepository
         {
             get
             {
@@ -57,6 +57,7 @@ namespace SandwichSystem.DataLayer
             sandwichRepository = null;
             supplierRepository = null;
         }
+
         public void Save()
         {
             DbContext.SaveChanges();

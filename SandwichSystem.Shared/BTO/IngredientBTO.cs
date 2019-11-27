@@ -4,12 +4,11 @@ using System.Text;
 
 namespace SandwichSystem.Shared.BTO
 {
-    public class SupplierBTO
+    public class IngredientBTO
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-
-        public bool IsCurrentSupplier { get; set; }
-
+        public StringTranslated Name { get; set; }
+        public bool IsAllergen { get; set; }
     }
+
 }
