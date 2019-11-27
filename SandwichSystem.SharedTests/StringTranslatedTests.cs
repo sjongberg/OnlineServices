@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SandwichSystem.Shared;
+using SandwichSystem.Shared.Enumerations;
 using System;
 
 namespace SandwichSystem.SharedTests

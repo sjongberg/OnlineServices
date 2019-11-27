@@ -1,16 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using SandwichSystem.BusinessLayer.Domain;
-using SandwichSystem.BusinessLayer.Extentions;
-using SandwichSystem.BusinessLayer.UseCases;
-using SandwichSystem.DataLayer;
-using SandwichSystem.DataLayer.Interfaces;
+using SandwichSystem.Shared.Interfaces;
 using SandwichSystem.Shared;
 using SandwichSystem.Shared.DTO;
-using System;
+using SandwichSystem.Shared.Enumerations;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace SandwichSystem.BusinessLayer.UseCases.Tests
 {
@@ -20,7 +15,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
         private List<SandwichDTO> GetTestsListOfSandwich()
         {
             //REchercher Founisseur
-            IngredientDTO Tomate = new IngredientDTO {Id = 1, Name = new StringTranslated("Tomato", "Tomate", "Tomaat"), IsAllergen = false };
+            IngredientDTO Tomate = new IngredientDTO { Id = 1, Name = new StringTranslated("Tomato", "Tomate", "Tomaat"), IsAllergen = false };
             IngredientDTO Brie = new IngredientDTO { Id = 2, Name = new StringTranslated("Brie", "Brie", "Brie"), IsAllergen = true };
             IngredientDTO Fromage = new IngredientDTO { Id = 3, Name = new StringTranslated("Cheese", "Fromage", "Kaas"), IsAllergen = true };
             IngredientDTO Noix = new IngredientDTO { Id = 4, Name = new StringTranslated("Nuts", "Noix", "Noten"), IsAllergen = true };

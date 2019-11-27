@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using SandwichSystem.BusinessLayer;
-using SandwichSystem.BusinessLayer.Domain;
 using SandwichSystem.BusinessLayer.Extentions;
-using SandwichSystem.DataLayer;
-using SandwichSystem.Shared;
 using SandwichSystem.Shared.BTO;
+using SandwichSystem.Shared.Enumerations;
 
 namespace SandwichSystem.BusinessLayer.UseCases
 {

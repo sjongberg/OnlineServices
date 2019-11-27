@@ -1,13 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using SandwichSystem.BusinessLayer.UseCases.Assistante;
-using SandwichSystem.DataLayer.Interfaces;
-using SandwichSystem.Shared.BTO;
+using SandwichSystem.Shared.Interfaces;
 using SandwichSystem.Shared.DTO;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace SandwichSystem.BusinessLayerTests.UseCases.AssistanteTests
 {

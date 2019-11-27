@@ -1,6 +1,4 @@
-﻿using SandwichSystem.Shared.DTO;
-
-namespace SandwichSystem.DataLayer.Interfaces
+﻿namespace SandwichSystem.Shared.Interfaces
 {
     public interface IUnitOfWork
     {

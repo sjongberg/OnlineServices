@@ -1,7 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using SandwichSystem.DataLayer;
-using SandwichSystem.DataLayer.Interfaces;
+using SandwichSystem.Shared.Interfaces;
 
 namespace SandwichSystem.DataLayerTests
 {

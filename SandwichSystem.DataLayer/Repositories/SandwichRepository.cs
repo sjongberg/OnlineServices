@@ -1,12 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SandwichSystem.DataLayer.Entities;
 using SandwichSystem.DataLayer.Extentions;
-using SandwichSystem.DataLayer.Interfaces;
+using SandwichSystem.Shared.Interfaces;
 using SandwichSystem.Shared.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace SandwichSystem.DataLayer.Repositories
 {

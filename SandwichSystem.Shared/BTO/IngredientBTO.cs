@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SandwichSystem.Shared.BTO
+﻿namespace SandwichSystem.Shared.BTO
 {
     public class IngredientBTO
     {

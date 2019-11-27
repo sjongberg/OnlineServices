@@ -1,29 +1,28 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SandwichSystem;
-using SandwichSystem.BusinessLayer;
 using SandwichSystem.BusinessLayer.Domain;
 using SandwichSystem.Shared;
+using SandwichSystem.Shared.Enumerations;
 
 namespace SandwichSystem.BusinessLayer.DomainTests
 {
     [TestClass]
     public class IngredientTests
     {
-        Ingredient Tomate = new Ingredient(new StringTranslated("Tomato", "Tomate", "Tomaat"), false);
-        Ingredient Brie = new Ingredient(new StringTranslated("Brie", "Brie", "Brie"), true);
-        Ingredient Fromage = new Ingredient(new StringTranslated("Cheese", "Fromage", "Kaas"), true);
-        Ingredient Noix = new Ingredient(new StringTranslated("Nuts", "Noix", "Noten"), true);
-        Ingredient Beurre = new Ingredient(new StringTranslated("Butter", "Beurre", "Boter"), false);
-        Ingredient Jambon = new Ingredient(new StringTranslated("Ham", "Jambon", "Ham"), false);
-        Ingredient Roquette = new Ingredient(new StringTranslated("Arugula", "Roquette", "Rucola"), false);
-        Ingredient Salade = new Ingredient(new StringTranslated("Salad", "Salade", "Salade"), false);
-        Ingredient Pesto = new Ingredient(new StringTranslated("Pesto", "Pesto", "Pesto"), false);
-        Ingredient Oeuf = new Ingredient(new StringTranslated("Eggs", "Oeufs", "Eien"), true);
-        Ingredient Miel = new Ingredient(new StringTranslated("Honey", "Miel", "Honing"), false);
-
-        Sandwich Club = new Sandwich(new StringTranslated("Club", "Club", "Club"), new Supplier { Id = 33, Name = "Supplier1" });
-        Sandwich BrieNoix = new Sandwich(new StringTranslated("Brie", "Brie", "Brie"), new Supplier { Id = 33, Name = "Supplier1" });
-        Sandwich PestoVerde = new Sandwich(new StringTranslated("Pesto", "Pesto", "Pesto"), new Supplier { Id = 33, Name = "Supplier1" });
+        private readonly Ingredient Tomate = new Ingredient(new StringTranslated("Tomato", "Tomate", "Tomaat"), false);
+        private readonly Ingredient Brie = new Ingredient(new StringTranslated("Brie", "Brie", "Brie"), true);
+        private readonly Ingredient Fromage = new Ingredient(new StringTranslated("Cheese", "Fromage", "Kaas"), true);
+        private readonly Ingredient Noix = new Ingredient(new StringTranslated("Nuts", "Noix", "Noten"), true);
+        private readonly Ingredient Beurre = new Ingredient(new StringTranslated("Butter", "Beurre", "Boter"), false);
+        private readonly Ingredient Jambon = new Ingredient(new StringTranslated("Ham", "Jambon", "Ham"), false);
+        private readonly Ingredient Roquette = new Ingredient(new StringTranslated("Arugula", "Roquette", "Rucola"), false);
+        private readonly Ingredient Salade = new Ingredient(new StringTranslated("Salad", "Salade", "Salade"), false);
+        private readonly Ingredient Pesto = new Ingredient(new StringTranslated("Pesto", "Pesto", "Pesto"), false);
+        private readonly Ingredient Oeuf = new Ingredient(new StringTranslated("Eggs", "Oeufs", "Eien"), true);
+        private readonly Ingredient Miel = new Ingredient(new StringTranslated("Honey", "Miel", "Honing"), false);
+        
+        private readonly Sandwich Club = new Sandwich(new StringTranslated("Club", "Club", "Club"), new Supplier { Id = 33, Name = "Supplier1" });
+        private readonly Sandwich BrieNoix = new Sandwich(new StringTranslated("Brie", "Brie", "Brie"), new Supplier { Id = 33, Name = "Supplier1" });
+        private readonly Sandwich PestoVerde = new Sandwich(new StringTranslated("Pesto", "Pesto", "Pesto"), new Supplier { Id = 33, Name = "Supplier1" });
 
         [TestMethod]
         public void ShowAllergene_ReturnsStart_WhenIngredientIsAllergen()

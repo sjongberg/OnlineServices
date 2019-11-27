@@ -1,9 +1,7 @@
-﻿using SandwichSystem.DataLayer.Interfaces;
+﻿using SandwichSystem.Shared.Interfaces;
 using SandwichSystem.DataLayer.Repositories;
 using SandwichSystem.Shared.DTO;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SandwichSystem.DataLayer
 {

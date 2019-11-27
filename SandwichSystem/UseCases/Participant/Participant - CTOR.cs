@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SandwichSystem.DataLayer.Interfaces;
+using SandwichSystem.Shared.Interfaces;
 
 namespace SandwichSystem.BusinessLayer.UseCases
 {

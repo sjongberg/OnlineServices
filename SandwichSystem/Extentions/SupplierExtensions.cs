@@ -1,9 +1,7 @@
 ﻿using SandwichSystem.BusinessLayer.Domain;
-using SandwichSystem.Shared;
 using SandwichSystem.Shared.BTO;
 using SandwichSystem.Shared.DTO;
 using System;
-using System.Linq;
 
 namespace SandwichSystem.BusinessLayer.Extentions
 {
@@ -14,7 +12,8 @@ namespace SandwichSystem.BusinessLayer.Extentions
             return new SupplierBTO
             {
                 Id = Supplier.Id,
-                Name = Supplier.Name
+                Name = Supplier.Name,
+                IsCurrentSupplier = Supplier.IsCurrentSupplier
             };
         }
         public static Supplier ToDomain(this SupplierBTO SupplierBTO)
@@ -24,7 +23,8 @@ namespace SandwichSystem.BusinessLayer.Extentions
                 var SupplierDomain = new Supplier()
                 {
                     Id = SupplierBTO.Id,
-                    Name = SupplierBTO.Name
+                    Name = SupplierBTO.Name,
+                    IsCurrentSupplier = SupplierBTO.IsCurrentSupplier
                 };
 
                 SupplierDomain.IsValid();
@@ -39,18 +39,31 @@ namespace SandwichSystem.BusinessLayer.Extentions
 
         public static Supplier ToDomain(this SupplierDTO SupplierDTO)
         {
-            return new Supplier()
+            try
             {
-                Id = SupplierDTO.Id,
-                Name = SupplierDTO.Name
-            };
+                var SupplierDomain = new Supplier()
+                {
+                    Id = SupplierDTO.Id,
+                    Name = SupplierDTO.Name,
+                    IsCurrentSupplier = SupplierDTO.IsCurrentSupplier
+                };
+
+                SupplierDomain.IsValid();
+
+                return SupplierDomain;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public static SupplierDTO ToDTO(this Supplier Supplier)
         {
             return new SupplierDTO
             {
                 Id = Supplier.Id,
-                Name = Supplier.Name
+                Name = Supplier.Name,
+                IsCurrentSupplier = Supplier.IsCurrentSupplier
             };
         }
     }

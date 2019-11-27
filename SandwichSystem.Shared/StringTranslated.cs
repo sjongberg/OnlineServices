@@ -1,4 +1,6 @@
 ﻿
+using SandwichSystem.Shared.Enumerations;
+
 namespace SandwichSystem.Shared
 {
     public class StringTranslated

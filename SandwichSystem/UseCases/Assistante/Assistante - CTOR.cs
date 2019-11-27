@@ -1,7 +1,4 @@
-﻿using SandwichSystem.DataLayer.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SandwichSystem.Shared.Interfaces;
 
 namespace SandwichSystem.BusinessLayer.UseCases.Assistante
 {

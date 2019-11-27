@@ -1,8 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SandwichSystem;
-using SandwichSystem.BusinessLayer;
 using SandwichSystem.BusinessLayer.Domain;
 using SandwichSystem.Shared;
+using SandwichSystem.Shared.Enumerations;
 
 namespace SandwichSystem.BusinessLayer.DomainTests
 {

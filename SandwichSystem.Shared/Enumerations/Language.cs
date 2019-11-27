@@ -1,8 +1,6 @@
 ﻿//using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace SandwichSystem.Shared
+namespace SandwichSystem.Shared.Enumerations
 {
     public enum Language
     {

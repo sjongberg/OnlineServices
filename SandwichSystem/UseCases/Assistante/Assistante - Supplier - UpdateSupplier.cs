@@ -1,9 +1,6 @@
 ﻿using SandwichSystem.BusinessLayer.Extentions;
 using SandwichSystem.Shared.BTO;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SandwichSystem.BusinessLayer.UseCases.Assistante
 {

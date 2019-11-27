@@ -1,9 +1,7 @@
 ﻿using SandwichSystem.Shared.DTO;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace SandwichSystem.DataLayer.Interfaces
+namespace SandwichSystem.Shared.Interfaces
 {
     public interface ISandwichRepository : IRepository<SandwichDTO, int>
     {
