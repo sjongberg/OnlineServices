@@ -2,13 +2,13 @@
 
 namespace SandwichSystem.Shared.Interfaces
 {
-    public interface IRepository<T, U>
+    public interface IRepository<Type, IdType>
     {
-        void Delete(T entityToDelete);
-        void Delete(U id);
-        IEnumerable<T> GetAll();
-        T GetByID(U id);
-        void Insert(T entity);
-        void Update(T entityToUpdate);
+        void Delete(Type Entity);
+        void Delete(IdType Id);
+        IEnumerable<Type> GetAll();
+        Type GetByID(IdType Id);
+        void Insert(Type Entity);
+        void Update(Type Entity);
     }
 }

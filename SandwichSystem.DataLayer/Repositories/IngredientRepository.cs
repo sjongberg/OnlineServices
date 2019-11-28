@@ -1,14 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SandwichSystem.DataLayer.Extentions;
 using SandwichSystem.Shared.Interfaces;
-using SandwichSystem.Shared.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using SandwichSystem.Shared.TransfertObjects;
 
 namespace SandwichSystem.DataLayer.Repositories
 {
-    public class IngredientRepository : IRepository<IngredientDTO,int>
+    public class IngredientRepository : IRepository<IngredientTO, int>
     {
         private SandwichSystemContext Context;
 
@@ -17,42 +17,42 @@ namespace SandwichSystem.DataLayer.Repositories
             Context = ContextInjected ?? throw new ArgumentNullException(nameof(ContextInjected));
         }
 
-        public void Delete(IngredientDTO entityToDelete)
+        public void Delete(IngredientTO Entity)
         {
-            Context.Ingredients.Remove(entityToDelete.ToEF());
+            Context.Ingredients.Remove(Entity.ToEF());
         }
 
-        public void Delete(int id)
+        public void Delete(int Id)
         {
-            Delete(GetByID(id));
+            Delete(GetByID(Id));
         }
 
-        public IEnumerable<IngredientDTO> GetAll()
+        public IEnumerable<IngredientTO> GetAll()
          => Context.Ingredients
             .Include(x => x.SandwichIngredients)
-            .Select(x => x.ToDTO()).ToList();
+            .Select(x => x.ToTranfertObject()).ToList();
 
-        public IngredientDTO GetByID(int id)
+        public IngredientTO GetByID(int Id)
             => Context.Ingredients
             .Include(x => x.SandwichIngredients)
-            .FirstOrDefault(x => x.Id == id).ToDTO();
+            .FirstOrDefault(x => x.Id == Id).ToTranfertObject();
 
-        public List<IngredientDTO> GetSandwichesByIngredient(List<IngredientDTO> Ingredients)
+        public List<IngredientTO> GetSandwichesByIngredient(List<IngredientTO> Ingredients)
         {
             throw new NotImplementedException();
         }
 
-        public List<IngredientDTO> GetSandwichesWithoutIngredient(List<IngredientDTO> Ingredients)
+        public List<IngredientTO> GetSandwichesWithoutIngredient(List<IngredientTO> Ingredients)
         {
             throw new NotImplementedException();
         }
 
-        public void Insert(IngredientDTO entity)
+        public void Insert(IngredientTO entity)
         {
             Context.Ingredients.Add(entity.ToEF());
         }
 
-        public void Update(IngredientDTO entityToUpdate)
+        public void Update(IngredientTO Entity)
         {
             throw new NotImplementedException();
         }

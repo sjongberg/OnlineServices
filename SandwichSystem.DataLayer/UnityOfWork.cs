@@ -1,7 +1,7 @@
 ﻿using SandwichSystem.Shared.Interfaces;
 using SandwichSystem.DataLayer.Repositories;
-using SandwichSystem.Shared.DTO;
 using System;
+using SandwichSystem.Shared.TransfertObjects;
 
 namespace SandwichSystem.DataLayer
 {
@@ -25,8 +25,8 @@ namespace SandwichSystem.DataLayer
             }
         }
 
-        private IRepository<IngredientDTO, int> ingredientRepository;
-        public IRepository<IngredientDTO, int> IngredientRepository
+        private IRepository<IngredientTO, int> ingredientRepository;
+        public IRepository<IngredientTO, int> IngredientRepository
         {
             get
             {

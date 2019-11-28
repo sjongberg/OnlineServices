@@ -10,16 +10,16 @@ namespace SandwichSystem.BusinessLayer.Domain
 
         public StringTranslated Name { get; set; }
 
-        public bool IsAllergene { get; set; }
+        public bool IsAllergen { get; set; }
 
         public Ingredient(StringTranslated Name, bool isAllergene)
         {
             this.Name = Name ?? throw new ArgumentNullException(nameof(Name));
-            this.IsAllergene = isAllergene;
+            this.IsAllergen = isAllergene;
         }
 
         public string ToString(Language Langue)
-            => Name.ToString(Langue) + (IsAllergene? "*":"");
+            => Name.ToString(Langue) + (IsAllergen? "*":"");
     }
 
 }

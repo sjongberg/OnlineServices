@@ -1,13 +1,13 @@
 ﻿using SandwichSystem.BusinessLayer.Extentions;
-using SandwichSystem.Shared.BTO;
+using SandwichSystem.Shared.TransfertObjects;
 
 namespace SandwichSystem.BusinessLayer.UseCases.Assistante
 {
     public partial class Assistante
     {
-        public SupplierBTO GetCurrentSupplier()
+        public SupplierTO GetCurrentSupplier()
             => UnitOfWork.SupplierRepository
                     .GetCurrentSupplier()
-                    .ToDomain().ToBTO();
+                    .ToDomain().ToTransfertObject();
     }
 }

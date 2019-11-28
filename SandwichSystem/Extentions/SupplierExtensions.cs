@@ -1,30 +1,20 @@
 ﻿using SandwichSystem.BusinessLayer.Domain;
-using SandwichSystem.Shared.BTO;
-using SandwichSystem.Shared.DTO;
+using SandwichSystem.Shared.TransfertObjects;
 using System;
 
 namespace SandwichSystem.BusinessLayer.Extentions
 {
     public static class SupplierExtensions
     {
-        public static SupplierBTO ToBTO(this Supplier Supplier)
-        {
-            return new SupplierBTO
-            {
-                Id = Supplier.Id,
-                Name = Supplier.Name,
-                IsCurrentSupplier = Supplier.IsCurrentSupplier
-            };
-        }
-        public static Supplier ToDomain(this SupplierBTO SupplierBTO)
+        public static Supplier ToDomain(this SupplierTO SupplierTO)
         {
             try
             {
                 var SupplierDomain = new Supplier()
                 {
-                    Id = SupplierBTO.Id,
-                    Name = SupplierBTO.Name,
-                    IsCurrentSupplier = SupplierBTO.IsCurrentSupplier
+                    Id = SupplierTO.Id,
+                    Name = SupplierTO.Name,
+                    IsCurrentSupplier = SupplierTO.IsCurrentSupplier
                 };
 
                 SupplierDomain.IsValid();
@@ -37,29 +27,9 @@ namespace SandwichSystem.BusinessLayer.Extentions
             }
         }
 
-        public static Supplier ToDomain(this SupplierDTO SupplierDTO)
+        public static SupplierTO ToTransfertObject(this Supplier Supplier)
         {
-            try
-            {
-                var SupplierDomain = new Supplier()
-                {
-                    Id = SupplierDTO.Id,
-                    Name = SupplierDTO.Name,
-                    IsCurrentSupplier = SupplierDTO.IsCurrentSupplier
-                };
-
-                SupplierDomain.IsValid();
-
-                return SupplierDomain;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        public static SupplierDTO ToDTO(this Supplier Supplier)
-        {
-            return new SupplierDTO
+            return new SupplierTO
             {
                 Id = Supplier.Id,
                 Name = Supplier.Name,

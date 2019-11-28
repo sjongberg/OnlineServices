@@ -1,31 +1,36 @@
-﻿
-using SandwichSystem.DataLayer.Entities;
-using SandwichSystem.Shared.DTO;
+﻿using SandwichSystem.DataLayer.Entities;
+using SandwichSystem.Shared;
+using SandwichSystem.Shared.TransfertObjects;
 using System;
 
 namespace SandwichSystem.DataLayer.Extentions
 {
     public static class IngredientExtensions
     {
-        public static IngredientDTO ToDTO(this IngredientEF Ingredient)
+        public static IngredientTO ToTranfertObject(this IngredientEF Ingredient)
         {
-            return new IngredientDTO
-            {
+            if (Ingredient is null)
+                throw new ArgumentNullException(nameof(Ingredient));
 
+            return new IngredientTO
+            {
+                 Id = Ingredient.Id,
+                  Name = new StringTranslated(Ingredient.NameEnglish, Ingredient.NameFrench, Ingredient.NameDutch),
+                 IsAllergen = Ingredient.IsAllergen
             };
         }
-        public static IngredientEF ToEF(this IngredientDTO IngredientDTO)
+        public static IngredientEF ToEF(this IngredientTO Ingredient)
         {
-            if (IngredientDTO is null)
-                throw new ArgumentNullException(nameof(IngredientDTO));
+            if (Ingredient is null)
+                throw new ArgumentNullException(nameof(Ingredient));
 
             return new IngredientEF()
             {
-                NameEnglish = IngredientDTO.Name.English,
-                NameFrench = IngredientDTO.Name.French,
-                NameDutch = IngredientDTO.Name.Dutch,
+                NameEnglish = Ingredient.Name.English,
+                NameFrench = Ingredient.Name.French,
+                NameDutch = Ingredient.Name.Dutch,
 
-                IsAllergen = IngredientDTO.IsAllergen
+                IsAllergen = Ingredient.IsAllergen
             };
         }
     }

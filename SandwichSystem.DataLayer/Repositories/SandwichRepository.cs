@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SandwichSystem.DataLayer.Extentions;
 using SandwichSystem.Shared.Interfaces;
-using SandwichSystem.Shared.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using SandwichSystem.Shared.TransfertObjects;
 
 namespace SandwichSystem.DataLayer.Repositories
 {
@@ -17,52 +17,52 @@ namespace SandwichSystem.DataLayer.Repositories
             Context = ContextInjected ?? throw new ArgumentNullException(nameof(ContextInjected));
         }
 
-        public void Delete(SandwichDTO entityToDelete)
+        public void Delete(Shared.TransfertObjects.SandwichTO Entity)
         {
-            Context.Sandwiches.Remove(entityToDelete.ToEF());
+            Context.Sandwiches.Remove(Entity.ToEF());
         }
 
-        public void Delete(int id)
+        public void Delete(int Id)
         {
-            Delete(GetByID(id));
+            Delete(GetByID(Id));
         }
 
-        public IEnumerable<SandwichDTO> GetAll()
+        public IEnumerable<Shared.TransfertObjects.SandwichTO> GetAll()
          => Context.Sandwiches
             .Include(x => x.Supplier)
             .Include(x => x.SandwichIngredients)
-            .Select(x => x.ToDTO()).ToList();
+            .Select(x => x.ToTranfertObject()).ToList();
 
-        public SandwichDTO GetByID(int id)
+        public SandwichTO GetByID(int Id)
             => Context.Sandwiches
             .Include(x => x.Supplier)
             .Include(x => x.SandwichIngredients)
-            .FirstOrDefault(x => x.Id == id).ToDTO();
+            .FirstOrDefault(x => x.Id == Id).ToTranfertObject();
 
-        public List<SandwichDTO> GetSandwichesByIngredient(List<IngredientDTO> Ingredients)
+        public List<Shared.TransfertObjects.SandwichTO> GetSandwichesByIngredient(List<IngredientTO> Ingredients)
         {
             throw new NotImplementedException();
         }
 
-        public List<SandwichDTO> GetSandwichesBySupplier(SupplierDTO Supplier)
+        public List<Shared.TransfertObjects.SandwichTO> GetSandwichesBySupplier(SupplierTO Supplier)
             => Context.Sandwiches
             .Include(x => x.Supplier)
             .Include(x => x.SandwichIngredients)
             .Where(x=>x.Supplier.Id == Supplier.Id)
-            .Select(x=>x.ToDTO())
+            .Select(x=>x.ToTranfertObject())
             .ToList();
 
-        public List<SandwichDTO> GetSandwichesWithoutIngredient(List<IngredientDTO> Ingredients)
+        public List<Shared.TransfertObjects.SandwichTO> GetSandwichesWithoutIngredient(List<IngredientTO> Ingredients)
         {
             throw new NotImplementedException();
         }
 
-        public void Insert(SandwichDTO entity)
+        public void Insert(Shared.TransfertObjects.SandwichTO Entity)
         {
-            Context.Sandwiches.Add(entity.ToEF());
+            Context.Sandwiches.Add(Entity.ToEF());
         }
 
-        public void Update(SandwichDTO entityToUpdate)
+        public void Update(Shared.TransfertObjects.SandwichTO Entity)
         {
             throw new NotImplementedException();
         }

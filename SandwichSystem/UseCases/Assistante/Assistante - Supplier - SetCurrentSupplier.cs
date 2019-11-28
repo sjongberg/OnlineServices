@@ -1,12 +1,12 @@
 ﻿using SandwichSystem.BusinessLayer.Extentions;
-using SandwichSystem.Shared.BTO;
+using SandwichSystem.Shared.TransfertObjects;
 using System;
 
 namespace SandwichSystem.BusinessLayer.UseCases.Assistante
 {
     public partial class Assistante
     {
-        public bool SetCurrentSupplier(SupplierBTO Supplier)
+        public bool SetCurrentSupplier(SupplierTO Supplier)
         {
             if (Supplier is null)
                 throw new ArgumentNullException(nameof(Supplier));
@@ -19,7 +19,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Assistante
 
             try
             {
-                UnitOfWork.SupplierRepository.SetCurrentSupplier(Supplier.ToDomain().ToDTO());
+                UnitOfWork.SupplierRepository.SetCurrentSupplier(Supplier.ToDomain().ToTransfertObject());
 
                 return true;
             }

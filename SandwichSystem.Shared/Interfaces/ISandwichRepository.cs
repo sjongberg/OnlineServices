@@ -1,12 +1,12 @@
-﻿using SandwichSystem.Shared.DTO;
+﻿using SandwichSystem.Shared.TransfertObjects;
 using System.Collections.Generic;
 
 namespace SandwichSystem.Shared.Interfaces
 {
-    public interface ISandwichRepository : IRepository<SandwichDTO, int>
+    public interface ISandwichRepository : IRepository<SandwichTO, int>
     {
-        List<SandwichDTO> GetSandwichesBySupplier(SupplierDTO Supplier);
-        List<SandwichDTO> GetSandwichesByIngredient(List<IngredientDTO> Ingredients);
-        List<SandwichDTO> GetSandwichesWithoutIngredient(List<IngredientDTO> Ingredients);
+        List<SandwichTO> GetSandwichesBySupplier(SupplierTO Supplier);
+        List<SandwichTO> GetSandwichesByIngredient(List<IngredientTO> Ingredients);
+        List<SandwichTO> GetSandwichesWithoutIngredient(List<IngredientTO> Ingredients);
     }
 }

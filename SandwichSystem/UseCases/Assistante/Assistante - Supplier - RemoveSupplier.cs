@@ -1,12 +1,12 @@
 ﻿using SandwichSystem.BusinessLayer.Extentions;
-using SandwichSystem.Shared.BTO;
+using SandwichSystem.Shared.TransfertObjects;
 using System;
 
 namespace SandwichSystem.BusinessLayer.UseCases.Assistante
 {
     public partial class Assistante
     {
-        public bool RemoveSupplier(SupplierBTO Supplier)
+        public bool RemoveSupplier(SupplierTO Supplier)
         {
             try
             {
@@ -16,7 +16,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Assistante
                 if (Supplier.Id == 0)
                     throw new Exception("Supplier not in DB.");
 
-                UnitOfWork.SupplierRepository.Delete(Supplier.ToDomain().ToDTO());
+                UnitOfWork.SupplierRepository.Delete(Supplier.ToDomain().ToTransfertObject());
 
                 return true;
             }

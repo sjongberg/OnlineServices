@@ -1,12 +1,12 @@
 ﻿using SandwichSystem.BusinessLayer.Extentions;
-using SandwichSystem.Shared.BTO;
+using SandwichSystem.Shared.TransfertObjects;
 using System;
 
 namespace SandwichSystem.BusinessLayer.UseCases.Assistante
 {
     public partial class Assistante
     {
-        public bool UpdateSupplier(SupplierBTO Supplier)
+        public bool UpdateSupplier(SupplierTO Supplier)
         {
             try
             {
@@ -16,7 +16,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Assistante
                 if (Supplier.Id == 0)
                     throw new Exception("Inexisting supplier");
 
-                UnitOfWork.SupplierRepository.Update(Supplier.ToDomain().ToDTO());
+                UnitOfWork.SupplierRepository.Update(Supplier.ToDomain().ToTransfertObject());
 
                 return true;
             }

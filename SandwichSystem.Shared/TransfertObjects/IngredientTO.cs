@@ -1,6 +1,6 @@
-﻿namespace SandwichSystem.Shared.DTO
+﻿namespace SandwichSystem.Shared.TransfertObjects
 {
-    public class IngredientDTO
+    public class IngredientTO
     {
         public int Id { get; set; }
         public StringTranslated Name { get; set; }

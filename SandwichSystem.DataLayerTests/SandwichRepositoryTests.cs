@@ -14,7 +14,7 @@ namespace SandwichSystem.DataLayerTests
 
             //repoMock.Setup(x=>x.Insert).
 
-            //repo.Insert(new Shared.DTO.SandwichDTO { Name = new Shared.StringTranslated("hello2", "bonjour", "hlo"), Supplier = new Shared.DTO.SupplierDTO { Name = "Fournisseur1" } });
+            //repo.Insert(new Shared.DTO.SandwichDTO { Name = new Shared.StringTranslated("hello2", "bonjour", "hlo"), Supplier = new Shared.DTO.SupplierTO { Name = "Fournisseur1" } });
         }
     }
 }

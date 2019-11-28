@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SandwichSystem.DataLayer.Extentions;
 using SandwichSystem.Shared.Interfaces;
-using SandwichSystem.Shared.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using SandwichSystem.Shared.TransfertObjects;
 
 namespace SandwichSystem.DataLayer.Repositories
 {
@@ -17,40 +17,40 @@ namespace SandwichSystem.DataLayer.Repositories
 
         public SandwichSystemContext SandwichContext { get; private set; }
 
-        public void Delete(SupplierDTO entityToDelete)
+        public void Delete(SupplierTO Entity)
         {
             var sandwichRepository = new SandwichRepository(this.SandwichContext);
 
-            if (sandwichRepository.GetSandwichesBySupplier(entityToDelete).Any())
+            if (sandwichRepository.GetSandwichesBySupplier(Entity).Any())
                 throw new Exception("Cannot delete supplier that has a sandwich in db.");
             else
             {
-                SandwichContext.Suppliers.Remove(entityToDelete.ToEF());
+                SandwichContext.Suppliers.Remove(Entity.ToEF());
             }
         }
 
-        public void Delete(int id)
+        public void Delete(int Id)
         {
-            Delete(GetByID(id));
+            Delete(GetByID(Id));
         }
 
-        public IEnumerable<SupplierDTO> GetAll()
+        public IEnumerable<SupplierTO> GetAll()
         {
             return SandwichContext.Suppliers
                 .AsNoTracking()
-                .Select(x => x.ToDTO())
+                .Select(x => x.ToTranfertObject())
                 .ToList();
         }
 
-        public SupplierDTO GetByID(int id)
+        public SupplierTO GetByID(int Id)
         {
             return SandwichContext.Suppliers
                 .AsNoTracking()
-                .FirstOrDefault(x => x.Id == id)
-                .ToDTO();
+                .FirstOrDefault(x => x.Id == Id)
+                .ToTranfertObject();
         }
 
-        public SupplierDTO GetCurrentSupplier()
+        public SupplierTO GetCurrentSupplier()
         {
             if (SandwichContext.Suppliers.Count(x=>x.IsCurrentSupplier==true) != 1)
                 throw new Exception("Current Supplier not well configured in DB");
@@ -58,15 +58,15 @@ namespace SandwichSystem.DataLayer.Repositories
             return SandwichContext.Suppliers
                 .AsNoTracking()
                 .FirstOrDefault(x => x.IsCurrentSupplier == true)
-                .ToDTO();
+                .ToTranfertObject();
         }
 
-        public void Insert(SupplierDTO entity)
+        public void Insert(SupplierTO entity)
         {
             throw new NotImplementedException();
         }
 
-        public void SetCurrentSupplier(SupplierDTO Supplier)
+        public void SetCurrentSupplier(SupplierTO Supplier)
         {
             if (Supplier is null)
                 throw new ArgumentNullException(nameof(Supplier));
@@ -89,7 +89,7 @@ namespace SandwichSystem.DataLayer.Repositories
                 throw new Exception("Current Supplier not well configured in DB");
         }
 
-        public void Update(SupplierDTO entityToUpdate)
+        public void Update(SupplierTO Entity)
         {
             throw new NotImplementedException();
         }

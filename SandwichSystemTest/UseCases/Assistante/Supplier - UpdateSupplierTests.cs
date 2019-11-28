@@ -2,9 +2,9 @@
 using Moq;
 using SandwichSystem.BusinessLayer.UseCases.Assistante;
 using SandwichSystem.Shared.Interfaces;
-using SandwichSystem.Shared.BTO;
-using SandwichSystem.Shared.DTO;
+using SandwichSystem.Shared.TransfertObjects;
 using System;
+using SandwichSystem.Shared.TransfertObjects;
 
 namespace SandwichSystem.BusinessLayerTests.UseCases.AssistanteTests
 {
@@ -16,7 +16,7 @@ namespace SandwichSystem.BusinessLayerTests.UseCases.AssistanteTests
         {
             //ARRANGE
             var AssistanteRole = new Assistante((new Mock<IUnitOfWork>()).Object);
-            var SupplierToUpdate = new SupplierBTO { Id = 0, Name = "InexistantSupplier" };
+            var SupplierToUpdate = new SupplierTO { Id = 0, Name = "InexistantSupplier" };
 
             //ACT
             Assert.ThrowsException<Exception>( () => AssistanteRole.UpdateSupplier(SupplierToUpdate));
@@ -37,13 +37,13 @@ namespace SandwichSystem.BusinessLayerTests.UseCases.AssistanteTests
         {
             //ARRANGE
             var mockSupplierRepository = new Mock<ISupplierRepository>();
-            mockSupplierRepository.Setup(x => x.Update(It.IsAny<SupplierDTO>()));
+            mockSupplierRepository.Setup(x => x.Update(It.IsAny<SupplierTO>()));
 
             var mockUoW = new Mock<IUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
             var AssistanteRole = new Assistante(mockUoW.Object);
-            var SupplierToUpdate = new SupplierBTO { Id = 10, Name = "ExistantSupplier" };
+            var SupplierToUpdate = new SupplierTO { Id = 10, Name = "ExistantSupplier" };
 
             //ACT
             var ReturnValueToAssert = AssistanteRole.UpdateSupplier(SupplierToUpdate);
@@ -56,18 +56,18 @@ namespace SandwichSystem.BusinessLayerTests.UseCases.AssistanteTests
         {
             //ARRANGE
             var mockSupplierRepository = new Mock<ISupplierRepository>();
-            mockSupplierRepository.Setup(x => x.Update(It.IsAny<SupplierDTO>()));
+            mockSupplierRepository.Setup(x => x.Update(It.IsAny<SupplierTO>()));
 
             var mockUoW = new Mock<IUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
             var AssistanteRole = new Assistante(mockUoW.Object);
-            var SupplierToUpdate = new SupplierBTO { Id = 10, Name = "ExistantSupplier" };
+            var SupplierToUpdate = new SupplierTO { Id = 10, Name = "ExistantSupplier" };
 
             //ACT
             AssistanteRole.UpdateSupplier(SupplierToUpdate);
 
-            mockSupplierRepository.Verify(x => x.Update(It.IsAny<SupplierDTO>()), Times.Once);
+            mockSupplierRepository.Verify(x => x.Update(It.IsAny<SupplierTO>()), Times.Once);
         }
     }
 }

@@ -27,9 +27,9 @@ namespace SandwichSystem.BusinessLayer.DomainTests
         [TestMethod]
         public void ShowAllergene_ReturnsStart_WhenIngredientIsAllergen()
         {
-            Assert.AreEqual(false, Tomate.IsAllergene);
-            Assert.AreEqual(true, Fromage.IsAllergene);
-            Assert.AreEqual(true, Noix.IsAllergene);
+            Assert.AreEqual(false, Tomate.IsAllergen);
+            Assert.AreEqual(true, Fromage.IsAllergen);
+            Assert.AreEqual(true, Noix.IsAllergen);
         }
 
         [TestMethod]

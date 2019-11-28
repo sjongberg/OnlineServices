@@ -2,7 +2,7 @@
 using Moq;
 using SandwichSystem.BusinessLayer.UseCases.Assistante;
 using SandwichSystem.Shared.Interfaces;
-using SandwichSystem.Shared.DTO;
+using SandwichSystem.Shared.TransfertObjects;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,13 +11,13 @@ namespace SandwichSystem.BusinessLayerTests.UseCases.AssistanteTests
     [TestClass]
     public class Supplier_GetSuppliersTests
     {
-        public static List<SupplierDTO> SupplierList()
+        public static List<SupplierTO> SupplierList()
         {
-            return new List<SupplierDTO>
+            return new List<SupplierTO>
             {
-                new SupplierDTO { Id=1, Name="Suplier1"},
-                new SupplierDTO { Id=2, Name="Suplier3"},
-                new SupplierDTO { Id=3, Name="Suplier3"}
+                new SupplierTO { Id=1, Name="Suplier1"},
+                new SupplierTO { Id=2, Name="Suplier3"},
+                new SupplierTO { Id=3, Name="Suplier3"}
             };
         }
 
@@ -63,7 +63,7 @@ namespace SandwichSystem.BusinessLayerTests.UseCases.AssistanteTests
         //public void GetSuppliers_ThrowsException_WhenNotConnectedToDB()
         //{
         //    //ARRANGE
-        //    var mockSupplierRepository = new Mock<IRepository<SupplierDTO, int>>();
+        //    var mockSupplierRepository = new Mock<IRepository<SupplierTO, int>>();
         //    mockSupplierRepository.Setup(x => x.GetAll()).Returns(() => throw new Exception("Not connected to db."));
 
         //    var mockUoW = new Mock<IUnitOfWork>();

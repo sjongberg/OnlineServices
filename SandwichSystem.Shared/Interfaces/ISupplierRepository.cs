@@ -1,10 +1,10 @@
-﻿using SandwichSystem.Shared.DTO;
+﻿using SandwichSystem.Shared.TransfertObjects;
 
 namespace SandwichSystem.Shared.Interfaces
 {
-    public interface ISupplierRepository : IRepository<SupplierDTO, int>
+    public interface ISupplierRepository : IRepository<SupplierTO, int>
     {
-        SupplierDTO GetCurrentSupplier();
-        void SetCurrentSupplier(SupplierDTO Supplier);
+        SupplierTO GetCurrentSupplier();
+        void SetCurrentSupplier(SupplierTO Supplier);
     }
 }
