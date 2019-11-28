@@ -1,4 +1,6 @@
 ﻿
+using SandwichSystem.Shared.Enumerations;
+
 namespace SandwichSystem.Shared
 {
     public class StringTranslated
@@ -24,7 +26,7 @@ namespace SandwichSystem.Shared
                 case Language.Dutch:
                     return Dutch;
                 default:
-                    throw new System.Exception("Language not known");
+                    throw new System.Exception("Language Unknown or not properly configured.");
             }
         }
     }

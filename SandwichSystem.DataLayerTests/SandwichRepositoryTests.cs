@@ -1,7 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using SandwichSystem.DataLayer;
-using SandwichSystem.DataLayer.Interfaces;
+using SandwichSystem.Shared.Interfaces;
 
 namespace SandwichSystem.DataLayerTests
 {
@@ -15,7 +14,7 @@ namespace SandwichSystem.DataLayerTests
 
             //repoMock.Setup(x=>x.Insert).
 
-            //repo.Insert(new Shared.DTO.SandwichDTO { Name = new Shared.StringTranslated("hello2", "bonjour", "hlo"), Supplier = new Shared.DTO.SupplierDTO { Name = "Fournisseur1" } });
+            //repo.Insert(new Shared.DTO.SandwichDTO { Name = new Shared.StringTranslated("hello2", "bonjour", "hlo"), Supplier = new Shared.DTO.SupplierTO { Name = "Fournisseur1" } });
         }
     }
 }

@@ -1,36 +1,39 @@
 ﻿using SandwichSystem.BusinessLayer.Domain;
-using SandwichSystem.Shared;
-using SandwichSystem.Shared.BTO;
-using SandwichSystem.Shared.DTO;
+using SandwichSystem.Shared.TransfertObjects;
 using System;
-using System.Linq;
 
 namespace SandwichSystem.BusinessLayer.Extentions
 {
     public static class SupplierExtensions
     {
-        public static SupplierBTO ToBTO(this Supplier Supplier)
+        public static Supplier ToDomain(this SupplierTO SupplierTO)
         {
-            return new SupplierBTO
+            try
             {
-                Id = Supplier.SupplierId,
-                Name = Supplier.Name
-            };
+                var SupplierDomain = new Supplier()
+                {
+                    Id = SupplierTO.Id,
+                    Name = SupplierTO.Name,
+                    IsCurrentSupplier = SupplierTO.IsCurrentSupplier
+                };
+
+                SupplierDomain.IsValid();
+
+                return SupplierDomain;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-        public static Supplier ToDomain(this SupplierBTO SupplierBTO)
+
+        public static SupplierTO ToTransfertObject(this Supplier Supplier)
         {
-            return new Supplier()
+            return new SupplierTO
             {
-                SupplierId = SupplierBTO.Id,
-                Name = SupplierBTO.Name
-            };
-        }
-        public static SupplierDTO ToDTO(this Supplier Supplier)
-        {
-            return new SupplierDTO
-            {
-                Id = Supplier.SupplierId,
-                Name = Supplier.Name
+                Id = Supplier.Id,
+                Name = Supplier.Name,
+                IsCurrentSupplier = Supplier.IsCurrentSupplier
             };
         }
     }

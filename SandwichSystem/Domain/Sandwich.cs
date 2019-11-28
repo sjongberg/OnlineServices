@@ -1,46 +1,31 @@
 ﻿using SandwichSystem.Shared;
+using SandwichSystem.Shared.Enumerations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace SandwichSystem.BusinessLayer.Domain
 {
     public class Sandwich
     {
-        
+        public Sandwich(StringTranslated Name, Supplier Supplier)
+        {
+            this.Name = Name;
+            this.Supplier = Supplier;
+        }
+
+        public int Id { get; set; }
+
         public StringTranslated Name { get; set; }
 
         public List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
 
-        public Sandwich(StringTranslated Name)
-        {
-            this.Name = Name;
-        }
+        public string ToString(Language Langue)
+            => Name.ToString(Langue);
 
-        public string GetIngredients(Language Langue)
+        public string GetIngredientsString(Language Langue)
             => String.Join(" - ", Ingredients.Select(x => x.ToString(Langue)));
 
-        //DOC Substitué par le code au-dessus...
-        //public string ShowIngredients(Language Langue)
-        //{
-        //    var result = "";
-        //    var index = 0;
-        //    foreach (Ingredient i in Ingredients)
-        //    {
-        //        if (index < Ingredients.Count-1)
-        //        {
-        //            result += i.ToString(Langue) + " - ";
-        //        }
-        //        else
-        //        {
-        //            result += i.ToString(Langue);
-        //        }
-        //        index++;
-        //    }
-        //    return result;
-        //}
-
-        public Supplier Supplier { get; set; }
+        public Supplier Supplier { get; private set; }
     }
 }

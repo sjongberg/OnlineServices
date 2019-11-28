@@ -1,29 +1,27 @@
-﻿
-using SandwichSystem.DataLayer.Entities;
-using SandwichSystem.Shared;
-using SandwichSystem.Shared.DTO;
-using System;
-using System.Linq;
+﻿using SandwichSystem.DataLayer.Entities;
+using SandwichSystem.Shared.TransfertObjects;
 
 namespace SandwichSystem.DataLayer.Extentions
 {
     public static class SupplierExtensions
     {
-        public static SupplierDTO ToDTO(this SupplierEF Supplier)
+        public static SupplierTO ToTranfertObject(this SupplierEF Supplier)
         {
-            return new SupplierDTO
+            return new SupplierTO
             {
                  Id = Supplier.Id,
-                 Name = Supplier.Name
+                 Name = Supplier.Name,
+                 IsCurrentSupplier = Supplier.IsCurrentSupplier
             };
         }
 
-        public static SupplierEF ToEF(this SupplierDTO Supplier)
+        public static SupplierEF ToEF(this SupplierTO Supplier)
         {
             return new SupplierEF
             {
                 Id = Supplier.Id,
-                Name = Supplier.Name
+                Name = Supplier.Name,
+                IsCurrentSupplier = Supplier.IsCurrentSupplier
             };
         }
     }

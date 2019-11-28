@@ -3,8 +3,8 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <AssemblyVersion>1911.26.0.1000</AssemblyVersion>
-    <FileVersion>1911.26.0.1000</FileVersion>
+    <AssemblyVersion>2019.11.27.2</AssemblyVersion>
+    <FileVersion>2019.11.27.2</FileVersion>
     <ApplicationIcon />
     <StartupObject />
   </PropertyGroup>
@@ -12,10 +12,6 @@
   <ItemGroup>
     <ProjectReference Include="..\SandwichSystem.DataLayer\SandwichSystem.DataLayer.csproj" />
     <ProjectReference Include="..\SandwichSystem.Shared\SandwichSystem.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="UseCases\Assistante\" />
   </ItemGroup>
 
 </Project>

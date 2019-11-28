@@ -1,7 +1,7 @@
 ﻿using SandwichSystem.BusinessLayer.Domain;
 using SandwichSystem.Shared;
-using SandwichSystem.Shared.BTO;
-using SandwichSystem.Shared.DTO;
+using SandwichSystem.Shared.Enumerations;
+using SandwichSystem.Shared.TransfertObjects;
 using System;
 using System.Linq;
 
@@ -13,16 +13,30 @@ namespace SandwichSystem.BusinessLayer.Extentions
         {
             return new SandwichBTO
             {
-                Name = Sandwich.Name.ToString(Langue),
-                Ingredients = String.Join(", ", Sandwich.Ingredients.Select(x => x.ToString(Langue)))
+                Id = Sandwich.Id,
+                Name = Sandwich.ToString(Langue),
+                Ingredients = String.Join(" - ", Sandwich.Ingredients.Select(x => x.ToString(Langue))),
+                //Supplier = Sandwich.Supplier.ToTransfertObject()
             };
         }
 
-        public static Sandwich ToDomain(this SandwichDTO SandwichDTO)
+        public static Sandwich ToDomain(this SandwichTO SandwichTO)
         {
-            return new Sandwich(new StringTranslated("traduction english", "traduction french", "traduction du"))
+            return new Sandwich(SandwichTO.Name, SandwichTO.Supplier.ToDomain())
             {
-                Ingredients = SandwichDTO.Ingredients.Select(x => x.ToDomain()).ToList()
+                Id = SandwichTO.Id,
+                Ingredients = SandwichTO.Ingredients.Select(x => x.ToDomain()).ToList()
+            };
+        }
+
+        public static SandwichTO ToTransfertObject(this Sandwich Sandwich)
+        {
+            return new SandwichTO
+            {
+                Id = Sandwich.Id,
+                Name = Sandwich.Name,
+                Ingredients = Sandwich.Ingredients.Select(x => x.ToTransfertObject()).ToList(),
+                Supplier = Sandwich.Supplier.ToTransfertObject()
             };
         }
     }

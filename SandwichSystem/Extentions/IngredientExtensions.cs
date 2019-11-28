@@ -1,22 +1,25 @@
 ﻿using SandwichSystem.BusinessLayer.Domain;
-using SandwichSystem.Shared;
-using SandwichSystem.Shared.BTO;
-using SandwichSystem.Shared.DTO;
-using System;
-using System.Linq;
+using SandwichSystem.Shared.TransfertObjects;
 
 namespace SandwichSystem.BusinessLayer.Extentions
 {
     public static class IngredientExtensions
     {
-        public static Ingredient ToDomain(this string ingredientBTO, Language Langue)
+        public static Ingredient ToDomain(this IngredientTO IngredientTO)
         {
-            //TO IMPLEMENT
-            return new Ingredient(null, false);
+            return new Ingredient(IngredientTO.Name, IngredientTO.IsAllergen)
+            {
+                Id = IngredientTO.Id
+            };
         }
-        public static Ingredient ToDomain(this IngredientDTO IngredientDTO)
+        public static IngredientTO ToTransfertObject(this Ingredient Ingredient)
         {
-            return new Ingredient(IngredientDTO.Name, IngredientDTO.IsAllergene);
+            return new IngredientTO()
+            {
+                Id = Ingredient.Id,
+                Name = Ingredient.Name,
+                IsAllergen = Ingredient.IsAllergen
+            };
         }
     }
 }

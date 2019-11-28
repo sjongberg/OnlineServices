@@ -1,8 +1,6 @@
-﻿
-using SandwichSystem.DataLayer.Entities;
+﻿using SandwichSystem.DataLayer.Entities;
 using SandwichSystem.Shared;
-using SandwichSystem.Shared.BTO;
-using SandwichSystem.Shared.DTO;
+using SandwichSystem.Shared.TransfertObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,39 +9,39 @@ namespace SandwichSystem.DataLayer.Extentions
 {
     public static class SandwichExtensions
     {
-        public static SandwichDTO ToDTO(this SandwichEF SandwichEF)
+        public static SandwichTO ToTranfertObject(this SandwichEF Sandwich)
         {
-            if (SandwichEF is null)
-                throw new ArgumentNullException(nameof(SandwichEF));
+            if (Sandwich is null)
+                throw new ArgumentNullException(nameof(Sandwich));
 
-            return new SandwichDTO
+            return new Shared.TransfertObjects.SandwichTO
             {
-                Id = SandwichEF.Id,
-                Name = new StringTranslated(SandwichEF.NameEnglish, SandwichEF.NameFrench, SandwichEF.NameDutch),
-                Ingredients = SandwichEF.SandwichIngredients?.Select(x => x.Ingredient.ToDTO()).ToList(),
-                Supplier = SandwichEF.Supplier.ToDTO()
+                Id = Sandwich.Id,
+                Name = new StringTranslated(Sandwich.NameEnglish, Sandwich.NameFrench, Sandwich.NameDutch),
+                Ingredients = Sandwich.SandwichIngredients?.Select(x => x.Ingredient.ToTranfertObject()).ToList(),
+                Supplier = Sandwich.Supplier.ToTranfertObject()
             };
         }
 
-        public static SandwichEF ToEF(this SandwichDTO SandwichDTO)
+        public static SandwichEF ToEF(this Shared.TransfertObjects.SandwichTO Sandwich)
         {
-            if (SandwichDTO is null)
-                throw new ArgumentNullException(nameof(SandwichDTO));
+            if (Sandwich is null)
+                throw new ArgumentNullException(nameof(Sandwich));
 
             var ReturnValue = new SandwichEF()
             {
-                Id = SandwichDTO.Id,
-                NameEnglish = SandwichDTO.Name.English,
-                NameFrench = SandwichDTO.Name.French,
-                NameDutch = SandwichDTO.Name.Dutch,
+                Id = Sandwich.Id,
+                NameEnglish = Sandwich.Name.English,
+                NameFrench = Sandwich.Name.French,
+                NameDutch = Sandwich.Name.Dutch,
 
-                Supplier = new SupplierEF { Id = SandwichDTO.Supplier.Id, Name = SandwichDTO.Supplier.Name },
+                Supplier = Sandwich.Supplier.ToEF(),
                 SandwichIngredients = new List<SandwichIngredient>()
 
                 //Ingredients = SandwichDTO.Ingredients.Select(x => x.ToEF()).ToList()
             };
 
-            foreach (var i in SandwichDTO.Ingredients)
+            foreach (var i in Sandwich.Ingredients)
             {
                 ReturnValue.SandwichIngredients.Add(
                     new SandwichIngredient()

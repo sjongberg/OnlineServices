@@ -19,7 +19,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cross-Cutting", "Cross-Cutt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandwichSystem.Shared", "SandwichSystem.Shared\SandwichSystem.Shared.csproj", "{D6E9890A-B959-41BD-8E24-280324742ABB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandwichSystem.SharedTests", "SandwichSystem.SharedTests\SandwichSystem.SharedTests.csproj", "{46214B6C-4E65-473F-9BF7-59B385C48480}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandwichSystem.SharedTests", "SandwichSystem.SharedTests\SandwichSystem.SharedTests.csproj", "{46214B6C-4E65-473F-9BF7-59B385C48480}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "User Interfaces", "User Interfaces", "{62AD5A2E-5251-4EE1-A7BF-0549067846BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{36AE1E9F-8116-4EE8-8F29-D104432E7023}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
