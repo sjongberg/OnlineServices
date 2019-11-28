@@ -6,7 +6,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Assistante
     {
         public Assistante(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
-            UnitOfWork = unitOfWork;
+            UnitOfWork = unitOfWork ?? throw new System.ArgumentNullException(nameof(unitOfWork));
         }
 
         public IUnitOfWork UnitOfWork { get; }

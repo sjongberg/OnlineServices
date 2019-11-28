@@ -8,13 +8,14 @@ namespace SandwichSystem.BusinessLayer.UseCases.Assistante
     {
         public bool AddSupplier(SupplierTO Supplier)
         {
+            if (Supplier is null)
+                throw new ArgumentNullException(nameof(Supplier));
+
+            if (Supplier.Id != 0)
+                throw new Exception("Existing supplier");
+
             try
             {
-                if (Supplier is null)
-                    throw new ArgumentNullException(nameof(Supplier));
-
-                if (Supplier.Id != 0)
-                    throw new Exception("Existing supplier");
 
                 UnitOfWork.SupplierRepository.Insert(Supplier.ToDomain().ToTransfertObject());
 

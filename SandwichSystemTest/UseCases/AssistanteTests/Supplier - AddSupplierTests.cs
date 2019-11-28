@@ -4,7 +4,6 @@ using SandwichSystem.BusinessLayer.UseCases.Assistante;
 using SandwichSystem.Shared.Interfaces;
 using SandwichSystem.Shared.TransfertObjects;
 using System;
-using SandwichSystem.Shared.TransfertObjects;
 
 namespace SandwichSystem.BusinessLayerTests.UseCases.AssistanteTests
 {
@@ -20,7 +19,23 @@ namespace SandwichSystem.BusinessLayerTests.UseCases.AssistanteTests
 
             //ACT
             Assert.ThrowsException<Exception>( () => AssistanteRole.AddSupplier(SupplierToAdd));
+            //TODO TEST IF INSERT IS CALLED Times.None: mockSupplierRepository.Verify(x => x.Insert(It.IsAny<SupplierTO>()), Times.Once);
+
         }
+
+        [TestMethod]
+        public void AddSupplier_ThrowException_WhenSupplierNameISEmptyString()
+        {
+            //ARRANGE
+            var AssistanteRole = new Assistante((new Mock<IUnitOfWork>()).Object);
+            var SupplierToAdd = new SupplierTO { Id = 0, Name = "" };
+
+            //ACT
+            Assert.ThrowsException<Exception>(() => AssistanteRole.AddSupplier(SupplierToAdd));
+            //TODO TEST IF INSERT IS CALLED Times.None: mockSupplierRepository.Verify(x => x.Insert(It.IsAny<SupplierTO>()), Times.Once);
+
+        }
+
 
         [TestMethod]
         public void AddSupplier_ThrowException_WhenSupplierIsNull()
@@ -30,6 +45,8 @@ namespace SandwichSystem.BusinessLayerTests.UseCases.AssistanteTests
 
             //ACT
             Assert.ThrowsException<ArgumentNullException>(() => AssistanteRole.AddSupplier(null));
+            //TODO TEST IF INSERT IS CALLED Times.None: mockSupplierRepository.Verify(x => x.Insert(It.IsAny<SupplierTO>()), Times.Once);
+
         }
 
         [TestMethod]

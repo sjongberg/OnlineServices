@@ -9,16 +9,16 @@ namespace SandwichSystem.BusinessLayer.Extentions
 {
     public static class SandwichExtensions
     {
-        public static SandwichBTO ToBTO(this Sandwich Sandwich, Language Langue)
-        {
-            return new SandwichBTO
-            {
-                Id = Sandwich.Id,
-                Name = Sandwich.ToString(Langue),
-                Ingredients = String.Join(" - ", Sandwich.Ingredients.Select(x => x.ToString(Langue))),
-                //Supplier = Sandwich.Supplier.ToTransfertObject()
-            };
-        }
+        //public static SandwichBTO ToBTO(this Sandwich Sandwich, Language Langue)
+        //{
+        //    return new SandwichBTO
+        //    {
+        //        Id = Sandwich.Id,
+        //        Name = Sandwich.ToString(Langue),
+        //        Ingredients = String.Join(" - ", Sandwich.Ingredients.Select(x => x.ToString(Langue))),
+        //        //Supplier = Sandwich.Supplier.ToTransfertObject()
+        //    };
+        //}
 
         public static Sandwich ToDomain(this SandwichTO SandwichTO)
         {
