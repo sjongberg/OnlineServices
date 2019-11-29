@@ -19,7 +19,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Assistante
 
             try
             {
-                UnitOfWork.SupplierRepository.SetDefaultSupplier(Supplier.ToDomain().ToTransfertObject());
+                iUnitOfWork.SupplierRepository.SetDefaultSupplier(Supplier.ToDomain().ToTransfertObject());
 
                 return true;
             }

@@ -16,7 +16,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Assistante
                 if (Supplier.Id == 0)
                     throw new Exception("Inexisting supplier");
 
-                UnitOfWork.SupplierRepository.Update(Supplier.ToDomain().ToTransfertObject());
+                iUnitOfWork.SupplierRepository.Update(Supplier.ToDomain().ToTransfertObject());
 
                 return true;
             }

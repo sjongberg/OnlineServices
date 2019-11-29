@@ -86,5 +86,27 @@ namespace SandwichSystem.BusinessLayerTests.UseCases.AssistanteTests
 
             mockSupplierRepository.Verify(x => x.Insert(It.IsAny<SupplierTO>()), Times.Once);
         }
+
+        [TestMethod]
+        public void AddSupplier_ReturnsTrueAndSetsDefault_WhenAValidSupplierIsProvidedWithIsDefaultAndAddToDB()
+        {
+            //ARRANGE
+            var mockSupplierRepository = new Mock<ISupplierRepository>();
+            mockSupplierRepository.Setup(x => x.Insert(It.IsAny<SupplierTO>()));
+            mockSupplierRepository.Setup(x => x.SetDefaultSupplier(It.IsAny<SupplierTO>()));
+
+            var mockUoW = new Mock<IUnitOfWork>();
+            mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
+
+            var AssistanteRole = new Assistante(mockUoW.Object);
+            var SupplierToAdd = new SupplierTO { Id = 0, Name = "InexistantSupplier", IsDefault=true };
+
+            //ACT
+            var ReturnValueToAssert = AssistanteRole.AddSupplier(SupplierToAdd);
+
+            Assert.IsTrue(ReturnValueToAssert);
+            mockSupplierRepository.Verify(x => x.Insert(It.IsAny<SupplierTO>()), Times.Once);
+            mockSupplierRepository.Verify(x => x.SetDefaultSupplier(It.IsAny<SupplierTO>()), Times.Once);
+        }
     }
 }

@@ -4,11 +4,11 @@ namespace SandwichSystem.BusinessLayer.UseCases.Assistante
 {
     public partial class Assistante : Participant
     {
-        public Assistante(IUnitOfWork unitOfWork) : base(unitOfWork)
+        public Assistante(IUnitOfWork iUnitOfWork) : base(iUnitOfWork)
         {
-            UnitOfWork = unitOfWork ?? throw new System.ArgumentNullException(nameof(unitOfWork));
+            this.iUnitOfWork = iUnitOfWork ?? throw new System.ArgumentNullException(nameof(iUnitOfWork));
         }
 
-        public IUnitOfWork UnitOfWork { get; }
+        public IUnitOfWork iUnitOfWork { get; }
     }
 }

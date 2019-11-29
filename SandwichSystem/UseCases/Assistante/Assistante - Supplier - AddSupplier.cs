@@ -17,7 +17,10 @@ namespace SandwichSystem.BusinessLayer.UseCases.Assistante
             try
             {
 
-                UnitOfWork.SupplierRepository.Insert(Supplier.ToDomain().ToTransfertObject());
+                iUnitOfWork.SupplierRepository.Insert(Supplier.ToDomain().ToTransfertObject());
+
+                if (Supplier.IsDefault)
+                    iUnitOfWork.SupplierRepository.SetDefaultSupplier(Supplier.ToDomain().ToTransfertObject());
 
                 return true;
             }

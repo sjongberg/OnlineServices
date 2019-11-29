@@ -15,9 +15,9 @@ namespace SandwichSystem.BusinessLayerTests.UseCases.AssistanteTests
         {
             return new List<SupplierTO>
             {
-                new SupplierTO { Id=1, Name="Suplier1"},
-                new SupplierTO { Id=2, Name="Suplier3"},
-                new SupplierTO { Id=3, Name="Suplier3"}
+                new SupplierTO { Id=1, Name="Suplier1", IsDefault=false},
+                new SupplierTO { Id=2, Name="Suplier3", IsDefault=true},
+                new SupplierTO { Id=3, Name="Suplier3", IsDefault=false}
             };
         }
 
