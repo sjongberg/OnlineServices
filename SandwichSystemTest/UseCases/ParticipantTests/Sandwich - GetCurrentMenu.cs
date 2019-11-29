@@ -28,9 +28,9 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
             var Oeuf = new IngredientTO { Id = 10, Name = new StringTranslated("Eggs", "Oeufs", "Eien"), IsAllergen = true };
             var Miel = new IngredientTO { Id = 11, Name = new StringTranslated("Honey", "Miel", "Honing"), IsAllergen = false };
 
-            MealTO Club = new MealTO { Id = 1, Name = new StringTranslated("ClubEN", "ClubFR", "ClubNL"), Supplier = new SupplierTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientTO>() };
-            MealTO BrieNoix = new MealTO { Id = 2, Name = new StringTranslated("BrieEN", "BrieFR", "BrieNL"), Supplier = new SupplierTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientTO>() };
-            MealTO PestoVerde = new MealTO { Id = 3, Name = new StringTranslated("PestoEN", "PestoFR", "PestoNL"), Supplier = new SupplierTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientTO>() };
+            MealTO Club = new MealTO { Id = 1, Name = new StringTranslated("ClubEN", "ClubFR", "ClubNL"), Supplier = new SupplierTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientTO>(), MealType=MealType.Sandwich };
+            MealTO BrieNoix = new MealTO { Id = 2, Name = new StringTranslated("BrieEN", "BrieFR", "BrieNL"), Supplier = new SupplierTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientTO>(), MealType = MealType.Sandwich };
+            MealTO PestoVerde = new MealTO { Id = 3, Name = new StringTranslated("PestoEN", "PestoFR", "PestoNL"), Supplier = new SupplierTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientTO>(), MealType = MealType.Sandwich };
 
             BrieNoix.Ingredients.Add(Brie);
             BrieNoix.Ingredients.Add(Miel);
