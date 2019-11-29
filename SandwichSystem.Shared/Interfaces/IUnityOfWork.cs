@@ -2,7 +2,7 @@
 {
     public interface IUnitOfWork
     {
-        ISandwichRepository SandwichRepository { get; }
+        IMealRepository MealRepository { get; }
         ISupplierRepository SupplierRepository { get; }
 
         void Dispose();

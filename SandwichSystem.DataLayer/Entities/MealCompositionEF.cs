@@ -2,12 +2,13 @@
 
 namespace SandwichSystem.DataLayer.Entities
 {
-    public class SandwichIngredient
+    [Table("MealComposition")]
+    public class MealCompositionEF
     {
-        public int SandwichId { get; set; }
+        public int MealId { get; set; }
 
-        [ForeignKey("SandwichId")]
-        public SandwichEF Sandwich { get; set; }
+        [ForeignKey("MealId")]
+        public MealEF Meal { get; set; }
 
         public int IngredientId { get; set; }
 

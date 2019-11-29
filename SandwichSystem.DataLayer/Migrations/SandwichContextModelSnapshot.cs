@@ -8,7 +8,7 @@ using SandwichSystem.DataLayer;
 
 namespace SandwichSystem.DataLayer.Migrations
 {
-    [DbContext(typeof(SandwichSystemContext))]
+    [DbContext(typeof(MealContext))]
     partial class SandwichContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

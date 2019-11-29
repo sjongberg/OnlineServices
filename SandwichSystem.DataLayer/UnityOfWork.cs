@@ -7,21 +7,21 @@ namespace SandwichSystem.DataLayer
 {
     public class UnitOfWork : IDisposable, IUnitOfWork
     {
-        public UnitOfWork(SandwichSystemContext Context)
+        public UnitOfWork(MealContext Context)
         {
             this.DbContext = Context;
         }
 
-        private SandwichSystemContext DbContext;
+        private MealContext DbContext;
 
-        private ISandwichRepository sandwichRepository;
-        public ISandwichRepository SandwichRepository
+        private IMealRepository mealRepository;
+        public IMealRepository MealRepository
         {
             get
             {
-                if (sandwichRepository == null)
-                    sandwichRepository = new SandwichRepository(DbContext);
-                return sandwichRepository;
+                if (mealRepository == null)
+                    mealRepository = new MealRepository(DbContext);
+                return mealRepository;
             }
         }
 
@@ -52,7 +52,7 @@ namespace SandwichSystem.DataLayer
             DbContext.Dispose();
             DbContext = null;
 
-            sandwichRepository = null;
+            mealRepository = null;
             supplierRepository = null;
         }
 

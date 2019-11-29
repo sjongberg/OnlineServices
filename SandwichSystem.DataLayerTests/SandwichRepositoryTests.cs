@@ -10,7 +10,7 @@ namespace SandwichSystem.DataLayerTests
         [TestMethod]
         public void SandwichRepository_ShouldInsertInDb_WhenValidSandwichIsProvided()
         {
-            var repoMock = new Mock<ISandwichRepository>();
+            var repoMock = new Mock<IMealRepository>();
 
             //repoMock.Setup(x=>x.Insert).
 

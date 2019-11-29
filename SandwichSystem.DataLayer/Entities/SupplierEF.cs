@@ -14,6 +14,6 @@ namespace SandwichSystem.DataLayer.Entities
 
         public bool IsCurrentSupplier { get; set; }
 
-        public ICollection<SandwichEF> Sandwiches { get; set; }
+        public ICollection<MealEF> Meals { get; set; }
     }
 }

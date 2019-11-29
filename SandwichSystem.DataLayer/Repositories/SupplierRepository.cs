@@ -10,22 +10,22 @@ namespace SandwichSystem.DataLayer.Repositories
 {
     public class SupplierRepository : ISupplierRepository
     {
-        public SupplierRepository(SandwichSystemContext ContextInjected)
+        public SupplierRepository(MealContext ContextIoC)
         {
-            this.SandwichContext = ContextInjected ?? throw new ArgumentNullException(nameof(ContextInjected));
+            mealContext = ContextIoC ?? throw new ArgumentNullException($"{nameof(ContextIoC)} in SupplierRepository");
         }
 
-        public SandwichSystemContext SandwichContext { get; private set; }
+        public MealContext mealContext { get; private set; }
 
         public void Delete(SupplierTO Entity)
         {
-            var sandwichRepository = new SandwichRepository(this.SandwichContext);
+            var sandwichRepository = new MealRepository(this.mealContext);
 
             if (sandwichRepository.GetSandwichesBySupplier(Entity).Any())
                 throw new Exception("Cannot delete supplier that has a sandwich in db.");
             else
             {
-                SandwichContext.Suppliers.Remove(Entity.ToEF());
+                mealContext.Suppliers.Remove(Entity.ToEF());
             }
         }
 
@@ -36,7 +36,7 @@ namespace SandwichSystem.DataLayer.Repositories
 
         public IEnumerable<SupplierTO> GetAll()
         {
-            return SandwichContext.Suppliers
+            return mealContext.Suppliers
                 .AsNoTracking()
                 .Select(x => x.ToTranfertObject())
                 .ToList();
@@ -44,7 +44,7 @@ namespace SandwichSystem.DataLayer.Repositories
 
         public SupplierTO GetByID(int Id)
         {
-            return SandwichContext.Suppliers
+            return mealContext.Suppliers
                 .AsNoTracking()
                 .FirstOrDefault(x => x.Id == Id)
                 .ToTranfertObject();
@@ -52,10 +52,10 @@ namespace SandwichSystem.DataLayer.Repositories
 
         public SupplierTO GetCurrentSupplier()
         {
-            if (SandwichContext.Suppliers.Count(x=>x.IsCurrentSupplier==true) != 1)
+            if (mealContext.Suppliers.Count(x=>x.IsCurrentSupplier==true) != 1)
                 throw new Exception("Current Supplier not well configured in DB");
          
-            return SandwichContext.Suppliers
+            return mealContext.Suppliers
                 .AsNoTracking()
                 .FirstOrDefault(x => x.IsCurrentSupplier == true)
                 .ToTranfertObject();
@@ -76,7 +76,7 @@ namespace SandwichSystem.DataLayer.Repositories
             var SupplierToMakeCurrent = GetByID(Supplier.Id);
             SupplierToMakeCurrent.IsCurrentSupplier = true;
 
-            SandwichContext.Suppliers
+            mealContext.Suppliers
                 .UpdateRange(
                     GetAll()
                     .Select(x => { x.IsCurrentSupplier = false; return x.ToEF(); })
@@ -85,7 +85,7 @@ namespace SandwichSystem.DataLayer.Repositories
 
             Update(SupplierToMakeCurrent);
 
-            if (SandwichContext.Suppliers.Count(x => x.IsCurrentSupplier == true) != 1)
+            if (mealContext.Suppliers.Count(x => x.IsCurrentSupplier == true) != 1)
                 throw new Exception("Current Supplier not well configured in DB");
         }
 

@@ -20,7 +20,7 @@ namespace SandwichSystem.BusinessLayer.Extentions
         //    };
         //}
 
-        public static Sandwich ToDomain(this SandwichTO SandwichTO)
+        public static Sandwich ToDomain(this MealTO SandwichTO)
         {
             return new Sandwich(SandwichTO.Name, SandwichTO.Supplier.ToDomain())
             {
@@ -29,9 +29,9 @@ namespace SandwichSystem.BusinessLayer.Extentions
             };
         }
 
-        public static SandwichTO ToTransfertObject(this Sandwich Sandwich)
+        public static MealTO ToTransfertObject(this Sandwich Sandwich)
         {
-            return new SandwichTO
+            return new MealTO
             {
                 Id = Sandwich.Id,
                 Name = Sandwich.Name,
