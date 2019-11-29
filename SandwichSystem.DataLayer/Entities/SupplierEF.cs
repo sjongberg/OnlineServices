@@ -12,7 +12,7 @@ namespace SandwichSystem.DataLayer.Entities
         
         public string Name { get; set; }
 
-        public bool IsCurrentSupplier { get; set; }
+        public bool IsDefault { get; set; }
 
         public ICollection<MealEF> Meals { get; set; }
     }

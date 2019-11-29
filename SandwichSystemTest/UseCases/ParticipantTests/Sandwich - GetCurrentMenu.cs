@@ -68,7 +68,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
             //var fakeIngredientRepo = new Mock<IRepository<IngredientTO, int>>();
 
             var fakeSupplierRepo = new Mock<ISupplierRepository>();
-            fakeSupplierRepo.Setup(x => x.GetCurrentSupplier()).Returns(SupplierToUse);
+            fakeSupplierRepo.Setup(x => x.GetDefaultSupplier()).Returns(SupplierToUse);
 
             var unitOfWorkMock = new Mock<IUnitOfWork>();
             unitOfWorkMock.Setup(x => x.MealRepository).Returns(fakeSandwichRepo.Object);
@@ -92,7 +92,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
             fakeSandwichRepo.Setup(x => x.GetSandwichesBySupplier(It.IsAny<SupplierTO>())).Returns(GetTestsListOfSandwich());
 
             var fakeSupplierRepo = new Mock<ISupplierRepository>();
-            fakeSupplierRepo.Setup(x => x.GetCurrentSupplier()).Returns(SupplierToUse);
+            fakeSupplierRepo.Setup(x => x.GetDefaultSupplier()).Returns(SupplierToUse);
 
             var unitOfWorkMock = new Mock<IUnitOfWork>();
             unitOfWorkMock.Setup(x => x.MealRepository).Returns(fakeSandwichRepo.Object);
@@ -122,7 +122,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
             fakeSandwichRepo.Setup(x => x.GetSandwichesBySupplier(It.IsAny<SupplierTO>())).Returns(GetTestsListOfSandwich());
 
             var fakeSupplierRepo = new Mock<ISupplierRepository>();
-            fakeSupplierRepo.Setup(x => x.GetCurrentSupplier()).Returns(SupplierToUse);
+            fakeSupplierRepo.Setup(x => x.GetDefaultSupplier()).Returns(SupplierToUse);
 
             var unitOfWorkMock = new Mock<IUnitOfWork>();
             unitOfWorkMock.Setup(x => x.MealRepository).Returns(fakeSandwichRepo.Object);
@@ -152,7 +152,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
             fakeSandwichRepo.Setup(x => x.GetSandwichesBySupplier(It.IsAny<SupplierTO>())).Returns(GetTestsListOfSandwich());
 
             var fakeSupplierRepo = new Mock<ISupplierRepository>();
-            fakeSupplierRepo.Setup(x => x.GetCurrentSupplier()).Returns(SupplierToUse);
+            fakeSupplierRepo.Setup(x => x.GetDefaultSupplier()).Returns(SupplierToUse);
 
             var unitOfWorkMock = new Mock<IUnitOfWork>();
             unitOfWorkMock.Setup(x => x.MealRepository).Returns(fakeSandwichRepo.Object);

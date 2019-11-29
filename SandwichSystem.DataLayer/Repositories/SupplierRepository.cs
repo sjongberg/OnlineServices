@@ -50,14 +50,21 @@ namespace SandwichSystem.DataLayer.Repositories
                 .ToTranfertObject();
         }
 
-        public SupplierTO GetCurrentSupplier()
+        private bool isDefaultSupplierUniquenessWithThrow(string MethodName)
         {
-            if (mealContext.Suppliers.Count(x=>x.IsCurrentSupplier==true) != 1)
-                throw new Exception("Current Supplier not well configured in DB");
-         
+            if (mealContext.Suppliers.Count(x => x.IsDefault == true) != 1)
+                throw new Exception($"{MethodName}. Default Supplier not well configured in DB");
+            else
+                return true;
+        }
+
+        public SupplierTO GetDefaultSupplier()
+        {
+            isDefaultSupplierUniquenessWithThrow("GetCurrentSupplier()");
+
             return mealContext.Suppliers
                 .AsNoTracking()
-                .FirstOrDefault(x => x.IsCurrentSupplier == true)
+                .FirstOrDefault(x => x.IsDefault == true)
                 .ToTranfertObject();
         }
 
@@ -66,7 +73,7 @@ namespace SandwichSystem.DataLayer.Repositories
             throw new NotImplementedException();
         }
 
-        public void SetCurrentSupplier(SupplierTO Supplier)
+        public void SetDefaultSupplier(SupplierTO Supplier)
         {
             if (Supplier is null)
                 throw new ArgumentNullException(nameof(Supplier));
@@ -74,19 +81,18 @@ namespace SandwichSystem.DataLayer.Repositories
                 throw new Exception("Invalid SupplierID");
 
             var SupplierToMakeCurrent = GetByID(Supplier.Id);
-            SupplierToMakeCurrent.IsCurrentSupplier = true;
+            SupplierToMakeCurrent.IsDefault = true;
 
             mealContext.Suppliers
                 .UpdateRange(
                     GetAll()
-                    .Select(x => { x.IsCurrentSupplier = false; return x.ToEF(); })
+                    .Select(x => { x.IsDefault = false; return x.ToEF(); })
                     .ToArray()
                 );
 
             Update(SupplierToMakeCurrent);
 
-            if (mealContext.Suppliers.Count(x => x.IsCurrentSupplier == true) != 1)
-                throw new Exception("Current Supplier not well configured in DB");
+            isDefaultSupplierUniquenessWithThrow("SetCurrentSupplier(SupplierTO) after update");
         }
 
         public void Update(SupplierTO Entity)

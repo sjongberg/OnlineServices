@@ -20,7 +20,7 @@ namespace SandwichSystem.BusinessLayer.UseCases
 
         public List<MealTO> GetCurrentMenu()
         {
-            var Supplier = UnitOfWork.SupplierRepository.GetCurrentSupplier();
+            var Supplier = UnitOfWork.SupplierRepository.GetDefaultSupplier();
 
             return UnitOfWork.MealRepository
                     .GetSandwichesBySupplier(Supplier)

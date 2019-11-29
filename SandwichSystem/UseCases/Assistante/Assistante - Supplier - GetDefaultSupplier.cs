@@ -5,9 +5,9 @@ namespace SandwichSystem.BusinessLayer.UseCases.Assistante
 {
     public partial class Assistante
     {
-        public SupplierTO GetCurrentSupplier()
+        public SupplierTO GetDefaultSupplier()
             => UnitOfWork.SupplierRepository
-                    .GetCurrentSupplier()
+                    .GetDefaultSupplier()
                     .ToDomain().ToTransfertObject();
     }
 }

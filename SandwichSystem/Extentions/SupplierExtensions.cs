@@ -14,7 +14,7 @@ namespace SandwichSystem.BusinessLayer.Extentions
                 {
                     Id = SupplierTO.Id,
                     Name = SupplierTO.Name,
-                    IsCurrentSupplier = SupplierTO.IsCurrentSupplier
+                    IsCurrentSupplier = SupplierTO.IsDefault
                 };
 
                 SupplierDomain.IsValid();
@@ -33,7 +33,7 @@ namespace SandwichSystem.BusinessLayer.Extentions
             {
                 Id = Supplier.Id,
                 Name = Supplier.Name,
-                IsCurrentSupplier = Supplier.IsCurrentSupplier
+                IsDefault = Supplier.IsCurrentSupplier
             };
         }
     }

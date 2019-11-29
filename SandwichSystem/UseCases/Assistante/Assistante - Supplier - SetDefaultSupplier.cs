@@ -6,7 +6,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Assistante
 {
     public partial class Assistante
     {
-        public bool SetCurrentSupplier(SupplierTO Supplier)
+        public bool SetDefaultSupplier(SupplierTO Supplier)
         {
             if (Supplier is null)
                 throw new ArgumentNullException(nameof(Supplier));
@@ -14,12 +14,12 @@ namespace SandwichSystem.BusinessLayer.UseCases.Assistante
             if (Supplier.Id == 0)
                 throw new Exception("Inexisting supplier");
 
-            if (!Supplier.IsCurrentSupplier)
+            if (!Supplier.IsDefault)
                 throw new Exception("Supplier not marked as current supplier.");
 
             try
             {
-                UnitOfWork.SupplierRepository.SetCurrentSupplier(Supplier.ToDomain().ToTransfertObject());
+                UnitOfWork.SupplierRepository.SetDefaultSupplier(Supplier.ToDomain().ToTransfertObject());
 
                 return true;
             }
