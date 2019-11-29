@@ -8,7 +8,7 @@ using SandwichSystem.DataLayer;
 
 namespace SandwichSystem.DataLayer.Migrations
 {
-    [DbContext(typeof(SandwichSystemContext))]
+    [DbContext(typeof(MealContext))]
     [Migration("20191118155153_v1")]
     partial class v1
     {

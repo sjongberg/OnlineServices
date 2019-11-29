@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using SandwichSystem.Shared.Enumerations;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SandwichSystem.DataLayer.Entities
 {
-    [Table("Sandwich")]
-    public class SandwichEF
+    [Table("Meal")]
+    public class MealEF
     {
         [Key]
         public int Id { get; set; }
@@ -14,8 +15,10 @@ namespace SandwichSystem.DataLayer.Entities
         public string NameFrench { get; set; }
         public string NameDutch { get; set; }
 
+        public MealType MealType { get; set; }
+
         public SupplierEF Supplier { get; set; }
 
-        public IList<SandwichIngredient> SandwichIngredients { get; set; }
+        public IList<MealCompositionEF> MealsComposition { get; set; }
     }
 }

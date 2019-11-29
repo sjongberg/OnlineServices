@@ -11,7 +11,7 @@ namespace SandwichSystem.DataLayer.Extentions
             {
                  Id = Supplier.Id,
                  Name = Supplier.Name,
-                 IsCurrentSupplier = Supplier.IsCurrentSupplier
+                 IsDefault = Supplier.IsDefault
             };
         }
 
@@ -21,7 +21,7 @@ namespace SandwichSystem.DataLayer.Extentions
             {
                 Id = Supplier.Id,
                 Name = Supplier.Name,
-                IsCurrentSupplier = Supplier.IsCurrentSupplier
+                IsDefault = Supplier.IsDefault
             };
         }
     }

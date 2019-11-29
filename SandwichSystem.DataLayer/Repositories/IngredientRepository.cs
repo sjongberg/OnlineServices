@@ -10,16 +10,16 @@ namespace SandwichSystem.DataLayer.Repositories
 {
     public class IngredientRepository : IRepository<IngredientTO, int>
     {
-        private SandwichSystemContext Context;
+        private MealContext mealContext;
 
-        public IngredientRepository(SandwichSystemContext ContextInjected)
+        public IngredientRepository(MealContext ContextIoC)
         {
-            Context = ContextInjected ?? throw new ArgumentNullException(nameof(ContextInjected));
+            mealContext = ContextIoC ?? throw new ArgumentNullException($"{nameof(ContextIoC)} in IngredientRepository");
         }
 
         public void Delete(IngredientTO Entity)
         {
-            Context.Ingredients.Remove(Entity.ToEF());
+            mealContext.Ingredients.Remove(Entity.ToEF());
         }
 
         public void Delete(int Id)
@@ -28,13 +28,13 @@ namespace SandwichSystem.DataLayer.Repositories
         }
 
         public IEnumerable<IngredientTO> GetAll()
-         => Context.Ingredients
-            .Include(x => x.SandwichIngredients)
+         => mealContext.Ingredients
+            .Include(x => x.MealsComposition)
             .Select(x => x.ToTranfertObject()).ToList();
 
         public IngredientTO GetByID(int Id)
-            => Context.Ingredients
-            .Include(x => x.SandwichIngredients)
+            => mealContext.Ingredients
+            .Include(x => x.MealsComposition)
             .FirstOrDefault(x => x.Id == Id).ToTranfertObject();
 
         public List<IngredientTO> GetSandwichesByIngredient(List<IngredientTO> Ingredients)
@@ -49,7 +49,7 @@ namespace SandwichSystem.DataLayer.Repositories
 
         public void Insert(IngredientTO entity)
         {
-            Context.Ingredients.Add(entity.ToEF());
+            mealContext.Ingredients.Add(entity.ToEF());
         }
 
         public void Update(IngredientTO Entity)

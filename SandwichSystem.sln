@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandwichSystem.DataLayer", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Logic", "Business Logic", "{F08B134A-2EF0-4BB1-965C-74BC5848D661}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Logic", "Data Logic", "{A4348AF5-684D-4727-BCC0-6B543E9BB028}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Access Layer", "Data Access Layer", "{A4348AF5-684D-4727-BCC0-6B543E9BB028}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandwichSystem.DataLayerTests", "SandwichSystem.DataLayerTests\SandwichSystem.DataLayerTests.csproj", "{8C35E748-60E3-407F-BB4E-C039CB3EF51F}"
 EndProject

@@ -9,18 +9,18 @@ namespace SandwichSystem.BusinessLayer.Extentions
 {
     public static class SandwichExtensions
     {
-        public static SandwichBTO ToBTO(this Sandwich Sandwich, Language Langue)
-        {
-            return new SandwichBTO
-            {
-                Id = Sandwich.Id,
-                Name = Sandwich.ToString(Langue),
-                Ingredients = String.Join(" - ", Sandwich.Ingredients.Select(x => x.ToString(Langue))),
-                //Supplier = Sandwich.Supplier.ToTransfertObject()
-            };
-        }
+        //public static SandwichBTO ToBTO(this Sandwich Sandwich, Language Langue)
+        //{
+        //    return new SandwichBTO
+        //    {
+        //        Id = Sandwich.Id,
+        //        Name = Sandwich.ToString(Langue),
+        //        Ingredients = String.Join(" - ", Sandwich.Ingredients.Select(x => x.ToString(Langue))),
+        //        //Supplier = Sandwich.Supplier.ToTransfertObject()
+        //    };
+        //}
 
-        public static Sandwich ToDomain(this SandwichTO SandwichTO)
+        public static Sandwich ToDomain(this MealTO SandwichTO)
         {
             return new Sandwich(SandwichTO.Name, SandwichTO.Supplier.ToDomain())
             {
@@ -29,9 +29,9 @@ namespace SandwichSystem.BusinessLayer.Extentions
             };
         }
 
-        public static SandwichTO ToTransfertObject(this Sandwich Sandwich)
+        public static MealTO ToTransfertObject(this Sandwich Sandwich)
         {
-            return new SandwichTO
+            return new MealTO
             {
                 Id = Sandwich.Id,
                 Name = Sandwich.Name,

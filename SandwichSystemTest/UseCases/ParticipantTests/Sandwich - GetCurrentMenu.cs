@@ -13,7 +13,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
     [TestClass()]
     public class ParticipantTests
     {
-        private List<SandwichTO> GetTestsListOfSandwich()
+        private List<MealTO> GetTestsListOfSandwich()
         {
             //REchercher Founisseur
             var Tomate = new IngredientTO { Id = 1, Name = new StringTranslated("Tomato", "Tomate", "Tomaat"), IsAllergen = false };
@@ -28,9 +28,9 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
             var Oeuf = new IngredientTO { Id = 10, Name = new StringTranslated("Eggs", "Oeufs", "Eien"), IsAllergen = true };
             var Miel = new IngredientTO { Id = 11, Name = new StringTranslated("Honey", "Miel", "Honing"), IsAllergen = false };
 
-            SandwichTO Club = new SandwichTO { Id = 1, Name = new StringTranslated("ClubEN", "ClubFR", "ClubNL"), Supplier = new SupplierTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientTO>() };
-            SandwichTO BrieNoix = new SandwichTO { Id = 2, Name = new StringTranslated("BrieEN", "BrieFR", "BrieNL"), Supplier = new SupplierTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientTO>() };
-            SandwichTO PestoVerde = new SandwichTO { Id = 3, Name = new StringTranslated("PestoEN", "PestoFR", "PestoNL"), Supplier = new SupplierTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientTO>() };
+            MealTO Club = new MealTO { Id = 1, Name = new StringTranslated("ClubEN", "ClubFR", "ClubNL"), Supplier = new SupplierTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientTO>(), MealType=MealType.Sandwich };
+            MealTO BrieNoix = new MealTO { Id = 2, Name = new StringTranslated("BrieEN", "BrieFR", "BrieNL"), Supplier = new SupplierTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientTO>(), MealType = MealType.Sandwich };
+            MealTO PestoVerde = new MealTO { Id = 3, Name = new StringTranslated("PestoEN", "PestoFR", "PestoNL"), Supplier = new SupplierTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientTO>(), MealType = MealType.Sandwich };
 
             BrieNoix.Ingredients.Add(Brie);
             BrieNoix.Ingredients.Add(Miel);
@@ -46,7 +46,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
             Club.Ingredients.Add(Fromage);
             //Rechercher la liste de sandwich
 
-            var lst = new List<SandwichTO>(); ;
+            var lst = new List<MealTO>(); ;
 
             lst.Add(BrieNoix);
             lst.Add(Club);
@@ -61,17 +61,17 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
             //ARRANGE
             var SupplierToUse = new SupplierTO() { Id = 33, Name = "MockedSupplier" };
 
-            var fakeSandwichRepo = new Mock<ISandwichRepository>();
+            var fakeSandwichRepo = new Mock<IMealRepository>();
             //fakeSandwichRepo.Setup(x => x.GetAll()).Returns(GetTestsListOfSandwich());
             fakeSandwichRepo.Setup(x => x.GetSandwichesBySupplier(It.IsAny<SupplierTO>())).Returns(GetTestsListOfSandwich());
 
             //var fakeIngredientRepo = new Mock<IRepository<IngredientTO, int>>();
 
             var fakeSupplierRepo = new Mock<ISupplierRepository>();
-            fakeSupplierRepo.Setup(x => x.GetCurrentSupplier()).Returns(SupplierToUse);
+            fakeSupplierRepo.Setup(x => x.GetDefaultSupplier()).Returns(SupplierToUse);
 
             var unitOfWorkMock = new Mock<IUnitOfWork>();
-            unitOfWorkMock.Setup(x => x.SandwichRepository).Returns(fakeSandwichRepo.Object);
+            unitOfWorkMock.Setup(x => x.MealRepository).Returns(fakeSandwichRepo.Object);
             unitOfWorkMock.Setup(x => x.SupplierRepository).Returns(fakeSupplierRepo.Object);
 
             //ACT
@@ -88,14 +88,14 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
             //ARRANGE
             var SupplierToUse = new SupplierTO() { Id = 33, Name = "MockedSupplier" };
 
-            var fakeSandwichRepo = new Mock<ISandwichRepository>();
+            var fakeSandwichRepo = new Mock<IMealRepository>();
             fakeSandwichRepo.Setup(x => x.GetSandwichesBySupplier(It.IsAny<SupplierTO>())).Returns(GetTestsListOfSandwich());
 
             var fakeSupplierRepo = new Mock<ISupplierRepository>();
-            fakeSupplierRepo.Setup(x => x.GetCurrentSupplier()).Returns(SupplierToUse);
+            fakeSupplierRepo.Setup(x => x.GetDefaultSupplier()).Returns(SupplierToUse);
 
             var unitOfWorkMock = new Mock<IUnitOfWork>();
-            unitOfWorkMock.Setup(x => x.SandwichRepository).Returns(fakeSandwichRepo.Object);
+            unitOfWorkMock.Setup(x => x.MealRepository).Returns(fakeSandwichRepo.Object);
             unitOfWorkMock.Setup(x => x.SupplierRepository).Returns(fakeSupplierRepo.Object);
 
             //ACT
@@ -118,14 +118,14 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
             //ARRANGE
             var SupplierToUse = new SupplierTO() { Id = 33, Name = "MockedSupplier" };
 
-            var fakeSandwichRepo = new Mock<ISandwichRepository>();
+            var fakeSandwichRepo = new Mock<IMealRepository>();
             fakeSandwichRepo.Setup(x => x.GetSandwichesBySupplier(It.IsAny<SupplierTO>())).Returns(GetTestsListOfSandwich());
 
             var fakeSupplierRepo = new Mock<ISupplierRepository>();
-            fakeSupplierRepo.Setup(x => x.GetCurrentSupplier()).Returns(SupplierToUse);
+            fakeSupplierRepo.Setup(x => x.GetDefaultSupplier()).Returns(SupplierToUse);
 
             var unitOfWorkMock = new Mock<IUnitOfWork>();
-            unitOfWorkMock.Setup(x => x.SandwichRepository).Returns(fakeSandwichRepo.Object);
+            unitOfWorkMock.Setup(x => x.MealRepository).Returns(fakeSandwichRepo.Object);
             unitOfWorkMock.Setup(x => x.SupplierRepository).Returns(fakeSupplierRepo.Object);
 
             //ACT
@@ -148,14 +148,14 @@ namespace SandwichSystem.BusinessLayer.UseCases.Tests
             //ARRANGE
             var SupplierToUse = new SupplierTO() { Id = 33, Name = "MockedSupplier" };
 
-            var fakeSandwichRepo = new Mock<ISandwichRepository>();
+            var fakeSandwichRepo = new Mock<IMealRepository>();
             fakeSandwichRepo.Setup(x => x.GetSandwichesBySupplier(It.IsAny<SupplierTO>())).Returns(GetTestsListOfSandwich());
 
             var fakeSupplierRepo = new Mock<ISupplierRepository>();
-            fakeSupplierRepo.Setup(x => x.GetCurrentSupplier()).Returns(SupplierToUse);
+            fakeSupplierRepo.Setup(x => x.GetDefaultSupplier()).Returns(SupplierToUse);
 
             var unitOfWorkMock = new Mock<IUnitOfWork>();
-            unitOfWorkMock.Setup(x => x.SandwichRepository).Returns(fakeSandwichRepo.Object);
+            unitOfWorkMock.Setup(x => x.MealRepository).Returns(fakeSandwichRepo.Object);
             unitOfWorkMock.Setup(x => x.SupplierRepository).Returns(fakeSupplierRepo.Object);
 
             //ACT

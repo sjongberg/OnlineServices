@@ -6,7 +6,7 @@ using SandwichSystem.Shared.Enumerations;
 namespace SandwichSystem.BusinessLayer.DomainTests
 {
     [TestClass]
-    public class SandwichTests
+    public class MealTests
     {
         Ingredient Brie = new Ingredient(new StringTranslated("Brie", "Brie", "Brie"), true);
         Ingredient Noix = new Ingredient(new StringTranslated("Nuts", "Noix", "Noten"), true);
@@ -24,17 +24,6 @@ namespace SandwichSystem.BusinessLayer.DomainTests
 
             var sute = BrieNoix.GetIngredientsString(Language.English);
             Assert.AreEqual(sute, "Brie* - Honey - Nuts*");
-        }
-
-        [TestMethod]
-        public void Supplier_ReturnsTheSupplierUsedInCTOR()
-        {
-            var supplierSUT = new Supplier { Id = 33, Name = "Supplier1" };
-
-            Sandwich BrieNoix2 = new Sandwich(new StringTranslated("Brie", "Brie", "Brie"), supplierSUT);
-
-            Assert.AreEqual(supplierSUT.Id, BrieNoix2.Supplier.Id);
-            Assert.AreEqual(supplierSUT.Name, BrieNoix2.Supplier.Name);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Assistante
     public partial class Assistante
     {
         public List<SupplierTO> GetSuppliers()
-            => UnitOfWork.SupplierRepository
+            => iUnitOfWork.SupplierRepository
                     .GetAll()
                     .Select(x => x.ToDomain().ToTransfertObject())
                     .ToList();

@@ -18,11 +18,11 @@ namespace SandwichSystem.BusinessLayer.UseCases
         //             .ToList();
         //}
 
-        public List<SandwichTO> GetCurrentMenu()
+        public List<MealTO> GetCurrentMenu()
         {
-            var Supplier = UnitOfWork.SupplierRepository.GetCurrentSupplier();
+            var Supplier = UnitOfWork.SupplierRepository.GetDefaultSupplier();
 
-            return UnitOfWork.SandwichRepository
+            return UnitOfWork.MealRepository
                     .GetSandwichesBySupplier(Supplier)
                     .Select(x => x.ToDomain().ToTransfertObject())
                      .ToList();
