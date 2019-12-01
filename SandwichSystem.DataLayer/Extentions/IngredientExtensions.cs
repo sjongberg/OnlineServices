@@ -19,6 +19,7 @@ namespace SandwichSystem.DataLayer.Extentions
                  IsAllergen = Ingredient.IsAllergen
             };
         }
+
         public static IngredientEF ToEF(this IngredientTO Ingredient)
         {
             if (Ingredient is null)

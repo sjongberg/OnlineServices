@@ -38,6 +38,9 @@ namespace SandwichSystem.DataLayer.Repositories
         {
             return mealContext.Suppliers
                 .AsNoTracking()
+                .Include(x => x.Meals)
+                    .ThenInclude(Meal => Meal.MealsComposition)
+                        .ThenInclude(MealsComposition => MealsComposition.Ingredient)
                 .Select(x => x.ToTranfertObject())
                 .ToList();
         }
@@ -46,6 +49,9 @@ namespace SandwichSystem.DataLayer.Repositories
         {
             return mealContext.Suppliers
                 .AsNoTracking()
+                .Include(x => x.Meals)
+                    .ThenInclude(Meal => Meal.MealsComposition)
+                        .ThenInclude(MealsComposition => MealsComposition.Ingredient)
                 .FirstOrDefault(x => x.Id == Id)
                 .ToTranfertObject();
         }
