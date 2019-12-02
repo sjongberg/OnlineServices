@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using SandwichSystem.Shared.Interfaces;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SandwichSystem.DataLayer.Entities
 {
     [Table("Ingredient")]
-    public class IngredientEF
+    public class IngredientEF: IMultiLanguageFields
     {
         [Key]
         public int Id{get;set;}

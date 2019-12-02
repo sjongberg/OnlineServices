@@ -1,5 +1,6 @@
 ﻿using SandwichSystem.DataLayer.Entities;
 using SandwichSystem.Shared;
+using SandwichSystem.Shared.Extentions;
 using SandwichSystem.Shared.TransfertObjects;
 using System;
 using System.Collections.Generic;
@@ -9,17 +10,18 @@ namespace SandwichSystem.DataLayer.Extentions
 {
     public static class MealExtensions
     {
-        public static MealTO ToTranfertObject(this MealEF Sandwich)
+        public static MealTO ToTranfertObject(this MealEF Meal)
         {
-            if (Sandwich is null)
-                throw new ArgumentNullException(nameof(Sandwich));
+            if (Meal is null)
+                throw new ArgumentNullException(nameof(Meal));
 
-            return new Shared.TransfertObjects.MealTO
+            return new MealTO
             {
-                Id = Sandwich.Id,
-                Name = new StringTranslated(Sandwich.NameEnglish, Sandwich.NameFrench, Sandwich.NameDutch),
-                Ingredients = Sandwich.MealsComposition?.Select(x => x.Ingredient.ToTranfertObject()).ToList(),
-                Supplier = Sandwich.Supplier.ToTranfertObject()
+                Id = Meal.Id,
+                Name = Meal.ExtractToStringTranslated(),
+                Ingredients = Meal.MealsComposition?.Select(x => x.Ingredient.ToTranfertObject()).ToList(),
+                Supplier = Meal.Supplier.ToTranfertObject(),
+                MealType = Meal.MealType,
             };
         }
 
@@ -31,9 +33,6 @@ namespace SandwichSystem.DataLayer.Extentions
             var ReturnValue = new MealEF()
             {
                 Id = Sandwich.Id,
-                NameEnglish = Sandwich.Name.English,
-                NameFrench = Sandwich.Name.French,
-                NameDutch = Sandwich.Name.Dutch,
 
                 Supplier = Sandwich.Supplier.ToEF(),
                 MealType = Sandwich.MealType,
@@ -42,6 +41,11 @@ namespace SandwichSystem.DataLayer.Extentions
                 //Ingredients = SandwichDTO.Ingredients.Select(x => x.ToEF()).ToList()
             };
 
+            ReturnValue = ReturnValue.FillFromStringTranslated(Sandwich.Name);
+
+
+            //TODO IngredientsTO to MealComposition Extention to use as
+            // andwichDTO.Ingredients.Select(x => x.ToMealCompositionEF()).ToList()??? or method in this file as toMEalComposition...
             foreach (var i in Sandwich.Ingredients)
             {
                 ReturnValue.MealsComposition.Add(
@@ -55,6 +59,19 @@ namespace SandwichSystem.DataLayer.Extentions
             }
 
             return ReturnValue;
+        }
+
+        public static MealEF UpdateFieldsFromDetached(this MealEF AttachedEF, MealEF DetachedEF)
+        {
+            if ((AttachedEF != default) && (DetachedEF != default))
+            {
+                AttachedEF.MealsComposition = DetachedEF.MealsComposition;
+                AttachedEF = AttachedEF.FillFromStringTranslated(DetachedEF.ExtractToStringTranslated());
+                AttachedEF.Supplier = DetachedEF.Supplier;
+                AttachedEF.MealType = DetachedEF.MealType;
+            }
+
+            return AttachedEF;
         }
     }
 }

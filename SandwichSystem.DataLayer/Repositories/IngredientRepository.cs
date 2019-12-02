@@ -17,14 +17,22 @@ namespace SandwichSystem.DataLayer.Repositories
             mealContext = ContextIoC ?? throw new ArgumentNullException($"{nameof(ContextIoC)} in IngredientRepository");
         }
 
-        public void Delete(IngredientTO Entity)
+        public bool Remove(IngredientTO Entity)
         {
-            mealContext.Ingredients.Remove(Entity.ToEF());
+            try
+            {
+                mealContext.Ingredients.Remove(Entity.ToEF());
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
         }
 
-        public void Delete(int Id)
+        public bool Remove(int Id)
         {
-            Delete(GetByID(Id));
+            return Remove(GetByID(Id));
         }
 
         public IEnumerable<IngredientTO> GetAll()

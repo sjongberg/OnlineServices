@@ -17,7 +17,7 @@ namespace SandwichSystem.DataLayer.Repositories
 
         public MealContext mealContext { get; private set; }
 
-        public void Delete(SupplierTO Entity)
+        public bool Remove(SupplierTO Entity)
         {
             var sandwichRepository = new MealRepository(this.mealContext);
 
@@ -26,13 +26,12 @@ namespace SandwichSystem.DataLayer.Repositories
             else
             {
                 mealContext.Suppliers.Remove(Entity.ToEF());
+                return true;
             }
         }
 
-        public void Delete(int Id)
-        {
-            Delete(GetByID(Id));
-        }
+        public bool Remove(int Id)
+            => Remove(GetByID(Id));
 
         public IEnumerable<SupplierTO> GetAll()
         {

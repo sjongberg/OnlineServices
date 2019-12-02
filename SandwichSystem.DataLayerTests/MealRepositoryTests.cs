@@ -192,7 +192,7 @@ namespace SandwichSystem.DataLayerTests
                 mealRepository.Insert(MealToUseInTest1);
                 mealRepository.Insert(MealToUseInTest2);
                 memoryCtx.SaveChanges();
-                mealRepository.Delete(2);
+                mealRepository.Remove(2);
                 memoryCtx.SaveChanges();
 
                 var retrievedMeals = mealRepository.GetAll();
@@ -247,11 +247,11 @@ namespace SandwichSystem.DataLayerTests
                 mealRepository.Insert(MealToUseInTest1);
                 mealRepository.Insert(MealToUseInTest2);
                 memoryCtx.SaveChanges();
-                mealRepository.Delete(2);
+                mealRepository.Remove(2);
                 memoryCtx.SaveChanges();
 
                 //ASSERT
-                Assert.ThrowsException<Exception>(() => mealRepository.Delete(2));
+                Assert.ThrowsException<Exception>(() => mealRepository.Remove(2));
             }
         }
         [TestMethod]
@@ -300,7 +300,7 @@ namespace SandwichSystem.DataLayerTests
                 mealRepository.Insert(MealToUseInTest2);
                 memoryCtx.SaveChanges();
                 MealToUseInTest2.Id = 2;
-                mealRepository.Delete(MealToUseInTest2);
+                mealRepository.Remove(MealToUseInTest2);
                 memoryCtx.SaveChanges();
 
                 var retrievedMeals = mealRepository.GetAll();
@@ -356,11 +356,11 @@ namespace SandwichSystem.DataLayerTests
                 mealRepository.Insert(MealToUseInTest2);
                 memoryCtx.SaveChanges();
                 MealToUseInTest2.Id = 2;
-                mealRepository.Delete(MealToUseInTest2);
+                mealRepository.Remove(MealToUseInTest2);
                 memoryCtx.SaveChanges();
 
                 //ASSERT
-                Assert.ThrowsException<Exception>(() => mealRepository.Delete(MealToUseInTest2));
+                Assert.ThrowsException<Exception>(() => mealRepository.Remove(MealToUseInTest2));
             }
         }
 

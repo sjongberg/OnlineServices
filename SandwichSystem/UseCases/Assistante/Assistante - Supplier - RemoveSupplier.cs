@@ -16,7 +16,7 @@ namespace SandwichSystem.BusinessLayer.UseCases.Assistante
                 if (Supplier.Id == 0)
                     throw new Exception("Supplier not in DB.");
 
-                iUnitOfWork.SupplierRepository.Delete(Supplier.ToDomain().ToTransfertObject());
+                iUnitOfWork.SupplierRepository.Remove(Supplier.ToDomain().ToTransfertObject());
 
                 return true;
             }

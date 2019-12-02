@@ -18,19 +18,30 @@ namespace SandwichSystem.DataLayer.Repositories
             mealContext = ContextIoC ?? throw new ArgumentNullException($"{nameof(ContextIoC)} in MealRepository");
         }
 
-        public void Delete(MealTO Entity)
-        {
-            Delete(Entity.Id);
-        }
+        public bool Remove(MealTO Entity)
+            => Remove(Entity.Id);
 
-        public void Delete(int Id)
+        public bool Remove(int Id)
         {
+            var ReturnValue = false;
             if (!mealContext.Meals.Any(x => x.Id == Id))
                 throw new Exception($"MealRepository. Delete(MealId = {Id}) no record to delete.");
 
             var meal = mealContext.Meals.FirstOrDefault(x => x.Id == Id);
             if (meal != default)
-                mealContext.Meals.Remove(meal);
+            {
+                try
+                {
+                    mealContext.Meals.Remove(meal);
+                    ReturnValue = true;
+                }
+                catch (Exception)
+                {
+                    ReturnValue = false;
+                }
+            }
+
+            return ReturnValue;
         }
 
         public IEnumerable<MealTO> GetAll()
@@ -70,7 +81,8 @@ namespace SandwichSystem.DataLayer.Repositories
 
         public void Insert(MealTO Entity)
         {
-            mealContext.Meals.Add(Entity.ToEF());
+            if (!mealContext.Meals.Any(x => x.Id == Entity.Id))
+                mealContext.Meals.Add(Entity.ToEF());
         }
 
         public void Update(MealTO Entity)
@@ -78,14 +90,12 @@ namespace SandwichSystem.DataLayer.Repositories
             if (!mealContext.Meals.Any(x => x.Id == Entity.Id))
                 throw new Exception($"MealRepository. Update(MealTransfertObject) no record to update.");
 
-            var meal = mealContext.Meals.FirstOrDefault(x => x.Id == Entity.Id);
-            if (meal != default)
-            {
-                meal.MealType = Entity.MealType;
-            }
-            mealContext.Meals.Update(meal);
-            //mealContext.Entry(meal).State = Entity.ToEF();
+            var attachedMeal = mealContext.Meals.FirstOrDefault(x => x.Id == Entity.Id);
 
+            if (attachedMeal != default)
+                attachedMeal.UpdateFieldsFromDetached(Entity.ToEF());
+
+            mealContext.Meals.Update(attachedMeal);
         }
     }
 }
