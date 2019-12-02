@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using SandwichSystem.Shared.TransfertObjects;
+using SandwichSystem.DataLayer.Entities;
 
 namespace SandwichSystem.DataLayer.Repositories
 {
@@ -17,54 +18,86 @@ namespace SandwichSystem.DataLayer.Repositories
             mealContext = ContextIoC ?? throw new ArgumentNullException($"{nameof(ContextIoC)} in MealRepository");
         }
 
-        public void Delete(Shared.TransfertObjects.MealTO Entity)
+        public bool Remove(MealTO Entity)
+            => Remove(Entity.Id);
+
+        public bool Remove(int Id)
         {
-            mealContext.Sandwiches.Remove(Entity.ToEF());
+            var ReturnValue = false;
+            if (!mealContext.Meals.Any(x => x.Id == Id))
+                throw new Exception($"MealRepository. Delete(MealId = {Id}) no record to delete.");
+
+            var meal = mealContext.Meals.FirstOrDefault(x => x.Id == Id);
+            if (meal != default)
+            {
+                try
+                {
+                    mealContext.Meals.Remove(meal);
+                    ReturnValue = true;
+                }
+                catch (Exception)
+                {
+                    ReturnValue = false;
+                }
+            }
+
+            return ReturnValue;
         }
 
-        public void Delete(int Id)
-        {
-            Delete(GetByID(Id));
-        }
-
-        public IEnumerable<Shared.TransfertObjects.MealTO> GetAll()
-         => mealContext.Sandwiches
-            .Include(x => x.Supplier)
-            .Include(x => x.MealsComposition)
-            .Select(x => x.ToTranfertObject()).ToList();
+        public IEnumerable<MealTO> GetAll()
+            => mealContext.Meals
+                .AsNoTracking()
+                .Include(x => x.MealsComposition)
+                    .ThenInclude(x => x.Ingredient)
+                .Include(x => x.Supplier)
+                .Select(x => x.ToTranfertObject())
+                .ToList();
 
         public MealTO GetByID(int Id)
-            => mealContext.Sandwiches
-            .Include(x => x.Supplier)
+            => mealContext.Meals
+            .AsNoTracking()
             .Include(x => x.MealsComposition)
+                .ThenInclude(x => x.Ingredient)
+            .Include(x => x.Supplier)
             .FirstOrDefault(x => x.Id == Id).ToTranfertObject();
 
-        public List<Shared.TransfertObjects.MealTO> GetSandwichesByIngredient(List<IngredientTO> Ingredients)
+        public List<MealTO> GetSandwichesByIngredient(List<IngredientTO> Ingredients)
         {
             throw new NotImplementedException();
         }
 
-        public List<Shared.TransfertObjects.MealTO> GetSandwichesBySupplier(SupplierTO Supplier)
-            => mealContext.Sandwiches
+        public List<MealTO> GetSandwichesBySupplier(SupplierTO Supplier)
+            => mealContext.Meals
             .Include(x => x.Supplier)
             .Include(x => x.MealsComposition)
-            .Where(x=>x.Supplier.Id == Supplier.Id)
-            .Select(x=>x.ToTranfertObject())
+            .Where(x => x.Supplier.Id == Supplier.Id)
+            .Select(x => x.ToTranfertObject())
             .ToList();
 
-        public List<Shared.TransfertObjects.MealTO> GetSandwichesWithoutIngredient(List<IngredientTO> Ingredients)
+        public List<MealTO> GetSandwichesWithoutIngredient(List<IngredientTO> Ingredients)
         {
             throw new NotImplementedException();
         }
 
-        public void Insert(Shared.TransfertObjects.MealTO Entity)
+        public void Insert(MealTO Entity)
         {
-            mealContext.Sandwiches.Add(Entity.ToEF());
+            if (!mealContext.Meals.Any(x => x.Id == Entity.Id))
+                mealContext.Meals.Add(Entity.ToEF());
         }
 
-        public void Update(Shared.TransfertObjects.MealTO Entity)
+        public void Update(MealTO Entity)
         {
-            throw new NotImplementedException();
+            if (!mealContext.Meals.Any(x => x.Id == Entity.Id))
+                throw new Exception($"MealRepository. Update(MealTransfertObject) no record to update.");
+
+            var attachedMeal = mealContext.Meals.FirstOrDefault(x => x.Id == Entity.Id);
+
+            if (attachedMeal != default)
+                attachedMeal.UpdateFieldsFromDetached(Entity.ToEF());
+
+            mealContext.Meals.Update(attachedMeal);
         }
     }
 }
+
+//DOC TO IMPLEMENT? https://www.codeproject.com/Articles/25418/Object-Cloning-Using-Generic-in-C

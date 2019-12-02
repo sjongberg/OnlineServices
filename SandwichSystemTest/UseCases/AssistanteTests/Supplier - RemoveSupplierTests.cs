@@ -37,7 +37,7 @@ namespace SandwichSystem.BusinessLayerTests.UseCases.AssistanteTests
         {
             //ARRANGE
             var mockSupplierRepository = new Mock<ISupplierRepository>();
-            mockSupplierRepository.Setup(x => x.Delete(It.IsAny<SupplierTO>()));
+            mockSupplierRepository.Setup(x => x.Remove(It.IsAny<SupplierTO>()));
 
             var mockUoW = new Mock<IUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
@@ -56,7 +56,7 @@ namespace SandwichSystem.BusinessLayerTests.UseCases.AssistanteTests
         {
             //ARRANGE
             var mockSupplierRepository = new Mock<ISupplierRepository>();
-            mockSupplierRepository.Setup(x => x.Delete(It.IsAny<SupplierTO>()));
+            mockSupplierRepository.Setup(x => x.Remove(It.IsAny<SupplierTO>()));
 
             var mockUoW = new Mock<IUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
@@ -67,7 +67,7 @@ namespace SandwichSystem.BusinessLayerTests.UseCases.AssistanteTests
             //ACT
             AssistanteRole.RemoveSupplier(SupplierToRemove);
 
-            mockSupplierRepository.Verify(x => x.Delete(It.IsAny<SupplierTO>()), Times.Once);
+            mockSupplierRepository.Verify(x => x.Remove(It.IsAny<SupplierTO>()), Times.Once);
         }
     }
 }

@@ -14,11 +14,12 @@ namespace SandwichSystem.DataLayer.Extentions
 
             return new IngredientTO
             {
-                 Id = Ingredient.Id,
-                  Name = new StringTranslated(Ingredient.NameEnglish, Ingredient.NameFrench, Ingredient.NameDutch),
-                 IsAllergen = Ingredient.IsAllergen
+                Id = Ingredient.Id,
+                Name = new StringTranslated(Ingredient.NameEnglish, Ingredient.NameFrench, Ingredient.NameDutch),
+                IsAllergen = Ingredient.IsAllergen
             };
         }
+
         public static IngredientEF ToEF(this IngredientTO Ingredient)
         {
             if (Ingredient is null)
@@ -26,6 +27,7 @@ namespace SandwichSystem.DataLayer.Extentions
 
             return new IngredientEF()
             {
+                Id = Ingredient.Id,
                 NameEnglish = Ingredient.Name.English,
                 NameFrench = Ingredient.Name.French,
                 NameDutch = Ingredient.Name.Dutch,

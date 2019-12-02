@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using SandwichSystem.Shared.Interfaces;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SandwichSystem.DataLayer.Entities
 {
     [Table("Ingredient")]
-    public class IngredientEF
+    public class IngredientEF: IMultiLanguageFields
     {
         [Key]
         public int Id{get;set;}
@@ -14,7 +15,7 @@ namespace SandwichSystem.DataLayer.Entities
         public string NameDutch { get; set; }
         public bool IsAllergen { get; set; }
 
-        public IList<MealCompositionEF> MealsComposition { get; set; }
+        public IList<MealCompositionEF> MealsWithIngredient { get; set; }
     }
 
 }

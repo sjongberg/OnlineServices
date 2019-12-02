@@ -1,4 +1,5 @@
 ﻿using SandwichSystem.Shared.Enumerations;
+using SandwichSystem.Shared.Interfaces;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace SandwichSystem.DataLayer.Entities
 {
     [Table("Meal")]
-    public class MealEF
+    public class MealEF: IMultiLanguageFields
     {
         [Key]
         public int Id { get; set; }

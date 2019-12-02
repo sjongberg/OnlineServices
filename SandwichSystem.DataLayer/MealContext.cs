@@ -5,6 +5,15 @@ namespace SandwichSystem.DataLayer
 {
     public class MealContext : DbContext
     {
+        public MealContext()
+        {
+
+        }
+
+        public MealContext(DbContextOptions<MealContext> options)
+        : base(options)
+        { }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -20,16 +29,17 @@ namespace SandwichSystem.DataLayer
             modelBuilder.Entity<MealCompositionEF>()
                 .HasOne<MealEF>(MealsIngredientsEF => MealsIngredientsEF.Meal)
                 .WithMany(MealEF => MealEF.MealsComposition)
-                .HasForeignKey(MealCompositionEF => MealCompositionEF.MealId);
-
+                .HasForeignKey(MealCompositionEF => MealCompositionEF.MealId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<MealCompositionEF>()
                 .HasOne<IngredientEF>(MealCompositionEF => MealCompositionEF.Ingredient)
-                .WithMany(IngredientEF => IngredientEF.MealsComposition)
-                .HasForeignKey(MealCompositionEF => MealCompositionEF.IngredientId);
+                .WithMany(IngredientEF => IngredientEF.MealsWithIngredient)
+                .HasForeignKey(MealsWithIngredient => MealsWithIngredient.IngredientId);
+                //.OnDelete(DeleteBehavior.Restrict);
         }
 
-        public DbSet<MealEF> Sandwiches { get; set; }
+        public DbSet<MealEF> Meals { get; set; }
         public DbSet<IngredientEF> Ingredients { get; set; }
         public DbSet<MealCompositionEF> MealCompositions { get; set; }
         public DbSet<SupplierEF> Suppliers { get; set; }
