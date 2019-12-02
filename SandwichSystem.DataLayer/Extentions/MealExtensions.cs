@@ -65,7 +65,11 @@ namespace SandwichSystem.DataLayer.Extentions
         {
             if ((AttachedEF != default) && (DetachedEF != default))
             {
-                AttachedEF.MealsComposition = DetachedEF.MealsComposition;
+                //AttachedEF.MealsComposition = //DetachedEF.MealsComposition;
+                //AttachedEF.MealsComposition
+                //    .ToList()
+                //    .UpdateListFromDetached(DetachedEF.MealsComposition.ToList());
+
                 AttachedEF = AttachedEF.FillFromStringTranslated(DetachedEF.ExtractToStringTranslated());
                 AttachedEF.Supplier = DetachedEF.Supplier;
                 AttachedEF.MealType = DetachedEF.MealType;

@@ -125,7 +125,7 @@ namespace SandwichSystem.DataLayerTests
                     Name = new StringTranslated("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
-                            Id = 1,
+                            Id = 2,
                             Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
@@ -164,7 +164,7 @@ namespace SandwichSystem.DataLayerTests
                     Name = new StringTranslated("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
-                            Id = 1,
+                            Id = 0,
                             Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
@@ -178,7 +178,7 @@ namespace SandwichSystem.DataLayerTests
                     Name = new StringTranslated("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
-                            Id = 1,
+                            Id = 0,
                             Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
@@ -190,6 +190,7 @@ namespace SandwichSystem.DataLayerTests
 
                 //ACT
                 mealRepository.Insert(MealToUseInTest1);
+                memoryCtx.SaveChanges();
                 mealRepository.Insert(MealToUseInTest2);
                 memoryCtx.SaveChanges();
                 mealRepository.Remove(2);
@@ -233,7 +234,7 @@ namespace SandwichSystem.DataLayerTests
                     Name = new StringTranslated("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
-                            Id = 1,
+                            Id = 2,
                             Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
@@ -285,7 +286,7 @@ namespace SandwichSystem.DataLayerTests
                     Name = new StringTranslated("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
-                            Id = 1,
+                            Id = 2,
                             Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
@@ -341,7 +342,7 @@ namespace SandwichSystem.DataLayerTests
                     Name = new StringTranslated("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
-                            Id = 1,
+                            Id = 2,
                             Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
@@ -376,11 +377,11 @@ namespace SandwichSystem.DataLayerTests
                 //ARRANGE
                 var MealToUseInTest = new MealTO
                 {
-                    Id = 0,
+                    Id = 1,
                     Name = new StringTranslated("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
-                            Id = 1,
+                            Id = 2,
                             Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
@@ -393,7 +394,7 @@ namespace SandwichSystem.DataLayerTests
                 //ACT
                 mealRepository.Insert(MealToUseInTest);
                 memoryCtx.SaveChanges();
-                MealToUseInTest.Id = 1;
+                //MealToUseInTest.Id = 1;
                 MealToUseInTest.MealType = MealType.Soupe;
                 mealRepository.Update(MealToUseInTest);
                 memoryCtx.SaveChanges();

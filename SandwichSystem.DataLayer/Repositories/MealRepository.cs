@@ -90,10 +90,18 @@ namespace SandwichSystem.DataLayer.Repositories
             if (!mealContext.Meals.Any(x => x.Id == Entity.Id))
                 throw new Exception($"MealRepository. Update(MealTransfertObject) no record to update.");
 
-            var attachedMeal = mealContext.Meals.FirstOrDefault(x => x.Id == Entity.Id);
+            var attachedMeal = mealContext.Meals
+                .Include(x=>x.MealsComposition)
+                    .ThenInclude(x=>x.Ingredient)
+                .FirstOrDefault(x => x.Id == Entity.Id);
 
             if (attachedMeal != default)
+            {
                 attachedMeal.UpdateFieldsFromDetached(Entity.ToEF());
+                //attachedMeal.MealsComposition = attachedMeal.MealsComposition
+                //    .ToList()
+                //    .UpdateListFromDetached(Entity.ToEF().MealsComposition.ToList());
+            }
 
             mealContext.Meals.Update(attachedMeal);
         }

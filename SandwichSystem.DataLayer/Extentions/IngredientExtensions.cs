@@ -1,5 +1,6 @@
 ﻿using SandwichSystem.DataLayer.Entities;
 using SandwichSystem.Shared;
+using SandwichSystem.Shared.Extentions;
 using SandwichSystem.Shared.TransfertObjects;
 using System;
 
@@ -34,6 +35,17 @@ namespace SandwichSystem.DataLayer.Extentions
 
                 IsAllergen = Ingredient.IsAllergen
             };
+        }
+
+        public static IngredientEF UpdateFieldsFromDetached(this IngredientEF AttachedEF, IngredientEF DetachedEF)
+        {
+            if ((AttachedEF != default) && (DetachedEF != default))
+            {
+                AttachedEF.IsAllergen = DetachedEF.IsAllergen;
+                AttachedEF = AttachedEF.FillFromStringTranslated(DetachedEF.ExtractToStringTranslated());
+            }
+
+            return AttachedEF;
         }
     }
 }
