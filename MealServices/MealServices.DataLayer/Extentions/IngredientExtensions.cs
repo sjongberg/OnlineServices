@@ -1,0 +1,54 @@
+﻿using MealServices.DataLayer.Entities;
+using MealServices.Shared;
+using MealServices.Shared.Extentions;
+using MealServices.Shared.TransfertObjects;
+using System;
+
+namespace MealServices.DataLayer.Extentions
+{
+    public static class IngredientExtensions
+    {
+        public static IngredientTO ToTranfertObject(this IngredientEF Ingredient)
+        {
+            if (Ingredient is null)
+                throw new ArgumentNullException(nameof(Ingredient));
+
+            return new IngredientTO
+            {
+                Id = Ingredient.Id,
+                Name = new StringTranslated(Ingredient.NameEnglish, Ingredient.NameFrench, Ingredient.NameDutch),
+                IsAllergen = Ingredient.IsAllergen
+            };
+        }
+
+        public static IngredientEF ToEF(this IngredientTO Ingredient)
+        {
+            if (Ingredient is null)
+                throw new ArgumentNullException(nameof(Ingredient));
+
+            return new IngredientEF()
+            {
+                Id = Ingredient.Id,
+                NameEnglish = Ingredient.Name.English,
+                NameFrench = Ingredient.Name.French,
+                NameDutch = Ingredient.Name.Dutch,
+
+                IsAllergen = Ingredient.IsAllergen
+            };
+        }
+
+        public static IngredientEF UpdateFromDetached(this IngredientEF AttachedEF, IngredientEF DetachedEF)
+        {
+            if (AttachedEF.Id != DetachedEF.Id)
+                throw new Exception("Cannot update IngredientEF entity as it is not the same.");
+
+            if ((AttachedEF != default) && (DetachedEF != default))
+            {
+                AttachedEF.IsAllergen = DetachedEF.IsAllergen;
+                AttachedEF = AttachedEF.FillFromStringTranslated(DetachedEF.ExtractToStringTranslated());
+            }
+
+            return AttachedEF;
+        }
+    }
+}
