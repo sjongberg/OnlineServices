@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AssemblyVersion>2019.12.3.3</AssemblyVersion>
+    <FileVersion>2019.12.3.3</FileVersion>
+    <ApplicationIcon />
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MealServices.DataLayer\MealServices.DataLayer.csproj" />
+    <ProjectReference Include="..\MealServices.Shared\MealServices.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

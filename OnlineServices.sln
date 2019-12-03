@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Logic Layer", "Business Logic Layer", "{F08B134A-2EF0-4BB1-965C-74BC5848D661}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Access Layer", "Data Access Layer", "{A4348AF5-684D-4727-BCC0-6B543E9BB028}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cross-Cutting", "Cross-Cutting", "{D448C9F6-AB3B-4938-AE1F-DFF20BEAB273}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "User Interfaces", "User Interfaces", "{62AD5A2E-5251-4EE1-A7BF-0549067846BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{36AE1E9F-8116-4EE8-8F29-D104432E7023}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MealServices", "MealServices", "{52DCD7F9-F2C0-45AA-A2BA-870AE47B87A3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MealServices.BusinessLayer", "MealServices\MealServices.BusinessLayer\MealServices.BusinessLayer.csproj", "{646F687F-4B2E-43B2-AEA2-E59250724110}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MealServices.BusinessLayerTests", "MealServices\MealServices.BusinessLayerTests\MealServices.BusinessLayerTests.csproj", "{899EE2C4-D8F5-4121-9477-FD57F3FC0241}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MealServices.Shared", "MealServices\MealServices.Shared\MealServices.Shared.csproj", "{26239059-5880-4665-9E55-CD569DC40272}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MealServices.SharedTests", "MealServices\MealServices.SharedTests\MealServices.SharedTests.csproj", "{039884EA-8080-4F55-848D-289681EC4D13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MealServices.DataLayer", "MealServices\MealServices.DataLayer\MealServices.DataLayer.csproj", "{C123D674-444E-4C48-B45B-2D4B9B261576}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MealServices.DataLayerTests", "MealServices\MealServices.DataLayerTests\MealServices.DataLayerTests.csproj", "{89F56160-267F-45FE-AB27-C92D3A868B85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{646F687F-4B2E-43B2-AEA2-E59250724110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{646F687F-4B2E-43B2-AEA2-E59250724110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{646F687F-4B2E-43B2-AEA2-E59250724110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{646F687F-4B2E-43B2-AEA2-E59250724110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{899EE2C4-D8F5-4121-9477-FD57F3FC0241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{899EE2C4-D8F5-4121-9477-FD57F3FC0241}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{899EE2C4-D8F5-4121-9477-FD57F3FC0241}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{899EE2C4-D8F5-4121-9477-FD57F3FC0241}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26239059-5880-4665-9E55-CD569DC40272}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26239059-5880-4665-9E55-CD569DC40272}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26239059-5880-4665-9E55-CD569DC40272}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26239059-5880-4665-9E55-CD569DC40272}.Release|Any CPU.Build.0 = Release|Any CPU
+		{039884EA-8080-4F55-848D-289681EC4D13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{039884EA-8080-4F55-848D-289681EC4D13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{039884EA-8080-4F55-848D-289681EC4D13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{039884EA-8080-4F55-848D-289681EC4D13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C123D674-444E-4C48-B45B-2D4B9B261576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C123D674-444E-4C48-B45B-2D4B9B261576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C123D674-444E-4C48-B45B-2D4B9B261576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C123D674-444E-4C48-B45B-2D4B9B261576}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89F56160-267F-45FE-AB27-C92D3A868B85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89F56160-267F-45FE-AB27-C92D3A868B85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89F56160-267F-45FE-AB27-C92D3A868B85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89F56160-267F-45FE-AB27-C92D3A868B85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F08B134A-2EF0-4BB1-965C-74BC5848D661} = {52DCD7F9-F2C0-45AA-A2BA-870AE47B87A3}
+		{A4348AF5-684D-4727-BCC0-6B543E9BB028} = {52DCD7F9-F2C0-45AA-A2BA-870AE47B87A3}
+		{D448C9F6-AB3B-4938-AE1F-DFF20BEAB273} = {52DCD7F9-F2C0-45AA-A2BA-870AE47B87A3}
+		{646F687F-4B2E-43B2-AEA2-E59250724110} = {F08B134A-2EF0-4BB1-965C-74BC5848D661}
+		{899EE2C4-D8F5-4121-9477-FD57F3FC0241} = {F08B134A-2EF0-4BB1-965C-74BC5848D661}
+		{26239059-5880-4665-9E55-CD569DC40272} = {D448C9F6-AB3B-4938-AE1F-DFF20BEAB273}
+		{039884EA-8080-4F55-848D-289681EC4D13} = {D448C9F6-AB3B-4938-AE1F-DFF20BEAB273}
+		{C123D674-444E-4C48-B45B-2D4B9B261576} = {A4348AF5-684D-4727-BCC0-6B543E9BB028}
+		{89F56160-267F-45FE-AB27-C92D3A868B85} = {A4348AF5-684D-4727-BCC0-6B543E9BB028}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C170EEE5-52F4-4C78-ABDF-890E97482E62}
+	EndGlobalSection
+EndGlobal
