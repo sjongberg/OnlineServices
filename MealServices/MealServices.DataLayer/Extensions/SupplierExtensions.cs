@@ -1,9 +1,9 @@
 ﻿using MealServices.DataLayer.Entities;
 using MealServices.Shared.TransfertObjects;
-using MealServices.Shared.Extentions;
+using MealServices.Shared.Extensions;
 using System;
 
-namespace MealServices.DataLayer.Extentions
+namespace MealServices.DataLayer.Extensions
 {
     public static class SupplierExtensions
     {

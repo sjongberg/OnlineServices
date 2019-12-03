@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using MealServices.BusinessLayer.Extentions;
+using MealServices.BusinessLayer.Extensions;
 using MealServices.Shared.Enumerations;
 using MealServices.Shared.TransfertObjects;
 
@@ -23,7 +23,7 @@ namespace MealServices.BusinessLayer.UseCases
             var Supplier = UnitOfWork.SupplierRepository.GetDefaultSupplier();
 
             return UnitOfWork.MealRepository
-                    .GetSandwichesBySupplier(Supplier)
+                    .GetMealsBySupplier(Supplier)
                     .Select(x => x.ToDomain().ToTransfertObject())
                      .ToList();
         }

@@ -18,7 +18,7 @@ namespace MealServices.DataLayerTests
     public class MealRepositoryTests
     {
         [TestMethod]
-        public void IRepositoryInsert_ShouldInsertInDb_WhenValidSandwichIsProvided()
+        public void IRepositoryInsert_ShouldInsertInDb_WhenValidMealIsProvided()
         {
             var options = new DbContextOptionsBuilder<MealContext>()
                 .UseInMemoryDatabase(databaseName: MethodBase.GetCurrentMethod().Name)
@@ -366,7 +366,7 @@ namespace MealServices.DataLayerTests
         }
 
         [TestMethod]
-        public void IRepositoryUpdate_ShouldUpdateInDb_WhenValidSandwichIsProvided()
+        public void IRepositoryUpdate_ShouldUpdateInDb_WhenValidMealIsProvided()
         {
             var options = new DbContextOptionsBuilder<MealContext>()
                 .UseInMemoryDatabase(databaseName: MethodBase.GetCurrentMethod().Name)
@@ -386,7 +386,7 @@ namespace MealServices.DataLayerTests
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
-                    MealType = MealType.Sandwich
+                    MealType = MealType.Salad
                 };
 
                 var mealRepository = new MealRepository(memoryCtx);
@@ -395,7 +395,7 @@ namespace MealServices.DataLayerTests
                 mealRepository.Insert(MealToUseInTest);
                 memoryCtx.SaveChanges();
                 //MealToUseInTest.Id = 1;
-                MealToUseInTest.MealType = MealType.Soupe;
+                MealToUseInTest.MealType = MealType.Sandwich;
                 mealRepository.Update(MealToUseInTest);
                 memoryCtx.SaveChanges();
 
@@ -405,7 +405,7 @@ namespace MealServices.DataLayerTests
                 Assert.AreEqual(1, MealToAssert.Id);
                 Assert.AreEqual(2, MealToAssert.Ingredients.FirstOrDefault().Id);
                 Assert.AreEqual("Sandwich1EN", MealToAssert.Name.English);
-                Assert.AreEqual(MealType.Soupe, MealToAssert.MealType);
+                Assert.AreEqual(MealType.Sandwich, MealToAssert.MealType);
             }
         }
     }

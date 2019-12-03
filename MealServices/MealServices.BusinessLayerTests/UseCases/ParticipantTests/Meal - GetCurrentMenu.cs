@@ -6,14 +6,14 @@ using MealServices.Shared.Enumerations;
 using System.Collections.Generic;
 using System.Linq;
 using MealServices.Shared.TransfertObjects;
-using MealServices.BusinessLayer.Extentions;
+using MealServices.BusinessLayer.Extensions;
 
 namespace MealServices.BusinessLayer.UseCases.Tests
 {
     [TestClass()]
     public class ParticipantTests
     {
-        private List<MealTO> GetTestsListOfSandwich()
+        private List<MealTO> GetTestsListOfMeals()
         {
             //REchercher Founisseur
             var Tomate = new IngredientTO { Id = 1, Name = new StringTranslated("Tomato", "Tomate", "Tomaat"), IsAllergen = false };
@@ -56,14 +56,14 @@ namespace MealServices.BusinessLayer.UseCases.Tests
         }
 
         [TestMethod()]
-        public void GetCurrentMenu_ReturnHasRightCountOfSandwiches_WhenAValidLanguageIsProvided()
+        public void GetCurrentMenu_ReturnHasRightCountOfMeals_WhenAValidLanguageIsProvided()
         {
             //ARRANGE
             var SupplierToUse = new SupplierTO() { Id = 33, Name = "MockedSupplier" };
 
             var fakeSandwichRepo = new Mock<IMealRepository>();
             //fakeSandwichRepo.Setup(x => x.GetAll()).Returns(GetTestsListOfSandwich());
-            fakeSandwichRepo.Setup(x => x.GetSandwichesBySupplier(It.IsAny<SupplierTO>())).Returns(GetTestsListOfSandwich());
+            fakeSandwichRepo.Setup(x => x.GetMealsBySupplier(It.IsAny<SupplierTO>())).Returns(GetTestsListOfMeals());
 
             //var fakeIngredientRepo = new Mock<IRepository<IngredientTO, int>>();
 
@@ -83,13 +83,13 @@ namespace MealServices.BusinessLayer.UseCases.Tests
         }
 
         [TestMethod]
-        public void GetCurrentMenu_ReturnSandwichesInEnglish_WhenEnglishLanguageIsProvided()
+        public void GetCurrentMenu_ReturnMealsInEnglish_WhenEnglishLanguageIsProvided()
         {
             //ARRANGE
             var SupplierToUse = new SupplierTO() { Id = 33, Name = "MockedSupplier" };
 
             var fakeSandwichRepo = new Mock<IMealRepository>();
-            fakeSandwichRepo.Setup(x => x.GetSandwichesBySupplier(It.IsAny<SupplierTO>())).Returns(GetTestsListOfSandwich());
+            fakeSandwichRepo.Setup(x => x.GetMealsBySupplier(It.IsAny<SupplierTO>())).Returns(GetTestsListOfMeals());
 
             var fakeSupplierRepo = new Mock<ISupplierRepository>();
             fakeSupplierRepo.Setup(x => x.GetDefaultSupplier()).Returns(SupplierToUse);
@@ -113,13 +113,13 @@ namespace MealServices.BusinessLayer.UseCases.Tests
         }
 
         [TestMethod]
-        public void GetCurrentMenu_ReturnSandwichesInFrench_WhenFrenchLanguageIsProvided()
+        public void GetCurrentMenu_ReturnMealsInFrench_WhenFrenchLanguageIsProvided()
         {
             //ARRANGE
             var SupplierToUse = new SupplierTO() { Id = 33, Name = "MockedSupplier" };
 
             var fakeSandwichRepo = new Mock<IMealRepository>();
-            fakeSandwichRepo.Setup(x => x.GetSandwichesBySupplier(It.IsAny<SupplierTO>())).Returns(GetTestsListOfSandwich());
+            fakeSandwichRepo.Setup(x => x.GetMealsBySupplier(It.IsAny<SupplierTO>())).Returns(GetTestsListOfMeals());
 
             var fakeSupplierRepo = new Mock<ISupplierRepository>();
             fakeSupplierRepo.Setup(x => x.GetDefaultSupplier()).Returns(SupplierToUse);
@@ -143,13 +143,13 @@ namespace MealServices.BusinessLayer.UseCases.Tests
         }
 
         [TestMethod]
-        public void GetCurrentMenu_ReturnSandwichesWithDutch_WhenDutchLanguageIsProvided()
+        public void GetCurrentMenu_ReturnMealsWithDutch_WhenDutchLanguageIsProvided()
         {
             //ARRANGE
             var SupplierToUse = new SupplierTO() { Id = 33, Name = "MockedSupplier" };
 
             var fakeSandwichRepo = new Mock<IMealRepository>();
-            fakeSandwichRepo.Setup(x => x.GetSandwichesBySupplier(It.IsAny<SupplierTO>())).Returns(GetTestsListOfSandwich());
+            fakeSandwichRepo.Setup(x => x.GetMealsBySupplier(It.IsAny<SupplierTO>())).Returns(GetTestsListOfMeals());
 
             var fakeSupplierRepo = new Mock<ISupplierRepository>();
             fakeSupplierRepo.Setup(x => x.GetDefaultSupplier()).Returns(SupplierToUse);

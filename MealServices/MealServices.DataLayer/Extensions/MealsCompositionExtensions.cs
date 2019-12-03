@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MealServices.DataLayer.Extentions
+namespace MealServices.DataLayer.Extensions
 {
-    public static class MealsCompositionExtentions
+    public static class MealsCompositionExtensions
     {
         public static MealCompositionEF UpdateFromDetached(this MealCompositionEF AttachedEF, MealCompositionEF DetachedEF)
         {

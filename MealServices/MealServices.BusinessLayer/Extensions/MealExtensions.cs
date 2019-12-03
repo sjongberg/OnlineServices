@@ -5,7 +5,7 @@ using MealServices.Shared.TransfertObjects;
 using System;
 using System.Linq;
 
-namespace MealServices.BusinessLayer.Extentions
+namespace MealServices.BusinessLayer.Extensions
 {
     public static class MealExtensions
     {

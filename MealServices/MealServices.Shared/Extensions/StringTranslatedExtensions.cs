@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MealServices.Shared.Extentions
+namespace MealServices.Shared.Extensions
 {
-    public static class StringTranslatedExtentions
+    public static class StringTranslatedExtensions
     {
         public static T FillFromStringTranslated<T>(this T ToFill, StringTranslated stringTranslated)
             where T : IMultiLanguageFields

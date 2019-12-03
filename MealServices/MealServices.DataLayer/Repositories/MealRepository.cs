@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MealServices.DataLayer.Extentions;
+using MealServices.DataLayer.Extensions;
 using MealServices.Shared.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -61,12 +61,12 @@ namespace MealServices.DataLayer.Repositories
             .Include(x => x.Supplier)
             .FirstOrDefault(x => x.Id == Id).ToTranfertObject();
 
-        public List<MealTO> GetSandwichesByIngredient(List<IngredientTO> Ingredients)
+        public List<MealTO> GetMealsByIngredient(List<IngredientTO> Ingredients)
         {
             throw new NotImplementedException();
         }
 
-        public List<MealTO> GetSandwichesBySupplier(SupplierTO Supplier)
+        public List<MealTO> GetMealsBySupplier(SupplierTO Supplier)
             => mealContext.Meals
             .Include(x => x.Supplier)
             .Include(x => x.MealsComposition)
@@ -74,7 +74,7 @@ namespace MealServices.DataLayer.Repositories
             .Select(x => x.ToTranfertObject())
             .ToList();
 
-        public List<MealTO> GetSandwichesWithoutIngredient(List<IngredientTO> Ingredients)
+        public List<MealTO> GetMealsWithoutIngredient(List<IngredientTO> Ingredients)
         {
             throw new NotImplementedException();
         }

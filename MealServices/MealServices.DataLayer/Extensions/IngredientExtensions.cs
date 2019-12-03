@@ -1,10 +1,10 @@
 ﻿using MealServices.DataLayer.Entities;
 using MealServices.Shared;
-using MealServices.Shared.Extentions;
+using MealServices.Shared.Extensions;
 using MealServices.Shared.TransfertObjects;
 using System;
 
-namespace MealServices.DataLayer.Extentions
+namespace MealServices.DataLayer.Extensions
 {
     public static class IngredientExtensions
     {

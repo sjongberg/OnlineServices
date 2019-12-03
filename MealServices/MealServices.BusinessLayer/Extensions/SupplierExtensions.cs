@@ -2,7 +2,7 @@
 using MealServices.Shared.TransfertObjects;
 using System;
 
-namespace MealServices.BusinessLayer.Extentions
+namespace MealServices.BusinessLayer.Extensions
 {
     public static class SupplierExtensions
     {

@@ -1,4 +1,4 @@
-﻿using MealServices.BusinessLayer.Extentions;
+﻿using MealServices.BusinessLayer.Extensions;
 using MealServices.Shared.TransfertObjects;
 using System.Collections.Generic;
 using System.Linq;

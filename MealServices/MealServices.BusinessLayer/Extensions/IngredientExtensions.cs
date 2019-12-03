@@ -1,7 +1,7 @@
 ﻿using MealServices.BusinessLayer.Domain;
 using MealServices.Shared.TransfertObjects;
 
-namespace MealServices.BusinessLayer.Extentions
+namespace MealServices.BusinessLayer.Extensions
 {
     public static class IngredientExtensions
     {

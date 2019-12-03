@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MealServices.DataLayer.Extentions;
+using MealServices.DataLayer.Extensions;
 using MealServices.Shared.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ namespace MealServices.DataLayer.Repositories
         {
             var sandwichRepository = new MealRepository(this.mealContext);
 
-            if (sandwichRepository.GetSandwichesBySupplier(Entity).Any())
+            if (sandwichRepository.GetMealsBySupplier(Entity).Any())
                 throw new Exception("Cannot delete supplier that has a sandwich in db.");
             else
             {
