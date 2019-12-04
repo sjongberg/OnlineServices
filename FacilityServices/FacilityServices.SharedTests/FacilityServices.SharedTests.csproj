@@ -20,4 +20,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FacilityServices.Shared\FacilityServices.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

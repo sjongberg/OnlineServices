@@ -6,4 +6,8 @@
     <FileVersion>2019.12.4.1</FileVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\MealServices\MealServices.Shared\MealServices.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

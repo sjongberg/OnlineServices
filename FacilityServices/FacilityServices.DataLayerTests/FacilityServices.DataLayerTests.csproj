@@ -20,4 +20,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\MealServices\MealServices.Shared\MealServices.Shared.csproj" />
+    <ProjectReference Include="..\..\UserServices\UserServices.DataLayer\UserServices.DataLayer.csproj" />
+  </ItemGroup>
+
 </Project>
