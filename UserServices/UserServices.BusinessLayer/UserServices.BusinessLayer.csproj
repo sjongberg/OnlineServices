@@ -6,4 +6,8 @@
     <FileVersion>2019.12.4.0</FileVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\UserServices.Shared\UserServices.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
