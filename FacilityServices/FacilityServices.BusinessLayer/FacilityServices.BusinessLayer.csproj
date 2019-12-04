@@ -1,7 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyVersion>2019.12.4.1</AssemblyVersion>
+    <FileVersion>2019.12.4.1</FileVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FacilityServices.Shared\FacilityServices.Shared.csproj" />
+  </ItemGroup>
 
 </Project>
