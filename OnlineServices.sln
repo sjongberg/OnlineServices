@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MealServices.DataLayer", "M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MealServices.DataLayerTests", "MealServices\MealServices.DataLayerTests\MealServices.DataLayerTests.csproj", "{89F56160-267F-45FE-AB27-C92D3A868B85}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FacilityServices", "FacilityServices", "{0DDEE60A-8AE3-4255-9B3F-837F62049D4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
