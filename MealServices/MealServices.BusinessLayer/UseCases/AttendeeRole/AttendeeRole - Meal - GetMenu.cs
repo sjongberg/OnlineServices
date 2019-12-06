@@ -9,7 +9,7 @@ namespace MealServices.BusinessLayer.UseCases
 {
     public partial class AttendeeRole
     {
-        public List<MealTO> GetCurrentMenu()
+        public List<MealTO> GetMenu()
         {
             var Supplier = iMSUnitOfWork.SupplierRepository.GetDefaultSupplier();
 

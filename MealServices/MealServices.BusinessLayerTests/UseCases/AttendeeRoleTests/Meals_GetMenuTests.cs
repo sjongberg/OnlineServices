@@ -14,10 +14,10 @@ using MealServices.BusinessLayerTests;
 namespace MealServices.BusinessLayer.UseCases.AttendeeRoleTests
 {
     [TestClass()]
-    public class Meals_GetCurrentMenuTests
+    public class Meals_GetMenuTests
     {
         [TestMethod()]
-        public void GetCurrentMenu_ReturnHasRightCountOfMeals_WhenAValidLanguageIsProvided()
+        public void GetMenu_ReturnHasRightCountOfMeals_WhenAValidLanguageIsProvided()
         {
             //ARRANGE
             var SupplierToUse = new SupplierTO() { Id = 33, Name = "MockedSupplier" };
@@ -37,14 +37,14 @@ namespace MealServices.BusinessLayer.UseCases.AttendeeRoleTests
 
             //ACT
             var participant = new AttendeeRole(unitOfWorkMock.Object);
-            var listMenu = participant.GetCurrentMenu();
+            var listMenu = participant.GetMenu();
 
             //ASSERT
             Assert.AreEqual(3, listMenu.Count());
         }
 
         [TestMethod()]
-        public void GetCurrentMenu_ReturnMealsInEnglish_WhenEnglishLanguageIsProvided()
+        public void GetMenu_ReturnMealsInEnglish_WhenEnglishLanguageIsProvided()
         {
             //ARRANGE
             var SupplierToUse = new SupplierTO() { Id = 33, Name = "MockedSupplier" };
@@ -61,7 +61,7 @@ namespace MealServices.BusinessLayer.UseCases.AttendeeRoleTests
 
             //ACT
             var participant = new AttendeeRole(unitOfWorkMock.Object);
-            var listMenu = participant.GetCurrentMenu();
+            var listMenu = participant.GetMenu();
 
             //ASSERT
             Assert.AreEqual("BrieEN", listMenu.Skip(0).First().ToDomain().ToString(Language.English));
@@ -74,7 +74,7 @@ namespace MealServices.BusinessLayer.UseCases.AttendeeRoleTests
         }
 
         [TestMethod()]
-        public void GetCurrentMenu_ReturnMealsInFrench_WhenFrenchLanguageIsProvided()
+        public void GetMenu_ReturnMealsInFrench_WhenFrenchLanguageIsProvided()
         {
             //ARRANGE
             var SupplierToUse = new SupplierTO() { Id = 33, Name = "MockedSupplier" };
@@ -91,7 +91,7 @@ namespace MealServices.BusinessLayer.UseCases.AttendeeRoleTests
 
             //ACT
             var participant = new AttendeeRole(unitOfWorkMock.Object);
-            var listMenu = participant.GetCurrentMenu();
+            var listMenu = participant.GetMenu();
 
             //ASSERT
             Assert.AreEqual("BrieFR", listMenu.Skip(0).First().ToDomain().ToString(Language.French));
@@ -104,7 +104,7 @@ namespace MealServices.BusinessLayer.UseCases.AttendeeRoleTests
         }
 
         [TestMethod()]
-        public void GetCurrentMenu_ReturnMealsWithDutch_WhenDutchLanguageIsProvided()
+        public void GetMenu_ReturnMealsWithDutch_WhenDutchLanguageIsProvided()
         {
             //ARRANGE
             var SupplierToUse = new SupplierTO() { Id = 33, Name = "MockedSupplier" };
@@ -121,7 +121,7 @@ namespace MealServices.BusinessLayer.UseCases.AttendeeRoleTests
 
             //ACT
             var participant = new AttendeeRole(unitOfWorkMock.Object);
-            var listMenu = participant.GetCurrentMenu();
+            var listMenu = participant.GetMenu();
 
             //ASSERT
             Assert.AreEqual("BrieNL", listMenu.Skip(0).First().ToDomain().ToString(Language.Dutch));

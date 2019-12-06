@@ -6,6 +6,6 @@ namespace OnlineServices.Shared.MealServices
 {
     public interface IMSAttendeeRole
     {
-        List<MealTO> GetCurrentMenu();
+        List<MealTO> GetMenu();
     }
 }
