@@ -12,7 +12,7 @@ namespace MealServices.DataLayer
         }
 
         public MealContext(DbContextOptions<MealContext> options)
-        : base(options)
+            : base(options)
         { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

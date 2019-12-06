@@ -4,9 +4,9 @@ using OnlineServices.Shared.MealServices.TransfertObjects;
 
 using System;
 
-namespace MealServices.BusinessLayer.UseCases.Assistante
+namespace MealServices.BusinessLayer.UseCases
 {
-    public partial class Assistante
+    public partial class AssistantRole
     {
         public bool AddSupplier(SupplierTO Supplier)
         {
@@ -19,10 +19,10 @@ namespace MealServices.BusinessLayer.UseCases.Assistante
             try
             {
 
-                iUnitOfWork.SupplierRepository.Insert(Supplier.ToDomain().ToTransfertObject());
+                iMSUnitOfWork.SupplierRepository.Insert(Supplier.ToDomain().ToTransfertObject());
 
                 if (Supplier.IsDefault)
-                    iUnitOfWork.SupplierRepository.SetDefaultSupplier(Supplier.ToDomain().ToTransfertObject());
+                    iMSUnitOfWork.SupplierRepository.SetDefaultSupplier(Supplier.ToDomain().ToTransfertObject());
 
                 return true;
             }

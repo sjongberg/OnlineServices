@@ -4,9 +4,9 @@ using OnlineServices.Shared.MealServices.TransfertObjects;
 
 using System;
 
-namespace MealServices.BusinessLayer.UseCases.Assistante
+namespace MealServices.BusinessLayer.UseCases
 {
-    public partial class Assistante
+    public partial class AssistantRole
     {
         public bool UpdateSupplier(SupplierTO Supplier)
         {
@@ -18,7 +18,7 @@ namespace MealServices.BusinessLayer.UseCases.Assistante
                 if (Supplier.Id == 0)
                     throw new Exception("Inexisting supplier");
 
-                iUnitOfWork.SupplierRepository.Update(Supplier.ToDomain().ToTransfertObject());
+                iMSUnitOfWork.SupplierRepository.Update(Supplier.ToDomain().ToTransfertObject());
 
                 return true;
             }

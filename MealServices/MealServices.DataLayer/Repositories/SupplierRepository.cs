@@ -13,12 +13,13 @@ namespace MealServices.DataLayer.Repositories
 {
     public class SupplierRepository : ISupplierRepository
     {
+        private readonly MealContext mealContext;
+
         public SupplierRepository(MealContext ContextIoC)
         {
             mealContext = ContextIoC ?? throw new ArgumentNullException($"{nameof(ContextIoC)} in SupplierRepository");
         }
 
-        public MealContext mealContext { get; private set; }
 
         public bool Remove(SupplierTO Entity)
         {

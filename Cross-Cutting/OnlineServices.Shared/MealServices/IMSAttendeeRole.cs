@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace OnlineServices.Shared.MealServices
 {
-    public interface IMSParticipant
+    public interface IMSAttendeeRole
     {
         List<MealTO> GetCurrentMenu();
     }

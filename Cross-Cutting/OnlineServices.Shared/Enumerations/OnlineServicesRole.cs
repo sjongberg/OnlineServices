@@ -2,7 +2,8 @@
 {
     public enum OnlineServicesRole
     {
-        Attendee,  //MealServices, UserServices, FacilityServices
-        Assitant   //MealServices
+        Attendee,   //MealServices, UserServices, FacilityServices
+        Assitant,   //MealServices
+        Services    //TranslationServices
     }
 }

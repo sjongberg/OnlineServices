@@ -5,12 +5,12 @@ using OnlineServices.Shared.MealServices.TransfertObjects;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MealServices.BusinessLayer.UseCases.Assistante
+namespace MealServices.BusinessLayer.UseCases
 {
-    public partial class Assistante
+    public partial class AssistantRole
     {
         public List<SupplierTO> GetSuppliers()
-            => iUnitOfWork.SupplierRepository
+            => iMSUnitOfWork.SupplierRepository
                     .GetAll()
                     .Select(x => x.ToDomain().ToTransfertObject())
                     .ToList();

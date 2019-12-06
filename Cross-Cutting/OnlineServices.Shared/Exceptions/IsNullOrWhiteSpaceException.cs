@@ -4,6 +4,7 @@ using System.Text;
 
 namespace OnlineServices.Shared.Exceptions
 {
+    [Serializable]
     public class IsNullOrWhiteSpaceException : Exception
     {
         private const string ExceptionMessage = "String should not be Nul, Empty or Whitespace";

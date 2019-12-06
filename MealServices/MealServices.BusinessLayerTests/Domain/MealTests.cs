@@ -15,7 +15,7 @@ namespace MealServices.BusinessLayer.DomainTests
 
         Meal BrieNoix = new Meal(new MultiLanguageString("Brie", "Brie", "Brie"), new Supplier { Id = 33, Name = "Supplier1" });
 
-        [TestMethod]
+        [TestMethod()]
         public void GetIngredientsString_ReturnsACompleteListOFIngredientsWithAllergeneInfo()
         {
             BrieNoix.Ingredients.Add(Brie);

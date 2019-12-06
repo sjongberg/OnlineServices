@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using MealServices.BusinessLayer.UseCases.Assistante;
+using MealServices.BusinessLayer.UseCases;
 using MealServices.Shared.Interfaces;
 using OnlineServices.Shared.MealServices.TransfertObjects;
 using System;
@@ -41,7 +41,7 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
             };
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void GetDefaultSupplier_ReturnsSupplierInDB_WhenCalled()
         {
             //ARRANGE
@@ -53,16 +53,16 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
             var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
-            var AssistanteRole = new Assistante(mockUoW.Object);
+            var Assistante = new AssistantRole(mockUoW.Object);
 
             //ACT
-            var DefaultSupplier = AssistanteRole.GetDefaultSupplier();
+            var DefaultSupplier = Assistante.GetDefaultSupplier();
 
             //ASSERT
             Assert.AreEqual(SupplierId, DefaultSupplier.Id);
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void GetDefaultSupplier_SupplierRepositoryIsCalledOnce_WhenCalled()
         {
             //ARRANGE
@@ -74,16 +74,16 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
             var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
-            var AssistanteRole = new Assistante(mockUoW.Object);
+            var Assistante = new AssistantRole(mockUoW.Object);
 
             //ACT
-            var DefaultSupplier = AssistanteRole.GetDefaultSupplier();
+            var DefaultSupplier = Assistante.GetDefaultSupplier();
 
             //ASSERT
             mockSupplierRepository.Verify(x => x.GetDefaultSupplier(), Times.Once);
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void GetDefaultSupplier_ThrowsException_WhenNoDefaultSupplierIsSetup()
         {
             //ARRANGE
@@ -94,15 +94,15 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
             var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
-            var AssistanteRole = new Assistante(mockUoW.Object);
+            var Assistante = new AssistantRole(mockUoW.Object);
 
             //ACT & ASSERT
-            var ExceptionToTest = Assert.ThrowsException<Exception>(() => AssistanteRole.GetDefaultSupplier());
+            var ExceptionToTest = Assert.ThrowsException<Exception>(() => Assistante.GetDefaultSupplier());
             Assert.AreEqual($"GetDefaultSupplier(). Default Supplier not well configured in DB", ExceptionToTest.Message);
 
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void GetSuppliers_ThrowsException_WhenMoreThanONEDefaultSupplierIsSetup()
         {
             //ARRANGE
@@ -113,10 +113,10 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
             var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
-            var AssistanteRole = new Assistante(mockUoW.Object);
+            var Assistante = new AssistantRole(mockUoW.Object);
 
             //ACT & ASSERT
-            var ExceptionToTest = Assert.ThrowsException<Exception>(() => AssistanteRole.GetDefaultSupplier());
+            var ExceptionToTest = Assert.ThrowsException<Exception>(() => Assistante.GetDefaultSupplier());
             Assert.AreEqual($"GetDefaultSupplier(). Default Supplier not well configured in DB", ExceptionToTest.Message);
         }
     }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace OnlineServices.Shared.MealServices
 {
-    public interface IMSAssistanteSupplierManagement
+    public interface IMSAssistantRole
     {
         //IMSUnitOfWork iUnitOfWork { get; }
 

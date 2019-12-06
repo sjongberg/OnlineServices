@@ -5,16 +5,16 @@ using OnlineServices.Shared.MealServices.TransfertObjects;
 using System;
 using System.Linq;
 
-namespace MealServices.BusinessLayer.UseCases.Assistante
+namespace MealServices.BusinessLayer.UseCases
 {
-    public partial class Assistante
+    public partial class AssistantRole
     {
         public SupplierTO GetDefaultSupplier()
         {
             if (GetSuppliers().Count(x => x.IsDefault == true) != 1)
                 throw new Exception($"GetDefaultSupplier(). Default Supplier not well configured in DB");
 
-            return iUnitOfWork.SupplierRepository
+            return iMSUnitOfWork.SupplierRepository
                     .GetDefaultSupplier()
                     .ToDomain().ToTransfertObject();
         }

@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MealServices.DataLayer.Entities
 {
-    [Table("Ingredient")]
+    [Table("Ingredients")]
     public class IngredientEF: IMultiLanguageNameFields
     {
         [Key]

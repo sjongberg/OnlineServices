@@ -26,7 +26,7 @@ namespace MealServices.BusinessLayer.DomainTests
         private readonly Meal BrieNoix = new Meal(new MultiLanguageString("Brie", "Brie", "Brie"), new Supplier { Id = 33, Name = "Supplier1" });
         private readonly Meal PestoVerde = new Meal(new MultiLanguageString("Pesto", "Pesto", "Pesto"), new Supplier { Id = 33, Name = "Supplier1" });
 
-        [TestMethod]
+        [TestMethod()]
         public void ShowAllergene_ReturnsStart_WhenIngredientIsAllergen()
         {
             Assert.AreEqual(false, Tomate.IsAllergen);
@@ -34,34 +34,34 @@ namespace MealServices.BusinessLayer.DomainTests
             Assert.AreEqual(true, Noix.IsAllergen);
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void ToString_ReturnsEnglishName_WhenEnglishEnumISProvided()
         {
             var sutd = Tomate.ToString(Language.English);
             Assert.AreEqual(sutd, "Tomato");
         }
-        [TestMethod]
+        [TestMethod()]
         public void ToString_ReturnsFrenchName_WhenFrenchEnumISProvided()
         {
             var sutd = Tomate.ToString(Language.French);
             Assert.AreEqual(sutd, "Tomate");
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void ToString_ReturnsDutchName_WhenDutchEnumISProvided()
         {
             var sut = Tomate.ToString(Language.Dutch);
             Assert.AreEqual("Tomaat", sut);
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void ToString_ReturnsIngredientWithAllergenInfo_WhenAllergenIsProvided()
         {
             var sut = Noix.ToString(Language.English);
             Assert.AreEqual("Nuts*", sut);
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void GetIngredientsString_ReturnsACompleteListOFIngredientsWithAllergeneInfo()
         {
             BrieNoix.Ingredients.Add(Brie);

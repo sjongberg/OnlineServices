@@ -4,9 +4,9 @@ using OnlineServices.Shared.MealServices.TransfertObjects;
 
 using System;
 
-namespace MealServices.BusinessLayer.UseCases.Assistante
+namespace MealServices.BusinessLayer.UseCases
 {
-    public partial class Assistante
+    public partial class AssistantRole
     {
         public bool RemoveSupplier(SupplierTO Supplier)
         {
@@ -18,7 +18,7 @@ namespace MealServices.BusinessLayer.UseCases.Assistante
                 if (Supplier.Id == 0)
                     throw new Exception("Supplier not in DB.");
 
-                iUnitOfWork.SupplierRepository.Remove(Supplier.ToDomain().ToTransfertObject());
+                iMSUnitOfWork.SupplierRepository.Remove(Supplier.ToDomain().ToTransfertObject());
 
                 return true;
             }

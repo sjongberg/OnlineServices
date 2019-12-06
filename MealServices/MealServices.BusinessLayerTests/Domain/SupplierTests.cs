@@ -11,7 +11,7 @@ namespace MealServices.BusinessLayer.DomainTests
     [TestClass]
     public class SupplierTests
     {
-        [TestMethod]
+        [TestMethod()]
         public void Supplier_ReturnsTheSupplierUsedInCTOR()
         {
             var supplierSUT = new Supplier { Id = 33, Name = "Supplier1" };
@@ -22,7 +22,7 @@ namespace MealServices.BusinessLayer.DomainTests
             Assert.AreEqual(supplierSUT.Name, BrieNoix2.Supplier.Name);
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void IsValid_ThrowsIsNullOrWhiteSpaceException_WhenNullNameIsProvided()
         {
             var sut = new Supplier()
@@ -33,7 +33,7 @@ namespace MealServices.BusinessLayer.DomainTests
             Assert.ThrowsException<IsNullOrWhiteSpaceException>(() => sut.IsValid());
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void IsValid_ThrowsIsNullOrWhiteSpaceException_WhenWhiteSpaceNameIsProvided()
         {
             var sut = new Supplier()
@@ -44,7 +44,7 @@ namespace MealServices.BusinessLayer.DomainTests
             Assert.ThrowsException<IsNullOrWhiteSpaceException>(() => sut.IsValid());
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void IsValid_ThrowsIsNullOrWhiteSpaceException_WhenEmptyNameIsProvided()
         {
             var sut = new Supplier()

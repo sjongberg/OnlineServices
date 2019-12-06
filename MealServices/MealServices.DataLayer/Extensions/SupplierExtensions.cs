@@ -26,6 +26,11 @@ namespace MealServices.DataLayer.Extensions
 
         public static SupplierEF UpdateFromDetached(this SupplierEF AttachedEF, SupplierEF DetachedEF)
         {
+            if (AttachedEF is null)
+                throw new ArgumentNullException(nameof(AttachedEF));
+            if (DetachedEF is null)
+                throw new ArgumentNullException(nameof(DetachedEF));
+
             if (AttachedEF.Id != DetachedEF.Id)
                 throw new Exception("Cannot update SupplierEF entity as it is not the same.");
 

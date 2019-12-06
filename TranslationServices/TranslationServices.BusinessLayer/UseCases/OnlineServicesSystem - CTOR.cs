@@ -5,7 +5,7 @@ using TranslationServices.DataLayer.ServiceAgents;
 
 namespace TranslationServices.BusinessLayer.UseCases
 {
-    public partial class OnlineServicesSystem : ITRSOnlineServicesSystem
+    public partial class OnlineServicesSystem : ITRSServicesRole
     {
         private readonly ILogger logger;
         private readonly ITRSTranslationService Translator;

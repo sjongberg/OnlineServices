@@ -18,7 +18,7 @@ namespace MealServices.DataLayerTests
     [TestClass]
     public class MealRepositoryTests
     {
-        [TestMethod]
+        [TestMethod()]
         public void IRepositoryInsert_ShouldInsertInDb_WhenValidMealIsProvided()
         {
             var options = new DbContextOptionsBuilder<MealContext>()
@@ -58,7 +58,7 @@ namespace MealServices.DataLayerTests
             }
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void IRepositoryGetByID_ShouldRetrieveMeal_WhenValidIdIsProvided()
         {
             //ARRANGE
@@ -95,7 +95,7 @@ namespace MealServices.DataLayerTests
             }
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void IRepositoryGetAll_ShouldRetrieveMeals_WhenCalled()
         {
             //ASSERT
@@ -148,7 +148,7 @@ namespace MealServices.DataLayerTests
             }
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void IRepositoryDeleteById_ShouldDelete_WhenValidIdIsProvided()
         {
             //ASSERT
@@ -204,7 +204,7 @@ namespace MealServices.DataLayerTests
             }
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void IRepositoryDeleteById_ShouldThrowException_WhenDeletingANonExistantMeal()
         {
             //ASSERT
@@ -256,7 +256,7 @@ namespace MealServices.DataLayerTests
                 Assert.ThrowsException<Exception>(() => mealRepository.Remove(2));
             }
         }
-        [TestMethod]
+        [TestMethod()]
         public void IRepositoryDeleteByTransfertObject_ShouldDelete_WhenValidTOIsProvided()
         {
             //ASSERT
@@ -312,7 +312,7 @@ namespace MealServices.DataLayerTests
             }
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void IRepositoryDeleteByTranfertObject_ShouldThrowException_WhenDeletingANonExistantMeal()
         {
             //ASSERT
@@ -366,7 +366,7 @@ namespace MealServices.DataLayerTests
             }
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void IRepositoryUpdate_ShouldUpdateInDb_WhenValidMealIsProvided()
         {
             var options = new DbContextOptionsBuilder<MealContext>()

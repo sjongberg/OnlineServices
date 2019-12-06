@@ -209,7 +209,7 @@ namespace TranslationServices.BusinessLayerTests.UseCases
         }
 
         [Fact]
-        public void IsCorrectTranslation_CallsONCETranslator_When1stNOTWellTranslated()
+        public void IsCorrectTranslation_CallsONCETranslator_When1stNOTWellTranslated_PerformanceTest()
         {
             //ARRANGE
             var mockILogger = TestHelper.MakeILogger();
@@ -229,7 +229,7 @@ namespace TranslationServices.BusinessLayerTests.UseCases
         }
 
         [Fact]
-        public void IsCorrectTranslation_CallsTWICETranslator_When2stNOTWellTranslated()
+        public void IsCorrectTranslation_CallsTWICETranslator_When2stNOTWellTranslated_PerformanceTest()
         {
             //ARRANGE
             var mockILogger = TestHelper.MakeILogger();

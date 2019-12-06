@@ -6,12 +6,12 @@ using OnlineServices.Shared.TranslationServices.TransfertObjects;
 
 using System;
 
-namespace MealServices.SharedTests
+namespace OnlineServices.SharedTests
 {
     [TestClass]
     public class StringTranslatedTests
     {
-        [TestMethod]
+        [TestMethod()]
         public void CTOR_ShouldInitTranslatedFields_WhenValidTranslationIsProvided()
         {
             //Arrange & Act
@@ -23,7 +23,7 @@ namespace MealServices.SharedTests
             Assert.AreEqual("Dutch", sut.Dutch);
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void ToString_ShouldReturnTranslatedFields_WhenValidLanguageIsProvided()
         {
             //Arrange & Act
@@ -35,7 +35,7 @@ namespace MealServices.SharedTests
             Assert.AreEqual("Dutch", sut.ToString(Language.Dutch));
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void ToString_ThrowsLanguageNotSupportedException_WhenUnknownLanguageIsProvided()
         {
             //Arrange & Act

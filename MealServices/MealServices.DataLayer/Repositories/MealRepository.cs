@@ -13,7 +13,7 @@ namespace MealServices.DataLayer.Repositories
 {
     public class MealRepository : IMealRepository
     {
-        private MealContext mealContext;
+        private readonly MealContext mealContext;
 
         public MealRepository(MealContext ContextIoC)
         {

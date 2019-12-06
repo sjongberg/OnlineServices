@@ -7,13 +7,13 @@ using System.Linq;
 
 namespace MealServices.BusinessLayer.UseCases
 {
-    public partial class Participant
+    public partial class AttendeeRole
     {
         public List<MealTO> GetCurrentMenu()
         {
-            var Supplier = UnitOfWork.SupplierRepository.GetDefaultSupplier();
+            var Supplier = iMSUnitOfWork.SupplierRepository.GetDefaultSupplier();
 
-            return UnitOfWork.MealRepository
+            return iMSUnitOfWork.MealRepository
                     .GetMealsBySupplier(Supplier)
                     .Select(x => x.ToDomain().ToTransfertObject())
                      .ToList();

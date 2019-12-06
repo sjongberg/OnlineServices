@@ -4,6 +4,7 @@ using System.Text;
 
 namespace OnlineServices.Shared.Exceptions
 {
+    [Serializable]
     public class LanguageNotSupportedException : Exception
     {
         private const string ExceptionMessage = "Language Unknown or not properly configured";

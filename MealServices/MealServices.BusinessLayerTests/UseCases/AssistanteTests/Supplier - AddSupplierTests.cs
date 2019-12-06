@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using MealServices.BusinessLayer.UseCases.Assistante;
+using MealServices.BusinessLayer.UseCases;
 using MealServices.Shared.Interfaces;
 using System;
 using OnlineServices.Shared.MealServices.TransfertObjects;
@@ -11,46 +11,46 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
     [TestClass]
     public class Supplier_AddSupplierTests
     {
-        [TestMethod]
+        [TestMethod()]
         public void AddSupplier_ThrowException_WhenSupplierIDisDiferentOfZero()
         {
             //ARRANGE
-            var AssistanteRole = new Assistante((new Mock<IMSUnitOfWork>()).Object);
+            var Assistante = new AssistantRole((new Mock<IMSUnitOfWork>()).Object);
             var SupplierToAdd = new SupplierTO { Id = 10, Name = "ExistantSupplier" };
 
             //ACT
-            Assert.ThrowsException<Exception>( () => AssistanteRole.AddSupplier(SupplierToAdd));
+            Assert.ThrowsException<Exception>( () => Assistante.AddSupplier(SupplierToAdd));
             //TODO TEST IF INSERT IS CALLED Times.None: mockSupplierRepository.Verify(x => x.Insert(It.IsAny<SupplierTO>()), Times.Once);
 
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void AddSupplier_ThrowIsNullOrWhiteSpaceException_WhenSupplierNameISEmptyString()
         {
             //ARRANGE
-            var AssistanteRole = new Assistante((new Mock<IMSUnitOfWork>()).Object);
+            var Assistante = new AssistantRole((new Mock<IMSUnitOfWork>()).Object);
             var SupplierToAdd = new SupplierTO { Id = 0, Name = "" };
 
             //ACT
-            Assert.ThrowsException<IsNullOrWhiteSpaceException>(() => AssistanteRole.AddSupplier(SupplierToAdd));
+            Assert.ThrowsException<IsNullOrWhiteSpaceException>(() => Assistante.AddSupplier(SupplierToAdd));
             //TODO TEST IF INSERT IS CALLED Times.None: mockSupplierRepository.Verify(x => x.Insert(It.IsAny<SupplierTO>()), Times.Once);
 
         }
 
 
-        [TestMethod]
+        [TestMethod()]
         public void AddSupplier_ThrowException_WhenSupplierIsNull()
         {
             //ARRANGE
-            var AssistanteRole = new Assistante((new Mock<IMSUnitOfWork>()).Object);
+            var Assistante = new AssistantRole((new Mock<IMSUnitOfWork>()).Object);
 
             //ACT
-            Assert.ThrowsException<ArgumentNullException>(() => AssistanteRole.AddSupplier(null));
+            Assert.ThrowsException<ArgumentNullException>(() => Assistante.AddSupplier(null));
             //TODO TEST IF INSERT IS CALLED Times.None: mockSupplierRepository.Verify(x => x.Insert(It.IsAny<SupplierTO>()), Times.Once);
 
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void AddSupplier_ReturnsTrue_WhenAValidSupplierIsProvidedAndAddToDB()
         {
             //ARRANGE
@@ -60,16 +60,16 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
             var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
-            var AssistanteRole = new Assistante(mockUoW.Object);
+            var Assistante = new AssistantRole(mockUoW.Object);
             var SupplierToAdd = new SupplierTO { Id = 0, Name = "InexistantSupplier" };
 
             //ACT
-            var ReturnValueToAssert = AssistanteRole.AddSupplier(SupplierToAdd);
+            var ReturnValueToAssert = Assistante.AddSupplier(SupplierToAdd);
 
             Assert.IsTrue(ReturnValueToAssert);
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void AddSupplier_SupplierRepositoryIsCalledOnce_WhenAValidSupplierIsProvidedAndAddToDB()
         {
             //ARRANGE
@@ -79,16 +79,16 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
             var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
-            var AssistanteRole = new Assistante(mockUoW.Object);
+            var Assistante = new AssistantRole(mockUoW.Object);
             var SupplierToAdd = new SupplierTO { Id = 0, Name = "InexistantSupplier" };
 
             //ACT
-            AssistanteRole.AddSupplier(SupplierToAdd);
+            Assistante.AddSupplier(SupplierToAdd);
 
             mockSupplierRepository.Verify(x => x.Insert(It.IsAny<SupplierTO>()), Times.Once);
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void AddSupplier_ReturnsTrueAndSetsDefault_WhenAValidSupplierIsProvidedWithIsDefaultAndAddToDB()
         {
             //ARRANGE
@@ -99,11 +99,11 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
             var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
-            var AssistanteRole = new Assistante(mockUoW.Object);
+            var Assistante = new AssistantRole(mockUoW.Object);
             var SupplierToAdd = new SupplierTO { Id = 0, Name = "InexistantSupplier", IsDefault=true };
 
             //ACT
-            var ReturnValueToAssert = AssistanteRole.AddSupplier(SupplierToAdd);
+            var ReturnValueToAssert = Assistante.AddSupplier(SupplierToAdd);
 
             Assert.IsTrue(ReturnValueToAssert);
             mockSupplierRepository.Verify(x => x.Insert(It.IsAny<SupplierTO>()), Times.Once);
