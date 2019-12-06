@@ -1,8 +1,10 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MealServices.Shared;
 using MealServices.Shared.Enumerations;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using OnlineServices.Shared.TranslationServices.TransfertObjects;
+
 using System;
-using OnlineServices.Shared;
 
 namespace MealServices.SharedTests
 {

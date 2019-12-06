@@ -3,7 +3,7 @@ using MealServices.BusinessLayer.Domain;
 using MealServices.Shared.Enumerations;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OnlineServices.Shared;
+using OnlineServices.Shared.TranslationServices.TransfertObjects;
 
 namespace MealServices.BusinessLayer.DomainTests
 {

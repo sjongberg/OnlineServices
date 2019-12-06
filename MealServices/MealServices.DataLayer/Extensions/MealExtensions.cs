@@ -1,6 +1,8 @@
 ﻿using MealServices.DataLayer.Entities;
-using MealServices.Shared.Extensions;
+
+using OnlineServices.Shared.Extensions;
 using OnlineServices.Shared.MealServices.TransfertObjects;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

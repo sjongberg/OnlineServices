@@ -1,7 +1,7 @@
 ﻿
 using MealServices.Shared.Enumerations;
 
-namespace OnlineServices.Shared
+namespace OnlineServices.Shared.TranslationServices.TransfertObjects
 {
     public class MultiLanguageString
     {

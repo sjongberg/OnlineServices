@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using MealServices.BusinessLayer.Extensions;
+﻿using MealServices.BusinessLayer.Extensions;
+
 using OnlineServices.Shared.MealServices.TransfertObjects;
+
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MealServices.BusinessLayer.UseCases
 {

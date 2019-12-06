@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace OnlineServices.Shared.MealServices.Enumerations
+﻿namespace OnlineServices.Shared.MealServices.Enumerations
 {
     public enum MealType
     {

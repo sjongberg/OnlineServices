@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TrainingServices.BusinessLayer
+﻿namespace TrainingServices.BusinessLayer
 {
     public class Class1
     {

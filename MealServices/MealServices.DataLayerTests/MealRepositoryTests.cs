@@ -1,14 +1,17 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MealServices.DataLayer;
 using MealServices.DataLayer.Repositories;
+
+using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using OnlineServices.Shared.MealServices.Enumerations;
+using OnlineServices.Shared.MealServices.TransfertObjects;
+using OnlineServices.Shared.TranslationServices.TransfertObjects;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using OnlineServices.Shared.MealServices.TransfertObjects;
-using OnlineServices.Shared;
-using OnlineServices.Shared.MealServices.Enumerations;
 
 namespace MealServices.DataLayerTests
 {

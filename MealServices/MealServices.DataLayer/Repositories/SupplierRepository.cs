@@ -1,10 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MealServices.DataLayer.Extensions;
+﻿using MealServices.DataLayer.Extensions;
 using MealServices.Shared.Interfaces;
+
+using Microsoft.EntityFrameworkCore;
+
+using OnlineServices.Shared.MealServices.TransfertObjects;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using OnlineServices.Shared.MealServices.TransfertObjects;
 
 namespace MealServices.DataLayer.Repositories
 {

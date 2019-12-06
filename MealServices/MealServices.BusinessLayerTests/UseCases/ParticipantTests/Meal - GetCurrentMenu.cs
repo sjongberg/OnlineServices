@@ -6,9 +6,9 @@ using MealServices.Shared.Enumerations;
 using System.Collections.Generic;
 using System.Linq;
 using MealServices.BusinessLayer.Extensions;
-using OnlineServices.Shared;
 using OnlineServices.Shared.MealServices.TransfertObjects;
 using OnlineServices.Shared.MealServices.Enumerations;
+using OnlineServices.Shared.TranslationServices.TransfertObjects;
 
 namespace MealServices.BusinessLayer.UseCases.Tests
 {

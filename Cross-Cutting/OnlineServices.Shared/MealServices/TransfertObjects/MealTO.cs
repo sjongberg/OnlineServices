@@ -1,4 +1,6 @@
 ﻿using OnlineServices.Shared.MealServices.Enumerations;
+using OnlineServices.Shared.TranslationServices.TransfertObjects;
+
 using System.Collections.Generic;
 
 namespace OnlineServices.Shared.MealServices.TransfertObjects

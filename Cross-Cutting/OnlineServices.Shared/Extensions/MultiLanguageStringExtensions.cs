@@ -1,14 +1,13 @@
-﻿using OnlineServices.Shared;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using OnlineServices.Shared.TranslationServices.TransfertObjects;
 
-namespace MealServices.Shared.Extensions
+using System;
+
+namespace OnlineServices.Shared.Extensions
 {
-    public static class StringTranslatedExtensions
+    public static class MultiLanguageStringExtensions
     {
         public static T FillFromMultiLanguageString<T>(this T ToFill, MultiLanguageString multiLanguageString)
-            where T : IMultiLanguage
+            where T : IMultiLanguageNameFields
         {
             if (multiLanguageString is null)
                 throw new ArgumentNullException(nameof(multiLanguageString));
@@ -20,7 +19,7 @@ namespace MealServices.Shared.Extensions
             return ToFill;
         }
 
-        public static MultiLanguageString ExtractToMultiLanguageString(this IMultiLanguage MultilanguageString)
+        public static MultiLanguageString ExtractToMultiLanguageString(this IMultiLanguageNameFields MultilanguageString)
         {
             if (MultilanguageString is null)
                 throw new ArgumentNullException(nameof(MultilanguageString));

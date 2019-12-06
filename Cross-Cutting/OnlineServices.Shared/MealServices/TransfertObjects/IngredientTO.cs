@@ -1,4 +1,6 @@
-﻿namespace OnlineServices.Shared.MealServices.TransfertObjects
+﻿using OnlineServices.Shared.TranslationServices.TransfertObjects;
+
+namespace OnlineServices.Shared.MealServices.TransfertObjects
 {
     public class IngredientTO
     {

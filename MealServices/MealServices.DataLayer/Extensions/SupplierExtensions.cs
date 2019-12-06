@@ -1,6 +1,8 @@
 ﻿using MealServices.DataLayer.Entities;
-using System;
+
 using OnlineServices.Shared.MealServices.TransfertObjects;
+
+using System;
 
 namespace MealServices.DataLayer.Extensions
 {

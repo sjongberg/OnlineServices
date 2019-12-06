@@ -1,5 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MealServices.DataLayer.Entities;
+﻿using MealServices.DataLayer.Entities;
+
+using Microsoft.EntityFrameworkCore;
 
 namespace MealServices.DataLayer
 {

@@ -1,4 +1,5 @@
 ﻿using MealServices.Shared.Interfaces;
+
 using OnlineServices.Shared.MealServices;
 
 namespace MealServices.BusinessLayer.UseCases.Assistante

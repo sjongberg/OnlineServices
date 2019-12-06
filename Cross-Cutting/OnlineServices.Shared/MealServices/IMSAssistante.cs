@@ -1,4 +1,5 @@
 ﻿using OnlineServices.Shared.MealServices.TransfertObjects;
+
 using System.Collections.Generic;
 
 namespace OnlineServices.Shared.MealServices

@@ -1,4 +1,5 @@
-﻿using OnlineServices.Shared;
+﻿using OnlineServices.Shared.TranslationServices.TransfertObjects;
+
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace MealServices.DataLayer.Entities
 {
     [Table("Ingredient")]
-    public class IngredientEF: IMultiLanguage
+    public class IngredientEF: IMultiLanguageNameFields
     {
         [Key]
         public int Id{get;set;}

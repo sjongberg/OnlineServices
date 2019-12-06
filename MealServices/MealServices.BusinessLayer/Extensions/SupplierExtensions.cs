@@ -1,5 +1,7 @@
 ﻿using MealServices.BusinessLayer.Domain;
+
 using OnlineServices.Shared.MealServices.TransfertObjects;
+
 using System;
 
 namespace MealServices.BusinessLayer.Extensions

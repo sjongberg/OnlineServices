@@ -1,7 +1,9 @@
-﻿using MealServices.Shared.Interfaces;
-using MealServices.DataLayer.Repositories;
-using System;
+﻿using MealServices.DataLayer.Repositories;
+using MealServices.Shared.Interfaces;
+
 using OnlineServices.Shared.MealServices.TransfertObjects;
+
+using System;
 
 namespace MealServices.DataLayer
 {

@@ -1,6 +1,8 @@
-﻿using System;
-using MealServices.Shared.Interfaces;
+﻿using MealServices.Shared.Interfaces;
+
 using OnlineServices.Shared.MealServices;
+
+using System;
 
 namespace MealServices.BusinessLayer.UseCases
 {

@@ -1,5 +1,7 @@
 ﻿using MealServices.Shared.Enumerations;
-using OnlineServices.Shared;
+
+using OnlineServices.Shared.TranslationServices.TransfertObjects;
+
 using System;
 
 namespace MealServices.BusinessLayer.Domain
