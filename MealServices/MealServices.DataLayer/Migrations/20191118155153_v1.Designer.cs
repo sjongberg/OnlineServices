@@ -18,7 +18,7 @@ namespace MealServices.DataLayer.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("SandwichSystem.DataLayer.Entities.IngredientEF", b =>
+            modelBuilder.Entity("MealSystem.DataLayer.Entities.IngredientEF", b =>
                 {
                     b.Property<int>("IngredientId")
                         .ValueGeneratedOnAdd()
@@ -42,9 +42,9 @@ namespace MealServices.DataLayer.Migrations
                     b.ToTable("Ingredient");
                 });
 
-            modelBuilder.Entity("SandwichSystem.DataLayer.Entities.SandwichEF", b =>
+            modelBuilder.Entity("MealSystem.DataLayer.Entities.MealEF", b =>
                 {
-                    b.Property<int>("SandwichId")
+                    b.Property<int>("MealId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -58,35 +58,35 @@ namespace MealServices.DataLayer.Migrations
                     b.Property<string>("NameFrench")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("SandwichId");
+                    b.HasKey("MealId");
 
-                    b.ToTable("Sandwich");
+                    b.ToTable("Meal");
                 });
 
-            modelBuilder.Entity("SandwichSystem.DataLayer.Entities.SandwichIngredient", b =>
+            modelBuilder.Entity("MealSystem.DataLayer.Entities.MealIngredient", b =>
                 {
-                    b.Property<int>("SandwichId")
+                    b.Property<int>("MealId")
                         .HasColumnType("int");
 
                     b.Property<int>("IngredientId")
                         .HasColumnType("int");
 
-                    b.HasKey("SandwichId", "IngredientId");
+                    b.HasKey("MealId", "IngredientId");
 
-                    b.ToTable("SandwichIngredients");
+                    b.ToTable("MealIngredients");
                 });
 
-            modelBuilder.Entity("SandwichSystem.DataLayer.Entities.SandwichIngredient", b =>
+            modelBuilder.Entity("MealSystem.DataLayer.Entities.MealIngredient", b =>
                 {
-                    b.HasOne("SandwichSystem.DataLayer.Entities.IngredientEF", "Ingredient")
-                        .WithMany("SandwichIngredient")
-                        .HasForeignKey("SandwichId")
+                    b.HasOne("MealSystem.DataLayer.Entities.IngredientEF", "Ingredient")
+                        .WithMany("MealIngredient")
+                        .HasForeignKey("MealId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SandwichSystem.DataLayer.Entities.SandwichEF", "Sandwich")
-                        .WithMany("SandwichIngredient")
-                        .HasForeignKey("SandwichId")
+                    b.HasOne("MealSystem.DataLayer.Entities.MealEF", "Meal")
+                        .WithMany("MealIngredient")
+                        .HasForeignKey("MealId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

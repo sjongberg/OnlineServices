@@ -8,14 +8,14 @@ namespace MealServices.BusinessLayer.Extensions
 {
     public static class MealExtensions
     {
-        //public static MealTO ToBTO(this Sandwich Sandwich, Language Langue)
+        //public static MealTO ToBTO(this Meal Meal, Language Langue)
         //{
         //    return new MealTO
         //    {
-        //        Id = Sandwich.Id,
-        //        Name = Sandwich.ToString(Langue),
-        //        Ingredients = String.Join(" - ", Sandwich.Ingredients.Select(x => x.ToString(Langue))),
-        //        //Supplier = Sandwich.Supplier.ToTransfertObject()
+        //        Id = Meal.Id,
+        //        Name = Meal.ToString(Langue),
+        //        Ingredients = String.Join(" - ", Meal.Ingredients.Select(x => x.ToString(Langue))),
+        //        //Supplier = Meal.Supplier.ToTransfertObject()
         //    };
         //}
 

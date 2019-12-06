@@ -31,7 +31,7 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest = new MealTO
                 {
                     Id = 0,
-                    Name = new MultiLanguageString("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Meal1EN", "Meal1FR", "Meal1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 1,
@@ -54,7 +54,7 @@ namespace MealServices.DataLayerTests
 
                 Assert.AreEqual(1, MealToAssert.Id);
                 Assert.AreEqual(1, MealToAssert.Ingredients.FirstOrDefault().Id);
-                Assert.AreEqual("Sandwich1EN", MealToAssert.Name.English);
+                Assert.AreEqual("Meal1EN", MealToAssert.Name.English);
             }
         }
 
@@ -71,7 +71,7 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest = new MealTO
                 {
                     Id = 0,
-                    Name = new MultiLanguageString("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Meal1EN", "Meal1FR", "Meal1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 1,
@@ -91,7 +91,7 @@ namespace MealServices.DataLayerTests
 
                 //ASSERT
                 Assert.AreEqual(1, retrivedMeal.Id);
-                Assert.AreEqual("Sandwich1EN", mealRepository.GetByID(1).Name.English);
+                Assert.AreEqual("Meal1EN", mealRepository.GetByID(1).Name.English);
             }
         }
 
@@ -109,7 +109,7 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest1 = new MealTO
                 {
                     Id = 0,
-                    Name = new MultiLanguageString("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Meal1EN", "Meal1FR", "Meal1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 1,
@@ -123,7 +123,7 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest2 = new MealTO
                 {
                     Id = 0,
-                    Name = new MultiLanguageString("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
+                    Name = new MultiLanguageString("Meal2EN", "Meal2FR", "Meal2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 2,
@@ -162,7 +162,7 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest1 = new MealTO
                 {
                     Id = 0,
-                    Name = new MultiLanguageString("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Meal1EN", "Meal1FR", "Meal1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 0,
@@ -176,7 +176,7 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest2 = new MealTO
                 {
                     Id = 0,
-                    Name = new MultiLanguageString("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
+                    Name = new MultiLanguageString("Meal2EN", "Meal2FR", "Meal2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 0,
@@ -218,7 +218,7 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest1 = new MealTO
                 {
                     Id = 0,
-                    Name = new MultiLanguageString("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Meal1EN", "Meal1FR", "Meal1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 1,
@@ -232,7 +232,7 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest2 = new MealTO
                 {
                     Id = 0,
-                    Name = new MultiLanguageString("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
+                    Name = new MultiLanguageString("Meal2EN", "Meal2FR", "Meal2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 2,
@@ -270,7 +270,7 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest1 = new MealTO
                 {
                     Id = 0,
-                    Name = new MultiLanguageString("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Meal1EN", "Meal1FR", "Meal1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 1,
@@ -284,7 +284,7 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest2 = new MealTO
                 {
                     Id = 0,
-                    Name = new MultiLanguageString("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
+                    Name = new MultiLanguageString("Meal2EN", "Meal2FR", "Meal2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 2,
@@ -326,7 +326,7 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest1 = new MealTO
                 {
                     Id = 0,
-                    Name = new MultiLanguageString("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Meal1EN", "Meal1FR", "Meal1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 1,
@@ -340,7 +340,7 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest2 = new MealTO
                 {
                     Id = 0,
-                    Name = new MultiLanguageString("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
+                    Name = new MultiLanguageString("Meal2EN", "Meal2FR", "Meal2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 2,
@@ -379,7 +379,7 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest = new MealTO
                 {
                     Id = 1,
-                    Name = new MultiLanguageString("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Meal1EN", "Meal1FR", "Meal1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 2,
@@ -405,7 +405,7 @@ namespace MealServices.DataLayerTests
                 Assert.AreEqual(1, mealRepository.GetAll().Count());
                 Assert.AreEqual(1, MealToAssert.Id);
                 Assert.AreEqual(2, MealToAssert.Ingredients.FirstOrDefault().Id);
-                Assert.AreEqual("Sandwich1EN", MealToAssert.Name.English);
+                Assert.AreEqual("Meal1EN", MealToAssert.Name.English);
                 Assert.AreEqual(MealType.Sandwich, MealToAssert.MealType);
             }
         }

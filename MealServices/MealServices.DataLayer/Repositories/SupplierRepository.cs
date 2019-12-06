@@ -22,10 +22,10 @@ namespace MealServices.DataLayer.Repositories
 
         public bool Remove(SupplierTO Entity)
         {
-            var sandwichRepository = new MealRepository(this.mealContext);
+            var mealRepository = new MealRepository(this.mealContext);
 
-            if (sandwichRepository.GetMealsBySupplier(Entity).Any())
-                throw new Exception("Cannot delete supplier that has a sandwich in db.");
+            if (mealRepository.GetMealsBySupplier(Entity).Any())
+                throw new Exception("Cannot delete supplier that has a meal in db.");
             else
             {
                 mealContext.Suppliers.Remove(Entity.ToEF());

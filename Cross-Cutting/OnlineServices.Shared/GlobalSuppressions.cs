@@ -9,3 +9,5 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1716:Identifiers should not match keywords", Justification = "<Pending>", Scope = "namespace", Target = "~N:OnlineServices.Shared.MealServices.Enumerations")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1716:Identifiers should not match keywords", Justification = "<Pending>", Scope = "namespace", Target = "~N:OnlineServices.Shared.MealServices.TransfertObjects")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1716:Identifiers should not match keywords", Justification = "<Pending>", Scope = "namespace", Target = "~N:OnlineServices.Shared.TranslationServices.TransfertObjects")]
+
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1716:Identifiers should not match keywords", Justification = "<Pending>", Scope = "namespace", Target = "~N:OnlineServices.Shared.Exceptions")]

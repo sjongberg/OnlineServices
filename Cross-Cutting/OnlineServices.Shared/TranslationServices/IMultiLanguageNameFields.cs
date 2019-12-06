@@ -1,4 +1,4 @@
-﻿namespace OnlineServices.Shared.TranslationServices.TransfertObjects
+﻿namespace OnlineServices.Shared.TranslationServices
 {
     public interface IMultiLanguageNameFields
     {

@@ -23,10 +23,10 @@ namespace MealServices.DataLayer.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Sandwich",
+                name: "Meal",
                 columns: table => new
                 {
-                    SandwichId = table.Column<int>(nullable: false)
+                    MealId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NameEnglish = table.Column<string>(nullable: true),
                     NameFrench = table.Column<string>(nullable: true),
@@ -34,30 +34,30 @@ namespace MealServices.DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Sandwich", x => x.SandwichId);
+                    table.PrimaryKey("PK_Meal", x => x.MealId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "SandwichIngredients",
+                name: "MealIngredients",
                 columns: table => new
                 {
-                    SandwichId = table.Column<int>(nullable: false),
+                    MealId = table.Column<int>(nullable: false),
                     IngredientId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SandwichIngredients", x => new { x.SandwichId, x.IngredientId });
+                    table.PrimaryKey("PK_MealIngredients", x => new { x.MealId, x.IngredientId });
                     table.ForeignKey(
-                        name: "FK_SandwichIngredients_Ingredient_SandwichId",
-                        column: x => x.SandwichId,
+                        name: "FK_MealIngredients_Ingredient_MealId",
+                        column: x => x.MealId,
                         principalTable: "Ingredient",
                         principalColumn: "IngredientId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_SandwichIngredients_Sandwich_SandwichId",
-                        column: x => x.SandwichId,
-                        principalTable: "Sandwich",
-                        principalColumn: "SandwichId",
+                        name: "FK_MealIngredients_Meal_MealId",
+                        column: x => x.MealId,
+                        principalTable: "Meal",
+                        principalColumn: "MealId",
                         onDelete: ReferentialAction.Cascade);
                 });
         }
@@ -65,13 +65,13 @@ namespace MealServices.DataLayer.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "SandwichIngredients");
+                name: "MealIngredients");
 
             migrationBuilder.DropTable(
                 name: "Ingredient");
 
             migrationBuilder.DropTable(
-                name: "Sandwich");
+                name: "Meal");
         }
     }
 }

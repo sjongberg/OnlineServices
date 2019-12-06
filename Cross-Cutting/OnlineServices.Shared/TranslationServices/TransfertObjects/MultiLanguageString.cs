@@ -1,5 +1,5 @@
-﻿
-using MealServices.Shared.Enumerations;
+﻿using OnlineServices.Shared.Enumerations;
+using OnlineServices.Shared.Exceptions;
 
 namespace OnlineServices.Shared.TranslationServices.TransfertObjects
 {
@@ -26,7 +26,7 @@ namespace OnlineServices.Shared.TranslationServices.TransfertObjects
                 case Language.Dutch:
                     return Dutch;
                 default:
-                    throw new System.Exception("Language Unknown or not properly configured.");
+                    throw new LanguageNotSupportedException($"{typeof(MultiLanguageString)}. Value={(int)Langue}");
             }
         }
     }

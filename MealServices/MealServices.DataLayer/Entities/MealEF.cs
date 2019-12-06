@@ -1,5 +1,5 @@
 ﻿using OnlineServices.Shared.MealServices.Enumerations;
-using OnlineServices.Shared.TranslationServices.TransfertObjects;
+using OnlineServices.Shared.TranslationServices;
 
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

@@ -1,6 +1,6 @@
-﻿//using SandwichSystem.Shared.TransfertObjects;
+﻿//using MealSystem.Shared.TransfertObjects;
 
-//namespace SandwichSystem.Shared.TransfertObjects
+//namespace MealSystem.Shared.TransfertObjects
 //{
 //    public class MealTO
 //    {

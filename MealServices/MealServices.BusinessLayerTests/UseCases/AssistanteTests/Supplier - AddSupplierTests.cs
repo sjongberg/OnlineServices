@@ -4,6 +4,7 @@ using MealServices.BusinessLayer.UseCases.Assistante;
 using MealServices.Shared.Interfaces;
 using System;
 using OnlineServices.Shared.MealServices.TransfertObjects;
+using OnlineServices.Shared.Exceptions;
 
 namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
 {
@@ -24,14 +25,14 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
         }
 
         [TestMethod]
-        public void AddSupplier_ThrowException_WhenSupplierNameISEmptyString()
+        public void AddSupplier_ThrowIsNullOrWhiteSpaceException_WhenSupplierNameISEmptyString()
         {
             //ARRANGE
             var AssistanteRole = new Assistante((new Mock<IMSUnitOfWork>()).Object);
             var SupplierToAdd = new SupplierTO { Id = 0, Name = "" };
 
             //ACT
-            Assert.ThrowsException<Exception>(() => AssistanteRole.AddSupplier(SupplierToAdd));
+            Assert.ThrowsException<IsNullOrWhiteSpaceException>(() => AssistanteRole.AddSupplier(SupplierToAdd));
             //TODO TEST IF INSERT IS CALLED Times.None: mockSupplierRepository.Verify(x => x.Insert(It.IsAny<SupplierTO>()), Times.Once);
 
         }

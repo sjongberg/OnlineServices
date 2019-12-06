@@ -1,7 +1,7 @@
-using MealServices.Shared.Enumerations;
+using OnlineServices.Shared.Enumerations;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using OnlineServices.Shared.Exceptions;
 using OnlineServices.Shared.TranslationServices.TransfertObjects;
 
 using System;
@@ -36,13 +36,13 @@ namespace MealServices.SharedTests
         }
 
         [TestMethod]
-        public void ToString_ShouldThrowException_WhenUnknownLanguageIsProvided()
+        public void ToString_ThrowsLanguageNotSupportedException_WhenUnknownLanguageIsProvided()
         {
             //Arrange & Act
             var sut = new MultiLanguageString("English", "French", "Dutch");
 
             //Assert
-            Assert.ThrowsException<Exception>(() => sut.ToString((Language)50));
+            Assert.ThrowsException<LanguageNotSupportedException>(() => sut.ToString((Language)50));
         }
     }
 }

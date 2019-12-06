@@ -1,5 +1,4 @@
-﻿using MealServices.Shared.Enumerations;
-
+﻿using OnlineServices.Shared.Enumerations;
 using OnlineServices.Shared.TranslationServices.TransfertObjects;
 
 using System;

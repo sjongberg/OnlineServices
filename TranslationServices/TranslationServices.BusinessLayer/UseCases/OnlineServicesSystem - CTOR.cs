@@ -1,11 +1,10 @@
-﻿using MealServices.Shared.Enumerations;
-using OnlineServices.Shared.TranslationServices.TransfertObjects;
+﻿using OnlineServices.Shared.TranslationServices;
 using Serilog;
 using System;
 
 namespace TranslationServices.BusinessLayer.UseCases
 {
-    public partial class OnlineServicesSystem
+    public partial class OnlineServicesSystem : ITRSOnlineServicesSystem
     {
         private readonly ILogger logger;
 

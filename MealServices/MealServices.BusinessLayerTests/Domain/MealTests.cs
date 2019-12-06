@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MealServices.BusinessLayer.Domain;
-using MealServices.Shared.Enumerations;
 using OnlineServices.Shared.TranslationServices.TransfertObjects;
+using OnlineServices.Shared.Enumerations;
 
 namespace MealServices.BusinessLayer.DomainTests
 {

@@ -4,6 +4,7 @@ using MealServices.Shared;
 using System;
 using OnlineServices.Shared;
 using OnlineServices.Shared.TranslationServices.TransfertObjects;
+using OnlineServices.Shared.Exceptions;
 
 namespace MealServices.BusinessLayer.DomainTests
 {
@@ -22,36 +23,36 @@ namespace MealServices.BusinessLayer.DomainTests
         }
 
         [TestMethod]
-        public void IsValid_ShouldThrowsException_WhenNullNameIsProvided()
+        public void IsValid_ThrowsIsNullOrWhiteSpaceException_WhenNullNameIsProvided()
         {
             var sut = new Supplier()
             {
                 Name = null,
             };
 
-            Assert.ThrowsException<Exception>(() => sut.IsValid());
+            Assert.ThrowsException<IsNullOrWhiteSpaceException>(() => sut.IsValid());
         }
 
         [TestMethod]
-        public void IsValid_ShouldThrowsException_WhenWhiteSpaceNameIsProvided()
+        public void IsValid_ThrowsIsNullOrWhiteSpaceException_WhenWhiteSpaceNameIsProvided()
         {
             var sut = new Supplier()
             {
                 Name = " ",
             };
 
-            Assert.ThrowsException<Exception>(() => sut.IsValid());
+            Assert.ThrowsException<IsNullOrWhiteSpaceException>(() => sut.IsValid());
         }
 
         [TestMethod]
-        public void IsValid_ShouldThrowsException_WhenEmptyNameIsProvided()
+        public void IsValid_ThrowsIsNullOrWhiteSpaceException_WhenEmptyNameIsProvided()
         {
             var sut = new Supplier()
             {
                 Name = "",
             };
 
-            Assert.ThrowsException<Exception>(() => sut.IsValid());
+            Assert.ThrowsException<IsNullOrWhiteSpaceException>(() => sut.IsValid());
         }
     }
 }

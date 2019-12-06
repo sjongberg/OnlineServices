@@ -1,5 +1,5 @@
-﻿using OnlineServices.Shared.TranslationServices.TransfertObjects;
-
+﻿using OnlineServices.Shared.TranslationServices;
+using OnlineServices.Shared.TranslationServices.TransfertObjects;
 using System;
 
 namespace OnlineServices.Shared.Extensions

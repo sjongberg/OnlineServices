@@ -1,6 +1,6 @@
 ﻿//using System;
 
-namespace MealServices.Shared.Enumerations
+namespace OnlineServices.Shared.Enumerations
 {
     public enum Language
     {
