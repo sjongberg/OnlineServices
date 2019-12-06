@@ -2,6 +2,7 @@
 using MealServices.BusinessLayer.Domain;
 using MealServices.Shared;
 using System;
+using OnlineServices.Shared;
 
 namespace MealServices.BusinessLayer.DomainTests
 {
@@ -13,7 +14,7 @@ namespace MealServices.BusinessLayer.DomainTests
         {
             var supplierSUT = new Supplier { Id = 33, Name = "Supplier1" };
 
-            Meal BrieNoix2 = new Meal(new StringTranslated("Brie", "Brie", "Brie"), supplierSUT);
+            Meal BrieNoix2 = new Meal(new MultiLanguageString("Brie", "Brie", "Brie"), supplierSUT);
 
             Assert.AreEqual(supplierSUT.Id, BrieNoix2.Supplier.Id);
             Assert.AreEqual(supplierSUT.Name, BrieNoix2.Supplier.Name);

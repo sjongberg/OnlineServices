@@ -2,7 +2,7 @@
 using Moq;
 using MealServices.BusinessLayer.UseCases.Assistante;
 using MealServices.Shared.Interfaces;
-using MealServices.Shared.TransfertObjects;
+using OnlineServices.Shared.MealServices.TransfertObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,7 +50,7 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
             mockSupplierRepository.Setup(x => x.GetAll()).Returns(SupplierList());
             mockSupplierRepository.Setup(x => x.GetDefaultSupplier()).Returns(new SupplierTO { Id = SupplierId, Name = $"Suplier{SupplierId}", IsDefault = true });
 
-            var mockUoW = new Mock<IUnitOfWork>();
+            var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
             var AssistanteRole = new Assistante(mockUoW.Object);
@@ -71,7 +71,7 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
             mockSupplierRepository.Setup(x => x.GetAll()).Returns(SupplierList());
             mockSupplierRepository.Setup(x => x.GetDefaultSupplier()).Returns(new SupplierTO { Id = SupplierId, Name = $"Suplier{SupplierId}", IsDefault = true });
 
-            var mockUoW = new Mock<IUnitOfWork>();
+            var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
             var AssistanteRole = new Assistante(mockUoW.Object);
@@ -91,7 +91,7 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
             mockSupplierRepository.Setup(x => x.GetAll()).Returns(SupplierListWith0True());
             mockSupplierRepository.Setup(x => x.GetDefaultSupplier()).Returns(SupplierListWith0True().FirstOrDefault(x=>x.IsDefault==true));
 
-            var mockUoW = new Mock<IUnitOfWork>();
+            var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
             var AssistanteRole = new Assistante(mockUoW.Object);
@@ -110,7 +110,7 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
             mockSupplierRepository.Setup(x => x.GetAll()).Returns(SupplierListWith2True());
             mockSupplierRepository.Setup(x => x.GetDefaultSupplier()).Returns(SupplierListWith2True().FirstOrDefault(x=>x.IsDefault==true));
 
-            var mockUoW = new Mock<IUnitOfWork>();
+            var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
             var AssistanteRole = new Assistante(mockUoW.Object);

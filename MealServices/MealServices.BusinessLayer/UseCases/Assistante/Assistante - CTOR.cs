@@ -1,14 +1,16 @@
 ﻿using MealServices.Shared.Interfaces;
+using OnlineServices.Shared.MealServices;
 
 namespace MealServices.BusinessLayer.UseCases.Assistante
 {
-    public partial class Assistante : Participant
+    public partial class Assistante : Participant, IMSAssistanteSupplierManagement
+
     {
-        public Assistante(IUnitOfWork iUnitOfWork) : base(iUnitOfWork)
+        public Assistante(IMSUnitOfWork iUnitOfWork) : base(iUnitOfWork)
         {
             this.iUnitOfWork = iUnitOfWork ?? throw new System.ArgumentNullException(nameof(iUnitOfWork));
         }
 
-        public IUnitOfWork iUnitOfWork { get; }
+        public IMSUnitOfWork iUnitOfWork { get; }
     }
 }

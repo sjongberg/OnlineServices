@@ -4,8 +4,7 @@ using MealServices.Shared.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MealServices.Shared.TransfertObjects;
-using MealServices.DataLayer.Entities;
+using OnlineServices.Shared.MealServices.TransfertObjects;
 
 namespace MealServices.DataLayer.Repositories
 {

@@ -2,7 +2,7 @@
 using Moq;
 using MealServices.BusinessLayer.UseCases.Assistante;
 using MealServices.Shared.Interfaces;
-using MealServices.Shared.TransfertObjects;
+using OnlineServices.Shared.MealServices.TransfertObjects;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -28,7 +28,7 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
             var mockSupplierRepository = new Mock<ISupplierRepository>();
             mockSupplierRepository.Setup(x => x.GetAll()).Returns(SupplierList());
 
-            var mockUoW = new Mock<IUnitOfWork>();
+            var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
             var AssistanteRole = new Assistante(mockUoW.Object);
@@ -47,7 +47,7 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
             var mockSupplierRepository = new Mock<ISupplierRepository>();
             mockSupplierRepository.Setup(x => x.GetAll()).Returns(SupplierList());
 
-            var mockUoW = new Mock<IUnitOfWork>();
+            var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
             var AssistanteRole = new Assistante(mockUoW.Object);

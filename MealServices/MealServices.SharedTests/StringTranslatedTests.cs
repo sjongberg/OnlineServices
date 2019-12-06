@@ -2,6 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MealServices.Shared;
 using MealServices.Shared.Enumerations;
 using System;
+using OnlineServices.Shared;
 
 namespace MealServices.SharedTests
 {
@@ -12,7 +13,7 @@ namespace MealServices.SharedTests
         public void CTOR_ShouldInitTranslatedFields_WhenValidTranslationIsProvided()
         {
             //Arrange & Act
-            var sut = new StringTranslated("English", "French", "Dutch");
+            var sut = new MultiLanguageString("English", "French", "Dutch");
 
             //Assert
             Assert.AreEqual("English", sut.English);
@@ -24,7 +25,7 @@ namespace MealServices.SharedTests
         public void ToString_ShouldReturnTranslatedFields_WhenValidLanguageIsProvided()
         {
             //Arrange & Act
-            var sut = new StringTranslated("English", "French", "Dutch");
+            var sut = new MultiLanguageString("English", "French", "Dutch");
 
             //Assert
             Assert.AreEqual("English", sut.ToString(Language.English));
@@ -36,7 +37,7 @@ namespace MealServices.SharedTests
         public void ToString_ShouldThrowException_WhenUnknownLanguageIsProvided()
         {
             //Arrange & Act
-            var sut = new StringTranslated("English", "French", "Dutch");
+            var sut = new MultiLanguageString("English", "French", "Dutch");
 
             //Assert
             Assert.ThrowsException<Exception>(() => sut.ToString((Language)50));

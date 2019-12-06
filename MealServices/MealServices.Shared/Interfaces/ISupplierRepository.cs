@@ -1,4 +1,4 @@
-﻿using MealServices.Shared.TransfertObjects;
+﻿using OnlineServices.Shared.MealServices.TransfertObjects;
 
 namespace MealServices.Shared.Interfaces
 {

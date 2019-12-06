@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MealServices", "MealServices", "{52DCD7F9-F2C0-45AA-A2BA-870AE47B87A3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MS - MealServices", "MS - MealServices", "{52DCD7F9-F2C0-45AA-A2BA-870AE47B87A3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MealServices.BusinessLayer", "MealServices\MealServices.BusinessLayer\MealServices.BusinessLayer.csproj", "{646F687F-4B2E-43B2-AEA2-E59250724110}"
 EndProject
@@ -31,32 +31,33 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MealServices.DataLayer", "M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MealServices.DataLayerTests", "MealServices\MealServices.DataLayerTests\MealServices.DataLayerTests.csproj", "{89F56160-267F-45FE-AB27-C92D3A868B85}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FacilityServices", "FacilityServices", "{0DDEE60A-8AE3-4255-9B3F-837F62049D4A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS - FacilityServices", "FS - FacilityServices", "{0DDEE60A-8AE3-4255-9B3F-837F62049D4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacilityServices.BusinessLayer", "FacilityServices\FacilityServices.BusinessLayer\FacilityServices.BusinessLayer.csproj", "{9DC18D8C-D979-4680-84FE-D6FB55BC7C63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FacilityServices.BusinessLayer", "FacilityServices\FacilityServices.BusinessLayer\FacilityServices.BusinessLayer.csproj", "{9DC18D8C-D979-4680-84FE-D6FB55BC7C63}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Logic Layer", "Business Logic Layer", "{135D23C0-EC8E-45B5-8E48-D98B14A0F17E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacilityServices.BusinessLayerTests", "FacilityServices\FacilityServices.BusinessLayerTests\FacilityServices.BusinessLayerTests.csproj", "{D1AD10B5-310D-4877-ACC1-AF636E809D4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FacilityServices.BusinessLayerTests", "FacilityServices\FacilityServices.BusinessLayerTests\FacilityServices.BusinessLayerTests.csproj", "{D1AD10B5-310D-4877-ACC1-AF636E809D4A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cross-Cutting", "Cross-Cutting", "{38F573E1-DCBB-450A-98D9-99E5602B2EBE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Access Layer", "Data Access Layer", "{AEA097D8-4641-4D2E-919B-17DF2BE64BA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacilityServices.Shared", "FacilityServices\FacilityServices.Shared\FacilityServices.Shared.csproj", "{9E1D88A8-CCF7-4826-AD52-09A52728F2B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FacilityServices.Shared", "FacilityServices\FacilityServices.Shared\FacilityServices.Shared.csproj", "{9E1D88A8-CCF7-4826-AD52-09A52728F2B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacilityServices.SharedTests", "FacilityServices\FacilityServices.SharedTests\FacilityServices.SharedTests.csproj", "{DF2F63D9-9CA7-4016-BFC4-ACD75152195A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FacilityServices.SharedTests", "FacilityServices\FacilityServices.SharedTests\FacilityServices.SharedTests.csproj", "{DF2F63D9-9CA7-4016-BFC4-ACD75152195A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacilityServices.DataLayer", "FacilityServices\FacilityServices.DataLayer\FacilityServices.DataLayer.csproj", "{3823F515-D90E-4F40-95F3-F62F5F61F225}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FacilityServices.DataLayer", "FacilityServices\FacilityServices.DataLayer\FacilityServices.DataLayer.csproj", "{3823F515-D90E-4F40-95F3-F62F5F61F225}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacilityServices.DataLayerTests", "FacilityServices\FacilityServices.DataLayerTests\FacilityServices.DataLayerTests.csproj", "{6B2475E4-C154-4A6B-A6F6-A1FE588929A2}"
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserServices", "UserServices", "{57DF89CB-51CE-4D34-B274-403296A15202}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FacilityServices.DataLayerTests", "FacilityServices\FacilityServices.DataLayerTests\FacilityServices.DataLayerTests.csproj", "{6B2475E4-C154-4A6B-A6F6-A1FE588929A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "US - UserServices", "US - UserServices", "{57DF89CB-51CE-4D34-B274-403296A15202}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserServices.Shared", "UserServices\UserServices.Shared\UserServices.Shared.csproj", "{E0EA6218-6918-444D-BE8E-9D9DC537810C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserServices.BusinessLayer", "UserServices\UserServices.BusinessLayer\UserServices.BusinessLayer.csproj", "{33C6D1F3-AA41-4060-946E-BCE208DD511B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserServices.BusinessLayer", "UserServices\UserServices.BusinessLayer\UserServices.BusinessLayer.csproj", "{33C6D1F3-AA41-4060-946E-BCE208DD511B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserServices.BusinessLayerTests", "UserServices\UserServices.BusinessLayerTests\UserServices.BusinessLayerTests.csproj", "{D8C949FB-E6C8-4033-B952-A079B8AA590B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserServices.BusinessLayerTests", "UserServices\UserServices.BusinessLayerTests\UserServices.BusinessLayerTests.csproj", "{D8C949FB-E6C8-4033-B952-A079B8AA590B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Logic Layer", "Business Logic Layer", "{8295AE90-2063-4E09-8EDC-0107C2FAC9B3}"
 EndProject
@@ -64,11 +65,39 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cross-Cutting", "Cross-Cutt
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Access Layer", "Data Access Layer", "{0F156B42-8E76-421F-9149-31BBB87DFF8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserServices.DataLayer", "UserServices\UserServices.DataLayer\UserServices.DataLayer.csproj", "{DA999F8F-C08D-4CBC-AE2E-4E824EBE1FAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserServices.DataLayer", "UserServices\UserServices.DataLayer\UserServices.DataLayer.csproj", "{DA999F8F-C08D-4CBC-AE2E-4E824EBE1FAD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserServices.SharedTests", "UserServices\UserServices.SharedTests\UserServices.SharedTests.csproj", "{AF78A071-C8B4-446F-9B25-F46CC64B404F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserServices.DataLayerTests", "UserServices\UserServices.DataLayerTests\UserServices.DataLayerTests.csproj", "{E44FC353-12F9-49DD-96FC-D0073AAF2783}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TS - TrainingServices", "TS - TrainingServices", "{1EEE6C60-EF60-4054-8EDB-B92890445D30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Logic Layer", "Business Logic Layer", "{1331A2FD-5835-49CE-BDF2-475D9BC98A1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cross-Cutting", "Cross-Cutting", "{9B63F903-8A48-44FB-99FB-C026E06F4BD3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Access Layer", "Data Access Layer", "{5262E2A9-74C4-4C79-AB22-E07EF57E5DA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainingServices.Shared", "TrainingServices\TrainingServices.Shared\TrainingServices.Shared.csproj", "{B1C57F17-5C68-450A-84F6-BE13340F589C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainingServices.SharedTests", "TrainingServices\TrainingServices.SharedTests\TrainingServices.SharedTests.csproj", "{EDA4614B-D897-4338-AC9A-968BCA90BF75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainingServices.DataLayer", "TrainingServices\TrainingServices.DataLayer\TrainingServices.DataLayer.csproj", "{8D9781AB-6F5C-4573-B65B-BC5A146D7C8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainingServices.DataLayerTests", "TrainingServices\TrainingServices.DataLayerTests\TrainingServices.DataLayerTests.csproj", "{0784B380-C2E0-4CE1-B5D1-3C0C225A50ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainingServices.BusinessLayer", "TrainingServices\TrainingServices.BusinessLayer\TrainingServices.BusinessLayer.csproj", "{2D6CE2EA-EEB3-4006-8908-EE6321661BA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainingServices.BusinessLayerTests", "TrainingServices\TrainingServices.BusinessLayerTests\TrainingServices.BusinessLayerTests.csproj", "{0F68457F-F05B-44B5-A8EB-52267169D674}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineServices.Shared", "Cross-Cutting\OnlineServices.Shared\OnlineServices.Shared.csproj", "{1BB17343-744F-42B0-9992-225D5084CE18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineServices.SharedTests", "Cross-Cutting\OnlineServices.SharedTests\OnlineServices.SharedTests.csproj", "{FC9E9F7E-64D7-4A1E-A972-C5EC3AAED045}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{22EB011A-39E4-41C2-898A-9BF918F8919C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cross-Cutting", "Cross-Cutting", "{C8220A85-F915-4946-A3C6-B7529EAE5F22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -148,6 +177,38 @@ Global
 		{E44FC353-12F9-49DD-96FC-D0073AAF2783}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E44FC353-12F9-49DD-96FC-D0073AAF2783}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E44FC353-12F9-49DD-96FC-D0073AAF2783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1C57F17-5C68-450A-84F6-BE13340F589C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1C57F17-5C68-450A-84F6-BE13340F589C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1C57F17-5C68-450A-84F6-BE13340F589C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1C57F17-5C68-450A-84F6-BE13340F589C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDA4614B-D897-4338-AC9A-968BCA90BF75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDA4614B-D897-4338-AC9A-968BCA90BF75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDA4614B-D897-4338-AC9A-968BCA90BF75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDA4614B-D897-4338-AC9A-968BCA90BF75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D9781AB-6F5C-4573-B65B-BC5A146D7C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D9781AB-6F5C-4573-B65B-BC5A146D7C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D9781AB-6F5C-4573-B65B-BC5A146D7C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D9781AB-6F5C-4573-B65B-BC5A146D7C8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0784B380-C2E0-4CE1-B5D1-3C0C225A50ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0784B380-C2E0-4CE1-B5D1-3C0C225A50ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0784B380-C2E0-4CE1-B5D1-3C0C225A50ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0784B380-C2E0-4CE1-B5D1-3C0C225A50ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D6CE2EA-EEB3-4006-8908-EE6321661BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D6CE2EA-EEB3-4006-8908-EE6321661BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D6CE2EA-EEB3-4006-8908-EE6321661BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D6CE2EA-EEB3-4006-8908-EE6321661BA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F68457F-F05B-44B5-A8EB-52267169D674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F68457F-F05B-44B5-A8EB-52267169D674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F68457F-F05B-44B5-A8EB-52267169D674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F68457F-F05B-44B5-A8EB-52267169D674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BB17343-744F-42B0-9992-225D5084CE18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BB17343-744F-42B0-9992-225D5084CE18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BB17343-744F-42B0-9992-225D5084CE18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BB17343-744F-42B0-9992-225D5084CE18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC9E9F7E-64D7-4A1E-A972-C5EC3AAED045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC9E9F7E-64D7-4A1E-A972-C5EC3AAED045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC9E9F7E-64D7-4A1E-A972-C5EC3AAED045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC9E9F7E-64D7-4A1E-A972-C5EC3AAED045}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -156,12 +217,14 @@ Global
 		{F08B134A-2EF0-4BB1-965C-74BC5848D661} = {52DCD7F9-F2C0-45AA-A2BA-870AE47B87A3}
 		{A4348AF5-684D-4727-BCC0-6B543E9BB028} = {52DCD7F9-F2C0-45AA-A2BA-870AE47B87A3}
 		{D448C9F6-AB3B-4938-AE1F-DFF20BEAB273} = {52DCD7F9-F2C0-45AA-A2BA-870AE47B87A3}
+		{52DCD7F9-F2C0-45AA-A2BA-870AE47B87A3} = {22EB011A-39E4-41C2-898A-9BF918F8919C}
 		{646F687F-4B2E-43B2-AEA2-E59250724110} = {F08B134A-2EF0-4BB1-965C-74BC5848D661}
 		{899EE2C4-D8F5-4121-9477-FD57F3FC0241} = {F08B134A-2EF0-4BB1-965C-74BC5848D661}
 		{26239059-5880-4665-9E55-CD569DC40272} = {D448C9F6-AB3B-4938-AE1F-DFF20BEAB273}
 		{039884EA-8080-4F55-848D-289681EC4D13} = {D448C9F6-AB3B-4938-AE1F-DFF20BEAB273}
 		{C123D674-444E-4C48-B45B-2D4B9B261576} = {A4348AF5-684D-4727-BCC0-6B543E9BB028}
 		{89F56160-267F-45FE-AB27-C92D3A868B85} = {A4348AF5-684D-4727-BCC0-6B543E9BB028}
+		{0DDEE60A-8AE3-4255-9B3F-837F62049D4A} = {22EB011A-39E4-41C2-898A-9BF918F8919C}
 		{9DC18D8C-D979-4680-84FE-D6FB55BC7C63} = {135D23C0-EC8E-45B5-8E48-D98B14A0F17E}
 		{135D23C0-EC8E-45B5-8E48-D98B14A0F17E} = {0DDEE60A-8AE3-4255-9B3F-837F62049D4A}
 		{D1AD10B5-310D-4877-ACC1-AF636E809D4A} = {135D23C0-EC8E-45B5-8E48-D98B14A0F17E}
@@ -171,6 +234,7 @@ Global
 		{DF2F63D9-9CA7-4016-BFC4-ACD75152195A} = {38F573E1-DCBB-450A-98D9-99E5602B2EBE}
 		{3823F515-D90E-4F40-95F3-F62F5F61F225} = {AEA097D8-4641-4D2E-919B-17DF2BE64BA6}
 		{6B2475E4-C154-4A6B-A6F6-A1FE588929A2} = {AEA097D8-4641-4D2E-919B-17DF2BE64BA6}
+		{57DF89CB-51CE-4D34-B274-403296A15202} = {22EB011A-39E4-41C2-898A-9BF918F8919C}
 		{E0EA6218-6918-444D-BE8E-9D9DC537810C} = {4A0EB225-E3DF-437B-AF90-2FD3EF905369}
 		{33C6D1F3-AA41-4060-946E-BCE208DD511B} = {8295AE90-2063-4E09-8EDC-0107C2FAC9B3}
 		{D8C949FB-E6C8-4033-B952-A079B8AA590B} = {8295AE90-2063-4E09-8EDC-0107C2FAC9B3}
@@ -180,6 +244,18 @@ Global
 		{DA999F8F-C08D-4CBC-AE2E-4E824EBE1FAD} = {0F156B42-8E76-421F-9149-31BBB87DFF8E}
 		{AF78A071-C8B4-446F-9B25-F46CC64B404F} = {4A0EB225-E3DF-437B-AF90-2FD3EF905369}
 		{E44FC353-12F9-49DD-96FC-D0073AAF2783} = {0F156B42-8E76-421F-9149-31BBB87DFF8E}
+		{1EEE6C60-EF60-4054-8EDB-B92890445D30} = {22EB011A-39E4-41C2-898A-9BF918F8919C}
+		{1331A2FD-5835-49CE-BDF2-475D9BC98A1E} = {1EEE6C60-EF60-4054-8EDB-B92890445D30}
+		{9B63F903-8A48-44FB-99FB-C026E06F4BD3} = {1EEE6C60-EF60-4054-8EDB-B92890445D30}
+		{5262E2A9-74C4-4C79-AB22-E07EF57E5DA0} = {1EEE6C60-EF60-4054-8EDB-B92890445D30}
+		{B1C57F17-5C68-450A-84F6-BE13340F589C} = {9B63F903-8A48-44FB-99FB-C026E06F4BD3}
+		{EDA4614B-D897-4338-AC9A-968BCA90BF75} = {9B63F903-8A48-44FB-99FB-C026E06F4BD3}
+		{8D9781AB-6F5C-4573-B65B-BC5A146D7C8D} = {5262E2A9-74C4-4C79-AB22-E07EF57E5DA0}
+		{0784B380-C2E0-4CE1-B5D1-3C0C225A50ED} = {5262E2A9-74C4-4C79-AB22-E07EF57E5DA0}
+		{2D6CE2EA-EEB3-4006-8908-EE6321661BA7} = {1331A2FD-5835-49CE-BDF2-475D9BC98A1E}
+		{0F68457F-F05B-44B5-A8EB-52267169D674} = {1331A2FD-5835-49CE-BDF2-475D9BC98A1E}
+		{1BB17343-744F-42B0-9992-225D5084CE18} = {C8220A85-F915-4946-A3C6-B7529EAE5F22}
+		{FC9E9F7E-64D7-4A1E-A972-C5EC3AAED045} = {C8220A85-F915-4946-A3C6-B7529EAE5F22}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C170EEE5-52F4-4C78-ABDF-890E97482E62}

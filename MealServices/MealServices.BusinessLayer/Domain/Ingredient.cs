@@ -1,5 +1,5 @@
-﻿using MealServices.Shared;
-using MealServices.Shared.Enumerations;
+﻿using MealServices.Shared.Enumerations;
+using OnlineServices.Shared;
 using System;
 
 namespace MealServices.BusinessLayer.Domain
@@ -8,11 +8,11 @@ namespace MealServices.BusinessLayer.Domain
     {
         public int Id { get; set; }
 
-        public StringTranslated Name { get; set; }
+        public MultiLanguageString Name { get; set; }
 
         public bool IsAllergen { get; set; }
 
-        public Ingredient(StringTranslated Name, bool isAllergene)
+        public Ingredient(MultiLanguageString Name, bool isAllergene)
         {
             this.Name = Name ?? throw new ArgumentNullException(nameof(Name));
             this.IsAllergen = isAllergene;

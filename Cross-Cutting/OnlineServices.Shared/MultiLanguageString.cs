@@ -1,11 +1,11 @@
 ﻿
 using MealServices.Shared.Enumerations;
 
-namespace MealServices.Shared
+namespace OnlineServices.Shared
 {
-    public class StringTranslated
+    public class MultiLanguageString
     {
-        public StringTranslated(string English, string French, string Dutch)
+        public MultiLanguageString(string English, string French, string Dutch)
         {
             this.English = English;
             this.French = French;

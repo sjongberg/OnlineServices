@@ -1,6 +1,6 @@
 ﻿namespace MealServices.Shared.Interfaces
 {
-    public interface IUnitOfWork
+    public interface IMSUnitOfWork
     {
         IMealRepository MealRepository { get; }
         ISupplierRepository SupplierRepository { get; }

@@ -1,7 +1,6 @@
 ﻿using MealServices.DataLayer.Entities;
-using MealServices.Shared;
 using MealServices.Shared.Extensions;
-using MealServices.Shared.TransfertObjects;
+using OnlineServices.Shared.MealServices.TransfertObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +17,7 @@ namespace MealServices.DataLayer.Extensions
             return new MealTO
             {
                 Id = Meal.Id,
-                Name = Meal.ExtractToStringTranslated(),
+                Name = Meal.ExtractToMultiLanguageString(),
                 Ingredients = Meal.MealsComposition?.Select(x => x.Ingredient.ToTranfertObject()).ToList(),
                 Supplier = Meal.Supplier.ToTranfertObject(),
                 MealType = Meal.MealType,
@@ -41,7 +40,7 @@ namespace MealServices.DataLayer.Extensions
                 //Ingredients = MealTO.Ingredients.Select(x => x.ToEF()).ToList()
             };
 
-            ReturnValue = ReturnValue.FillFromStringTranslated(Meal.Name);
+            ReturnValue = ReturnValue.FillFromMultiLanguageString(Meal.Name);
 
 
             //TODO IngredientsTO to MealComposition Extention to use as
@@ -73,7 +72,7 @@ namespace MealServices.DataLayer.Extensions
                 //    .ToList()
                 //    .UpdateListFromDetached(DetachedEF.MealsComposition.ToList());
 
-                AttachedEF = AttachedEF.FillFromStringTranslated(DetachedEF.ExtractToStringTranslated());
+                AttachedEF = AttachedEF.FillFromMultiLanguageString(DetachedEF.ExtractToMultiLanguageString());
                 AttachedEF.Supplier = DetachedEF.Supplier;
                 AttachedEF.MealType = DetachedEF.MealType;
             }

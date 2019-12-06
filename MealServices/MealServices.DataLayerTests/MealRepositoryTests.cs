@@ -1,16 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
 using MealServices.DataLayer;
 using MealServices.DataLayer.Repositories;
-using MealServices.Shared;
-using MealServices.Shared.Enumerations;
-using MealServices.Shared.Interfaces;
-using MealServices.Shared.TransfertObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using OnlineServices.Shared.MealServices.TransfertObjects;
+using OnlineServices.Shared;
+using OnlineServices.Shared.MealServices.Enumerations;
 
 namespace MealServices.DataLayerTests
 {
@@ -30,11 +28,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 1,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -70,11 +68,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 1,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -108,11 +106,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest1 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 1,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -122,11 +120,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest2 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
+                    Name = new MultiLanguageString("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 2,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -161,11 +159,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest1 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 0,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -175,11 +173,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest2 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
+                    Name = new MultiLanguageString("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 0,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -217,11 +215,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest1 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 1,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -231,11 +229,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest2 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
+                    Name = new MultiLanguageString("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 2,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -269,11 +267,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest1 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 1,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -283,11 +281,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest2 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
+                    Name = new MultiLanguageString("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 2,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -325,11 +323,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest1 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 1,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -339,11 +337,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest2 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
+                    Name = new MultiLanguageString("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 2,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -378,11 +376,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest = new MealTO
                 {
                     Id = 1,
-                    Name = new StringTranslated("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 2,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },

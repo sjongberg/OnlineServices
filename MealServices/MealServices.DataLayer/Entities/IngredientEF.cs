@@ -1,4 +1,4 @@
-﻿using MealServices.Shared.Interfaces;
+﻿using OnlineServices.Shared;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace MealServices.DataLayer.Entities
 {
     [Table("Ingredient")]
-    public class IngredientEF: IMultiLanguageFields
+    public class IngredientEF: IMultiLanguage
     {
         [Key]
         public int Id{get;set;}

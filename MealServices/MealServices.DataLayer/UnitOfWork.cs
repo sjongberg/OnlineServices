@@ -1,13 +1,13 @@
 ﻿using MealServices.Shared.Interfaces;
 using MealServices.DataLayer.Repositories;
 using System;
-using MealServices.Shared.TransfertObjects;
+using OnlineServices.Shared.MealServices.TransfertObjects;
 
 namespace MealServices.DataLayer
 {
-    public class UnitOfWork : IDisposable, IUnitOfWork
+    public class MSUnitOfWork : IDisposable, IMSUnitOfWork
     {
-        public UnitOfWork(MealContext Context)
+        public MSUnitOfWork(MealContext Context)
         {
             this.DbContext = Context;
         }

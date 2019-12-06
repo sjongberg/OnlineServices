@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MealServices.Shared.Enumerations
+namespace OnlineServices.Shared.MealServices.Enumerations
 {
     public enum MealType
     {

@@ -3,13 +3,21 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyVersion>2019.12.4.4</AssemblyVersion>
-    <FileVersion>2019.12.4.4</FileVersion>
+    <AssemblyVersion>2019.12.5.0</AssemblyVersion>
+    <FileVersion>2019.12.5.0</FileVersion>
     <ApplicationIcon />
     <StartupObject />
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Cross-Cutting\OnlineServices.Shared\OnlineServices.Shared.csproj" />
     <ProjectReference Include="..\MealServices.DataLayer\MealServices.DataLayer.csproj" />
     <ProjectReference Include="..\MealServices.Shared\MealServices.Shared.csproj" />
   </ItemGroup>

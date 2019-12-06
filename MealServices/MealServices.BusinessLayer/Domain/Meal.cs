@@ -1,5 +1,7 @@
 ﻿using MealServices.Shared;
 using MealServices.Shared.Enumerations;
+using OnlineServices.Shared;
+using OnlineServices.Shared.MealServices.Enumerations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +10,7 @@ namespace MealServices.BusinessLayer.Domain
 {
     public class Meal
     {
-        public Meal(StringTranslated Name, Supplier Supplier)
+        public Meal(MultiLanguageString Name, Supplier Supplier)
         {
             this.Name = Name;
             this.Supplier = Supplier;
@@ -16,7 +18,7 @@ namespace MealServices.BusinessLayer.Domain
 
         public int Id { get; set; }
 
-        public StringTranslated Name { get; set; }
+        public MultiLanguageString Name { get; set; }
 
         public List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
 

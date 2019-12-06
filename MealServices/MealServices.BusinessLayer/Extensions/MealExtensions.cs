@@ -1,7 +1,5 @@
 ﻿using MealServices.BusinessLayer.Domain;
-using MealServices.Shared;
-using MealServices.Shared.Enumerations;
-using MealServices.Shared.TransfertObjects;
+using OnlineServices.Shared.MealServices.TransfertObjects;
 using System;
 using System.Linq;
 

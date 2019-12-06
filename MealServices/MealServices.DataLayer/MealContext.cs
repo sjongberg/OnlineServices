@@ -16,6 +16,9 @@ namespace MealServices.DataLayer
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            if (optionsBuilder is null)
+                throw new System.ArgumentNullException(nameof(optionsBuilder));
+
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MealDB;Trusted_Connection=True;");
@@ -24,6 +27,9 @@ namespace MealServices.DataLayer
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            if (modelBuilder is null)
+                throw new System.ArgumentNullException(nameof(modelBuilder));
+
             modelBuilder.Entity<MealCompositionEF>().HasKey(si => new { si.MealId, si.IngredientId });
 
             modelBuilder.Entity<MealCompositionEF>()

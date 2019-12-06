@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MealServices.Shared.Interfaces
+namespace OnlineServices.Shared
 {
-    public interface IMultiLanguageFields
+    public interface IMultiLanguage
     {
         string NameEnglish { get; set; }
         string NameFrench { get; set; }

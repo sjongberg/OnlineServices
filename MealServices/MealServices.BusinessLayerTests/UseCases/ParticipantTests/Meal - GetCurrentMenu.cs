@@ -5,8 +5,10 @@ using MealServices.Shared;
 using MealServices.Shared.Enumerations;
 using System.Collections.Generic;
 using System.Linq;
-using MealServices.Shared.TransfertObjects;
 using MealServices.BusinessLayer.Extensions;
+using OnlineServices.Shared;
+using OnlineServices.Shared.MealServices.TransfertObjects;
+using OnlineServices.Shared.MealServices.Enumerations;
 
 namespace MealServices.BusinessLayer.UseCases.Tests
 {
@@ -16,21 +18,21 @@ namespace MealServices.BusinessLayer.UseCases.Tests
         private List<MealTO> GetTestsListOfMeals()
         {
             //REchercher Founisseur
-            var Tomate = new IngredientTO { Id = 1, Name = new StringTranslated("Tomato", "Tomate", "Tomaat"), IsAllergen = false };
-            var Brie = new IngredientTO { Id = 2, Name = new StringTranslated("Brie", "Brie", "Brie"), IsAllergen = true };
-            var Fromage = new IngredientTO { Id = 3, Name = new StringTranslated("Cheese", "Fromage", "Kaas"), IsAllergen = true };
-            var Noix = new IngredientTO { Id = 4, Name = new StringTranslated("Nuts", "Noix", "Noten"), IsAllergen = true };
-            var Beurre = new IngredientTO { Id = 5, Name = new StringTranslated("Butter", "Beurre", "Boter"), IsAllergen = false };
-            var Jambon = new IngredientTO { Id = 6, Name = new StringTranslated("Ham", "Jambon", "Ham"), IsAllergen = false };
-            var Roquette = new IngredientTO { Id = 7, Name = new StringTranslated("Arugula", "Roquette", "Rucola"), IsAllergen = false };
-            var Salade = new IngredientTO { Id = 8, Name = new StringTranslated("Salad", "Salade", "Salade"), IsAllergen = false };
-            var Pesto = new IngredientTO { Id = 9, Name = new StringTranslated("Pesto", "Pesto", "Pesto"), IsAllergen = false };
-            var Oeuf = new IngredientTO { Id = 10, Name = new StringTranslated("Eggs", "Oeufs", "Eien"), IsAllergen = true };
-            var Miel = new IngredientTO { Id = 11, Name = new StringTranslated("Honey", "Miel", "Honing"), IsAllergen = false };
+            var Tomate = new IngredientTO { Id = 1, Name = new MultiLanguageString("Tomato", "Tomate", "Tomaat"), IsAllergen = false };
+            var Brie = new IngredientTO { Id = 2, Name = new MultiLanguageString("Brie", "Brie", "Brie"), IsAllergen = true };
+            var Fromage = new IngredientTO { Id = 3, Name = new MultiLanguageString("Cheese", "Fromage", "Kaas"), IsAllergen = true };
+            var Noix = new IngredientTO { Id = 4, Name = new MultiLanguageString("Nuts", "Noix", "Noten"), IsAllergen = true };
+            var Beurre = new IngredientTO { Id = 5, Name = new MultiLanguageString("Butter", "Beurre", "Boter"), IsAllergen = false };
+            var Jambon = new IngredientTO { Id = 6, Name = new MultiLanguageString("Ham", "Jambon", "Ham"), IsAllergen = false };
+            var Roquette = new IngredientTO { Id = 7, Name = new MultiLanguageString("Arugula", "Roquette", "Rucola"), IsAllergen = false };
+            var Salade = new IngredientTO { Id = 8, Name = new MultiLanguageString("Salad", "Salade", "Salade"), IsAllergen = false };
+            var Pesto = new IngredientTO { Id = 9, Name = new MultiLanguageString("Pesto", "Pesto", "Pesto"), IsAllergen = false };
+            var Oeuf = new IngredientTO { Id = 10, Name = new MultiLanguageString("Eggs", "Oeufs", "Eien"), IsAllergen = true };
+            var Miel = new IngredientTO { Id = 11, Name = new MultiLanguageString("Honey", "Miel", "Honing"), IsAllergen = false };
 
-            MealTO Club = new MealTO { Id = 1, Name = new StringTranslated("ClubEN", "ClubFR", "ClubNL"), Supplier = new SupplierTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientTO>(), MealType=MealType.Sandwich };
-            MealTO BrieNoix = new MealTO { Id = 2, Name = new StringTranslated("BrieEN", "BrieFR", "BrieNL"), Supplier = new SupplierTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientTO>(), MealType = MealType.Sandwich };
-            MealTO PestoVerde = new MealTO { Id = 3, Name = new StringTranslated("PestoEN", "PestoFR", "PestoNL"), Supplier = new SupplierTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientTO>(), MealType = MealType.Sandwich };
+            MealTO Club = new MealTO { Id = 1, Name = new MultiLanguageString("ClubEN", "ClubFR", "ClubNL"), Supplier = new SupplierTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientTO>(), MealType=MealType.Sandwich };
+            MealTO BrieNoix = new MealTO { Id = 2, Name = new MultiLanguageString("BrieEN", "BrieFR", "BrieNL"), Supplier = new SupplierTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientTO>(), MealType = MealType.Sandwich };
+            MealTO PestoVerde = new MealTO { Id = 3, Name = new MultiLanguageString("PestoEN", "PestoFR", "PestoNL"), Supplier = new SupplierTO { Id = 33, Name = "Supplier1" }, Ingredients = new List<IngredientTO>(), MealType = MealType.Sandwich };
 
             BrieNoix.Ingredients.Add(Brie);
             BrieNoix.Ingredients.Add(Miel);
@@ -70,7 +72,7 @@ namespace MealServices.BusinessLayer.UseCases.Tests
             var fakeSupplierRepo = new Mock<ISupplierRepository>();
             fakeSupplierRepo.Setup(x => x.GetDefaultSupplier()).Returns(SupplierToUse);
 
-            var unitOfWorkMock = new Mock<IUnitOfWork>();
+            var unitOfWorkMock = new Mock<IMSUnitOfWork>();
             unitOfWorkMock.Setup(x => x.MealRepository).Returns(fakeSandwichRepo.Object);
             unitOfWorkMock.Setup(x => x.SupplierRepository).Returns(fakeSupplierRepo.Object);
 
@@ -94,7 +96,7 @@ namespace MealServices.BusinessLayer.UseCases.Tests
             var fakeSupplierRepo = new Mock<ISupplierRepository>();
             fakeSupplierRepo.Setup(x => x.GetDefaultSupplier()).Returns(SupplierToUse);
 
-            var unitOfWorkMock = new Mock<IUnitOfWork>();
+            var unitOfWorkMock = new Mock<IMSUnitOfWork>();
             unitOfWorkMock.Setup(x => x.MealRepository).Returns(fakeSandwichRepo.Object);
             unitOfWorkMock.Setup(x => x.SupplierRepository).Returns(fakeSupplierRepo.Object);
 
@@ -124,7 +126,7 @@ namespace MealServices.BusinessLayer.UseCases.Tests
             var fakeSupplierRepo = new Mock<ISupplierRepository>();
             fakeSupplierRepo.Setup(x => x.GetDefaultSupplier()).Returns(SupplierToUse);
 
-            var unitOfWorkMock = new Mock<IUnitOfWork>();
+            var unitOfWorkMock = new Mock<IMSUnitOfWork>();
             unitOfWorkMock.Setup(x => x.MealRepository).Returns(fakeSandwichRepo.Object);
             unitOfWorkMock.Setup(x => x.SupplierRepository).Returns(fakeSupplierRepo.Object);
 
@@ -154,7 +156,7 @@ namespace MealServices.BusinessLayer.UseCases.Tests
             var fakeSupplierRepo = new Mock<ISupplierRepository>();
             fakeSupplierRepo.Setup(x => x.GetDefaultSupplier()).Returns(SupplierToUse);
 
-            var unitOfWorkMock = new Mock<IUnitOfWork>();
+            var unitOfWorkMock = new Mock<IMSUnitOfWork>();
             unitOfWorkMock.Setup(x => x.MealRepository).Returns(fakeSandwichRepo.Object);
             unitOfWorkMock.Setup(x => x.SupplierRepository).Returns(fakeSupplierRepo.Object);
 

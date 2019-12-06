@@ -1,4 +1,4 @@
-﻿namespace MealServices.Shared.TransfertObjects
+﻿namespace OnlineServices.Shared.MealServices.TransfertObjects
 {
     public class SupplierTO
     {
