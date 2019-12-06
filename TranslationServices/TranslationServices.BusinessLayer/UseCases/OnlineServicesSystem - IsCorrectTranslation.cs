@@ -19,13 +19,19 @@ namespace TranslationServices.BusinessLayer.UseCases
                 throw new IsNullOrWhiteSpaceException(exceptionMSG);
             }
 
-            if (Enum.IsDefined(typeof(Language), SourceLanguage))
+            if (!Enum.IsDefined(typeof(Language), SourceLanguage))
             {
                 var exceptionMSG = $"CorrectTranslation(...) ArgumentOutOfRangeException({nameof(SourceLanguage)}). Value={(int)SourceLanguage}";
                 logger.Error(exceptionMSG);
                 throw new ArgumentOutOfRangeException(exceptionMSG);
             }
 
+            if (MLSToCheck is null)
+            {
+                var exceptionMSG = $"MLSToCorrect should not be null. {nameof(SourceLanguage)}";
+                logger.Error(exceptionMSG);
+                throw new ArgumentNullException(nameof(MLSToCheck));
+            }
             if (MLSToCheck.ToString(SourceLanguage).IsNullOrWhiteSpace())
             {
                 var exceptionMSG = $"String necessary for check not present. {nameof(SourceLanguage)}";
@@ -33,17 +39,29 @@ namespace TranslationServices.BusinessLayer.UseCases
                 throw new IsNullOrWhiteSpaceException(exceptionMSG);
             }
 
-            //LOGIC HERE
-            var correctedMLString = GetTranslation(APIKey, MLSToCheck.ToString(SourceLanguage), SourceLanguage);
+            ////LOGIC HERE I ==> TEST OK. ICI  "Qte Requete aux agents == Enum.Language.Count-1 == Exact 2"
+            //var correctedMLString = GetTranslation(APIKey, MLSToCheck.ToString(SourceLanguage), SourceLanguage);
 
+            //var IsCorrect = true;
+            //foreach (var item in Enum.GetValues(typeof(Language)))
+            //{
+            //    if (MLSToCheck.ToString((Language)item) != correctedMLString.ToString((Language)item))
+            //    {
+            //        IsCorrect = false;
+            //        break;
+            //    }
+            //}
+
+            //LOGIC HERE II ==> On essaie de Ameliorer la performance en diminuant la quantité d'appel à l'API. On Chercher "Qte Requete aux agents < Enum.Language.Count"
             var IsCorrect = true;
             foreach (var item in Enum.GetValues(typeof(Language)))
             {
-                if (MLSToCheck.ToString((Language)item) == correctedMLString.ToString((Language)item))
-                {
-                    IsCorrect = false;
-                    break;
-                }
+                if ((Language)item != SourceLanguage)
+                    if (MLSToCheck.ToString((Language)item) != Translator.Translate(MLSToCheck.ToString(SourceLanguage), SourceLanguage, (Language)item))
+                    {
+                        IsCorrect = false;
+                        break;
+                    }
             }
             return IsCorrect;
         }

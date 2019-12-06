@@ -16,7 +16,7 @@ namespace TranslationServices.DataLayer.ServiceAgents
             aPIKey = APIKey;
         }
 
-        string ITRSTranslationService.GetTranslation(string StringToTranslate, Language Langue)
+        string ITRSTranslationService.Translate(string StringToTranslate, Language FromLangue, Language ToLangue)
         {
             throw new NotImplementedException();
         }

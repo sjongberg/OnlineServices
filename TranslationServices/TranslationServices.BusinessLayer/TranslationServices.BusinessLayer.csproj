@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyVersion>1912.6.5.1415</AssemblyVersion>
-    <FileVersion>1912.6.5.1415</FileVersion>
+    <AssemblyVersion>1912.6.8.1805</AssemblyVersion>
+    <FileVersion>1912.6.8.1805</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Cross-Cutting\OnlineServices.Shared\OnlineServices.Shared.csproj" />
+    <ProjectReference Include="..\TranslationServices.DataLayer.ServiceAgents\TranslationServices.DataLayer.ServiceAgents.csproj" />
   </ItemGroup>
 
 </Project>

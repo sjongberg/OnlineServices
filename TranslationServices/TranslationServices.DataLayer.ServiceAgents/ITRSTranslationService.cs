@@ -5,6 +5,6 @@ namespace TranslationServices.DataLayer.ServiceAgents
 {
     public interface ITRSTranslationService
     {
-        string GetTranslation(string StringToTranslate, Language Langue);
+        string Translate(string StringToTranslate, Language FromLangue, Language ToLangue);
     }
 }

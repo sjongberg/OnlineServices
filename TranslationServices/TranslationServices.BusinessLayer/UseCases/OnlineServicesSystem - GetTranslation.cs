@@ -19,7 +19,7 @@ namespace TranslationServices.BusinessLayer.UseCases
                 throw new IsNullOrWhiteSpaceException(exceptionMSG);
             }
 
-            if (Enum.IsDefined(typeof(Language), SourceLanguage))
+            if (!Enum.IsDefined(typeof(Language), SourceLanguage))
             {
                 var exceptionMSG = $"GetTranslation(...) ArgumentOutOfRangeException({nameof(SourceLanguage)}). Value={(int)SourceLanguage}";
                 logger.Error(exceptionMSG);
@@ -34,8 +34,10 @@ namespace TranslationServices.BusinessLayer.UseCases
             }
 
             //LOGIC HERE
-
-            return new MultiLanguageString($"{StringToTranslate}", $"{(StringToTranslate)}", $"{(StringToTranslate)}");
+            return new MultiLanguageString(
+                SourceLanguage == Language.English ? StringToTranslate : Translator.Translate(StringToTranslate, SourceLanguage, Language.English),
+                SourceLanguage == Language.French ? StringToTranslate : Translator.Translate(StringToTranslate, SourceLanguage, Language.French),
+                SourceLanguage == Language.Dutch ? StringToTranslate : Translator.Translate(StringToTranslate, SourceLanguage, Language.Dutch));
         }
     }
 }

@@ -18,13 +18,19 @@ namespace TranslationServices.BusinessLayer.UseCases
                 throw new IsNullOrWhiteSpaceException(exceptionMSG);
             }
 
-            if (Enum.IsDefined(typeof(Language), SourceLanguage))
+            if (!Enum.IsDefined(typeof(Language), SourceLanguage))
             {
                 var exceptionMSG = $"CorrectTranslation(...) ArgumentOutOfRangeException({nameof(SourceLanguage)}). Value={(int)SourceLanguage}";
                 logger.Error(exceptionMSG);
                 throw new ArgumentOutOfRangeException(exceptionMSG);
             }
 
+            if (MLSToCorrect is null)
+            {
+                var exceptionMSG = $"MLSToCorrect should not be null. {nameof(SourceLanguage)}";
+                logger.Error(exceptionMSG);
+                throw new ArgumentNullException(nameof(MLSToCorrect));
+            }
             if (MLSToCorrect.ToString(SourceLanguage).IsNullOrWhiteSpace())
             {
                 var exceptionMSG = $"String necessary for correction correct not present. {nameof(SourceLanguage)}";

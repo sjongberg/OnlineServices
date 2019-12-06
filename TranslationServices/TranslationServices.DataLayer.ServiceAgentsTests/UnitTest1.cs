@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace TranslationServices.BusinessLayerTests
+namespace TranslationServices.DataLayer.ServiceAgentsTests
 {
     public class UnitTest1
     {
