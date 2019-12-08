@@ -6,6 +6,7 @@ using System.Text;
 using TranslationServices.DataLayer.ServiceAgents;
 using Xunit;
 using Serilog;
+using TranslationServices.DataLayer.ServiceAgents.TranslationAgents;
 
 namespace TranslationServices.DataLayer.ServiceAgentsTests
 {

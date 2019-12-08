@@ -7,9 +7,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using TranslationServices.DataLayer.ServiceAgents.Extensions;
+using TranslationServices.DataLayer.ServiceAgents.Interfaces;
+
 using Language = OnlineServices.Shared.Enumerations.Language;
 
-namespace TranslationServices.DataLayer.ServiceAgents
+namespace TranslationServices.DataLayer.ServiceAgents.TranslationAgents
 {
     public class GoogleTranslationAgent : ITRSTranslationService
     {
@@ -62,14 +64,18 @@ namespace TranslationServices.DataLayer.ServiceAgents
             }
 
             //LOGIC HERE
+            #region This Region depends on a current Google Cloud Account with Credit Card entered on it.
             //DOC Students should create a service account https://cloud.google.com/docs/authentication/getting-started
-            var credential = GoogleCredential.FromFile(apiKey);
-            using (var client = TranslationClient.Create(credential, TranslationModel.NeuralMachineTranslation))
-            {
-                var result = client.TranslateText(StringToTranslate, ToLangue.ToLanguageCode(), FromLangue.ToLanguageCode());
+            //var credential = GoogleCredential.FromFile(apiKey);
+            //using (var client = TranslationClient.Create(credential, TranslationModel.NeuralMachineTranslation))
+            //{
+            //    var result = client.TranslateText(StringToTranslate, ToLangue.ToLanguageCode(), FromLangue.ToLanguageCode());
 
-                return result.TranslatedText;
-            }
+            //    return result.TranslatedText;
+            //}
+            #endregion
+
+            return StringToTranslate; //TODO Delete when the google account is created and JSON file downloaded...
         }
     }
 }

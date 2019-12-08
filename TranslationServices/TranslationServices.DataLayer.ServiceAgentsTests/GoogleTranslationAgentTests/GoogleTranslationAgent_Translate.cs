@@ -6,13 +6,16 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using TranslationServices.DataLayer.ServiceAgents;
+using TranslationServices.DataLayer.ServiceAgents.Interfaces;
+using TranslationServices.DataLayer.ServiceAgents.TranslationAgents;
 using Xunit;
 
 namespace TranslationServices.DataLayer.ServiceAgentsTests
 {
     public class GoogleTranslationAgent_Translate
     {
-        [Theory(Skip = "Not a payed account to launch the google api... sorry...")] //TODO Pay google for translation...
+        [Theory]//(Skip = "Not a payed account to launch the google api... sorry...")] //TODO Pay google for translation...
+        //[InlineData(Language.English, "Test", Language.French, "Test")] //TestOfTheTest... without the logic.
         [InlineData(Language.English, "The rough sea makes him nauseous.", Language.French, "La mer agitée lui donne la nausée.")]
         [InlineData(Language.English, "Do you see that man there in that photo?", Language.Dutch, "Zie je die man daar op die foto?")]
         [InlineData(Language.French, "Maman, donne-moi un peu de lait, s'il te plaît.", Language.English, "Mom, give me some milk, please.")]

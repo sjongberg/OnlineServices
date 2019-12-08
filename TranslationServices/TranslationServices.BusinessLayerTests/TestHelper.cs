@@ -3,6 +3,7 @@ using OnlineServices.Shared.Enumerations;
 using Serilog;
 using System;
 using TranslationServices.DataLayer.ServiceAgents;
+using TranslationServices.DataLayer.ServiceAgents.Interfaces;
 using Xunit;
 
 namespace TranslationServices.BusinessLayerTests

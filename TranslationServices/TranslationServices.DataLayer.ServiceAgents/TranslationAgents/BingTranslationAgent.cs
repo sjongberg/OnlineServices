@@ -5,8 +5,11 @@ using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TranslationServices.DataLayer.ServiceAgents.Interfaces;
 
-namespace TranslationServices.DataLayer.ServiceAgents
+using Language = OnlineServices.Shared.Enumerations.Language;
+
+namespace TranslationServices.DataLayer.ServiceAgents.TranslationAgents
 {
     public class BingTranslationAgent : ITRSTranslationService
     {

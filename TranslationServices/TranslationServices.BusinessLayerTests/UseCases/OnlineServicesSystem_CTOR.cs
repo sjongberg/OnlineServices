@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using TranslationServices.BusinessLayer.UseCases;
 using TranslationServices.DataLayer.ServiceAgents;
+using TranslationServices.DataLayer.ServiceAgents.Interfaces;
 using Xunit;
 
 namespace TranslationServices.BusinessLayerTests.UseCases

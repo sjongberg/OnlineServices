@@ -1,7 +1,7 @@
 ﻿using OnlineServices.Shared.Enumerations;
 using System;
 
-namespace TranslationServices.DataLayer.ServiceAgents
+namespace TranslationServices.DataLayer.ServiceAgents.Interfaces
 {
     public interface ITRSTranslationService
     {
