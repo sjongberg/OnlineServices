@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MealServices.BusinessLayer.Domain;
-using MealServices.Shared;
 using System;
 using OnlineServices.Shared;
 using OnlineServices.Shared.TranslationServices.TransfertObjects;

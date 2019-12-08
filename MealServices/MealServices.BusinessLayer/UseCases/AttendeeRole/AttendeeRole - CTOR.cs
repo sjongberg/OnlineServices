@@ -1,7 +1,5 @@
-﻿using MealServices.Shared.Interfaces;
-
-using OnlineServices.Shared.MealServices;
-
+﻿using OnlineServices.Shared.MealServices;
+using OnlineServices.Shared.MealServices.Interfaces;
 using System;
 
 namespace MealServices.BusinessLayer.UseCases

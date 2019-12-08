@@ -14,28 +14,28 @@ namespace TranslationServices.DataLayer.ServiceAgentsTests
 {
     public class GoogleTranslationAgent_Translate
     {
-        [Theory]//(Skip = "Not a payed account to launch the google api... sorry...")] //TODO Pay google for translation...
-        //[InlineData(Language.English, "Test", Language.French, "Test")] //TestOfTheTest... without the logic.
-        [InlineData(Language.English, "The rough sea makes him nauseous.", Language.French, "La mer agitée lui donne la nausée.")]
-        [InlineData(Language.English, "Do you see that man there in that photo?", Language.Dutch, "Zie je die man daar op die foto?")]
-        [InlineData(Language.French, "Maman, donne-moi un peu de lait, s'il te plaît.", Language.English, "Mom, give me some milk, please.")]
-        [InlineData(Language.French, "Jouer au papa et à la maman.", Language.Dutch, "Speel papa en mama.")]
-        [InlineData(Language.Dutch, "Dat is niet eerlijk!", Language.English, "That's not fair!")]
-        [InlineData(Language.Dutch, "Tot ziens mevrouw", Language.French, "Au revoir, mademoiselle!")]
-        public void Translate_ShouldTranslate_WhenValidSentenceIsProvided(Language FromLangue, string StringToTranslate, Language ToLangue, string StringTranlated)
-        {
-            //ARRANGE
-            var mockILogger = TestHelper.MockILogger();
+        //[Theory]//(Skip = "Not a payed account to launch the google api... sorry...")] //TODO Pay google for translation...
+        ////[InlineData(Language.English, "Test", Language.French, "Test")] //TestOfTheTest... without the logic.
+        //[InlineData(Language.English, "The rough sea makes him nauseous.", Language.French, "La mer agitée lui donne la nausée.")]
+        //[InlineData(Language.English, "Do you see that man there in that photo?", Language.Dutch, "Zie je die man daar op die foto?")]
+        //[InlineData(Language.French, "Maman, donne-moi un peu de lait, s'il te plaît.", Language.English, "Mom, give me some milk, please.")]
+        //[InlineData(Language.French, "Jouer au papa et à la maman.", Language.Dutch, "Speel papa en mama.")]
+        //[InlineData(Language.Dutch, "Dat is niet eerlijk!", Language.English, "That's not fair!")]
+        //[InlineData(Language.Dutch, "Tot ziens mevrouw", Language.French, "Au revoir, mademoiselle!")]
+        //public void Translate_ShouldTranslate_WhenValidSentenceIsProvided(Language FromLangue, string StringToTranslate, Language ToLangue, string StringTranlated)
+        //{
+        //    //ARRANGE
+        //    var mockILogger = TestHelper.MockILogger();
 
-            ITRSTranslationService TranslatorToTest = new GoogleTranslationAgent(mockILogger.Object, TestHelper.GoogleAPIKey());
+        //    ITRSTranslationService TranslatorToTest = new GoogleTranslationAgent(mockILogger.Object, TestHelper.GoogleAPIKey());
 
-            //ACT
-            var GoogleTranslatedSentence = TranslatorToTest.Translate(StringToTranslate, FromLangue, ToLangue);
+        //    //ACT
+        //    var GoogleTranslatedSentence = TranslatorToTest.Translate(StringToTranslate, FromLangue, ToLangue);
 
-            //ASSERT
-            Assert.Equal(StringTranlated, GoogleTranslatedSentence);
-            mockILogger.Verify(x => x.Error(It.IsAny<string>()), Times.Never);
-        }
+        //    //ASSERT
+        //    Assert.Equal(StringTranlated, GoogleTranslatedSentence);
+        //    mockILogger.Verify(x => x.Error(It.IsAny<string>()), Times.Never);
+        //}
 
         [Fact]
         public void Translate_ThrowsArgumentNullException_WhenStringToTranslateIsNull()

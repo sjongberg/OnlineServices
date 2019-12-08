@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using MealServices.BusinessLayer.UseCases;
-using MealServices.Shared.Interfaces;
 using OnlineServices.Shared.MealServices.TransfertObjects;
 using System;
+using OnlineServices.Shared.MealServices.Interfaces;
 
 namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
 {

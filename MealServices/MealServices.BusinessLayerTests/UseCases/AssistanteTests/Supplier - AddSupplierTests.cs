@@ -1,10 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using MealServices.BusinessLayer.UseCases;
-using MealServices.Shared.Interfaces;
 using System;
 using OnlineServices.Shared.MealServices.TransfertObjects;
 using OnlineServices.Shared.Exceptions;
+using OnlineServices.Shared.MealServices.Interfaces;
 
 namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
 {

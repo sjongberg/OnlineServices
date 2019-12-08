@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using MealServices.Shared.Interfaces;
-using MealServices.Shared;
+using OnlineServices.Shared.MealServices.Interfaces;
 using OnlineServices.Shared.Enumerations;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,8 +1,9 @@
-﻿using OnlineServices.Shared.MealServices.TransfertObjects;
+﻿using OnlineServices.Shared.DataAccessHelpers;
+using OnlineServices.Shared.MealServices.TransfertObjects;
 
 using System.Collections.Generic;
 
-namespace MealServices.Shared.Interfaces
+namespace OnlineServices.Shared.MealServices.Interfaces
 {
     public interface IMealRepository : IRepository<MealTO, int>
     {

@@ -1,8 +1,8 @@
 ﻿using MealServices.DataLayer.Extensions;
-using MealServices.Shared.Interfaces;
 
 using Microsoft.EntityFrameworkCore;
-
+using OnlineServices.Shared.DataAccessHelpers;
+using OnlineServices.Shared.MealServices.Interfaces;
 using OnlineServices.Shared.MealServices.TransfertObjects;
 
 using System;
