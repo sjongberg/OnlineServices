@@ -18,15 +18,18 @@ namespace MealServices.DataLayer
 
         private IMealRepository mealRepository;
         public IMealRepository MealRepository
-            => mealRepository ??= new MealRepository(mealContext);
+            => mealRepository = new MealRepository(mealContext);
+            //=> mealRepository ??= new MealRepository(mealContext);
 
         private IRepository<IngredientTO, int> ingredientRepository;
         public IRepository<IngredientTO, int> IngredientRepository
-            => ingredientRepository ??= new IngredientRepository(mealContext);
+            => ingredientRepository = new IngredientRepository(mealContext);
+            //=> ingredientRepository ??= new IngredientRepository(mealContext);
 
         private ISupplierRepository supplierRepository;
         public ISupplierRepository SupplierRepository
-            => supplierRepository ??= new SupplierRepository(mealContext);
+            => supplierRepository = new SupplierRepository(mealContext);
+            //=> supplierRepository ??= new SupplierRepository(mealContext);
 
         private bool disposed = false;
         protected virtual void Dispose(bool disposing)

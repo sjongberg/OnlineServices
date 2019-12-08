@@ -30,9 +30,7 @@ namespace OnlineServices.Shared.Extensions
         }
 
         public static int ToInt<TEnum>(this TEnum EnumToExtend)
-            where TEnum : notnull, Enum
-        {
-            return Convert.ToInt32(EnumToExtend, null);
-        }
+            //TODO UPDATE VS... where TEnum : notnull, Enum
+            => Convert.ToInt32(EnumToExtend, null);
     }
 }

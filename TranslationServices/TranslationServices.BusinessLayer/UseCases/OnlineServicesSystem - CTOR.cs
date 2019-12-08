@@ -7,12 +7,12 @@ namespace TranslationServices.BusinessLayer.UseCases
 {
     public partial class OnlineServicesSystem : ITRSServicesRole
     {
-        private readonly ILogger logger;
+        private readonly ILogger iLogger;
         private readonly ITRSTranslationService Translator;
 
         public OnlineServicesSystem(ILogger logger, ITRSTranslationService Translator)
         {
-            this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            this.iLogger = logger ?? throw new ArgumentNullException(nameof(logger));
 
             if (Translator is null)
             {
