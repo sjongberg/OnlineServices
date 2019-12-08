@@ -1,8 +1,5 @@
 ﻿using OnlineServices.Shared.Enumerations;
 using OnlineServices.Shared.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace TranslationServices.DataLayer.ServiceAgents.Extensions

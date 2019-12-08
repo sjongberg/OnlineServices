@@ -1,12 +1,7 @@
-﻿using Google.Apis.Auth.OAuth2;
-using Google.Cloud.Translation.V2;
-using OnlineServices.Shared.Exceptions;
+﻿using OnlineServices.Shared.Exceptions;
 using OnlineServices.Shared.Extensions;
 using Serilog;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using TranslationServices.DataLayer.ServiceAgents.Extensions;
 using TranslationServices.DataLayer.ServiceAgents.Interfaces;
 
 using Language = OnlineServices.Shared.Enumerations.Language;

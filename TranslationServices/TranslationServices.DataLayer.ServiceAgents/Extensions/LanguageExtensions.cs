@@ -1,8 +1,5 @@
 ﻿using Google.Cloud.Translation.V2;
 using OnlineServices.Shared.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 using Language = OnlineServices.Shared.Enumerations.Language;
 

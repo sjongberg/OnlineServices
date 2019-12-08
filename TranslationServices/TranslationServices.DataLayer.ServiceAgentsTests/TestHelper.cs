@@ -1,9 +1,5 @@
 ﻿using Moq;
 using Serilog;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using TranslationServices.DataLayer.ServiceAgents;
 
 namespace TranslationServices.DataLayer.ServiceAgentsTests
 {

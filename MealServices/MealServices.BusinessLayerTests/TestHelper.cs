@@ -1,9 +1,7 @@
 ﻿using OnlineServices.Shared.MealServices.Enumerations;
 using OnlineServices.Shared.MealServices.TransfertObjects;
 using OnlineServices.Shared.TranslationServices.TransfertObjects;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace MealServices.BusinessLayerTests
 {

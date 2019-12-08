@@ -1,8 +1,6 @@
 ﻿using Google.Apis.Auth.OAuth2;
 using Google.Cloud.Translation.V2;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace TranslationServices.DataLayer.ServiceAgentsTests

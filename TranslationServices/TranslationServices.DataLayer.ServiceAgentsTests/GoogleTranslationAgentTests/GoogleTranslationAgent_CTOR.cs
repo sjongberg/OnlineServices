@@ -1,9 +1,6 @@
 ﻿using Moq;
 using OnlineServices.Shared.Exceptions;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using TranslationServices.DataLayer.ServiceAgents;
 using Xunit;
 using Serilog;
 using TranslationServices.DataLayer.ServiceAgents.TranslationAgents;

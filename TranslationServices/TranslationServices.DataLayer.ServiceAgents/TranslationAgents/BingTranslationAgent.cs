@@ -1,10 +1,7 @@
-﻿using OnlineServices.Shared.Enumerations;
-using OnlineServices.Shared.Exceptions;
+﻿using OnlineServices.Shared.Exceptions;
 using OnlineServices.Shared.Extensions;
 using Serilog;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using TranslationServices.DataLayer.ServiceAgents.Interfaces;
 
 using Language = OnlineServices.Shared.Enumerations.Language;

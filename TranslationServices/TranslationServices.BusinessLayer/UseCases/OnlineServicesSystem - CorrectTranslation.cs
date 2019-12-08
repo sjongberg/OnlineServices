@@ -2,7 +2,6 @@
 using OnlineServices.Shared.Exceptions;
 using OnlineServices.Shared.Extensions;
 using OnlineServices.Shared.TranslationServices.TransfertObjects;
-using Serilog;
 using System;
 
 namespace TranslationServices.BusinessLayer.UseCases

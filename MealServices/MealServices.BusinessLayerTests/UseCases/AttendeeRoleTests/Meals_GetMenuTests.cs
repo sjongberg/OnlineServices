@@ -2,12 +2,9 @@
 using Moq;
 using OnlineServices.Shared.MealServices.Interfaces;
 using OnlineServices.Shared.Enumerations;
-using System.Collections.Generic;
 using System.Linq;
 using MealServices.BusinessLayer.Extensions;
 using OnlineServices.Shared.MealServices.TransfertObjects;
-using OnlineServices.Shared.MealServices.Enumerations;
-using OnlineServices.Shared.TranslationServices.TransfertObjects;
 using MealServices.BusinessLayerTests;
 
 namespace MealServices.BusinessLayer.UseCases.AttendeeRoleTests

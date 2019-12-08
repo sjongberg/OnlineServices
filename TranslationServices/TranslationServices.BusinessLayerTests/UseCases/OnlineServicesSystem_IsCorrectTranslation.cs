@@ -2,13 +2,9 @@
 using OnlineServices.Shared.Enumerations;
 using OnlineServices.Shared.Exceptions;
 using OnlineServices.Shared.TranslationServices.TransfertObjects;
-using Serilog;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using TranslationServices.BusinessLayer.UseCases;
-using TranslationServices.DataLayer.ServiceAgents;
 using Xunit;
 
 namespace TranslationServices.BusinessLayerTests.UseCases

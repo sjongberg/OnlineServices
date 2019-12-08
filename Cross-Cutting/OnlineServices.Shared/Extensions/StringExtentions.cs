@@ -1,7 +1,5 @@
 ﻿using OnlineServices.Shared.Exceptions;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OnlineServices.Shared.Extensions
 {

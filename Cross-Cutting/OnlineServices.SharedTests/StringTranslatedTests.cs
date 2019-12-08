@@ -4,8 +4,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OnlineServices.Shared.Exceptions;
 using OnlineServices.Shared.TranslationServices.TransfertObjects;
 
-using System;
-
 namespace OnlineServices.SharedTests
 {
     [TestClass]
