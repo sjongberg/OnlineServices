@@ -1,28 +1,31 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MealServices.DataLayer.Extensions;
-using MealServices.Shared.Interfaces;
+﻿using MealServices.DataLayer.Extensions;
+
+using Microsoft.EntityFrameworkCore;
+using OnlineServices.Shared.MealServices.Interfaces;
+using OnlineServices.Shared.MealServices.TransfertObjects;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MealServices.Shared.TransfertObjects;
 
 namespace MealServices.DataLayer.Repositories
 {
     public class SupplierRepository : ISupplierRepository
     {
+        private readonly MealContext mealContext;
+
         public SupplierRepository(MealContext ContextIoC)
         {
             mealContext = ContextIoC ?? throw new ArgumentNullException($"{nameof(ContextIoC)} in SupplierRepository");
         }
 
-        public MealContext mealContext { get; private set; }
 
         public bool Remove(SupplierTO Entity)
         {
-            var sandwichRepository = new MealRepository(this.mealContext);
+            var mealRepository = new MealRepository(this.mealContext);
 
-            if (sandwichRepository.GetMealsBySupplier(Entity).Any())
-                throw new Exception("Cannot delete supplier that has a sandwich in db.");
+            if (mealRepository.GetMealsBySupplier(Entity).Any())
+                throw new Exception("Cannot delete supplier that has a meal in db.");
             else
             {
                 mealContext.Suppliers.Remove(Entity.ToEF());

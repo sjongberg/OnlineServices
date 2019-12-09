@@ -2,8 +2,25 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyVersion>2019.12.4.3</AssemblyVersion>
-    <FileVersion>2019.12.4.3</FileVersion>
+    <AssemblyVersion>2019.12.8.0</AssemblyVersion>
+    <FileVersion>2019.12.8.0</FileVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Enumerations\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Cross-Cutting\OnlineServices.Shared\OnlineServices.Shared.csproj" />
+  </ItemGroup>
 
 </Project>

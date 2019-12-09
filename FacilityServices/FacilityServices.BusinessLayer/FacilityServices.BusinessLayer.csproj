@@ -2,9 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyVersion>2019.12.4.1</AssemblyVersion>
-    <FileVersion>2019.12.4.1</FileVersion>
+    <AssemblyVersion>2019.12.7.1</AssemblyVersion>
+    <FileVersion>2019.12.7.1</FileVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FacilityServices.Shared\FacilityServices.Shared.csproj" />

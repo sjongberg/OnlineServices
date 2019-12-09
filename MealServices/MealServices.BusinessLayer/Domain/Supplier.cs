@@ -1,4 +1,4 @@
-﻿using System;
+﻿using OnlineServices.Shared.Extensions;
 
 namespace MealServices.BusinessLayer.Domain
 {
@@ -10,11 +10,7 @@ namespace MealServices.BusinessLayer.Domain
 
         public bool IsValid()
         {
-            var InvalidSupplier = String.IsNullOrWhiteSpace(Name)
-                || String.IsNullOrEmpty(Name);
-
-            if (InvalidSupplier)
-                throw new Exception("Supplier not valid;");
+            Name.IsNullOrWhiteSpace("Supplier Name should not null or empty or whitespace");
 
             return true;
         }

@@ -1,5 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MealServices.DataLayer.Entities;
+﻿using MealServices.DataLayer.Entities;
+
+using Microsoft.EntityFrameworkCore;
 
 namespace MealServices.DataLayer
 {
@@ -11,11 +12,14 @@ namespace MealServices.DataLayer
         }
 
         public MealContext(DbContextOptions<MealContext> options)
-        : base(options)
+            : base(options)
         { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            if (optionsBuilder is null)
+                throw new System.ArgumentNullException(nameof(optionsBuilder));
+
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MealDB;Trusted_Connection=True;");
@@ -24,6 +28,9 @@ namespace MealServices.DataLayer
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            if (modelBuilder is null)
+                throw new System.ArgumentNullException(nameof(modelBuilder));
+
             modelBuilder.Entity<MealCompositionEF>().HasKey(si => new { si.MealId, si.IngredientId });
 
             modelBuilder.Entity<MealCompositionEF>()

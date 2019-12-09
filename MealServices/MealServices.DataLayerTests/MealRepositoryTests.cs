@@ -1,12 +1,13 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
 using MealServices.DataLayer;
 using MealServices.DataLayer.Repositories;
-using MealServices.Shared;
-using MealServices.Shared.Enumerations;
-using MealServices.Shared.Interfaces;
-using MealServices.Shared.TransfertObjects;
+
+using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using OnlineServices.Shared.MealServices.Enumerations;
+using OnlineServices.Shared.MealServices.TransfertObjects;
+using OnlineServices.Shared.TranslationServices.TransfertObjects;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace MealServices.DataLayerTests
     [TestClass]
     public class MealRepositoryTests
     {
-        [TestMethod]
+        [TestMethod()]
         public void IRepositoryInsert_ShouldInsertInDb_WhenValidMealIsProvided()
         {
             var options = new DbContextOptionsBuilder<MealContext>()
@@ -30,11 +31,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Meal1EN", "Meal1FR", "Meal1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 1,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -53,11 +54,11 @@ namespace MealServices.DataLayerTests
 
                 Assert.AreEqual(1, MealToAssert.Id);
                 Assert.AreEqual(1, MealToAssert.Ingredients.FirstOrDefault().Id);
-                Assert.AreEqual("Sandwich1EN", MealToAssert.Name.English);
+                Assert.AreEqual("Meal1EN", MealToAssert.Name.English);
             }
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void IRepositoryGetByID_ShouldRetrieveMeal_WhenValidIdIsProvided()
         {
             //ARRANGE
@@ -70,11 +71,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Meal1EN", "Meal1FR", "Meal1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 1,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -90,11 +91,11 @@ namespace MealServices.DataLayerTests
 
                 //ASSERT
                 Assert.AreEqual(1, retrivedMeal.Id);
-                Assert.AreEqual("Sandwich1EN", mealRepository.GetByID(1).Name.English);
+                Assert.AreEqual("Meal1EN", mealRepository.GetByID(1).Name.English);
             }
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void IRepositoryGetAll_ShouldRetrieveMeals_WhenCalled()
         {
             //ASSERT
@@ -108,11 +109,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest1 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Meal1EN", "Meal1FR", "Meal1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 1,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -122,11 +123,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest2 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
+                    Name = new MultiLanguageString("Meal2EN", "Meal2FR", "Meal2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 2,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -147,7 +148,7 @@ namespace MealServices.DataLayerTests
             }
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void IRepositoryDeleteById_ShouldDelete_WhenValidIdIsProvided()
         {
             //ASSERT
@@ -161,11 +162,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest1 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Meal1EN", "Meal1FR", "Meal1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 0,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -175,11 +176,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest2 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
+                    Name = new MultiLanguageString("Meal2EN", "Meal2FR", "Meal2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 0,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -203,7 +204,7 @@ namespace MealServices.DataLayerTests
             }
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void IRepositoryDeleteById_ShouldThrowException_WhenDeletingANonExistantMeal()
         {
             //ASSERT
@@ -217,11 +218,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest1 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Meal1EN", "Meal1FR", "Meal1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 1,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -231,11 +232,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest2 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
+                    Name = new MultiLanguageString("Meal2EN", "Meal2FR", "Meal2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 2,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -255,7 +256,7 @@ namespace MealServices.DataLayerTests
                 Assert.ThrowsException<Exception>(() => mealRepository.Remove(2));
             }
         }
-        [TestMethod]
+        [TestMethod()]
         public void IRepositoryDeleteByTransfertObject_ShouldDelete_WhenValidTOIsProvided()
         {
             //ASSERT
@@ -269,11 +270,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest1 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Meal1EN", "Meal1FR", "Meal1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 1,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -283,11 +284,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest2 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
+                    Name = new MultiLanguageString("Meal2EN", "Meal2FR", "Meal2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 2,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -311,7 +312,7 @@ namespace MealServices.DataLayerTests
             }
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void IRepositoryDeleteByTranfertObject_ShouldThrowException_WhenDeletingANonExistantMeal()
         {
             //ASSERT
@@ -325,11 +326,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest1 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Meal1EN", "Meal1FR", "Meal1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 1,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -339,11 +340,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest2 = new MealTO
                 {
                     Id = 0,
-                    Name = new StringTranslated("Sandwich2EN", "Sandwich2FR", "Sandwich2NL"),
+                    Name = new MultiLanguageString("Meal2EN", "Meal2FR", "Meal2NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 2,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -365,7 +366,7 @@ namespace MealServices.DataLayerTests
             }
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void IRepositoryUpdate_ShouldUpdateInDb_WhenValidMealIsProvided()
         {
             var options = new DbContextOptionsBuilder<MealContext>()
@@ -378,11 +379,11 @@ namespace MealServices.DataLayerTests
                 var MealToUseInTest = new MealTO
                 {
                     Id = 1,
-                    Name = new StringTranslated("Sandwich1EN", "Sandwich1FR", "Sandwich1NL"),
+                    Name = new MultiLanguageString("Meal1EN", "Meal1FR", "Meal1NL"),
                     Ingredients = new List<IngredientTO> {
                         new IngredientTO {
                             Id = 2,
-                            Name = new StringTranslated("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
+                            Name = new MultiLanguageString("Ingr1EN", "Ingr1FR", "Ingr1NL"), IsAllergen = false
                         }
                     },
                     Supplier = new SupplierTO { Name = "Fournisseur1" },
@@ -404,7 +405,7 @@ namespace MealServices.DataLayerTests
                 Assert.AreEqual(1, mealRepository.GetAll().Count());
                 Assert.AreEqual(1, MealToAssert.Id);
                 Assert.AreEqual(2, MealToAssert.Ingredients.FirstOrDefault().Id);
-                Assert.AreEqual("Sandwich1EN", MealToAssert.Name.English);
+                Assert.AreEqual("Meal1EN", MealToAssert.Name.English);
                 Assert.AreEqual(MealType.Sandwich, MealToAssert.MealType);
             }
         }

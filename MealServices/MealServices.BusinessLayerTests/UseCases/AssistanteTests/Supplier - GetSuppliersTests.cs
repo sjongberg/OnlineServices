@@ -1,10 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using MealServices.BusinessLayer.UseCases.Assistante;
-using MealServices.Shared.Interfaces;
-using MealServices.Shared.TransfertObjects;
+using MealServices.BusinessLayer.UseCases;
+using OnlineServices.Shared.MealServices.TransfertObjects;
 using System.Collections.Generic;
 using System.Linq;
+using OnlineServices.Shared.MealServices.Interfaces;
 
 namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
 {
@@ -21,45 +21,45 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
             };
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void GetSuppliers_ReturnsSupplierInDB_WhenCalled()
         {
             //ARRANGE
             var mockSupplierRepository = new Mock<ISupplierRepository>();
             mockSupplierRepository.Setup(x => x.GetAll()).Returns(SupplierList());
 
-            var mockUoW = new Mock<IUnitOfWork>();
+            var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
-            var AssistanteRole = new Assistante(mockUoW.Object);
+            var Assistante = new AssistantRole(mockUoW.Object);
 
             //ACT
-            var suppliers = AssistanteRole.GetSuppliers();
+            var suppliers = Assistante.GetSuppliers();
 
             //ASSERT
             Assert.AreEqual(SupplierList().Count(), suppliers.Count());
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void GetSuppliers_SupplierRepositoryIsCalledOnce_WhenCalled()
         {
             //ARRANGE
             var mockSupplierRepository = new Mock<ISupplierRepository>();
             mockSupplierRepository.Setup(x => x.GetAll()).Returns(SupplierList());
 
-            var mockUoW = new Mock<IUnitOfWork>();
+            var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
-            var AssistanteRole = new Assistante(mockUoW.Object);
+            var Assistante = new AssistantRole(mockUoW.Object);
 
             //ACT
-            AssistanteRole.GetSuppliers();
+            Assistante.GetSuppliers();
 
             //ASSERT
             mockSupplierRepository.Verify(x => x.GetAll(), Times.Once);
         }
 
-        //[TestMethod]
+        //[TestMethod()]
         //public void GetSuppliers_ThrowsException_WhenNotConnectedToDB()
         //{
         //    //ARRANGE
@@ -69,10 +69,10 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
         //    var mockUoW = new Mock<IUnitOfWork>();
         //    mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
-        //    var AssistanteRole = new Assistante(mockUoW.Object);
+        //    var Assistante = new AssistantRole(mockUoW.Object);
 
         //    //ACT & ASSERT
-        //    Assert.ThrowsException<Exception>(()=>AssistanteRole.GetSuppliers());
+        //    Assert.ThrowsException<Exception>(()=>Assistante.GetSuppliers());
         //}
     }
 }

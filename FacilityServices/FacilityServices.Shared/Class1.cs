@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace FacilityServices.Shared
+﻿namespace FacilityServices.Shared
 {
     public class Class1
     {

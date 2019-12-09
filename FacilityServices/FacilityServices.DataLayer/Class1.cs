@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace FacilityServices.DataLayer
+﻿namespace FacilityServices.DataLayer
 {
     public class Class1
     {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace FacilityServices.BusinessLayer
+﻿namespace FacilityServices.BusinessLayer
 {
     public class Class1
     {

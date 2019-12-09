@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace MealServices.DataLayer.Entities
 {
-    [Table("MealComposition")]
+    [Table("MealCompositions")]
     public class MealCompositionEF : IEquatable<MealCompositionEF>
     {
         public int MealId { get; set; }
@@ -22,9 +22,18 @@ namespace MealServices.DataLayer.Entities
 
         public bool Equals([AllowNull] MealCompositionEF other)
         {
+            if (other is null)
+            {
+                if (this is null) return true;
+                else return false;
+            }
+
             return (this.IsValid() && other.IsValid())
                 && (this.IngredientId == other.IngredientId)
                 && (this.MealId == other.MealId);
         }
+
+        public override bool Equals(object obj)
+            => this.Equals((MealCompositionEF)obj);
     }
 }

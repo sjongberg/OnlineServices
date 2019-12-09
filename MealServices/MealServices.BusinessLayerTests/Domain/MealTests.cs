@@ -1,21 +1,21 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MealServices.BusinessLayer.Domain;
-using MealServices.Shared;
-using MealServices.Shared.Enumerations;
+using OnlineServices.Shared.TranslationServices.TransfertObjects;
+using OnlineServices.Shared.Enumerations;
 
 namespace MealServices.BusinessLayer.DomainTests
 {
     [TestClass]
     public class MealTests
     {
-        Ingredient Brie = new Ingredient(new StringTranslated("Brie", "Brie", "Brie"), true);
-        Ingredient Noix = new Ingredient(new StringTranslated("Nuts", "Noix", "Noten"), true);
-        Ingredient Miel = new Ingredient(new StringTranslated("Honey", "Miel", "Honing"), false);
+        Ingredient Brie = new Ingredient(new MultiLanguageString("Brie", "Brie", "Brie"), true);
+        Ingredient Noix = new Ingredient(new MultiLanguageString("Nuts", "Noix", "Noten"), true);
+        Ingredient Miel = new Ingredient(new MultiLanguageString("Honey", "Miel", "Honing"), false);
 
 
-        Meal BrieNoix = new Meal(new StringTranslated("Brie", "Brie", "Brie"), new Supplier { Id = 33, Name = "Supplier1" });
+        Meal BrieNoix = new Meal(new MultiLanguageString("Brie", "Brie", "Brie"), new Supplier { Id = 33, Name = "Supplier1" });
 
-        [TestMethod]
+        [TestMethod()]
         public void GetIngredientsString_ReturnsACompleteListOFIngredientsWithAllergeneInfo()
         {
             BrieNoix.Ingredients.Add(Brie);

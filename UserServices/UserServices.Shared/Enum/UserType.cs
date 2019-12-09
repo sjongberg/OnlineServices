@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace UserServices.Shared.Enum
+﻿namespace UserServices.Shared.Enum
 {
     public enum UserType
     {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace UserServices.DataLayer
+﻿namespace UserServices.DataLayer
 {
     public class Class1
     {
