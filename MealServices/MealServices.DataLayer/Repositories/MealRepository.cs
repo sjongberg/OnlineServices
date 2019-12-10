@@ -80,7 +80,7 @@ namespace MealServices.DataLayer.Repositories
             throw new NotImplementedException();
         }
 
-        public MealTO Insert(MealTO Entity)
+        public MealTO Add(MealTO Entity)
         {
             //if (!mealContext.Meals.Any(x => x.Id == Entity.Id))
             return mealContext.Meals
