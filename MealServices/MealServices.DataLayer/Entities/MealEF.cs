@@ -1,4 +1,5 @@
-﻿using OnlineServices.Shared.MealServices.Enumerations;
+﻿using OnlineServices.Shared.DataAccessHelpers;
+using OnlineServices.Shared.MealServices.Enumerations;
 using OnlineServices.Shared.TranslationServices;
 
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace MealServices.DataLayer.Entities
 {
     [Table("Meals")]
-    public class MealEF : IMultiLanguageNameFields
+    public class MealEF : IEntity<int>, IMultiLanguageNameFields
     {
         [Key]
         public int Id { get; set; }
