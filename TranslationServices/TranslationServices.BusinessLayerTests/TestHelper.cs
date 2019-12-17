@@ -11,9 +11,9 @@ namespace TranslationServices.BusinessLayerTests
         public const string FrenchTranslated = "FrenchTranslated";
         public const string DutchTranslated = "DutchTranslated";
 
-        public static Mock<ITRSTranslationService> MakeITRSTranslationService()
+        public static Mock<ITRSTranslationServiceV1> MakeITRSTranslationService()
         {
-            var mockITRSTranslationService = new Mock<ITRSTranslationService>();
+            var mockITRSTranslationService = new Mock<ITRSTranslationServiceV1>();
 
             mockITRSTranslationService
                 .Setup(x => x.Translate(It.IsAny<string>(), It.IsAny<Language>(), Language.English))

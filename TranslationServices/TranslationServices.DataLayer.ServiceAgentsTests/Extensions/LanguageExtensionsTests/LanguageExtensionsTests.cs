@@ -12,7 +12,7 @@ namespace TranslationServices.DataLayer.ServiceAgents.Extensions
         [InlineData(Language.Dutch, "nl")]
         public void ToLanguageCode_RenturnsEnglish_WhenLanguageEnglishIsProvided(Language LanguageEnumToConvert, string ExpectedLanguageCode)
         {
-            var ActualLanguageCode = LanguageEnumToConvert.ToLanguageCode();
+            var ActualLanguageCode = LanguageEnumToConvert.ToGoogleLanguage();
 
             Assert.Equal(ExpectedLanguageCode, ActualLanguageCode);
         }
@@ -22,7 +22,7 @@ namespace TranslationServices.DataLayer.ServiceAgents.Extensions
         {
             var LanguageEnumToConvert = (Language)50;
 
-            Assert.Throws<LanguageNotSupportedException>(()=> LanguageEnumToConvert.ToLanguageCode());
+            Assert.Throws<LanguageNotSupportedException>(()=> LanguageEnumToConvert.ToGoogleLanguage());
         }
     }
 }

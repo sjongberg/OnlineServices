@@ -40,7 +40,7 @@ namespace TranslationServices.DataLayer.ServiceAgentsTests
             //ARRANGE
             var mockILogger = TestHelper.MockILogger();
 
-            ITRSTranslationService TranslatorToTest = new GoogleTranslationAgent(mockILogger.Object, TestHelper.GoogleAPIKey());
+            ITRSTranslationServiceV1 TranslatorToTest = new GoogleTranslationAgent(mockILogger.Object, TestHelper.GoogleAPIKey());
             string StringToTranslate = null;
             var FromLangue = Language.Dutch;
             var ToLangue = Language.English;
@@ -56,7 +56,7 @@ namespace TranslationServices.DataLayer.ServiceAgentsTests
             //ARRANGE
             var mockILogger = TestHelper.MockILogger();
 
-            ITRSTranslationService TranslatorToTest = new GoogleTranslationAgent(mockILogger.Object, TestHelper.GoogleAPIKey());
+            ITRSTranslationServiceV1 TranslatorToTest = new GoogleTranslationAgent(mockILogger.Object, TestHelper.GoogleAPIKey());
             string StringToTranslate = "";
             var FromLangue = Language.English;
             var ToLangue = Language.French;
@@ -72,7 +72,7 @@ namespace TranslationServices.DataLayer.ServiceAgentsTests
             //ARRANGE
             var mockILogger = TestHelper.MockILogger();
 
-            ITRSTranslationService TranslatorToTest = new GoogleTranslationAgent(mockILogger.Object, TestHelper.GoogleAPIKey());
+            ITRSTranslationServiceV1 TranslatorToTest = new GoogleTranslationAgent(mockILogger.Object, TestHelper.GoogleAPIKey());
             string StringToTranslate = "   ";
             var FromLangue = Language.French;
             var ToLangue = Language.Dutch;
@@ -88,7 +88,7 @@ namespace TranslationServices.DataLayer.ServiceAgentsTests
             //ARRANGE
             var mockILogger = TestHelper.MockILogger();
 
-            ITRSTranslationService TranslatorToTest = new GoogleTranslationAgent(mockILogger.Object, TestHelper.GoogleAPIKey());
+            ITRSTranslationServiceV1 TranslatorToTest = new GoogleTranslationAgent(mockILogger.Object, TestHelper.GoogleAPIKey());
             string StringToTranslate = "Het witte paard van Napoleon.";
             var FromLangue = Language.Dutch;
             Language ToLangue = Language.Dutch;
@@ -104,7 +104,7 @@ namespace TranslationServices.DataLayer.ServiceAgentsTests
             //ARRANGE
             var mockILogger = TestHelper.MockILogger();
 
-            ITRSTranslationService TranslatorToTest = new GoogleTranslationAgent(mockILogger.Object, TestHelper.GoogleAPIKey());
+            ITRSTranslationServiceV1 TranslatorToTest = new GoogleTranslationAgent(mockILogger.Object, TestHelper.GoogleAPIKey());
             string StringToTranslate = "こんにちは";
             Language FromLangue = (Language)50;
             var ToLangue = Language.Dutch;
@@ -120,7 +120,7 @@ namespace TranslationServices.DataLayer.ServiceAgentsTests
             //ARRANGE
             var mockILogger = TestHelper.MockILogger();
 
-            ITRSTranslationService TranslatorToTest = new GoogleTranslationAgent(mockILogger.Object, TestHelper.GoogleAPIKey());
+            ITRSTranslationServiceV1 TranslatorToTest = new GoogleTranslationAgent(mockILogger.Object, TestHelper.GoogleAPIKey());
             string StringToTranslate = "Réduit la sensibilité cutanée.";
             var FromLangue = Language.Dutch;
             Language ToLangue = (Language)50;

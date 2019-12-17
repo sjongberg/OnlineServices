@@ -13,7 +13,7 @@ namespace TranslationServices.BusinessLayerTests.UseCases
         public void CTOR_ShouldInstaciate_WhenValidInjectionIsProvided()
         {
             var mockILogger = new Mock<ILogger>();
-            var mockITRSTranslationService = new Mock<ITRSTranslationService>();
+            var mockITRSTranslationService = new Mock<ITRSTranslationServiceV1>();
 
             var sut = new OnlineServicesSystem(mockILogger.Object, mockITRSTranslationService.Object);
             
@@ -31,7 +31,7 @@ namespace TranslationServices.BusinessLayerTests.UseCases
         public void CTOR_ShouldInstaciate_WhenNullILoggerIsProvided()
         {
             ILogger iLogger = null;
-            var mockITRSTranslationService = new Mock<ITRSTranslationService>();
+            var mockITRSTranslationService = new Mock<ITRSTranslationServiceV1>();
 
             Assert.Throws<ArgumentNullException>(() => new OnlineServicesSystem(iLogger, mockITRSTranslationService.Object));
         }
@@ -40,7 +40,7 @@ namespace TranslationServices.BusinessLayerTests.UseCases
         public void CTOR_ShouldInstaciate_WhenNullITRSTranslationServiceIsProvided()
         {
             var mockILogger = new Mock<ILogger>();
-            ITRSTranslationService iTRSTranslationService = null;
+            ITRSTranslationServiceV1 iTRSTranslationService = null;
 
             Assert.Throws<ArgumentNullException>(() => new OnlineServicesSystem(mockILogger.Object, iTRSTranslationService));
             mockILogger.Verify(x=>x.Error(It.IsAny<string>()), Times.Once);

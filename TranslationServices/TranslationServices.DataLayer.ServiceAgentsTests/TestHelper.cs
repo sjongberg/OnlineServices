@@ -1,5 +1,6 @@
 ﻿using Moq;
 using Serilog;
+using TranslationServices.DataLayer.ServiceAgents.Domain;
 
 namespace TranslationServices.DataLayer.ServiceAgentsTests
 {
@@ -10,14 +11,14 @@ namespace TranslationServices.DataLayer.ServiceAgentsTests
             return @"C:\TFS\OnlineServices-d9921f8e5f21.json";
         }
 
-        public static string BingAPIKey()
-        {
-            return @"Bing Api Key";
-        }
+        public static AzureCognitiveArgs AzCognitiveArgs
+            => new AzureCognitiveArgs();
 
         public static Mock<ILogger> MockILogger()
         {
-            return new Mock<ILogger>();
+            var mockILogger =  new Mock<ILogger>();
+            mockILogger.Setup(x => x.Error(It.IsAny<string>())).Verifiable();
+            return mockILogger;
         }
     }
 }

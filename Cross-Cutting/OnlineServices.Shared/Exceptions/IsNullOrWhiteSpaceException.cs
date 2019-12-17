@@ -5,7 +5,7 @@ namespace OnlineServices.Shared.Exceptions
     [Serializable]
     public class IsNullOrWhiteSpaceException : Exception
     {
-        private const string ExceptionMessage = "String should not be Nul, Empty or Whitespace";
+        private const string ExceptionMessage = "String should not be Null, Empty or Whitespace";
         public IsNullOrWhiteSpaceException(string message)
             : base($"{ExceptionMessage}. {message}")
         {

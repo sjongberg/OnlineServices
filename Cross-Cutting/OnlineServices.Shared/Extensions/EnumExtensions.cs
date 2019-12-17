@@ -21,7 +21,7 @@ namespace OnlineServices.Shared.Extensions
         {
             bool ReturnValue;
             if (!Enum.IsDefined(typeof(TEnum), EnumToExtend))
-                ReturnValue = !ThrowException ? false : throw new ArgumentOutOfRangeException($"{typeof(TEnum)} with invalid value of {EnumToExtend.ToInt()}");
+                ReturnValue = ThrowException ? throw new ArgumentOutOfRangeException($"{typeof(TEnum)} with invalid value of {EnumToExtend.ToInt()}") : false;
             else
                 ReturnValue = true;
             return ReturnValue;

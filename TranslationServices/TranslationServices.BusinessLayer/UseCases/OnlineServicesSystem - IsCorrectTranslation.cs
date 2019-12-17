@@ -51,7 +51,7 @@ namespace TranslationServices.BusinessLayer.UseCases
             //    }
             //}
 
-            //LOGIC HERE II ==> On essaie de Ameliorer la performance en diminuant la quantité d'appel à l'API de Google or Bing. On Chercher "Qte Requete aux agents <= Enum.Language.Count-1"
+            //LOGIC HERE II ==> On essaie de Ameliorer la performance en diminuant la quantité d'appel à l'API de Google or AzureCognitive. On Chercher "Qte Requete aux agents <= Enum.Language.Count-1"
             //TODO Reste encore a se poser la question si les If+Checks xFois (de la Logique II) sont plus lents que demander directment chéz le translator service (Logique I) d'un coup et comparer.
             //TODO (suite) Pour info le code LOGIQUE II est, selon NCrunch de 2 à 15ms plus lent... malgré moins d'appel au Translator. On sauras seulement quand le DataLayer seras developé...
             var IsCorrect = true;

@@ -5,11 +5,11 @@ using Xunit;
 
 namespace TranslationServices.DataLayer.ServiceAgentsTests
 {
-    public class GoogleAuthenticationTests
+    public class GoogleTranslatorAuthentificationTests
     {
         [Theory(Skip ="Run Only to Test Google Authentification")]
         [InlineData(@"C:\TFS\OnlineServices-d9921f8e5f21.json")]//TODO Students: Put your projectIdHere
-        public void GoogleAuthentificationImplicit(string JSONFile)
+        public void GoogleTranslatorAuthentificationImplicit(string JSONFile)
         {
             // If you don't specify credentials when constructing the client, the
             // client library will look for credentials in the environment.

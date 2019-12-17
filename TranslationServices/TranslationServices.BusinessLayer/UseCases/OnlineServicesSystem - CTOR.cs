@@ -8,9 +8,9 @@ namespace TranslationServices.BusinessLayer.UseCases
     public partial class OnlineServicesSystem : ITRSServicesRole
     {
         private readonly ILogger iLogger;
-        private readonly ITRSTranslationService Translator;
+        private readonly ITRSTranslationServiceV1 Translator;
 
-        public OnlineServicesSystem(ILogger logger, ITRSTranslationService Translator)
+        public OnlineServicesSystem(ILogger logger, ITRSTranslationServiceV1 Translator)
         {
             this.iLogger = logger ?? throw new ArgumentNullException(nameof(logger));
 

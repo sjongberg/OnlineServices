@@ -1,14 +1,16 @@
-﻿using OnlineServices.Shared.Exceptions;
+﻿using OnlineServices.Shared.Enumerations;
+using OnlineServices.Shared.Exceptions;
 using OnlineServices.Shared.Extensions;
 using Serilog;
 using System;
+using System.Threading.Tasks;
 using TranslationServices.DataLayer.ServiceAgents.Interfaces;
 
 using Language = OnlineServices.Shared.Enumerations.Language;
 
 namespace TranslationServices.DataLayer.ServiceAgents.TranslationAgents
 {
-    public class GoogleTranslationAgent : ITRSTranslationService
+    public class GoogleTranslationAgent : ITRSTranslationServiceV1
     {
         private readonly string apiKey;
         private readonly ILogger iLogger;
@@ -26,8 +28,7 @@ namespace TranslationServices.DataLayer.ServiceAgents.TranslationAgents
             else
                 this.apiKey = apiKey;
         }
-
-        string ITRSTranslationService.Translate(string StringToTranslate, Language FromLangue, Language ToLangue)
+        private void CheckArgumentsWithThrow(string StringToTranslate, Language FromLangue, Language ToLangue)
         {
             //CHECKS
             if (StringToTranslate.IsNullOrWhiteSpace())
@@ -57,8 +58,16 @@ namespace TranslationServices.DataLayer.ServiceAgents.TranslationAgents
                 iLogger.Error(exceptionMSG);
                 throw new ArgumentOutOfRangeException(exceptionMSG);
             }
+        }
 
-            //LOGIC HERE
+        string ITRSTranslationServiceV1.Translate(string StringToTranslate, Language FromLangue, Language ToLangue)
+        {
+            //CHECKS
+            CheckArgumentsWithThrow(StringToTranslate, FromLangue, ToLangue);
+
+            //IMPLEMENTATION
+            throw new NotImplementedException("Please create an Google API account and try again.");
+
             #region This Region depends on a current Google Cloud Account with Credit Card entered on it.
             //DOC Students should create a service account https://cloud.google.com/docs/authentication/getting-started
             //var credential = GoogleCredential.FromFile(apiKey);
@@ -67,10 +76,10 @@ namespace TranslationServices.DataLayer.ServiceAgents.TranslationAgents
             //    var result = client.TranslateText(StringToTranslate, ToLangue.ToLanguageCode(), FromLangue.ToLanguageCode());
 
             //    return result.TranslatedText;
+            return StringToTranslate; //TODO Delete when the google account is created and JSON file downloaded...
             //}
             #endregion
 
-            return StringToTranslate; //TODO Delete when the google account is created and JSON file downloaded...
         }
     }
 }
