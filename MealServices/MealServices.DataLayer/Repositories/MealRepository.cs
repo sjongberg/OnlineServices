@@ -1,17 +1,18 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MealServices.DataLayer.Extensions;
-using MealServices.Shared.Interfaces;
+﻿using MealServices.DataLayer.Extensions;
+
+using Microsoft.EntityFrameworkCore;
+using OnlineServices.Shared.MealServices.Interfaces;
+using OnlineServices.Shared.MealServices.TransfertObjects;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MealServices.Shared.TransfertObjects;
-using MealServices.DataLayer.Entities;
 
 namespace MealServices.DataLayer.Repositories
 {
     public class MealRepository : IMealRepository
     {
-        private MealContext mealContext;
+        private readonly MealContext mealContext;
 
         public MealRepository(MealContext ContextIoC)
         {
@@ -79,7 +80,7 @@ namespace MealServices.DataLayer.Repositories
             throw new NotImplementedException();
         }
 
-        public MealTO Insert(MealTO Entity)
+        public MealTO Add(MealTO Entity)
         {
             //if (!mealContext.Meals.Any(x => x.Id == Entity.Id))
             return mealContext.Meals

@@ -7,24 +7,24 @@ namespace MealServices.DataLayer.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_SandwichIngredients_Ingredient_SandwichId",
-                table: "SandwichIngredients");
+                name: "FK_MealIngredients_Ingredient_MealId",
+                table: "MealIngredients");
 
             migrationBuilder.DropForeignKey(
-                name: "FK_SandwichIngredients_Sandwich_SandwichId",
-                table: "SandwichIngredients");
+                name: "FK_MealIngredients_Meal_MealId",
+                table: "MealIngredients");
 
             migrationBuilder.DropPrimaryKey(
-                name: "PK_Sandwich",
-                table: "Sandwich");
+                name: "PK_Meal",
+                table: "Meal");
 
             migrationBuilder.DropPrimaryKey(
                 name: "PK_Ingredient",
                 table: "Ingredient");
 
             migrationBuilder.DropColumn(
-                name: "SandwichId",
-                table: "Sandwich");
+                name: "MealId",
+                table: "Meal");
 
             migrationBuilder.DropColumn(
                 name: "IngredientId",
@@ -32,14 +32,14 @@ namespace MealServices.DataLayer.Migrations
 
             migrationBuilder.AddColumn<int>(
                 name: "Id",
-                table: "Sandwich",
+                table: "Meal",
                 nullable: false,
                 defaultValue: 0)
                 .Annotation("SqlServer:Identity", "1, 1");
 
             migrationBuilder.AddColumn<int>(
                 name: "SupplierId",
-                table: "Sandwich",
+                table: "Meal",
                 nullable: true);
 
             migrationBuilder.AddColumn<int>(
@@ -50,8 +50,8 @@ namespace MealServices.DataLayer.Migrations
                 .Annotation("SqlServer:Identity", "1, 1");
 
             migrationBuilder.AddPrimaryKey(
-                name: "PK_Sandwich",
-                table: "Sandwich",
+                name: "PK_Meal",
+                table: "Meal",
                 column: "Id");
 
             migrationBuilder.AddPrimaryKey(
@@ -73,31 +73,31 @@ namespace MealServices.DataLayer.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Sandwich_SupplierId",
-                table: "Sandwich",
+                name: "IX_Meal_SupplierId",
+                table: "Meal",
                 column: "SupplierId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Sandwich_Supplier_SupplierId",
-                table: "Sandwich",
+                name: "FK_Meal_Supplier_SupplierId",
+                table: "Meal",
                 column: "SupplierId",
                 principalTable: "Supplier",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_SandwichIngredients_Ingredient_SandwichId",
-                table: "SandwichIngredients",
-                column: "SandwichId",
+                name: "FK_MealIngredients_Ingredient_MealId",
+                table: "MealIngredients",
+                column: "MealId",
                 principalTable: "Ingredient",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_SandwichIngredients_Sandwich_SandwichId",
-                table: "SandwichIngredients",
-                column: "SandwichId",
-                principalTable: "Sandwich",
+                name: "FK_MealIngredients_Meal_MealId",
+                table: "MealIngredients",
+                column: "MealId",
+                principalTable: "Meal",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
         }
@@ -105,27 +105,27 @@ namespace MealServices.DataLayer.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_Sandwich_Supplier_SupplierId",
-                table: "Sandwich");
+                name: "FK_Meal_Supplier_SupplierId",
+                table: "Meal");
 
             migrationBuilder.DropForeignKey(
-                name: "FK_SandwichIngredients_Ingredient_SandwichId",
-                table: "SandwichIngredients");
+                name: "FK_MealIngredients_Ingredient_MealId",
+                table: "MealIngredients");
 
             migrationBuilder.DropForeignKey(
-                name: "FK_SandwichIngredients_Sandwich_SandwichId",
-                table: "SandwichIngredients");
+                name: "FK_MealIngredients_Meal_MealId",
+                table: "MealIngredients");
 
             migrationBuilder.DropTable(
                 name: "Supplier");
 
             migrationBuilder.DropPrimaryKey(
-                name: "PK_Sandwich",
-                table: "Sandwich");
+                name: "PK_Meal",
+                table: "Meal");
 
             migrationBuilder.DropIndex(
-                name: "IX_Sandwich_SupplierId",
-                table: "Sandwich");
+                name: "IX_Meal_SupplierId",
+                table: "Meal");
 
             migrationBuilder.DropPrimaryKey(
                 name: "PK_Ingredient",
@@ -133,19 +133,19 @@ namespace MealServices.DataLayer.Migrations
 
             migrationBuilder.DropColumn(
                 name: "Id",
-                table: "Sandwich");
+                table: "Meal");
 
             migrationBuilder.DropColumn(
                 name: "SupplierId",
-                table: "Sandwich");
+                table: "Meal");
 
             migrationBuilder.DropColumn(
                 name: "Id",
                 table: "Ingredient");
 
             migrationBuilder.AddColumn<int>(
-                name: "SandwichId",
-                table: "Sandwich",
+                name: "MealId",
+                table: "Meal",
                 type: "int",
                 nullable: false,
                 defaultValue: 0)
@@ -160,9 +160,9 @@ namespace MealServices.DataLayer.Migrations
                 .Annotation("SqlServer:Identity", "1, 1");
 
             migrationBuilder.AddPrimaryKey(
-                name: "PK_Sandwich",
-                table: "Sandwich",
-                column: "SandwichId");
+                name: "PK_Meal",
+                table: "Meal",
+                column: "MealId");
 
             migrationBuilder.AddPrimaryKey(
                 name: "PK_Ingredient",
@@ -170,19 +170,19 @@ namespace MealServices.DataLayer.Migrations
                 column: "IngredientId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_SandwichIngredients_Ingredient_SandwichId",
-                table: "SandwichIngredients",
-                column: "SandwichId",
+                name: "FK_MealIngredients_Ingredient_MealId",
+                table: "MealIngredients",
+                column: "MealId",
                 principalTable: "Ingredient",
                 principalColumn: "IngredientId",
                 onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_SandwichIngredients_Sandwich_SandwichId",
-                table: "SandwichIngredients",
-                column: "SandwichId",
-                principalTable: "Sandwich",
-                principalColumn: "SandwichId",
+                name: "FK_MealIngredients_Meal_MealId",
+                table: "MealIngredients",
+                column: "MealId",
+                principalTable: "Meal",
+                principalColumn: "MealId",
                 onDelete: ReferentialAction.Cascade);
         }
     }

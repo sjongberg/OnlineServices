@@ -1,12 +1,13 @@
-﻿using MealServices.Shared.Interfaces;
+﻿using OnlineServices.Shared.DataAccessHelpers;
+using OnlineServices.Shared.TranslationServices;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MealServices.DataLayer.Entities
 {
-    [Table("Ingredient")]
-    public class IngredientEF: IMultiLanguageFields
+    [Table("Ingredients")]
+    public class IngredientEF: IEntity<int>, IMultiLanguageNameFields
     {
         [Key]
         public int Id{get;set;}

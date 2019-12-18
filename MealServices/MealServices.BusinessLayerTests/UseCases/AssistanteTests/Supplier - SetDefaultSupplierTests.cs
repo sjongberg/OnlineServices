@@ -1,126 +1,126 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using MealServices.BusinessLayer.UseCases.Assistante;
-using MealServices.Shared.Interfaces;
-using MealServices.Shared.TransfertObjects;
+using MealServices.BusinessLayer.UseCases;
+using OnlineServices.Shared.MealServices.TransfertObjects;
 using System;
+using OnlineServices.Shared.MealServices.Interfaces;
 
 namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
 {
     [TestClass]
     public class Supplier_SetDefaultSupplierTests
     {
-        [TestMethod]
+        [TestMethod()]
         public void SetDefaultSupplier_ThrowException_WhenSupplierIDisDifferentOfZero()
         {
             //ARRANGE
-            var AssistanteRole = new Assistante((new Mock<IUnitOfWork>()).Object);
+            var Assistante = new AssistantRole((new Mock<IMSUnitOfWork>()).Object);
             var SupplierToUpdate = new SupplierTO { Id = 0, Name = "InexistantSupplier" };
 
             //ACT
-            Assert.ThrowsException<Exception>(() => AssistanteRole.SetDefaultSupplier(SupplierToUpdate));
+            Assert.ThrowsException<Exception>(() => Assistante.SetDefaultSupplier(SupplierToUpdate));
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void SetDefaultSupplier_ThrowException_WhenSupplierIsNull()
         {
             //ARRANGE
-            var AssistanteRole = new Assistante((new Mock<IUnitOfWork>()).Object);
+            var Assistante = new AssistantRole((new Mock<IMSUnitOfWork>()).Object);
 
             //ACT
-            Assert.ThrowsException<ArgumentNullException>(() => AssistanteRole.SetDefaultSupplier(null));
+            Assert.ThrowsException<ArgumentNullException>(() => Assistante.SetDefaultSupplier(null));
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void SetDefaultSupplier_ReturnsTrue_WhenAValidSupplierWithIsDefaultTrueIsProvidedAndUpdatedInDB()
         {
             //ARRANGE
             var mockSupplierRepository = new Mock<ISupplierRepository>();
             mockSupplierRepository.Setup(x => x.SetDefaultSupplier(It.IsAny<SupplierTO>()));
 
-            var mockUoW = new Mock<IUnitOfWork>();
+            var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
-            var AssistanteRole = new Assistante(mockUoW.Object);
+            var Assistante = new AssistantRole(mockUoW.Object);
             var SupplierToUpdate = new SupplierTO { Id = 10, Name = "ExistantSupplier", IsDefault = true };
 
             //ACT
-            var ReturnValueToAssert = AssistanteRole.SetDefaultSupplier(SupplierToUpdate);
+            var ReturnValueToAssert = Assistante.SetDefaultSupplier(SupplierToUpdate);
 
             Assert.IsTrue(ReturnValueToAssert);
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void SetDefaultSupplier_ReturnsFalse_WhenAValidSupplierWithIsDefaultFalseIsProvidedAndUpdatedInDB()
         {
             //ARRANGE
             var mockSupplierRepository = new Mock<ISupplierRepository>();
             mockSupplierRepository.Setup(x => x.SetDefaultSupplier(It.IsAny<SupplierTO>()));
 
-            var mockUoW = new Mock<IUnitOfWork>();
+            var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
-            var AssistanteRole = new Assistante(mockUoW.Object);
+            var Assistante = new AssistantRole(mockUoW.Object);
             var SupplierToUpdate = new SupplierTO { Id = 10, Name = "ExistantSupplier", IsDefault = false };
 
             //ACT
-            Assert.ThrowsException<Exception>(() => AssistanteRole.SetDefaultSupplier(SupplierToUpdate));
+            Assert.ThrowsException<Exception>(() => Assistante.SetDefaultSupplier(SupplierToUpdate));
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void UpdateSupplier_SupplierRepositoryIsCalledOnce_WhenAValidSupplierWithIsDefaultTrueIsProvidedAndUpdatedInDB()
         {
             //ARRANGE
             var mockSupplierRepository = new Mock<ISupplierRepository>();
             mockSupplierRepository.Setup(x => x.SetDefaultSupplier(It.IsAny<SupplierTO>()));
 
-            var mockUoW = new Mock<IUnitOfWork>();
+            var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
-            var AssistanteRole = new Assistante(mockUoW.Object);
+            var Assistante = new AssistantRole(mockUoW.Object);
             var SupplierToUpdate = new SupplierTO { Id = 10, Name = "ExistantSupplier", IsDefault = true };
 
             //ACT
-            AssistanteRole.SetDefaultSupplier(SupplierToUpdate);
+            Assistante.SetDefaultSupplier(SupplierToUpdate);
 
             mockSupplierRepository.Verify(x => x.SetDefaultSupplier(It.IsAny<SupplierTO>()), Times.Once);
         }
-        [TestMethod]
+        [TestMethod()]
         public void SetDefaultSupplier_SupplierRepositoryIsCalledNone_WhenAValidSupplierWithIsDefaultFalseIsProvidedAndUpdatedInDB()
         {
             //ARRANGE
             var mockSupplierRepository = new Mock<ISupplierRepository>();
             mockSupplierRepository.Setup(x => x.SetDefaultSupplier(It.IsAny<SupplierTO>()));
 
-            var mockUoW = new Mock<IUnitOfWork>();
+            var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
-            var AssistanteRole = new Assistante(mockUoW.Object);
+            var Assistante = new AssistantRole(mockUoW.Object);
             var SupplierToUpdate = new SupplierTO { Id = 10, Name = "ExistantSupplier", IsDefault = false };
 
             //ACT
             //Assert.ThrowsException<Exception>(()=>
-            try { AssistanteRole.SetDefaultSupplier(SupplierToUpdate); } catch { }
+            try { Assistante.SetDefaultSupplier(SupplierToUpdate); } catch { }
 
             mockSupplierRepository.Verify(x => x.SetDefaultSupplier(It.IsAny<SupplierTO>()), Times.Never);
         }
 
-        [TestMethod]
+        [TestMethod()]
         public void SetDefaultSupplier_ThrowsException_WhenAInvalidSupplierWithIsDefaultTrueIsProvidedAndUpdatedInDB()
         {
             //ARRANGE
             var mockSupplierRepository = new Mock<ISupplierRepository>();
             mockSupplierRepository.Setup(x => x.SetDefaultSupplier(It.IsAny<SupplierTO>()));
 
-            var mockUoW = new Mock<IUnitOfWork>();
+            var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
 
-            var AssistanteRole = new Assistante(mockUoW.Object);
+            var Assistante = new AssistantRole(mockUoW.Object);
             var SupplierToUpdate = new SupplierTO { Id = 10, Name = "", IsDefault = true };
 
             //ACT
             //Assert.ThrowsException<Exception>(()=>
-            try { AssistanteRole.SetDefaultSupplier(SupplierToUpdate); } catch { }
+            try { Assistante.SetDefaultSupplier(SupplierToUpdate); } catch { }
 
             mockSupplierRepository.Verify(x => x.SetDefaultSupplier(It.IsAny<SupplierTO>()), Times.Never);
         }

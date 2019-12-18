@@ -1,16 +1,18 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MealServices.DataLayer.Extensions;
-using MealServices.Shared.Interfaces;
+﻿using MealServices.DataLayer.Extensions;
+
+using Microsoft.EntityFrameworkCore;
+using OnlineServices.Shared.DataAccessHelpers;
+using OnlineServices.Shared.MealServices.TransfertObjects;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MealServices.Shared.TransfertObjects;
 
 namespace MealServices.DataLayer.Repositories
 {
-    public class IngredientRepository : IRepository<IngredientTO, int>
+    public class IngredientRepository : IRepositoryTemp<IngredientTO, int>
     {
-        private MealContext mealContext;
+        private readonly MealContext mealContext;
 
         public IngredientRepository(MealContext ContextIoC)
         {
@@ -26,7 +28,7 @@ namespace MealServices.DataLayer.Repositories
             }
             catch (Exception Ex)
             {
-                throw Ex;
+                throw;
             }
         }
 
@@ -53,26 +55,38 @@ namespace MealServices.DataLayer.Repositories
             .FirstOrDefault(x => x.Id == Id)
             .ToTranfertObject();
 
-        public List<IngredientTO> GetMealsByIngredient(List<IngredientTO> Ingredients)
-        {
-            throw new NotImplementedException();
-        }
+        //TODO GetMealsByIngredient
+        //public List<IngredientTO> GetMealsByIngredient(List<IngredientTO> Ingredients)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public List<IngredientTO> GetMealsWithoutIngredient(List<IngredientTO> Ingredients)
-        {
-            throw new NotImplementedException();
-        }
+        //TODO GetMealsWithoutIngredient
+        //public List<IngredientTO> GetMealsWithoutIngredient(List<IngredientTO> Ingredients)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public IngredientTO Insert(IngredientTO entity)
-            => mealContext.Ingredients
+        public IngredientTO Add(IngredientTO entity)
+        {
+            if (entity is null)
+                throw new ArgumentNullException(nameof(entity));
+
+            return mealContext.Ingredients
                 .Add(entity.ToEF())
                 .Entity
                 .ToTranfertObject();
+        }
 
         public IngredientTO Update(IngredientTO Entity)
-            => mealContext.Ingredients
+        {
+            if (Entity is null)
+                throw new ArgumentNullException(nameof(Entity));
+
+            return mealContext.Ingredients
                 .Find(Entity.Id)
                 .UpdateFromDetached(Entity.ToEF())
                 .ToTranfertObject();
+        }
     }
 }

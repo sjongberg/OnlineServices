@@ -1,7 +1,9 @@
 ﻿using MealServices.DataLayer.Entities;
-using MealServices.Shared;
-using MealServices.Shared.Extensions;
-using MealServices.Shared.TransfertObjects;
+
+using OnlineServices.Shared.Extensions;
+using OnlineServices.Shared.MealServices.TransfertObjects;
+using OnlineServices.Shared.TranslationServices.TransfertObjects;
+
 using System;
 
 namespace MealServices.DataLayer.Extensions
@@ -16,7 +18,7 @@ namespace MealServices.DataLayer.Extensions
             return new IngredientTO
             {
                 Id = Ingredient.Id,
-                Name = new StringTranslated(Ingredient.NameEnglish, Ingredient.NameFrench, Ingredient.NameDutch),
+                Name = new MultiLanguageString(Ingredient.NameEnglish, Ingredient.NameFrench, Ingredient.NameDutch),
                 IsAllergen = Ingredient.IsAllergen
             };
         }
@@ -39,13 +41,19 @@ namespace MealServices.DataLayer.Extensions
 
         public static IngredientEF UpdateFromDetached(this IngredientEF AttachedEF, IngredientEF DetachedEF)
         {
+            if (AttachedEF is null)
+                throw new ArgumentNullException(nameof(AttachedEF));
+
+            if (DetachedEF is null)
+                throw new ArgumentNullException(nameof(DetachedEF));
+
             if (AttachedEF.Id != DetachedEF.Id)
                 throw new Exception("Cannot update IngredientEF entity as it is not the same.");
 
             if ((AttachedEF != default) && (DetachedEF != default))
             {
                 AttachedEF.IsAllergen = DetachedEF.IsAllergen;
-                AttachedEF = AttachedEF.FillFromStringTranslated(DetachedEF.ExtractToStringTranslated());
+                AttachedEF = AttachedEF.FillFromMultiLanguageString(DetachedEF.ExtractToMultiLanguageString());
             }
 
             return AttachedEF;

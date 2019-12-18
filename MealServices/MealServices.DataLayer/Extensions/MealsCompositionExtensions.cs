@@ -1,8 +1,8 @@
 ﻿using MealServices.DataLayer.Entities;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace MealServices.DataLayer.Extensions
 {
@@ -10,6 +10,11 @@ namespace MealServices.DataLayer.Extensions
     {
         public static MealCompositionEF UpdateFromDetached(this MealCompositionEF AttachedEF, MealCompositionEF DetachedEF)
         {
+            if (AttachedEF is null)
+                throw new ArgumentNullException(nameof(AttachedEF));
+            if (DetachedEF is null)
+                throw new ArgumentNullException(nameof(DetachedEF));
+
             if ((AttachedEF.IngredientId != DetachedEF.IngredientId)
                 && (AttachedEF.MealId != DetachedEF.MealId))
                     throw new Exception("Cannot update MealCompositionEF entity as it is not the same.");
@@ -25,6 +30,11 @@ namespace MealServices.DataLayer.Extensions
 
         public static List<MealCompositionEF> UpdateFromDetached(this List<MealCompositionEF> AttachedList, List<MealCompositionEF> DetachedList)
         {
+            if (AttachedList is null)
+                throw new ArgumentNullException(nameof(AttachedList));
+            if (DetachedList is null)
+                throw new ArgumentNullException(nameof(DetachedList));
+
             var ListNotModified = AttachedList.Except(DetachedList);
             var ListAdd = DetachedList.Except(AttachedList);
             var ListModifiedDetached = DetachedList.Intersect(AttachedList);//TODO !!! from Attached or BUG
