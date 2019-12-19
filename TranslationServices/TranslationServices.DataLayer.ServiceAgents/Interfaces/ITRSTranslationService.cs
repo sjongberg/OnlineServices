@@ -1,9 +1,13 @@
-﻿using OnlineServices.Shared.Enumerations;
+﻿//VERIFIED V3
+using OnlineServices.Shared.Enumerations;
+using System;
+using System.Threading.Tasks;
+using TranslationServices.DataLayer.ServiceAgents.Domain;
 
 namespace TranslationServices.DataLayer.ServiceAgents.Interfaces
 {
     public interface ITRSTranslationService
     {
-        string Translate(string StringToTranslate, Language FromLangue, Language ToLangue);
+        Task<Tuple<Language, string>[]> TranslateAsync(Tuple<Language, string> OriginalText);
     }
 }

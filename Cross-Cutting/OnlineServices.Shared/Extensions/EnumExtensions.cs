@@ -1,5 +1,7 @@
-﻿using System;
+﻿using OnlineServices.Shared.Enumerations;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace OnlineServices.Shared.Extensions
 {
@@ -16,12 +18,23 @@ namespace OnlineServices.Shared.Extensions
             return result;
         }
 
+        public static List<TEnum> GetOthersValues<TEnum>(this TEnum EnumToExtend)
+            where TEnum : Enum
+        {
+            var result = new List<TEnum>();
+            var values = Enum.GetNames(typeof(TEnum));
+
+            return values.Select(x=> (TEnum)Enum.Parse(typeof(TEnum), x))
+                         .Where(x=> !x.Equals(EnumToExtend))//TODO erase && !x.Equals(Language.Unknown))
+                         .ToList();
+        }
+
         public static bool IsDefined<TEnum>(this TEnum EnumToExtend, bool ThrowException = false)
             where TEnum : Enum
         {
             bool ReturnValue;
             if (!Enum.IsDefined(typeof(TEnum), EnumToExtend))
-                ReturnValue = !ThrowException ? false : throw new ArgumentOutOfRangeException($"{typeof(TEnum)} with invalid value of {EnumToExtend.ToInt()}");
+                ReturnValue = ThrowException ? throw new ArgumentOutOfRangeException($"{typeof(TEnum)} with invalid value of {EnumToExtend.ToInt()}") : false;
             else
                 ReturnValue = true;
             return ReturnValue;

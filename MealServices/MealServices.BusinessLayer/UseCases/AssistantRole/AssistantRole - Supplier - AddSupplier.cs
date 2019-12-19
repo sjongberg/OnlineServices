@@ -19,7 +19,7 @@ namespace MealServices.BusinessLayer.UseCases
             try
             {
 
-                iMSUnitOfWork.SupplierRepository.Insert(Supplier.ToDomain().ToTransfertObject());
+                iMSUnitOfWork.SupplierRepository.Add(Supplier.ToDomain().ToTransfertObject());
 
                 if (Supplier.IsDefault)
                     iMSUnitOfWork.SupplierRepository.SetDefaultSupplier(Supplier.ToDomain().ToTransfertObject());

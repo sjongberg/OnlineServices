@@ -55,7 +55,7 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
         {
             //ARRANGE
             var mockSupplierRepository = new Mock<ISupplierRepository>();
-            mockSupplierRepository.Setup(x => x.Insert(It.IsAny<SupplierTO>()));
+            mockSupplierRepository.Setup(x => x.Add(It.IsAny<SupplierTO>()));
 
             var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
@@ -74,7 +74,7 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
         {
             //ARRANGE
             var mockSupplierRepository = new Mock<ISupplierRepository>();
-            mockSupplierRepository.Setup(x => x.Insert(It.IsAny<SupplierTO>()));
+            mockSupplierRepository.Setup(x => x.Add(It.IsAny<SupplierTO>()));
 
             var mockUoW = new Mock<IMSUnitOfWork>();
             mockUoW.Setup(x => x.SupplierRepository).Returns(mockSupplierRepository.Object);
@@ -85,7 +85,7 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
             //ACT
             Assistante.AddSupplier(SupplierToAdd);
 
-            mockSupplierRepository.Verify(x => x.Insert(It.IsAny<SupplierTO>()), Times.Once);
+            mockSupplierRepository.Verify(x => x.Add(It.IsAny<SupplierTO>()), Times.Once);
         }
 
         [TestMethod()]
@@ -93,7 +93,7 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
         {
             //ARRANGE
             var mockSupplierRepository = new Mock<ISupplierRepository>();
-            mockSupplierRepository.Setup(x => x.Insert(It.IsAny<SupplierTO>()));
+            mockSupplierRepository.Setup(x => x.Add(It.IsAny<SupplierTO>()));
             mockSupplierRepository.Setup(x => x.SetDefaultSupplier(It.IsAny<SupplierTO>()));
 
             var mockUoW = new Mock<IMSUnitOfWork>();
@@ -106,7 +106,7 @@ namespace MealServices.BusinessLayerTests.UseCases.AssistanteTests
             var ReturnValueToAssert = Assistante.AddSupplier(SupplierToAdd);
 
             Assert.IsTrue(ReturnValueToAssert);
-            mockSupplierRepository.Verify(x => x.Insert(It.IsAny<SupplierTO>()), Times.Once);
+            mockSupplierRepository.Verify(x => x.Add(It.IsAny<SupplierTO>()), Times.Once);
             mockSupplierRepository.Verify(x => x.SetDefaultSupplier(It.IsAny<SupplierTO>()), Times.Once);
         }
     }

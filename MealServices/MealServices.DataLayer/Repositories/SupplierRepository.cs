@@ -76,7 +76,7 @@ namespace MealServices.DataLayer.Repositories
                 .ToTranfertObject();
         }
 
-        public SupplierTO Insert(SupplierTO Entity)
+        public SupplierTO Add(SupplierTO Entity)
             => mealContext
                 .Add(Entity.ToEF())
                 .Entity
