@@ -1,4 +1,6 @@
-﻿using Moq;
+﻿//VERIFIED V3
+using Moq;
+using OnlineServices.Shared.Exceptions;
 using Serilog;
 using System;
 using TranslationServices.BusinessLayer.UseCases;
@@ -22,28 +24,42 @@ namespace TranslationServices.BusinessLayerTests.UseCases
         }
 
         [Fact]
-        public void CTOR_ThrowsException_WhenNullInjectionIsProvided()
-        {
-            Assert.Throws<ArgumentNullException>(()=> new OnlineServicesSystem(null, null));
-        }
-
-        [Fact]
-        public void CTOR_ShouldInstaciate_WhenNullILoggerIsProvided()
+        public void CTOR_ThrowLoggedNullException_WhenNullInjectionIsProvided()
         {
             ILogger iLogger = null;
-            var mockITRSTranslationService = new Mock<ITRSTranslationService>();
+            ITRSTranslationService iTRSTranslationService = null;
 
-            Assert.Throws<ArgumentNullException>(() => new OnlineServicesSystem(iLogger, mockITRSTranslationService.Object));
+            var mockILogger = TestHelper.MakeILogger();
+            LoggedException.Logger = mockILogger.Object;
+
+            Assert.Throws<LoggedException>(() => new OnlineServicesSystem(iLogger, iTRSTranslationService));
+            mockILogger.Verify(x => x.Error(It.IsAny<ArgumentNullException>(), It.IsAny<string>()), Times.Once);
+            //TODO Times.Twice?
         }
 
         [Fact]
-        public void CTOR_ShouldInstaciate_WhenNullITRSTranslationServiceIsProvided()
+        public void CTOR_ThrowLoggedNullException_WhenNullILoggerIsProvided()
         {
-            var mockILogger = new Mock<ILogger>();
+            ILogger iLogger = null;
+            var mockILogger = TestHelper.MakeILogger();
+            LoggedException.Logger = mockILogger.Object;
+
+            var mockITRSTranslationService = new Mock<ITRSTranslationService>();
+
+            Assert.Throws<LoggedException>(() => new OnlineServicesSystem(iLogger, mockITRSTranslationService.Object));
+            mockILogger.Verify(x => x.Error(It.IsAny<ArgumentNullException>(), It.IsAny<string>()), Times.Once);
+        }
+
+        [Fact]
+        public void CTOR_ThrowLoggedNullException_WhenNullITRSTranslationServiceIsProvided()
+        {
+            var mockILogger = TestHelper.MakeILogger();
+            LoggedException.Logger = mockILogger.Object;
+
             ITRSTranslationService iTRSTranslationService = null;
 
-            Assert.Throws<ArgumentNullException>(() => new OnlineServicesSystem(mockILogger.Object, iTRSTranslationService));
-            mockILogger.Verify(x=>x.Error(It.IsAny<string>()), Times.Once);
+            Assert.Throws<LoggedException>(() => new OnlineServicesSystem(mockILogger.Object, iTRSTranslationService));
+            mockILogger.Verify(x=>x.Error(It.IsAny<ArgumentNullException>(), It.IsAny<string>()), Times.Once);
         }
     }
 }

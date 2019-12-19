@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyVersion>2019.12.8.1</AssemblyVersion>
-    <FileVersion>2019.12.8.1</FileVersion>
+    <AssemblyVersion>1912.19.2.1324</AssemblyVersion>
+    <FileVersion>1912.19.2.1324</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +11,14 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
+    <PackageReference Include="Serilog" Version="2.9.0" />
+    <PackageReference Include="Serilog.Sinks.ColoredConsole" Version="3.0.1" />
+    <PackageReference Include="Serilog.Sinks.Debug" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UserServices\" />
   </ItemGroup>
 
 </Project>

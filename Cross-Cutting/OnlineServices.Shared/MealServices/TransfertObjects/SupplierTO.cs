@@ -1,6 +1,8 @@
-﻿namespace OnlineServices.Shared.MealServices.TransfertObjects
+﻿using OnlineServices.Shared.DataAccessHelpers;
+
+namespace OnlineServices.Shared.MealServices.TransfertObjects
 {
-    public class SupplierTO
+    public class SupplierTO : IEntity<int>
     {
         public int Id { get; set; }
         public string Name { get; set; }

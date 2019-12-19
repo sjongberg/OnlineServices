@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace MealServices.DataLayer.Repositories
 {
-    public class IngredientRepository : IRepository<IngredientTO, int>
+    public class IngredientRepository : IRepositoryTemp<IngredientTO, int>
     {
         private readonly MealContext mealContext;
 
@@ -55,17 +55,19 @@ namespace MealServices.DataLayer.Repositories
             .FirstOrDefault(x => x.Id == Id)
             .ToTranfertObject();
 
-        public List<IngredientTO> GetMealsByIngredient(List<IngredientTO> Ingredients)
-        {
-            throw new NotImplementedException();
-        }
+        //TODO GetMealsByIngredient
+        //public List<IngredientTO> GetMealsByIngredient(List<IngredientTO> Ingredients)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public List<IngredientTO> GetMealsWithoutIngredient(List<IngredientTO> Ingredients)
-        {
-            throw new NotImplementedException();
-        }
+        //TODO GetMealsWithoutIngredient
+        //public List<IngredientTO> GetMealsWithoutIngredient(List<IngredientTO> Ingredients)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public IngredientTO Insert(IngredientTO entity)
+        public IngredientTO Add(IngredientTO entity)
         {
             if (entity is null)
                 throw new ArgumentNullException(nameof(entity));
