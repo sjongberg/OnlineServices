@@ -45,7 +45,7 @@ namespace MealServices.DataLayerTests
                 var mealRepository = new MealRepository(memoryCtx);
 
                 //ACT
-                mealRepository.Insert(MealToUseInTest);
+                mealRepository.Add(MealToUseInTest);
                 memoryCtx.SaveChanges();
 
                 //ASSERT
@@ -85,7 +85,7 @@ namespace MealServices.DataLayerTests
                 var mealRepository = new MealRepository(memoryCtx);
 
                 //ACT
-                mealRepository.Insert(MealToUseInTest);
+                mealRepository.Add(MealToUseInTest);
                 memoryCtx.SaveChanges();
                 var retrivedMeal = mealRepository.GetByID(1);
 
@@ -137,8 +137,8 @@ namespace MealServices.DataLayerTests
                 var mealRepository = new MealRepository(memoryCtx);
 
                 //ACT
-                mealRepository.Insert(MealToUseInTest1);
-                mealRepository.Insert(MealToUseInTest2);
+                mealRepository.Add(MealToUseInTest1);
+                mealRepository.Add(MealToUseInTest2);
                 memoryCtx.SaveChanges();
 
                 var retrievedMeals = mealRepository.GetAll();
@@ -190,9 +190,9 @@ namespace MealServices.DataLayerTests
                 var mealRepository = new MealRepository(memoryCtx);
 
                 //ACT
-                mealRepository.Insert(MealToUseInTest1);
+                mealRepository.Add(MealToUseInTest1);
                 memoryCtx.SaveChanges();
-                mealRepository.Insert(MealToUseInTest2);
+                mealRepository.Add(MealToUseInTest2);
                 memoryCtx.SaveChanges();
                 mealRepository.Remove(2);
                 memoryCtx.SaveChanges();
@@ -246,8 +246,8 @@ namespace MealServices.DataLayerTests
                 var mealRepository = new MealRepository(memoryCtx);
 
                 //ACT
-                mealRepository.Insert(MealToUseInTest1);
-                mealRepository.Insert(MealToUseInTest2);
+                mealRepository.Add(MealToUseInTest1);
+                mealRepository.Add(MealToUseInTest2);
                 memoryCtx.SaveChanges();
                 mealRepository.Remove(2);
                 memoryCtx.SaveChanges();
@@ -298,8 +298,8 @@ namespace MealServices.DataLayerTests
                 var mealRepository = new MealRepository(memoryCtx);
 
                 //ACT
-                mealRepository.Insert(MealToUseInTest1);
-                mealRepository.Insert(MealToUseInTest2);
+                mealRepository.Add(MealToUseInTest1);
+                mealRepository.Add(MealToUseInTest2);
                 memoryCtx.SaveChanges();
                 MealToUseInTest2.Id = 2;
                 mealRepository.Remove(MealToUseInTest2);
@@ -354,8 +354,8 @@ namespace MealServices.DataLayerTests
                 var mealRepository = new MealRepository(memoryCtx);
 
                 //ACT
-                mealRepository.Insert(MealToUseInTest1);
-                mealRepository.Insert(MealToUseInTest2);
+                mealRepository.Add(MealToUseInTest1);
+                mealRepository.Add(MealToUseInTest2);
                 memoryCtx.SaveChanges();
                 MealToUseInTest2.Id = 2;
                 mealRepository.Remove(MealToUseInTest2);
@@ -393,7 +393,7 @@ namespace MealServices.DataLayerTests
                 var mealRepository = new MealRepository(memoryCtx);
 
                 //ACT
-                mealRepository.Insert(MealToUseInTest);
+                mealRepository.Add(MealToUseInTest);
                 memoryCtx.SaveChanges();
                 //MealToUseInTest.Id = 1;
                 MealToUseInTest.MealType = MealType.Sandwich;

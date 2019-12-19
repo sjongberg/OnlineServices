@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TranslationServices.DataLayer.ServiceAgents</name>
+    </assembly>
+    <members>
+        <member name="T:TranslationServices.DataLayer.ServiceAgents.Domain.AzureCognitive.TranslationResult">
+            <summary>
+            The C# classes that represents the JSON returned by the Translator Text API.
+            </summary>
+        </member>
+        <member name="T:TranslationServices.DataLayer.ServiceAgents.Domain.TranslationArgs">
+            <summary>
+            A wrap of args for translation.
+            </summary>
+            <remarks>
+            This class has the benefits of wrapping all the args necessary for a translation request of the implementations of the ITRSTranslationService interface.
+            </remarks>
+        </member>
+        <member name="P:TranslationServices.DataLayer.ServiceAgents.Domain.TranslationArgs.TextToTranslate">
+            <summary>
+            Contains the string with the content to translate.
+            </summary>
+        </member>
+        <member name="P:TranslationServices.DataLayer.ServiceAgents.Domain.TranslationArgs.OriginalLanguage">
+            <summary>
+            Contains the language of the TextToTranslate.
+            </summary>
+        </member>
+        <member name="P:TranslationServices.DataLayer.ServiceAgents.Domain.TranslationArgs.RequestedLanguages">
+            <summary>
+            Contains a array of language to translate the TextToTranslate to.
+            </summary>
+        </member>
+        <member name="P:TranslationServices.DataLayer.ServiceAgents.Domain.TranslationArgs2.OriginalText">
+            <summary>
+            Contains the content to translate an its language.
+            </summary>
+        </member>
+        <member name="P:TranslationServices.DataLayer.ServiceAgents.Domain.TranslationArgs2.RequestedLanguages">
+            <summary>
+            Contains a array of languages to translate the OriginalText to.
+            </summary>
+        </member>
+        <member name="M:TranslationServices.DataLayer.ServiceAgents.Extensions.TupleLanguageExtensions.ToJsonObject(System.Tuple{OnlineServices.Shared.Enumerations.Language,System.String})">
+            <summary>
+            This method serialize the text to Azure Cognitive service to be used with the HttpClient request.
+            </summary>
+            <param name="TupleText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TranslationServices.DataLayer.ServiceAgents.Extensions.TupleLanguageExtensions.ComposeRoute(System.Tuple{OnlineServices.Shared.Enumerations.Language,System.String})">
+            <summary>
+            This method compose the route element of the Azure Cognitive service to be used as part of the URL the HttpClient request.
+            </summary>
+            <param name="OriginalText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TranslationServices.DataLayer.ServiceAgents.Extensions.TupleLanguageExtensions.IsValidWithThrow(System.Tuple{OnlineServices.Shared.Enumerations.Language,System.String})">
+            <summary>
+            The class validades that the fields has all the values as specifyed by the translation service.
+            </summary>
+            <returns>
+                void. This method throw a exception when LanguageTuple is not valid.
+            </returns>
+        </member>
+        <member name="T:TranslationServices.DataLayer.ServiceAgents.TranslationAgents.AzureCognitiveAgent">
+            <summary>
+            Adapter pattern implementation for the Azure Cognitive Tranlaslation API.
+            </summary>
+        </member>
+        <member name="M:TranslationServices.DataLayer.ServiceAgents.TranslationAgents.AzureCognitiveAgent.#ctor(Serilog.ILogger,TranslationServices.DataLayer.ServiceAgents.Domain.AzureCognitiveArgs)">
+            <summary>
+            Logger for debuging purposes and azure subscription information for the Azure Cognitive services.
+            </summary>
+            <param name="iLogger"></param>
+            <param name="SubscriptionConfig"></param>
+        </member>
+    </members>
+</doc>

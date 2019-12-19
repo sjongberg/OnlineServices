@@ -1,11 +1,12 @@
-﻿using OnlineServices.Shared.MealServices.Enumerations;
+﻿using OnlineServices.Shared.DataAccessHelpers;
+using OnlineServices.Shared.MealServices.Enumerations;
 using OnlineServices.Shared.TranslationServices.TransfertObjects;
 
 using System.Collections.Generic;
 
 namespace OnlineServices.Shared.MealServices.TransfertObjects
 {
-    public class MealTO
+    public class MealTO : IEntity<int>
     {
         public int Id { get; set; }
         public MultiLanguageString Name { get; set; }

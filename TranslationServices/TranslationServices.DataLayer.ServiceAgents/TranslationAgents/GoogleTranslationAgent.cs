@@ -1,7 +1,14 @@
-﻿using OnlineServices.Shared.Exceptions;
+﻿//using Google.Apis.Auth.OAuth2;
+//using Google.Cloud.Translation.V2;
+using OnlineServices.Shared.Exceptions;
 using OnlineServices.Shared.Extensions;
+
 using Serilog;
+
 using System;
+using System.Threading.Tasks;
+
+using TranslationServices.DataLayer.ServiceAgents.Extensions;
 using TranslationServices.DataLayer.ServiceAgents.Interfaces;
 
 using Language = OnlineServices.Shared.Enumerations.Language;
@@ -13,7 +20,7 @@ namespace TranslationServices.DataLayer.ServiceAgents.TranslationAgents
         private readonly string apiKey;
         private readonly ILogger iLogger;
 
-        public GoogleTranslationAgent( ILogger iLogger, string apiKey = @"C:\TFS\OnlineServices-d9921f8e5f21.json")
+        public GoogleTranslationAgent(ILogger iLogger, string apiKey = @"C:\TFS\OnlineServices-d9921f8e5f21.json")
         {
             this.iLogger = iLogger ?? throw new ArgumentNullException($"{nameof(apiKey)} @ CTOR in GoogleTranslationAgent");
 
@@ -27,50 +34,41 @@ namespace TranslationServices.DataLayer.ServiceAgents.TranslationAgents
                 this.apiKey = apiKey;
         }
 
-        string ITRSTranslationService.Translate(string StringToTranslate, Language FromLangue, Language ToLangue)
+        //Tuple<Language, string>[] Translate(Tuple<Language, string> OriginalText)
+        //{
+        //    //CHECKS
+        //    OriginalText.IsValidWithThrow();
+
+        //    //IMPLEMENTATION
+        //    throw new NotImplementedException("Depends on a current Google Cloud Account with Credit Card");
+
+
+        //    #region This Region depends on a current Google Cloud Account with Credit Card entered on it.
+        //    //DOC Students should create a service account https://cloud.google.com/docs/authentication/getting-started
+        //    var credential = GoogleCredential.FromFile(apiKey);
+
+        //    var result = new List<Tuple<Language, string>> { OriginalText };
+        //    using (var client = TranslationClient.Create(credential, TranslationModel.NeuralMachineTranslation))
+        //    {
+
+        //        foreach (var item in Enum.GetValues(typeof(Language)))
+        //        {
+        //            if ((Language)item != OriginalText.Item1)
+        //            result.Add(new Tuple<Language, string>((Language)item, client.TranslateText(OriginalText.Item2, ((Language)item).ToGoogleLanguage(), OriginalText.Item1.ToGoogleLanguage()).TranslatedText));
+        //        }
+        //    }
+
+        //    return result.ToArray();
+        //    #endregion
+        //}
+
+        Task<Tuple<Language, string>[]> ITRSTranslationService.TranslateAsync(Tuple<Language, string> OriginalText)
         {
             //CHECKS
-            if (StringToTranslate.IsNullOrWhiteSpace())
-            {
-                var exceptionMSG = $"Nothing to translate. {nameof(StringToTranslate)} @ GoogleTranslationAgent.Translate(...);";
-                iLogger.Error(exceptionMSG);
-                throw new IsNullOrWhiteSpaceException(exceptionMSG);
-            }
+            OriginalText.IsValidWithThrow();
 
-            if (FromLangue == ToLangue)
-            {
-                var exceptionMSG = $"ArgumentException({nameof(FromLangue)} && {nameof(FromLangue)}). Values Are The Same={(int)FromLangue}. Translate(...) @ GoogleTranslationAgent";
-                iLogger.Error(exceptionMSG);
-                throw new ArgumentException(exceptionMSG);
-            }
-
-            if (!FromLangue.IsDefined())
-            {
-                var exceptionMSG = $"ArgumentOutOfRangeException({nameof(FromLangue)}). Value={(int)FromLangue}. Translate(...) @ GoogleTranslationAgent";
-                iLogger.Error(exceptionMSG);
-                throw new ArgumentOutOfRangeException(exceptionMSG);
-            }
-
-            if (!ToLangue.IsDefined())
-            {
-                var exceptionMSG = $"ArgumentOutOfRangeException({nameof(ToLangue)}). Value={(int)ToLangue}. Translate(...) @ GoogleTranslationAgent";
-                iLogger.Error(exceptionMSG);
-                throw new ArgumentOutOfRangeException(exceptionMSG);
-            }
-
-            //LOGIC HERE
-            #region This Region depends on a current Google Cloud Account with Credit Card entered on it.
-            //DOC Students should create a service account https://cloud.google.com/docs/authentication/getting-started
-            //var credential = GoogleCredential.FromFile(apiKey);
-            //using (var client = TranslationClient.Create(credential, TranslationModel.NeuralMachineTranslation))
-            //{
-            //    var result = client.TranslateText(StringToTranslate, ToLangue.ToLanguageCode(), FromLangue.ToLanguageCode());
-
-            //    return result.TranslatedText;
-            //}
-            #endregion
-
-            return StringToTranslate; //TODO Delete when the google account is created and JSON file downloaded...
+            //IMPLEMENTATION
+            throw new NotImplementedException("Not Implemented as Async @ GoogleTranslationAgent.Translate(Tuple<Language, string> OriginalText)");
         }
     }
 }
