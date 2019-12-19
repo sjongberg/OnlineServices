@@ -1,6 +1,9 @@
-﻿using OnlineServices.Shared.TranslationServices;
+﻿using OnlineServices.Shared.Enumerations;
+using OnlineServices.Shared.Exceptions;
+using OnlineServices.Shared.TranslationServices;
 using OnlineServices.Shared.TranslationServices.TransfertObjects;
 using System;
+using System.Collections.Generic;
 
 namespace OnlineServices.Shared.Extensions
 {
@@ -26,5 +29,28 @@ namespace OnlineServices.Shared.Extensions
 
             return new MultiLanguageString(MultilanguageString.NameEnglish, MultilanguageString.NameFrench, MultilanguageString.NameDutch);
         }
+
+        public static MultiLanguageString ToMultiLanguageString(this Tuple<Language, string>[] tupleLanguages)
+        {
+            if (tupleLanguages is null)
+                throw new LoggedException(new ArgumentNullException($"{nameof(tupleLanguages)} is null @ MultiLanguageStringExtensions.ToMultiLanguageString"));
+
+            return new MultiLanguageString(tupleLanguages);
+        }
+        public static Tuple<Language, string>[] ToTupleLanguages(this MultiLanguageString multiLanguageString)
+        {
+            if (multiLanguageString is null)
+                throw new LoggedException(new ArgumentNullException($"{nameof(multiLanguageString)} is null @ MultiLanguageStringExtensions.ToTupleLanguages"));
+
+            var ReturnValues = new List<Tuple<Language, string>>
+            {
+                new Tuple<Language, string>(Language.English, multiLanguageString.ToString(Language.English)),
+                new Tuple<Language, string>(Language.French, multiLanguageString.ToString(Language.French)),
+                new Tuple<Language, string>(Language.Dutch, multiLanguageString.ToString(Language.Dutch))
+            };
+
+            return ReturnValues.ToArray();
+        }
+
     }
 }

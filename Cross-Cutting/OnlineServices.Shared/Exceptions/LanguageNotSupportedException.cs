@@ -3,7 +3,7 @@
 namespace OnlineServices.Shared.Exceptions
 {
     [Serializable]
-    public class LanguageNotSupportedException : Exception
+    public class LanguageNotSupportedException : LoggedException
     {
         private const string ExceptionMessage = "Language Unknown or not properly configured";
         public LanguageNotSupportedException(string message)

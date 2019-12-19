@@ -1,4 +1,5 @@
-﻿using Google.Cloud.Translation.V2;
+﻿//VERIFIED V3
+using Google.Cloud.Translation.V2;
 using OnlineServices.Shared.Exceptions;
 
 using Language = OnlineServices.Shared.Enumerations.Language;

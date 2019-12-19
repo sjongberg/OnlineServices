@@ -13,7 +13,7 @@ using Xunit;
 
 namespace TranslationServices.DataLayer.ServiceAgentsTests
 {
-    public class AzureCognitiveAgent_TranslateAsyncTests
+    public class GoogleTranslationAgent_TranslateAsyncTests
     {
         public static IEnumerable<object[]> Data
             => new List<object[]>
@@ -26,7 +26,7 @@ namespace TranslationServices.DataLayer.ServiceAgentsTests
                     new object[] { new Tuple<Language,string>(Language.Dutch, "Ga je met me mee, mis?"), new Tuple<Language, string>(Language.French, "Tu viens avec moi, mademoiselle ?") },
                 };
 
-        [Theory]//(Skip = "Integration Test, enable when doing integration test.")]
+        [Theory(Skip = "Integration Test, enable when doing integration test. Depends on a current Google Cloud Account with Credit Card")]
         [MemberData(nameof(Data))]
         public async Task TranslateAsync_ShouldTranslate_WhenValidSentenceIsProvided(Tuple<Language, string> StringToTranslate, Tuple<Language, string> StringTranlated)
         {
@@ -34,7 +34,7 @@ namespace TranslationServices.DataLayer.ServiceAgentsTests
             var mockILogger = TestHelper.MockILogger();
             LoggedException.Logger = mockILogger.Object;
 
-            ITRSTranslationService TranslatorToTest = new AzureCognitiveAgent(mockILogger.Object, TestHelper.AzCognitiveArgs);
+            ITRSTranslationService TranslatorToTest = new GoogleTranslationAgent(mockILogger.Object, TestHelper.GoogleAPIKey());
 
             //ACT
             var TranslatedSentence = await TranslatorToTest.TranslateAsync(StringToTranslate);
@@ -50,29 +50,13 @@ namespace TranslationServices.DataLayer.ServiceAgentsTests
         }
 
         [Fact]
-        public async Task TranslateAsync_ThrowsArgumentNullException_WhenTuppleToTranslateIsNull()
-        {
-            //ARRANGE
-            var mockILogger = TestHelper.MockILogger();
-            LoggedException.Logger = mockILogger.Object;
-
-            ITRSTranslationService TranslatorToTest = new AzureCognitiveAgent(mockILogger.Object, TestHelper.AzCognitiveArgs);
-
-            Tuple<Language, string> args =null;
-
-            //ACT & ASSERT
-            await Assert.ThrowsAsync<LoggedException>(async () => await TranslatorToTest.TranslateAsync(args));
-            mockILogger.Verify(x => x.Error(It.IsAny< ArgumentNullException>(), It.IsAny<string>()), Times.Once);
-        }
-
-        [Fact]
         public async Task TranslateAsync_ThrowsArgumentNullException_WhenStringToTranslateIsNull()
         {
             //ARRANGE
             var mockILogger = TestHelper.MockILogger();
             LoggedException.Logger = mockILogger.Object;
 
-            ITRSTranslationService TranslatorToTest = new AzureCognitiveAgent(mockILogger.Object, TestHelper.AzCognitiveArgs);
+            ITRSTranslationService TranslatorToTest = new GoogleTranslationAgent(mockILogger.Object, TestHelper.GoogleAPIKey());
 
             var args = new Tuple<Language, string>(Language.Dutch, null);
 
@@ -88,7 +72,7 @@ namespace TranslationServices.DataLayer.ServiceAgentsTests
             var mockILogger = TestHelper.MockILogger();
             LoggedException.Logger = mockILogger.Object;
 
-            ITRSTranslationService TranslatorToTest = new AzureCognitiveAgent(mockILogger.Object, TestHelper.AzCognitiveArgs);
+            ITRSTranslationService TranslatorToTest = new GoogleTranslationAgent(mockILogger.Object, TestHelper.GoogleAPIKey());
             var args = new Tuple<Language, string>(Language.English, "");
 
             //ACT & ASSERT
@@ -103,7 +87,7 @@ namespace TranslationServices.DataLayer.ServiceAgentsTests
             var mockILogger = TestHelper.MockILogger();
             LoggedException.Logger = mockILogger.Object;
 
-            ITRSTranslationService TranslatorToTest = new AzureCognitiveAgent(mockILogger.Object, TestHelper.AzCognitiveArgs);
+            ITRSTranslationService TranslatorToTest = new GoogleTranslationAgent(mockILogger.Object, TestHelper.GoogleAPIKey());
             var args = new Tuple<Language, string>(Language.French, "   ");
 
             //ACT & ASSERT
@@ -118,7 +102,7 @@ namespace TranslationServices.DataLayer.ServiceAgentsTests
             var mockILogger = TestHelper.MockILogger();
             LoggedException.Logger = mockILogger.Object;
 
-            ITRSTranslationService TranslatorToTest = new AzureCognitiveAgent(mockILogger.Object, TestHelper.AzCognitiveArgs);
+            ITRSTranslationService TranslatorToTest = new GoogleTranslationAgent(mockILogger.Object, TestHelper.GoogleAPIKey());
             var args = new Tuple<Language, string>((Language)50, "こんにちは");
 
             //ACT & ASSERT

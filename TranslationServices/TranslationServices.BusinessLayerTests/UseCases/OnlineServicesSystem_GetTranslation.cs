@@ -16,21 +16,22 @@ namespace TranslationServices.BusinessLayerTests.UseCases
             //ARRANGE
             var mockILogger = TestHelper.MakeILogger();
             var mockITRSTranslationService = TestHelper.MakeITRSTranslationService();
+            LoggedException.Logger = mockILogger.Object;
 
             var translationUC = new OnlineServicesSystem(mockILogger.Object, mockITRSTranslationService.Object);
-            var EnglishSource = "English Source String";
+            var EnglishTupleToTranslate = new Tuple<Language, string>(Language.English, "English Source String");
 
             //ACT
-            var translated = translationUC.GetTranslation("FakeApiKey", EnglishSource, Language.English);
+            var translated = translationUC.GetTranslations(TestHelper.FakeApiKey, EnglishTupleToTranslate);
 
             //ASSERT
             Assert.NotNull(translated);
-            Assert.Equal(EnglishSource, translated.ToString(Language.English));
+            Assert.Equal(EnglishTupleToTranslate.Item2, translated.ToString(Language.English));
             Assert.Equal(TestHelper.FrenchTranslated, translated.ToString(Language.French));
             Assert.Equal(TestHelper.DutchTranslated, translated.ToString(Language.Dutch));
-            mockITRSTranslationService.Verify(x => x.Translate(It.IsAny<string>(), It.IsAny<Language>(), It.IsAny<Language>()),
-                Times.Exactly(Enum.GetNames(typeof(Language)).Count() - 1));
-            mockILogger.Verify(x=>x.Error(It.IsAny<string>()), Times.Never);
+            mockITRSTranslationService.Verify(x => x.TranslateAsync(It.IsAny<Tuple<Language, string>>()),
+                Times.Once);
+            mockILogger.Verify(x => x.Error(It.IsAny<string>()), Times.Never);
         }
 
         [Fact]
@@ -39,21 +40,22 @@ namespace TranslationServices.BusinessLayerTests.UseCases
             //ARRANGE
             var mockILogger = TestHelper.MakeILogger();
             var mockITRSTranslationService = TestHelper.MakeITRSTranslationService();
+            LoggedException.Logger = mockILogger.Object;
 
             var translationUC = new OnlineServicesSystem(mockILogger.Object, mockITRSTranslationService.Object);
-            var FrenchSource = "French Source String";
+            var FrenchTupleToTranslate = new Tuple<Language, string>(Language.French, "French Source String");
 
             //ACT
-            var translated = translationUC.GetTranslation("FakeApiKey", FrenchSource, Language.French);
+            var translated = translationUC.GetTranslations(TestHelper.FakeApiKey, FrenchTupleToTranslate);
 
             //ASSERT
             Assert.NotNull(translated);
             Assert.Equal(TestHelper.EnglishTranslated, translated.ToString(Language.English));
-            Assert.Equal(FrenchSource, translated.ToString(Language.French));
+            Assert.Equal(FrenchTupleToTranslate.Item2, translated.ToString(Language.French));
             Assert.Equal(TestHelper.DutchTranslated, translated.ToString(Language.Dutch));
-            mockITRSTranslationService.Verify(x => x.Translate(It.IsAny<string>(), It.IsAny<Language>(), It.IsAny<Language>()),
-                Times.Exactly(Enum.GetNames(typeof(Language)).Count() - 1));
-            mockILogger.Verify(x=>x.Error(It.IsAny<string>()), Times.Never);
+            mockITRSTranslationService.Verify(x => x.TranslateAsync(It.IsAny<Tuple<Language, string>>()),
+                Times.Once);
+            mockILogger.Verify(x => x.Error(It.IsAny<string>()), Times.Never);
         }
 
         [Fact]
@@ -62,21 +64,22 @@ namespace TranslationServices.BusinessLayerTests.UseCases
             //ARRANGE
             var mockILogger = TestHelper.MakeILogger();
             var mockITRSTranslationService = TestHelper.MakeITRSTranslationService();
+            LoggedException.Logger = mockILogger.Object;
 
             var translationUC = new OnlineServicesSystem(mockILogger.Object, mockITRSTranslationService.Object);
-            var DutchSource = "Dutch Source String";
+            var DutchTupleToTranslate = new Tuple<Language, string>(Language.Dutch, "Dutch Source String");
 
             //ACT
-            var translated = translationUC.GetTranslation("FakeApiKey", DutchSource, Language.Dutch);
+            var translated = translationUC.GetTranslations(TestHelper.FakeApiKey, DutchTupleToTranslate);
 
             //ASSERT
             Assert.NotNull(translated);
             Assert.Equal(TestHelper.EnglishTranslated, translated.ToString(Language.English));
             Assert.Equal(TestHelper.FrenchTranslated, translated.ToString(Language.French));
-            Assert.Equal(DutchSource, translated.ToString(Language.Dutch));
-            mockITRSTranslationService.Verify(x => x.Translate(It.IsAny<string>(), It.IsAny<Language>(), It.IsAny<Language>()),
-                Times.Exactly(Enum.GetNames(typeof(Language)).Count()-1));
-            mockILogger.Verify(x=>x.Error(It.IsAny<string>()), Times.Never);
+            Assert.Equal(DutchTupleToTranslate.Item2, translated.ToString(Language.Dutch));
+            mockITRSTranslationService.Verify(x => x.TranslateAsync(It.IsAny<Tuple<Language, string>>()),
+                Times.Once);
+            mockILogger.Verify(x => x.Error(It.IsAny<string>()), Times.Never);
         }
 
         [Fact]
@@ -85,14 +88,15 @@ namespace TranslationServices.BusinessLayerTests.UseCases
             //ARRANGE
             var mockILogger = TestHelper.MakeILogger();
             var mockITRSTranslationService = TestHelper.MakeITRSTranslationService();
+            LoggedException.Logger = mockILogger.Object;
 
             var translationUC = new OnlineServicesSystem(mockILogger.Object, mockITRSTranslationService.Object);
-            var DutchSource = "Dutch Source String";
+            var DutchTupleToTranslate = new Tuple<Language, string>(Language.Dutch, "Dutch Source String");
 
             //ACT & ASSERT
-            Assert.Throws<IsNullOrWhiteSpaceException>(() => translationUC.GetTranslation("", DutchSource, Language.Dutch));
-            mockITRSTranslationService.Verify(x => x.Translate(It.IsAny<string>(), It.IsAny<Language>(), It.IsAny<Language>()), Times.Never);
-            mockILogger.Verify(x=>x.Error(It.IsAny<string>()), Times.Once);
+            Assert.Throws<NecessaryDataException>(() => translationUC.GetTranslations(null, DutchTupleToTranslate));
+            mockITRSTranslationService.Verify(x => x.TranslateAsync(It.IsAny<Tuple<Language, string>>()), Times.Never);
+            mockILogger.Verify(x => x.Error(It.IsAny<string>()), Times.Once);
         }
 
         [Fact]
@@ -101,14 +105,15 @@ namespace TranslationServices.BusinessLayerTests.UseCases
             //ARRANGE
             var mockILogger = TestHelper.MakeILogger();
             var mockITRSTranslationService = TestHelper.MakeITRSTranslationService();
+            LoggedException.Logger = mockILogger.Object;
 
             var translationUC = new OnlineServicesSystem(mockILogger.Object, mockITRSTranslationService.Object);
-            string SringToTranslate = null;
+            var TupleToTranslate = new Tuple<Language, string>(Language.French, null);
 
             //ACT & ASSERT
-            Assert.Throws<IsNullOrWhiteSpaceException>(() => translationUC.GetTranslation("FakeApiKey", SringToTranslate, Language.Dutch));
-            mockITRSTranslationService.Verify(x => x.Translate(It.IsAny<string>(), It.IsAny<Language>(), It.IsAny<Language>()), Times.Never);
-            mockILogger.Verify(x=>x.Error(It.IsAny<string>()), Times.Once);
+            Assert.Throws<IsNullOrWhiteSpaceException>(() => translationUC.GetTranslations(TestHelper.FakeApiKey, TupleToTranslate));
+            mockITRSTranslationService.Verify(x => x.TranslateAsync(It.IsAny<Tuple<Language, string>>()), Times.Never);
+            mockILogger.Verify(x => x.Error(It.IsAny<string>()), Times.Once);
         }
 
         [Fact]
@@ -117,14 +122,15 @@ namespace TranslationServices.BusinessLayerTests.UseCases
             //ARRANGE
             var mockILogger = TestHelper.MakeILogger();
             var mockITRSTranslationService = TestHelper.MakeITRSTranslationService();
+            LoggedException.Logger = mockILogger.Object;
 
             var translationUC = new OnlineServicesSystem(mockILogger.Object, mockITRSTranslationService.Object);
-            string SringToTranslate = "   ";
+            var TupleToTranslate = new Tuple<Language, string>(Language.Dutch, "  ");
 
             //ACT & ASSERT
-            Assert.Throws<IsNullOrWhiteSpaceException>(() => translationUC.GetTranslation("FakeApiKey", SringToTranslate, Language.Dutch));
-            mockITRSTranslationService.Verify(x => x.Translate(It.IsAny<string>(), It.IsAny<Language>(), It.IsAny<Language>()), Times.Never);
-            mockILogger.Verify(x=>x.Error(It.IsAny<string>()), Times.Once);
+            Assert.Throws<IsNullOrWhiteSpaceException>(() => translationUC.GetTranslations(TestHelper.FakeApiKey, TupleToTranslate));
+            mockITRSTranslationService.Verify(x => x.TranslateAsync(It.IsAny<Tuple<Language, string>>()), Times.Never);
+            mockILogger.Verify(x => x.Error(It.IsAny<string>()), Times.Once);
         }
 
         [Fact]
@@ -133,14 +139,15 @@ namespace TranslationServices.BusinessLayerTests.UseCases
             //ARRANGE
             var mockILogger = TestHelper.MakeILogger();
             var mockITRSTranslationService = TestHelper.MakeITRSTranslationService();
+            LoggedException.Logger = mockILogger.Object;
 
             var translationUC = new OnlineServicesSystem(mockILogger.Object, mockITRSTranslationService.Object);
-            var DutchSource = "Dutch Source String";
+            var TupleToTranslate = new Tuple<Language, string>((Language)50, "Dutch Source String");
 
             //ACT & ASSERT
-            Assert.Throws<ArgumentOutOfRangeException>(() => translationUC.GetTranslation("FakeApiKey", DutchSource, (Language)50));
-            mockITRSTranslationService.Verify(x => x.Translate(It.IsAny<string>(), It.IsAny<Language>(), It.IsAny<Language>()), Times.Never);
-            mockILogger.Verify(x=>x.Error(It.IsAny<string>()), Times.Once);
+            Assert.Throws<LanguageNotSupportedException>(() => translationUC.GetTranslations(TestHelper.FakeApiKey, TupleToTranslate));
+            mockITRSTranslationService.Verify(x => x.TranslateAsync(It.IsAny<Tuple<Language, string>>()), Times.Never);
+            mockILogger.Verify(x => x.Error(It.IsAny<string>()), Times.Once);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Moq;
+﻿//VERIFIED V3
+using Moq;
 using OnlineServices.Shared.Exceptions;
 using System;
 using Xunit;
@@ -12,108 +13,34 @@ namespace TranslationServices.DataLayer.ServiceAgentsTests
     {
         #region Serilog.ILogger
         [Fact]
-        public void CTOR_ThrowsArgumentNullException_WhenIloggerIsNull()
+        public void CTOR_ThrowsLoggedExceptionNullException_WhenIloggerIsNull()
         {
             //ARRANGE
             ILogger iLogger = null;
+            var mockILogger = TestHelper.MockILogger();
+            LoggedException.Logger = mockILogger.Object;
+
             AzureCognitiveArgs AzArg = TestHelper.AzCognitiveArgs;
 
             //ACT & ASSERT
-            Assert.Throws<ArgumentNullException>(() => new AzureCognitiveAgent(iLogger, AzArg));
+            Assert.Throws<LoggedException>(() => new AzureCognitiveAgent(iLogger, AzArg));
+            mockILogger.Verify(x => x.Error(It.IsAny<ArgumentNullException>(), It.IsAny<string>()), Times.Once);
         }
         #endregion Serilog.ILogger
 
         #region AzureCognitiveArgs
         [Fact]
-        public void CTOR_ThrowsArgumentNullException_WhenAzureCognitiveArgsIsNull()
+        public void CTOR_ThrowsLoggedNullException_WhenAzureCognitiveArgsIsNull()
         {
             //ARRANGE
             var mockILogger = TestHelper.MockILogger();
+            LoggedException.Logger = mockILogger.Object;
             AzureCognitiveArgs AzArg = null;
 
             //ACT & ASSERT
-            Assert.Throws<ArgumentNullException>(() => new AzureCognitiveAgent(mockILogger.Object, AzArg));
-            mockILogger.Verify(x => x.Error(It.IsAny<string>()), Times.Once);
+            Assert.Throws<LoggedException>(() => new AzureCognitiveAgent(mockILogger.Object, AzArg));
+            mockILogger.Verify(x => x.Error(It.IsAny<ArgumentNullException>(), It.IsAny<string>()), Times.Once);
         }
         #endregion AzureCognitiveArgs
-
-        #region AzureCognitiveArgs.SubscriptionKey
-        [Fact]
-        public void CTOR_ThrowsArgumentNullException_WhenAzArgSubscriptionKeyIsNull()
-        {
-            //ARRANGE
-            var mockILogger = TestHelper.MockILogger();
-            AzureCognitiveArgs AzArg = new AzureCognitiveArgs { SubscriptionKey = null };
-
-            //ACT & ASSERT
-            Assert.Throws<IsNullOrWhiteSpaceException>(() => new AzureCognitiveAgent(mockILogger.Object, AzArg));
-            mockILogger.Verify(x => x.Error(It.IsAny<string>()), Times.Once);
-        }
-
-        [Fact]
-        public void CTOR_ThrowsIsNullOrWhiteSpaceException_WhenAzArgSubscriptionKeyIsEmpty()
-        {
-            //ARRANGE
-            var mockILogger = TestHelper.MockILogger();
-            AzureCognitiveArgs AzArg = new AzureCognitiveArgs { SubscriptionKey = "" };
-
-            //ACT & ASSERT
-            Assert.Throws<IsNullOrWhiteSpaceException>(() => new AzureCognitiveAgent(mockILogger.Object, AzArg));
-            mockILogger.Verify(x => x.Error(It.IsAny<string>()), Times.Once);
-        }
-
-        [Fact]
-        public void CTOR_ThrowsIsNullOrWhiteSpaceException_WhenSubscriptionKeyIsWhitSpace()
-        {
-            //ARRANGE
-            var mockILogger = TestHelper.MockILogger();
-            AzureCognitiveArgs AzArg = new AzureCognitiveArgs { SubscriptionKey = "   " };
-
-            //ACT & ASSERT
-            Assert.Throws<IsNullOrWhiteSpaceException>(() => new AzureCognitiveAgent(mockILogger.Object, AzArg));
-            mockILogger.Verify(x => x.Error(It.IsAny<string>()), Times.Once);
-        }
-        #endregion SubscriptionKey
-
-        #region AzureCognitiveArgs.EndPoint
-        [Fact]
-        public void CTOR_ThrowsArgumentNullException_WhenAzArgEndpointIsNull()
-        {
-            //ARRANGE
-            var mockILogger = TestHelper.MockILogger();
-            AzureCognitiveArgs AzArg = new AzureCognitiveArgs { Endpoint = null };
-
-            //ACT & ASSERT
-            Assert.Throws<IsNullOrWhiteSpaceException>(() => new AzureCognitiveAgent(mockILogger.Object, AzArg));
-            mockILogger.Verify(x => x.Error(It.IsAny<string>()), Times.Once);
-        }
-
-        [Fact]
-        public void CTOR_ThrowsIsNullOrWhiteSpaceException_WhenAzArgEndpointIsEmpty()
-        {
-            //ARRANGE
-            var mockILogger = TestHelper.MockILogger();
-            AzureCognitiveArgs AzArg = new AzureCognitiveArgs { Endpoint = "" };
-
-            //ACT & ASSERT
-            Assert.Throws<IsNullOrWhiteSpaceException>(() => new AzureCognitiveAgent(mockILogger.Object, AzArg));
-            mockILogger.Verify(x => x.Error(It.IsAny<string>()), Times.Once);
-        }
-
-        [Fact]
-        public void CTOR_ThrowsIsNullOrWhiteSpaceException_WhenEndpointIsWhitSpace()
-        {
-            //ARRANGE
-            var mockILogger = TestHelper.MockILogger();
-            AzureCognitiveArgs AzArg = new AzureCognitiveArgs { Endpoint = "   " };
-
-            //ACT & ASSERT
-            Assert.Throws<IsNullOrWhiteSpaceException>(() => new AzureCognitiveAgent(mockILogger.Object, AzArg));
-            mockILogger.Verify(x => x.Error(It.IsAny<string>()), Times.Once);
-        }
-        #endregion Endpoint
-
-
-
     }
 }
