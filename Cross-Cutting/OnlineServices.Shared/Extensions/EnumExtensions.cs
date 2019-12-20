@@ -1,5 +1,7 @@
-﻿using System;
+﻿using OnlineServices.Shared.Enumerations;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace OnlineServices.Shared.Extensions
 {
@@ -14,6 +16,17 @@ namespace OnlineServices.Shared.Extensions
             foreach (int item in values)
                 result.Add(item, Enum.GetName(typeof(TEnum), item));
             return result;
+        }
+
+        public static List<TEnum> GetOthersValues<TEnum>(this TEnum EnumToExtend)
+            where TEnum : Enum
+        {
+            var result = new List<TEnum>();
+            var values = Enum.GetNames(typeof(TEnum));
+
+            return values.Select(x=> (TEnum)Enum.Parse(typeof(TEnum), x))
+                         .Where(x=> !x.Equals(EnumToExtend))//TODO erase && !x.Equals(Language.Unknown))
+                         .ToList();
         }
 
         public static bool IsDefined<TEnum>(this TEnum EnumToExtend, bool ThrowException = false)

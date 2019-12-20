@@ -32,13 +32,49 @@
             Contains a array of language to translate the TextToTranslate to.
             </summary>
         </member>
-        <member name="M:TranslationServices.DataLayer.ServiceAgents.Extensions.TranslationArgsExtentions.IsValidWithThrow(TranslationServices.DataLayer.ServiceAgents.Domain.TranslationArgs,Serilog.ILogger)">
+        <member name="P:TranslationServices.DataLayer.ServiceAgents.Domain.TranslationArgs2.OriginalText">
+            <summary>
+            Contains the content to translate an its language.
+            </summary>
+        </member>
+        <member name="P:TranslationServices.DataLayer.ServiceAgents.Domain.TranslationArgs2.RequestedLanguages">
+            <summary>
+            Contains a array of languages to translate the OriginalText to.
+            </summary>
+        </member>
+        <member name="M:TranslationServices.DataLayer.ServiceAgents.Extensions.TupleLanguageExtensions.ToJsonObject(System.Tuple{OnlineServices.Shared.Enumerations.Language,System.String})">
+            <summary>
+            This method serialize the text to Azure Cognitive service to be used with the HttpClient request.
+            </summary>
+            <param name="TupleText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TranslationServices.DataLayer.ServiceAgents.Extensions.TupleLanguageExtensions.ComposeRoute(System.Tuple{OnlineServices.Shared.Enumerations.Language,System.String})">
+            <summary>
+            This method compose the route element of the Azure Cognitive service to be used as part of the URL the HttpClient request.
+            </summary>
+            <param name="OriginalText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TranslationServices.DataLayer.ServiceAgents.Extensions.TupleLanguageExtensions.IsValidWithThrow(System.Tuple{OnlineServices.Shared.Enumerations.Language,System.String})">
             <summary>
             The class validades that the fields has all the values as specifyed by the translation service.
             </summary>
             <returns>
-            This method throw a exception withn validation returns false
+                void. This method throw a exception when LanguageTuple is not valid.
             </returns>
+        </member>
+        <member name="T:TranslationServices.DataLayer.ServiceAgents.TranslationAgents.AzureCognitiveAgent">
+            <summary>
+            Adapter pattern implementation for the Azure Cognitive Tranlaslation API.
+            </summary>
+        </member>
+        <member name="M:TranslationServices.DataLayer.ServiceAgents.TranslationAgents.AzureCognitiveAgent.#ctor(Serilog.ILogger,TranslationServices.DataLayer.ServiceAgents.Domain.AzureCognitiveArgs)">
+            <summary>
+            Logger for debuging purposes and azure subscription information for the Azure Cognitive services.
+            </summary>
+            <param name="iLogger"></param>
+            <param name="SubscriptionConfig"></param>
         </member>
     </members>
 </doc>
