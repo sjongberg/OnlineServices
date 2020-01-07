@@ -2,7 +2,7 @@
 //using Google.Cloud.Translation.V2;
 using OnlineServices.Shared.Exceptions;
 using OnlineServices.Shared.Extensions;
-
+using OnlineServices.Shared.TranslationServices.Extensions;
 using Serilog;
 
 using System;
