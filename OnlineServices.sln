@@ -113,13 +113,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Logic Layer", "Bus
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Access Layer", "Data Access Layer", "{A864CBCF-EB40-4D99-99A6-EE3575C3A6BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvaluationServices.DataLayer", "EvaluationServices\EvaluationServices.DataLayer\EvaluationServices.DataLayer.csproj", "{9417427D-A880-426A-8221-4776DDC33BD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvaluationServices.DataLayer", "EvaluationServices\EvaluationServices.DataLayer\EvaluationServices.DataLayer.csproj", "{9417427D-A880-426A-8221-4776DDC33BD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvaluationServices.DataLayerTests", "EvaluationServices\EvaluationServices.DataLayerTests\EvaluationServices.DataLayerTests.csproj", "{30DB3E98-7804-4D68-8E91-F8A5BE31E9D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvaluationServices.DataLayerTests", "EvaluationServices\EvaluationServices.DataLayerTests\EvaluationServices.DataLayerTests.csproj", "{30DB3E98-7804-4D68-8E91-F8A5BE31E9D5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvaluationServices.BusinessLayer", "EvaluationServices\EvaluationServices.BusinessLayer\EvaluationServices.BusinessLayer.csproj", "{3BDCDED2-18CB-4A3A-B89D-9945E3E55F07}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvaluationServices.BusinessLayerTests", "EvaluationServices\EvaluationServices.BusinessLayerTests\EvaluationServices.BusinessLayerTests.csproj", "{2E7C16FB-842F-4313-8E50-519B95991C16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CS - CommunicationServices", "CS - CommunicationServices", "{71FE01E1-7C8C-4EAB-ABBC-A897A33A4E60}"
+	ProjectSection(SolutionItems) = preProject
+		Message.cs = Message.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -313,6 +318,7 @@ Global
 		{30DB3E98-7804-4D68-8E91-F8A5BE31E9D5} = {A864CBCF-EB40-4D99-99A6-EE3575C3A6BC}
 		{3BDCDED2-18CB-4A3A-B89D-9945E3E55F07} = {2CA1D71D-6C2F-4316-B217-AE53FBB1A513}
 		{2E7C16FB-842F-4313-8E50-519B95991C16} = {2CA1D71D-6C2F-4316-B217-AE53FBB1A513}
+		{71FE01E1-7C8C-4EAB-ABBC-A897A33A4E60} = {22EB011A-39E4-41C2-898A-9BF918F8919C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C170EEE5-52F4-4C78-ABDF-890E97482E62}
