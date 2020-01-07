@@ -7,9 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Enumerations\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="Interfaces\" />
+    <Compile Remove="Enumerations\**" />
+    <Compile Remove="Extensions\**" />
+    <Compile Remove="Interfaces\**" />
+    <EmbeddedResource Remove="Enumerations\**" />
+    <EmbeddedResource Remove="Extensions\**" />
+    <EmbeddedResource Remove="Interfaces\**" />
+    <None Remove="Enumerations\**" />
+    <None Remove="Extensions\**" />
+    <None Remove="Interfaces\**" />
   </ItemGroup>
 
   <ItemGroup>

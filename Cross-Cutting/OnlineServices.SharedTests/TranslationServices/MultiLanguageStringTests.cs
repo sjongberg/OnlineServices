@@ -3,11 +3,14 @@ using OnlineServices.Shared.Enumerations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OnlineServices.Shared.Exceptions;
 using OnlineServices.Shared.TranslationServices.TransfertObjects;
+using OnlineServices.SharedTests;
+using Moq;
+using System;
 
-namespace OnlineServices.SharedTests
+namespace OnlineServices.Shared.TranslationServicesTests
 {
     [TestClass]
-    public class StringTranslatedTests
+    public class MultiLanguageStringTests
     {
         [TestMethod()]
         public void CTOR_ShouldInitTranslatedFields_WhenValidTranslationIsProvided()
@@ -36,11 +39,32 @@ namespace OnlineServices.SharedTests
         [TestMethod()]
         public void ToString_ThrowsLanguageNotSupportedException_WhenUnknownLanguageIsProvided()
         {
-            //Arrange & Act
+            //Arrange
+            var mockILogger = TestHelper.MockILogger();
+            LoggedException.Logger = mockILogger.Object;
+
+            //Act
             var sut = new MultiLanguageString("English", "French", "Dutch");
 
             //Assert
             Assert.ThrowsException<LanguageNotSupportedException>(() => sut.ToString((Language)50));
+            mockILogger.Verify(x => x.Error(It.IsAny<string>()), Times.Once);
+        }
+
+        [TestMethod()]
+        public void ToString_Throws_WhenInsufficientLanguagesIsProvided()
+        {
+            //Arrange
+            var mockILogger = TestHelper.MockILogger();
+            LoggedException.Logger = mockILogger.Object;
+            var TupleToUse = new Tuple<Language, string>[]
+            {
+
+            };
+
+            //Assert
+            Assert.ThrowsException<LoggedException>(() => new MultiLanguageString(TupleToUse));
+            mockILogger.Verify(x => x.Error(It.IsAny<string>()), Times.Once);
         }
     }
 }
