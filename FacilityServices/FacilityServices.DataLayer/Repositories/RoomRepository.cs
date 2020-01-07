@@ -28,6 +28,11 @@ namespace FacilityServices.DataLayer.Repositories
             throw new System.NotImplementedException();
         }
 
+        public List<RoomTO> GetRoomsByFloors(FloorTO Floor)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public bool Remove(RoomTO entity)
         {
             throw new System.NotImplementedException();

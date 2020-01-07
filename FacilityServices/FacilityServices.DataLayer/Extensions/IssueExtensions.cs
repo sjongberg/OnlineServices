@@ -10,7 +10,7 @@ namespace FacilityServices.DataLayer.Extensions
 {
     public static class IssueExtensions
     {
-        public static IssueTO ToTranfertObject(this IssueEF Issue)
+        public static IssueTO ToTranfertsObject(this IssueEF Issue)
         {
             if (Issue is null)
                 throw new ArgumentNullException(nameof(Issue));

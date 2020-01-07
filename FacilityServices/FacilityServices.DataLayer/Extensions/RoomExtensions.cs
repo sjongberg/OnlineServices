@@ -11,7 +11,7 @@ namespace FacilityServices.DataLayer.Extensions
 {
     public static class RoomExtensions
     {
-        public static RoomTO ToTranfertObject(this RoomEF Room)
+        public static RoomTO ToTranfertsObject(this RoomEF Room)
         {
             if (Room is null)
                 throw new ArgumentNullException(nameof(Room));

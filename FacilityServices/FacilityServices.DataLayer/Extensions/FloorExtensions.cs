@@ -8,7 +8,7 @@ namespace FacilityServices.DataLayer.Extensions
 {
     public static class FloorExtensions
     {
-        public static FloorTO ToTranfertObject(this FloorEF Floor)
+        public static FloorTO ToTranfertsObject(this FloorEF Floor)
         {
             if (Floor is null)
                 throw new ArgumentNullException(nameof(Floor));
