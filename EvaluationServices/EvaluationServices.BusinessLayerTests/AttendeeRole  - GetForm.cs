@@ -52,6 +52,7 @@ namespace EvaluationServices.BusinessLayerTests
             var FormID = 1; //Forms inexistant
 
             var moqRepo = new Mock<IRepository<FormTO, int>>();
+
             moqRepo.Setup(x => x.GetAll()).Returns(() => new List<FormTO> { new FormTO { Id = FormID, SessionID = SessionID } } );
             moqRepo.Setup(x => x.GetById(It.IsAny<int>())).Returns(() => new FormTO { Id = FormID, SessionID = SessionID } );
             var moqUserService = new Mock<IUserServiceTemp>();
