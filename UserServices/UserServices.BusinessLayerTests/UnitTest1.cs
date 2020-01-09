@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UserServices.BusinessLayerTests
+namespace RegistrationServices.BusinessLayerTests
 {
     [TestClass]
     public class UnitTest1
