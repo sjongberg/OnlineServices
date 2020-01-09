@@ -4,6 +4,7 @@ using Moq;
 using OnlineServices.Shared.DataAccessHelpers;
 using OnlineServices.Shared.EvaluationServices.TransfertObjects;
 using System;
+using System.Collections.Generic;
 
 namespace EvaluationServices.BusinessLayerTests
 {
@@ -51,6 +52,7 @@ namespace EvaluationServices.BusinessLayerTests
             var FormID = 1; //Forms inexistant
 
             var moqRepo = new Mock<IRepository<FormTO, int>>();
+            moqRepo.Setup(x => x.GetAll()).Returns(() => new List<FormTO> { new FormTO { Id = FormID, SessionID = SessionID } } );
             moqRepo.Setup(x => x.GetById(It.IsAny<int>())).Returns(() => new FormTO { Id = FormID, SessionID = SessionID } );
             var moqUserService = new Mock<IUserServiceTemp>();
             moqUserService.Setup(x => x.IsExistentSession(It.IsAny<int>())).Returns(() => true);
