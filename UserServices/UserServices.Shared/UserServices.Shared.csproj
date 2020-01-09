@@ -5,8 +5,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <ApplicationIcon />
     <StartupObject />
-    <AssemblyVersion>1912.18.0.1052</AssemblyVersion>
-    <FileVersion>1912.18.0.1052</FileVersion>
+    <AssemblyVersion>2001.8.0.0814</AssemblyVersion>
+    <FileVersion>2001.8.0.0814</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
