@@ -1,4 +1,4 @@
-﻿namespace UserServices.BusinessLayer
+﻿namespace RegistrationServices.BusinessLayer
 {
     public class Class1
     {

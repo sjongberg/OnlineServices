@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UserServices.DataLayerTests
+namespace RegistrationServices.DataLayerTests
 {
     [TestClass]
     public class UnitTest1
