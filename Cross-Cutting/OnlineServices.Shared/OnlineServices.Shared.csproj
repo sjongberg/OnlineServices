@@ -2,9 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyVersion>1912.19.2.1324</AssemblyVersion>
-    <FileVersion>1912.19.2.1324</FileVersion>
+    <AssemblyVersion>2001.8.1.0820</AssemblyVersion>
+    <FileVersion>2001.8.1.0820</FileVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="UserServices\**" />
+    <EmbeddedResource Remove="UserServices\**" />
+    <None Remove="UserServices\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">

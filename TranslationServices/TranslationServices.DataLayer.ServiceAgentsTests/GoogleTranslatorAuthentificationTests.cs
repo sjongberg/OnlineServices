@@ -28,7 +28,7 @@ namespace TranslationServices.DataLayer.ServiceAgentsTests
             }
         }
 
-        [Fact]//(Skip = "Code as Demo to Azure Cognitive")]
+        [Fact(Skip = "Code as Demo to Google Translation services")]
         public void DemoOfGeneralUseOfGoogleTranslator()
         {
             var OriginalText = new Tuple<Language, string>(Language.English, "Hello World!");
