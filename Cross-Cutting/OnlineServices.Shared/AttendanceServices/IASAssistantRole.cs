@@ -7,8 +7,8 @@ namespace OnlineServices.Shared.AttendanceServices
 {
     public interface IASAssistantRole
     {
-        bool SetPresence(AttendeePresenceTO presenceTO);
-        List<AttendeePresenceTO> GetAttendeePresence(int formationID, int attendeeID);
-        List<AttendeePresenceTO> GetFormationPresence(int formationID); 
+        bool SetPresence(int formationID, int attendeeID, DateTime MomentPresence);
+        AttendeePresenceTO GetAttendeePresence(int sessionID, int attendeeID);
+        List<AttendeePresenceTO> GetSessionPresence(int sessionID); 
     }
 }

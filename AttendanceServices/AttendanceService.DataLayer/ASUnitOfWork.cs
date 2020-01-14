@@ -2,8 +2,11 @@
 
 namespace AttendanceService.DataLayer
 {
-    public class ASUnitOfWork
+    public class ASUnitOfWork : IDisposable
     {
-
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

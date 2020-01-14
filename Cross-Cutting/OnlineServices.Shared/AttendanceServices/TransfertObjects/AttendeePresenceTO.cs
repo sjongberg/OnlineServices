@@ -8,7 +8,7 @@ namespace OnlineServices.Shared.AttendanceServices.TransfertObjects
     {
         public int attendeeID;
         public int sessionID;
-        public int localID;
+        public int localID;  //TODO a revoir si necessaire
         public List<DateTime> PresenceDay;
 
     }

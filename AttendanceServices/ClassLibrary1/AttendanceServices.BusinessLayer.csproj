@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Cross-Cutting\OnlineServices.Shared\OnlineServices.Shared.csproj" />
+    <ProjectReference Include="..\AttendanceService.DataLayer\AttendanceService.DataLayer.csproj" />
   </ItemGroup>
 
 </Project>
